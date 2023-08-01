@@ -125,6 +125,20 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
+
+        public FFstations Update_FFstations(FFstations FFstations)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FFstations_Update(UserName, Password, FFstations);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
+
         public DangerousPlaces Update_DangerousePlaces(DangerousPlaces place)
         {
             try

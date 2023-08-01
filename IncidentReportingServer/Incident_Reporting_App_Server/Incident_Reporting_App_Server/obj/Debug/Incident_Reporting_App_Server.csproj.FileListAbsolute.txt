@@ -52,3 +52,32 @@ C:\Users\PC 1\source\repos\incident-reporting\IncidentReportingServer\Incident_R
 C:\Users\PC 1\source\repos\incident-reporting\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.UserControl1.resources
 C:\Users\PC 1\source\repos\incident-reporting\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1List.2.dll
 C:\Users\PC 1\source\repos\incident-reporting\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1List.2.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\Incident_Reporting_App_Server.exe.config
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\Incident_Reporting_App_Server.exe
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\Incident_Reporting_App_Server.pdb
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1Command.4.dll
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1Input.4.dll
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1List.2.dll
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1List.4.dll
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1TouchToolKit.4.dll
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\EntityFramework.dll
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1Command.4.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1Input.4.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1List.2.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1List.4.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1TouchToolKit.4.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\EntityFramework.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.csproj.AssemblyReference.cache
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.Form1.resources
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.Form2.resources
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.Properties.Resources.resources
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.UserControl1.resources
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.csproj.GenerateResource.cache
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.exe.licenses
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.csproj.CoreCompileInputs.cache
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.csproj.CopyComplete
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.exe
+C:\Users\EMAN\source\repos\IREPORT\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.pdb

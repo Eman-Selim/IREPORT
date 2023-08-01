@@ -668,8 +668,19 @@ namespace IncidentReporting_WS
             }
         }
 
-        
-        
+
+        [WebMethod]
+        public FFstations FFstations_Update(string username, string password, FFstations FFstations)
+        {
+            try
+            {
+                return FFstationsSBL_Obj.FFstations_Update(username, password, FFstations);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
         [WebMethod]
         public FFstationsCollection FFstations_Select_All(string username, string password)

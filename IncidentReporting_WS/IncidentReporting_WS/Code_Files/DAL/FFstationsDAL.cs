@@ -30,7 +30,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 return false;
             }
         }
-        public FFstations FFstations_Insert(string username, string password, FFstations FFstations )
+
+        public FFstations FFstations_Insert(string username, string password, FFstations FFstations)
         {
             try
             {
@@ -54,6 +55,44 @@ namespace IncidentReporting_WS.Code_Files.DAL
                };
 
                 FFstations.FF_ID = db.Execute_Insert_Stored_Procedure("FFstations_Insert", sp_params);
+                if (FFstations.FF_ID > 0)
+                {
+                    return FFstations;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public FFstations FFstations_Update(string username, string password, FFstations FFstations )
+        {
+            try
+            {
+                bool flag = false;
+                object[,] sp_params = new object[,]
+               {
+                    {"@username", username},
+                    {"@password", password},
+                    {"@Sector", FFstations.Sector },
+                    {"@AreaName", FFstations.AreaName},
+                    {"@Street",FFstations.Street},
+                    {"@ZoneNumber",FFstations.ZoneNumber},
+                    {"@Signs",FFstations.Signs},
+                    {"@OfficersNumber",FFstations.OfficersNumber},
+                    {"@SoliderNumber",FFstations.SoliderNumber},
+                    {"@CarsNumber",FFstations.CarsNumber},
+                    {"@Equipments",FFstations.Equipments},
+                    {"@Additional_info",FFstations.Additional_info},
+                    {"@UserID",FFstations.UserID},
+                    {"@FF_ID",FFstations.FF_ID }
+
+               };
+
+                FFstations.FF_ID = db.Execute_Insert_Stored_Procedure("FFstations_Update", sp_params);
                 if (FFstations.FF_ID > 0)
                 {
                     return FFstations;

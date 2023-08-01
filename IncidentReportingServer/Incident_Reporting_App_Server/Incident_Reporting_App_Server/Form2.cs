@@ -225,6 +225,11 @@ namespace Incident_Reporting_App_Server
             LeftCompany_UC.TB_DCompanyMediator_UC_ELe.Text = selectedCompany.LeftFireMediator;
             LeftCompany_UC.TB_DCompanyImageURL_UC_ELe.Text = selectedCompany.LeftCompanyImageURL;
             LeftCompany_UC.TB_DCompanyImage_UC_ELe.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.RightCompanyImage));
+
+            richTextBox38.AppendText(selectedCompany.GasTrapLocation);
+           richTextBox38.AppendText( selectedCompany.OxygenTrapLocation);
+            richTextBox38.AppendText(selectedCompany.ElectricalPanelLocation);
+           
             //load buildings of selected company
 
 
@@ -275,7 +280,7 @@ namespace Incident_Reporting_App_Server
                 DG_Pumps_DT.Rows.Add(row);
             }
 
-
+            
 
         }
 
@@ -345,12 +350,32 @@ namespace Incident_Reporting_App_Server
             men.Rank = (string)ff_ManPowerGrid.CurrentRow.Cells[3].Value;
             men.Job = (string)ff_ManPowerGrid.CurrentRow.Cells[4].Value;
             men.Additional_info = (string)ff_ManPowerGrid.CurrentRow.Cells[5].Value;
+            server_Class_Obj.Update_FFstations(station);
 
-            FF_ManPower[] manpower = station.Station_ManPower;
-            Array.Resize(ref manpower, manpower.Length + 1);
-            manpower[manpower.GetUpperBound(0)] = men;
-            station.Station_ManPower = manpower;
         }
+
+        private void AddStationsManPower_Click(object sender, EventArgs e)
+        {
+            station.CarsNumber = TB_CarsNumber_DT.Text;
+            station.SoliderNumber = TB_SoliderNumber_DT.Text;
+            station.Sector = TB_sector_DT.Text;
+            station.Signs = TB_signs_DT.Text;
+            station.Street = TB_street_DT.Text;
+            station.ZoneNumber = TB_area_DT.Text;
+            station.Additional_info = TB_Additional_info_DT.Text;
+            station.UserID = Selected_User_ID;
+            men = new FF_ManPower();
+            men.OfficerName = (string)ff_ManPowerGrid.CurrentRow.Cells[0].Value;
+            men.Sector = (string)ff_ManPowerGrid.CurrentRow.Cells[1].Value;
+            men.Area = (string)ff_ManPowerGrid.CurrentRow.Cells[2].Value;
+            men.Rank = (string)ff_ManPowerGrid.CurrentRow.Cells[3].Value;
+            men.Job = (string)ff_ManPowerGrid.CurrentRow.Cells[4].Value;
+            men.Additional_info = (string)ff_ManPowerGrid.CurrentRow.Cells[5].Value;
+
+            server_Class_Obj.Add_FFstations_FF_ManPower(station);
+          
+        }
+
 
         private void DeleteStationsManPower_Click(object sender, EventArgs e)
         {
@@ -922,6 +947,7 @@ namespace Incident_Reporting_App_Server
         {
             server_Class_Obj.Delete_Account(Selected_User_ID);
         }
+
 
         #endregion
 

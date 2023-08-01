@@ -536,6 +536,18 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
+        public FFstations FFstations_Update(string username, string password, FFstations FFstations)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FFstations_Update(username, password, FFstations);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return null;
+            }
+        }
         public FFstations[] FFstations_Select_All(string username, string password)
         {
             try

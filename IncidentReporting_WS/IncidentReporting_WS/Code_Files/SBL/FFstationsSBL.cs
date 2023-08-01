@@ -49,6 +49,24 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
+        public FFstations FFstations_Update(string username, string password, FFstations FFstations)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return FFstationsDAL_Obj.FFstations_Update(username, password, FFstations);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public FFstationsCollection FFstations_Select_All(string username, string password)
         {
             try

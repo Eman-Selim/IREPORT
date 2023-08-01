@@ -29,6 +29,8 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="IncidentReporting_WSSoap", Namespace="http://tempuri.org/")]
     public partial class IncidentReporting_WS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback Managers_DeleteOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Managers_InsertOperationCompleted;
         
         private System.Threading.SendOrPostCallback Managers_Select_AllOperationCompleted;
@@ -78,6 +80,8 @@ namespace Incident_Reporting_App_Server.localhost {
         private System.Threading.SendOrPostCallback Accident_Select_By_TypeOperationCompleted;
         
         private System.Threading.SendOrPostCallback Accident_Select_By_VehiclesToAccidentOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_By_StatusOperationCompleted;
         
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_UserIDOperationCompleted;
         
@@ -203,8 +207,6 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback Company_Select_By_UserIDOperationCompleted;
         
-        private System.Threading.SendOrPostCallback Managers_DeleteOperationCompleted;
-        
         private System.Threading.SendOrPostCallback Users_DeleteOperationCompleted;
         
         private System.Threading.SendOrPostCallback Users_InsertOperationCompleted;
@@ -285,6 +287,8 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback FFstations_InsertOperationCompleted;
         
+        private System.Threading.SendOrPostCallback FFstations_UpdateOperationCompleted;
+        
         private System.Threading.SendOrPostCallback FFstations_Select_AllOperationCompleted;
         
         private System.Threading.SendOrPostCallback FFstations_Select_By_AreaNameOperationCompleted;
@@ -327,8 +331,6 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_SignsOperationCompleted;
         
-        private System.Threading.SendOrPostCallback FF_pumps_Select_By_StatusOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -366,6 +368,9 @@ namespace Incident_Reporting_App_Server.localhost {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event Managers_DeleteCompletedEventHandler Managers_DeleteCompleted;
         
         /// <remarks/>
         public event Managers_InsertCompletedEventHandler Managers_InsertCompleted;
@@ -441,6 +446,9 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         public event Accident_Select_By_VehiclesToAccidentCompletedEventHandler Accident_Select_By_VehiclesToAccidentCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_By_StatusCompletedEventHandler FF_pumps_Select_By_StatusCompleted;
         
         /// <remarks/>
         public event FF_pumps_Select_By_UserIDCompletedEventHandler FF_pumps_Select_By_UserIDCompleted;
@@ -629,9 +637,6 @@ namespace Incident_Reporting_App_Server.localhost {
         public event Company_Select_By_UserIDCompletedEventHandler Company_Select_By_UserIDCompleted;
         
         /// <remarks/>
-        public event Managers_DeleteCompletedEventHandler Managers_DeleteCompleted;
-        
-        /// <remarks/>
         public event Users_DeleteCompletedEventHandler Users_DeleteCompleted;
         
         /// <remarks/>
@@ -752,6 +757,9 @@ namespace Incident_Reporting_App_Server.localhost {
         public event FFstations_InsertCompletedEventHandler FFstations_InsertCompleted;
         
         /// <remarks/>
+        public event FFstations_UpdateCompletedEventHandler FFstations_UpdateCompleted;
+        
+        /// <remarks/>
         public event FFstations_Select_AllCompletedEventHandler FFstations_Select_AllCompleted;
         
         /// <remarks/>
@@ -815,7 +823,37 @@ namespace Incident_Reporting_App_Server.localhost {
         public event FF_pumps_Select_By_SignsCompletedEventHandler FF_pumps_Select_By_SignsCompleted;
         
         /// <remarks/>
-        public event FF_pumps_Select_By_StatusCompletedEventHandler FF_pumps_Select_By_StatusCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Managers_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Managers_Delete(string username, string password, int ManagerID) {
+            object[] results = this.Invoke("Managers_Delete", new object[] {
+                        username,
+                        password,
+                        ManagerID});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Managers_DeleteAsync(string username, string password, int ManagerID) {
+            this.Managers_DeleteAsync(username, password, ManagerID, null);
+        }
+        
+        /// <remarks/>
+        public void Managers_DeleteAsync(string username, string password, int ManagerID, object userState) {
+            if ((this.Managers_DeleteOperationCompleted == null)) {
+                this.Managers_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnManagers_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Managers_Delete", new object[] {
+                        username,
+                        password,
+                        ManagerID}, this.Managers_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnManagers_DeleteOperationCompleted(object arg) {
+            if ((this.Managers_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Managers_DeleteCompleted(this, new Managers_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Managers_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1633,6 +1671,39 @@ namespace Incident_Reporting_App_Server.localhost {
             if ((this.Accident_Select_By_VehiclesToAccidentCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Accident_Select_By_VehiclesToAccidentCompleted(this, new Accident_Select_By_VehiclesToAccidentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Status", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_By_Status(string username, string password, string Status) {
+            object[] results = this.Invoke("FF_pumps_Select_By_Status", new object[] {
+                        username,
+                        password,
+                        Status});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_StatusAsync(string username, string password, string Status) {
+            this.FF_pumps_Select_By_StatusAsync(username, password, Status, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_StatusAsync(string username, string password, string Status, object userState) {
+            if ((this.FF_pumps_Select_By_StatusOperationCompleted == null)) {
+                this.FF_pumps_Select_By_StatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_StatusOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_By_Status", new object[] {
+                        username,
+                        password,
+                        Status}, this.FF_pumps_Select_By_StatusOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_By_StatusOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_By_StatusCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_By_StatusCompleted(this, new FF_pumps_Select_By_StatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3673,39 +3744,6 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Managers_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Managers_Delete(string username, string password, int ManagerID) {
-            object[] results = this.Invoke("Managers_Delete", new object[] {
-                        username,
-                        password,
-                        ManagerID});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Managers_DeleteAsync(string username, string password, int ManagerID) {
-            this.Managers_DeleteAsync(username, password, ManagerID, null);
-        }
-        
-        /// <remarks/>
-        public void Managers_DeleteAsync(string username, string password, int ManagerID, object userState) {
-            if ((this.Managers_DeleteOperationCompleted == null)) {
-                this.Managers_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnManagers_DeleteOperationCompleted);
-            }
-            this.InvokeAsync("Managers_Delete", new object[] {
-                        username,
-                        password,
-                        ManagerID}, this.Managers_DeleteOperationCompleted, userState);
-        }
-        
-        private void OnManagers_DeleteOperationCompleted(object arg) {
-            if ((this.Managers_DeleteCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Managers_DeleteCompleted(this, new Managers_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool Users_Delete(string username, string password, int user_id) {
             object[] results = this.Invoke("Users_Delete", new object[] {
@@ -5014,6 +5052,39 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations FFstations_Update(string username, string password, FFstations FFstations) {
+            object[] results = this.Invoke("FFstations_Update", new object[] {
+                        username,
+                        password,
+                        FFstations});
+            return ((FFstations)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_UpdateAsync(string username, string password, FFstations FFstations) {
+            this.FFstations_UpdateAsync(username, password, FFstations, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_UpdateAsync(string username, string password, FFstations FFstations, object userState) {
+            if ((this.FFstations_UpdateOperationCompleted == null)) {
+                this.FFstations_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Update", new object[] {
+                        username,
+                        password,
+                        FFstations}, this.FFstations_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_UpdateOperationCompleted(object arg) {
+            if ((this.FFstations_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_UpdateCompleted(this, new FFstations_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public FFstations[] FFstations_Select_All(string username, string password) {
             object[] results = this.Invoke("FFstations_Select_All", new object[] {
@@ -5699,39 +5770,6 @@ namespace Incident_Reporting_App_Server.localhost {
             if ((this.FF_pumps_Select_By_SignsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.FF_pumps_Select_By_SignsCompleted(this, new FF_pumps_Select_By_SignsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Status", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_By_Status(string username, string password, string Status) {
-            object[] results = this.Invoke("FF_pumps_Select_By_Status", new object[] {
-                        username,
-                        password,
-                        Status});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_StatusAsync(string username, string password, string Status) {
-            this.FF_pumps_Select_By_StatusAsync(username, password, Status, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_StatusAsync(string username, string password, string Status, object userState) {
-            if ((this.FF_pumps_Select_By_StatusOperationCompleted == null)) {
-                this.FF_pumps_Select_By_StatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_StatusOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_By_Status", new object[] {
-                        username,
-                        password,
-                        Status}, this.FF_pumps_Select_By_StatusOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_By_StatusOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_By_StatusCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_By_StatusCompleted(this, new FF_pumps_Select_By_StatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -7821,6 +7859,32 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Managers_DeleteCompletedEventHandler(object sender, Managers_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Managers_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Managers_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void Managers_InsertCompletedEventHandler(object sender, Managers_InsertCompletedEventArgs e);
     
     /// <remarks/>
@@ -8465,6 +8529,32 @@ namespace Incident_Reporting_App_Server.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Accident[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_By_StatusCompletedEventHandler(object sender, FF_pumps_Select_By_StatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_By_StatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_By_StatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
             }
         }
     }
@@ -10083,32 +10173,6 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Managers_DeleteCompletedEventHandler(object sender, Managers_DeleteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Managers_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Managers_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void Users_DeleteCompletedEventHandler(object sender, Users_DeleteCompletedEventArgs e);
     
     /// <remarks/>
@@ -11149,6 +11213,32 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_UpdateCompletedEventHandler(object sender, FFstations_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void FFstations_Select_AllCompletedEventHandler(object sender, FFstations_Select_AllCompletedEventArgs e);
     
     /// <remarks/>
@@ -11680,32 +11770,6 @@ namespace Incident_Reporting_App_Server.localhost {
         private object[] results;
         
         internal FF_pumps_Select_By_SignsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_By_StatusCompletedEventHandler(object sender, FF_pumps_Select_By_StatusCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_By_StatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_By_StatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
