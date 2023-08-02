@@ -201,7 +201,7 @@
       <s:element name="Buildings_UpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Buildings_UpdateResult" type="tns:Buildings" />
+            <s:element minOccurs="1" maxOccurs="1" name="Buildings_UpdateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -876,7 +876,7 @@
       <s:element name="ExitPathways_UpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ExitPathways_UpdateResult" type="tns:ExitPathways" />
+            <s:element minOccurs="1" maxOccurs="1" name="ExitPathways_UpdateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1109,7 +1109,7 @@
       <s:element name="DangerousPlaces_UpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="DangerousPlaces_UpdateResult" type="tns:DangerousPlaces" />
+            <s:element minOccurs="1" maxOccurs="1" name="DangerousPlaces_UpdateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1301,7 +1301,7 @@
       <s:element name="Company_UpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_UpdateResult" type="tns:Company" />
+            <s:element minOccurs="1" maxOccurs="1" name="Company_UpdateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1745,7 +1745,7 @@
       <s:element name="Users_UpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_UpdateResult" type="tns:Users" />
+            <s:element minOccurs="1" maxOccurs="1" name="Users_UpdateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2184,7 +2184,7 @@
       <s:element name="Floors_UpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Floors_UpdateResult" type="tns:Floors" />
+            <s:element minOccurs="1" maxOccurs="1" name="Floors_UpdateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2359,7 +2359,7 @@
       <s:element name="FFstations_UpdateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="FFstations_UpdateResult" type="tns:FFstations" />
+            <s:element minOccurs="1" maxOccurs="1" name="FFstations_UpdateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>

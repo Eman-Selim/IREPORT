@@ -52,7 +52,7 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Users Users_Update(string username, string password, Users Users)
+        public bool Users_Update(string username, string password, Users Users)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace IncidentReporting_WS
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
@@ -498,7 +498,7 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Floors Floors_Update(string username, string password, Floors Floors)
+        public bool Floors_Update(string username, string password, Floors Floors)
         {
             try
             {
@@ -508,7 +508,7 @@ namespace IncidentReporting_WS
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
@@ -670,7 +670,7 @@ namespace IncidentReporting_WS
 
 
         [WebMethod]
-        public FFstations FFstations_Update(string username, string password, FFstations FFstations)
+        public bool FFstations_Update(string username, string password, FFstations FFstations)
         {
             try
             {
@@ -678,7 +678,7 @@ namespace IncidentReporting_WS
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
@@ -1309,18 +1309,17 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public ExitPathways ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
+        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
         {
             try
             {
-                ExitPathways ExitPathways = new ExitPathways();
-                ExitPathways = ExitPathwaysSBL_Obj.ExitPathways_Update(username, password, ExitPathway);
-                return ExitPathways;
+                bool flag = ExitPathwaysSBL_Obj.ExitPathways_Update(username, password, ExitPathway);
+                return flag;
 
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
@@ -1541,18 +1540,17 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public DangerousPlaces DangerousPlaces_Update(string username, string password, DangerousPlaces dangerousPlaces)
+        public bool DangerousPlaces_Update(string username, string password, DangerousPlaces dangerousPlaces)
         {
             try
             {
-                DangerousPlaces DangerousPlaces = new DangerousPlaces();
-                DangerousPlaces = DangerousPlacesSBL_Obj.DangerousPlaces_Update(username, password, dangerousPlaces);
-                return DangerousPlaces;
+                bool flag = DangerousPlacesSBL_Obj.DangerousPlaces_Update(username, password, dangerousPlaces);
+                return flag;
 
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
         [WebMethod]
@@ -1683,17 +1681,16 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Company Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, Company company)
         {
             try
             {
-                Company Company_obj = new Company();
-                Company_obj = CompanySBL_Obj.Company_Update(username, password, company);
-                return Load_Company_Data(username, password, new CompanyCollection() { Company_obj })[0];
+                bool flag= CompanySBL_Obj.Company_Update(username, password, company);
+                return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
@@ -2143,17 +2140,16 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Buildings Buildings_Update(string username, string password, Buildings buildings)
+        public bool Buildings_Update(string username, string password, Buildings buildings)
         {
             try
             {
-                Buildings Buildings_obj = new Buildings();
-                Buildings_obj = BuildingSBL_Obj.Building_Update(username, password, buildings);
-                return Load_Buildings_Data(username, password, new BuildingsCollection() { Buildings_obj })[0];
+                bool flag = BuildingSBL_Obj.Building_Update(username, password, buildings);
+                return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

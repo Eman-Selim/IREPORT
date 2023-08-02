@@ -62,7 +62,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public Users Users_Update(string username, string password, Users Users)
+        public bool Users_Update(string username, string password, Users Users)
         {
             try
             {
@@ -78,17 +78,12 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@AdminMode", Users.AdminMode}
                 };
 
-                Users.UserID = db.Execute_Insert_Stored_Procedure("Users_Update", sp_params);
-                if (Users.UserID > 0)
-                {
-                    return Users;
-                }
-
-                return null;
+                flag= db.Execute_Update_Delete_Stored_Procedure("Users_Update", sp_params);
+                return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

@@ -30,7 +30,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public DangerousPlaces DangerousPlaces_Update(string username, string password, DangerousPlaces DangerousPlaces)
+        public bool DangerousPlaces_Update(string username, string password, DangerousPlaces DangerousPlaces)
         {
             try
             {
@@ -40,12 +40,12 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 }
                 else
                 {
-                    return null;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

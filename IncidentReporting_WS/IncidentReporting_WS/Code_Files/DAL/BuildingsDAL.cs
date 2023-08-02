@@ -62,7 +62,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public Buildings Building_Update(string username, string password, Buildings buildings)
+        public bool Building_Update(string username, string password, Buildings buildings)
         {
             try
             {
@@ -81,17 +81,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
 
                };
 
-                buildings.BuildingID = db.Execute_Insert_Stored_Procedure("Building_Update", sp_params);
-                if (buildings.BuildingID > 0)
-                {
-                    return buildings;
-                }
+                flag = db.Execute_Update_Delete_Stored_Procedure("Building_Update", sp_params);
+                
 
-                return null;
+                return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
         public BuildingsCollection Buildings_Select_All(string username, string password)

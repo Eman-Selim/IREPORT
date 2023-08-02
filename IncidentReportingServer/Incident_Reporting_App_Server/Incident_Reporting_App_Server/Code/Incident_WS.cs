@@ -41,7 +41,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Users Users_Update(string username, string password, Users Users)
+        public bool Users_Update(string username, string password, Users Users)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception ex)
             {
                 Auditing.Error(ex.Message);
-                return null;
+                return false;
             }
         }
         public Users Users_SelectByNamePass(string username, string password)
@@ -404,7 +404,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Floors Floors_Update(string username, string password, Floors Floors)
+        public bool Floors_Update(string username, string password, Floors Floors)
         {
             try
             {
@@ -413,7 +413,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception ex)
             {
                 Auditing.Error(ex.Message);
-                return null;
+                return false;
             }
         }
 
@@ -536,7 +536,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public FFstations FFstations_Update(string username, string password, FFstations FFstations)
+        public bool FFstations_Update(string username, string password, FFstations FFstations)
         {
             try
             {
@@ -545,7 +545,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception ex)
             {
                 Auditing.Error(ex.Message);
-                return null;
+                return false;
             }
         }
         public FFstations[] FFstations_Select_All(string username, string password)
@@ -932,7 +932,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public ExitPathways ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
+        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
         {
             try
             {
@@ -941,7 +941,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception ex)
             {
                 Auditing.Error(ex.Message);
-                return null;
+                return false;
             }
         }
 
@@ -1124,7 +1124,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public DangerousPlaces DangerousPlaces_Update(string username, string password, DangerousPlaces dangerousPlaces)
+        public bool DangerousPlaces_Update(string username, string password, DangerousPlaces dangerousPlaces)
         {
             try
             {
@@ -1133,7 +1133,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception ex)
             {
                 Auditing.Error(ex.Message);
-                return null;
+                return false;
             }
         }
 
@@ -1245,7 +1245,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, Company company)
         {
             try
             {
@@ -1254,7 +1254,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception ex)
             {
                 Auditing.Error(ex.Message);
-                return null;
+                return false;
             }
         }
 
@@ -1638,7 +1638,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Buildings Buildings_Update(string username, string password, Buildings buildings)
+        public bool Buildings_Update(string username, string password, Buildings buildings)
         {
             try
             {
@@ -1647,7 +1647,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception ex)
             {
                 Auditing.Error(ex.Message);
-                return null;
+                return false;
             }
         }
 

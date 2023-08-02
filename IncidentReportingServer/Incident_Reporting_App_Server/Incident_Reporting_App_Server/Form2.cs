@@ -20,13 +20,15 @@ namespace Incident_Reporting_App_Server
         int menu_Selected_Index = 0;
         ServerClass server_Class_Obj = new ServerClass();
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
+        
         byte[] imagenu = null;
         Users U1;
         Users LoginAccount;
         //Company[] companies;
         Buildings[] buildings;
         List<Buildings> Newbuildings = new List<Buildings>();
-        Dictionary<int, Floors> NewFloors = new Dictionary<int, Floors>();
+        List<KeyValuePair<int, Floors>> NewFloors = new List<KeyValuePair<int, Floors>>();
+       // Dictionary<int, Floors> NewFloors = new Dictionary<int, Floors>();
         Managers[] managers;
         DangerousPlaces[] places;
         FFstations[] points;
@@ -45,7 +47,7 @@ namespace Incident_Reporting_App_Server
         {
             InitializeComponent();
             pictureBox5.MouseWheel += PictureBox5_MouseWheel;
-
+          
             #region load acounts treeview
             LoginAccount = server_Class_Obj.Select_Account();
             treeView3.Nodes[0].Tag = LoginAccount.UserID;
@@ -119,6 +121,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
+       
         #region Scroll
 
         private void PictureBox5_MouseWheel(object sender, MouseEventArgs e)
@@ -592,11 +595,12 @@ namespace Incident_Reporting_App_Server
                 {
                     floor.FoamExtinguishersWeight = 0;
                 }
-                NewFloors.Add(buildingCount, floor);
+                NewFloors.Add(new KeyValuePair<int, Floors>(buildingCount, floor));
             }
         }
         private void SaveAddedBuildings_Click(object sender, EventArgs e)
         {
+            
             Company c1 = new Company();
             c1.Name = TB_companyName_DT.Text;
             c1.Address = TB_Address_DT.Text;
@@ -622,38 +626,48 @@ namespace Incident_Reporting_App_Server
             c1.RightCompanyImage = ImageToByteArray(RightCompany_UC.TB_DCompanyImage_UC_ELe.Image);
             c1.LeftCompanyImage = ImageToByteArray(LeftCompany_UC.TB_DCompanyImage_UC_ELe.Image);
             c1.UserID = Selected_User_ID;
-            c1.FrontCompanyImageURL = FrontCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
-            c1.BackCompanyImageURL = BackCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
-            c1.RightCompanyImageURL = RightCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
-            c1.LeftCompanyImageURL = LeftCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
+            c1.FrontCompanyImageURL = FrontCompany_UC.TB_DCompanyImageURL_UC_ELe.Text==null?"": FrontCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
+            c1.BackCompanyImageURL = BackCompany_UC.TB_DCompanyImageURL_UC_ELe.Text==null?"": BackCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
+            c1.RightCompanyImageURL = RightCompany_UC.TB_DCompanyImageURL_UC_ELe.Text==null?"": RightCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
+            c1.LeftCompanyImageURL = LeftCompany_UC.TB_DCompanyImageURL_UC_ELe.Text==null?"": LeftCompany_UC.TB_DCompanyImageURL_UC_ELe.Text;
             c1.Longitude = 0;
             c1.Latitude = 0;
-            c1.CompanyBuisiness = TB_CompanyBuisiness_DT.Text;
-            c1.StockVolume = Convert.ToInt32(TB_Stock_DT.Text);
-            c1.StockType = TB_StockType_DT.Text;
+            c1.CompanyBuisiness = TB_CompanyBuisiness_DT.Text==null?"": Convert.ToString(TB_CompanyBuisiness_DT.Text);
+            c1.StockVolume = TB_Stock_DT.Text==""?0: Convert.ToInt32(TB_Stock_DT.Text);
+            c1.StockType = TB_StockType_DT.Text==""?"": TB_StockType_DT.Text;
             c1.CompanyImage = ImageToByteArray(TB_CompanyImage_DT.Image);
             c1.CompanyGeometeryImage = ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
             c1 = server_Class_Obj.Add_Company(c1);
+            if(c1!=null)
+            {
+                statusfeild.Text = "Company added Successfully";
+            }
 
             for (int i = 0; i < Newbuildings.Count; i++)
             {
                 Newbuildings[i].CompanyID = c1.CompanyID;
                 Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
-                foreach (var kvp in NewFloors)
-                {
-                    if (kvp.Key == i)
-                    {
-                        NewFloors[kvp.Key].BuildingID = B1.BuildingID;
-                        server_Class_Obj.Add_Floors(NewFloors[i]);
-                    }
-                }
+                if (B1 != null)
+                    statusfeild.AppendText("Building added Successfully");
 
+
+                foreach (var kvp in NewFloors.FindAll(m => m.Key == i+1))
+                {
+                    Floors floor = new Floors();
+                    kvp.Value.BuildingID = B1.BuildingID;
+                    floor=server_Class_Obj.Add_Floors(kvp.Value);
+                    if (floor != null)
+                        statusfeild.AppendText("Floor added Successfully");
+                }
 
                 ExitPathways exitPathWay = new ExitPathways();
                 exitPathWay.BuildingID = B1.BuildingID;
                 exitPathWay.PathwaysImage = ImageToByteArray(PB_ExitPathWayImage_DT.Image);
                 exitPathWay.PathwaysImageURL = "";
                 exitPathWay.Description = "";
+                exitPathWay = server_Class_Obj.Add_exitPath(exitPathWay);
+                if (exitPathWay != null)
+                    statusfeild.AppendText("exitPathWay added Successfully");
             }
             DangerousPlaces place = new DangerousPlaces();
             place.Location = DangerouseLocation.Text;
@@ -662,6 +676,9 @@ namespace Incident_Reporting_App_Server
             place.Image = imagenu;
             place.ImageURL = "";
             place.CompanyID = c1.CompanyID;
+            place = server_Class_Obj.Add_DangerousPlace(place);
+            if (place != null)
+                statusfeild.AppendText("DangerousPlaces added Successfully");
         }
 
         private void deleteBuildingList_Click(object sender, EventArgs e)
@@ -720,7 +737,7 @@ namespace Incident_Reporting_App_Server
         }
         private void EditCompany_Click(object sender, EventArgs e)
         {
-            Company c1 = new Company();
+             Company c1 = new Company();
 
             c1.Name = TB_companyName_DT.Text;
             c1.Address = TB_Address_DT.Text;
@@ -753,20 +770,25 @@ namespace Incident_Reporting_App_Server
             c1.Longitude = 0;
             c1.Latitude = 0;
             c1.CompanyBuisiness = TB_CompanyBuisiness_DT.Text;
-            c1.StockVolume = Convert.ToInt32(TB_Stock_DT.Text);
+            c1.StockVolume = TB_Stock_DT.Text == ""?0: Convert.ToInt32(TB_Stock_DT.Text);
             c1.StockType = TB_StockType_DT.Text;
+            c1.CompanyID = Selected_Company_ID;
             c1.CompanyImage = ImageToByteArray(TB_CompanyImage_DT.Image);
             c1.CompanyGeometeryImage = ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
-            c1 = server_Class_Obj.Update_Company(c1);
+            bool flag= server_Class_Obj.Update_Company(c1);
+            if(flag==true)
+                statusfeild.AppendText("Company updated Successfully");
 
             Buildings building = new Buildings();
             building.BuildingNumber = Convert.ToInt32(BuildingNumber.Text);
             building.FloorsNumber = Convert.ToInt32(floorNumbers.Text);
-            building.CompanyID = c1.CompanyID;
+            building.CompanyID = Selected_Company_ID;
             building.MainWaterTankCapacity = Convert.ToInt32(mainTankCapacity.Text);
             building.GeometricImage = ImageToByteArray(BuildingGeoPic_DT.Image);
             building.GeometricImageURL = GeoPicURL.Text;
-            building = server_Class_Obj.Update_Building(building);
+            flag = server_Class_Obj.Update_Building(building);
+            if (flag == true)
+                statusfeild.AppendText("Building updated Successfully");
 
             Floors floor = new Floors();
             floor.FloorNumber = (string)DG_Floors_DT.CurrentRow.Cells[0].Value;
@@ -778,7 +800,9 @@ namespace Incident_Reporting_App_Server
             floor.FoamExtinguishersNumbers = (string)DG_Floors_DT.CurrentRow.Cells[6].Value;
             floor.FoamExtinguishersWeight = Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[7].Value);
             floor.BuildingID = building.BuildingID;
-            floor = server_Class_Obj.Update_Floor(floor);
+            flag = server_Class_Obj.Update_Floor(floor);
+            if (flag == true)
+                statusfeild.AppendText("Floor updated Successfully");
 
             DangerousPlaces place = new DangerousPlaces();
             place.Location = DangerouseLocation.Text;
@@ -787,14 +811,18 @@ namespace Incident_Reporting_App_Server
             place.Image = imagenu;
             place.ImageURL = "";
             place.CompanyID = c1.CompanyID;
-            place = server_Class_Obj.Update_DangerousePlaces(place);
+            flag = server_Class_Obj.Update_DangerousePlaces(place);
+            if (flag == true)
+                statusfeild.AppendText("DangerousPlace updated Successfully");
 
             ExitPathways exitPathWay = new ExitPathways();
             exitPathWay.BuildingID = building.BuildingID;
             exitPathWay.PathwaysImage = ImageToByteArray(PB_ExitPathWayImage_DT.Image);
             exitPathWay.PathwaysImageURL = "";
             exitPathWay.Description = "";
-            exitPathWay = server_Class_Obj.Update_ExitPathways(exitPathWay);
+            flag = server_Class_Obj.Update_ExitPathways(exitPathWay);
+            if (flag == true)
+                statusfeild.AppendText("ExitPathway updated Successfully");
         }
         #endregion
 
@@ -949,8 +977,8 @@ namespace Incident_Reporting_App_Server
         }
 
 
-        #endregion
 
+        #endregion
         
     }
 

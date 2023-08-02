@@ -21,13 +21,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
                {
                     {"@username", username},
                     {"@password", password},
-                    {"@PathwaysImage", ExitPathway.PathwaysImage },
                     {"@Description", ExitPathway.Description},
+                    {"@PathwaysImage", ExitPathway.PathwaysImage },
+                    {"@PathwaysImageURL",ExitPathway.PathwaysImageURL },
                     {"@BuildingID",ExitPathway.BuildingID}
 
                };
 
-                ExitPathway.BuildingID = db.Execute_Insert_Stored_Procedure("Accident_Insert", sp_params);
+                ExitPathway.BuildingID = db.Execute_Insert_Stored_Procedure("ExitPathways_Insert", sp_params);
                 if (ExitPathway.BuildingID > 0)
                 {
                     return ExitPathway;
@@ -41,7 +42,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public ExitPathways ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
+        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
         {
             try
             {
@@ -57,17 +58,13 @@ namespace IncidentReporting_WS.Code_Files.DAL
 
                };
 
-                ExitPathway.BuildingID = db.Execute_Insert_Stored_Procedure("ExitPathways_Update", sp_params);
-                if (ExitPathway.BuildingID > 0)
-                {
-                    return ExitPathway;
-                }
-
-                return null;
+                flag = db.Execute_Update_Delete_Stored_Procedure("ExitPathways_Update", sp_params);
+                
+                return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

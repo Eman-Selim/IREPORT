@@ -43,7 +43,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public DangerousPlaces DangerousPlaces_Update(string username, string password, DangerousPlaces DangerousPlaces)
+        public bool DangerousPlaces_Update(string username, string password, DangerousPlaces DangerousPlaces)
         {
             try
             {
@@ -61,17 +61,13 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@ImageUrl",DangerousPlaces.ImageURL }
                };
 
-                DangerousPlaces.DangerousPlaceID = db.Execute_Insert_Stored_Procedure("DangerousPlaces_Update", sp_params);
-                if (DangerousPlaces.DangerousPlaceID > 0)
-                {
-                    return DangerousPlaces;
-                }
-
-                return null;
+                flag = db.Execute_Update_Delete_Stored_Procedure("DangerousPlaces_Update", sp_params);
+                
+                return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

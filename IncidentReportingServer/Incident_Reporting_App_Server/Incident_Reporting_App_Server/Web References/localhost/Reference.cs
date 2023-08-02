@@ -1053,12 +1053,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Buildings_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Buildings Buildings_Update(string username, string password, Buildings buildings) {
+        public bool Buildings_Update(string username, string password, Buildings buildings) {
             object[] results = this.Invoke("Buildings_Update", new object[] {
                         username,
                         password,
                         buildings});
-            return ((Buildings)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -2235,12 +2235,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ExitPathways_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ExitPathways ExitPathways_Update(string username, string password, ExitPathways ExitPathway) {
+        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway) {
             object[] results = this.Invoke("ExitPathways_Update", new object[] {
                         username,
                         password,
                         ExitPathway});
-            return ((ExitPathways)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -2693,12 +2693,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DangerousPlaces_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public DangerousPlaces DangerousPlaces_Update(string username, string password, DangerousPlaces dangerousPlaces) {
+        public bool DangerousPlaces_Update(string username, string password, DangerousPlaces dangerousPlaces) {
             object[] results = this.Invoke("DangerousPlaces_Update", new object[] {
                         username,
                         password,
                         dangerousPlaces});
-            return ((DangerousPlaces)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -2988,12 +2988,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Company Company_Update(string username, string password, Company company) {
+        public bool Company_Update(string username, string password, Company company) {
             object[] results = this.Invoke("Company_Update", new object[] {
                         username,
                         password,
                         company});
-            return ((Company)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -3811,12 +3811,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users Users_Update(string username, string password, Users Users) {
+        public bool Users_Update(string username, string password, Users Users) {
             object[] results = this.Invoke("Users_Update", new object[] {
                         username,
                         password,
                         Users});
-            return ((Users)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -4692,12 +4692,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors Floors_Update(string username, string password, Floors Floors) {
+        public bool Floors_Update(string username, string password, Floors Floors) {
             object[] results = this.Invoke("Floors_Update", new object[] {
                         username,
                         password,
                         Floors});
-            return ((Floors)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -5053,12 +5053,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations FFstations_Update(string username, string password, FFstations FFstations) {
+        public bool FFstations_Update(string username, string password, FFstations FFstations) {
             object[] results = this.Invoke("FFstations_Update", new object[] {
                         username,
                         password,
                         FFstations});
-            return ((FFstations)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -8057,10 +8057,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Buildings Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Buildings)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -8993,10 +8993,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public ExitPathways Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ExitPathways)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -9357,10 +9357,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public DangerousPlaces Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((DangerousPlaces)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -9591,10 +9591,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Company Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Company)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -10241,10 +10241,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -10943,10 +10943,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Floors Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Floors)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -11229,10 +11229,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public FFstations Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((FFstations)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }

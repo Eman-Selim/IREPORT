@@ -46,7 +46,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public Floors Floor_Update(string username, string password, Floors Floors)
+        public bool Floor_Update(string username, string password, Floors Floors)
         {
             try
             {
@@ -67,17 +67,13 @@ namespace IncidentReporting_WS.Code_Files.DAL
 
                };
 
-                Floors.FloorID = db.Execute_Insert_Stored_Procedure("Floor_Update", sp_params);
-                if (Floors.FloorID > 0)
-                {
-                    return Floors;
-                }
-
-                return null;
+                flag = db.Execute_Update_Delete_Stored_Procedure("Floor_Update", sp_params);
+               
+                    return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

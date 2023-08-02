@@ -49,7 +49,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return null;
             }
         }
-        public Company Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, Company company)
         {
             try
             {
@@ -59,12 +59,12 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 }
                 else
                 {
-                    return null;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
         public CompanyCollection Company_Select_All(string username, string password)

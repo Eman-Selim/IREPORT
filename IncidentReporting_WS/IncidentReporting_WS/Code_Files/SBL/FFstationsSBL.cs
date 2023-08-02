@@ -49,7 +49,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public FFstations FFstations_Update(string username, string password, FFstations FFstations)
+        public bool FFstations_Update(string username, string password, FFstations FFstations)
         {
             try
             {
@@ -59,12 +59,12 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 }
                 else
                 {
-                    return null;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
         public FFstationsCollection FFstations_Select_All(string username, string password)

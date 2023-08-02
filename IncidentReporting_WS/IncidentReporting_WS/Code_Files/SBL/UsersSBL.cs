@@ -49,7 +49,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public Users Users_Update(string username, string password, Users Users)
+        public bool Users_Update(string username, string password, Users Users)
         {
             try
             {
@@ -59,12 +59,12 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 }
                 else
                 {
-                    return null;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

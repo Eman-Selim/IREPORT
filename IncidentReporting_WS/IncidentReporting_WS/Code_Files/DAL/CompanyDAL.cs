@@ -93,14 +93,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public Company Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, Company company)
         {
             try
             {
                 bool flag = false;
                 object[,] sp_params = new object[,]
                {
-                    {"@username", username},
+                   {"@username", username},
                     {"@password", password},
                     {"@Name", company.Name},
                     {"@Address", company.Address},
@@ -120,8 +120,9 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@FrontFireMediator",company.FrontFireMediator },
                     {"@LeftFireMediator",company.LeftFireMediator },
                     {"@BackFireMediator",company.BackFireMediator },
+                    {"@RightFireMediator",company.RightFireMediator },
                     {"@BuildingsNumber", company.BuildingsNumber},
-                    {"@FrontCompanyImage",company.FrontCompanyName },
+                    {"@FrontCompanyImage",company.FrontCompanyImage },
                     {"@BackCompanyImage",company.BackCompanyImage },
                     {"@RightCompanyImage",company.RightCompanyImage },
                     {"@LeftCompanyImage",company.LeftCompanyImage },
@@ -138,19 +139,13 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@CompanyImage",company.CompanyImage },
                     {"@CompanyGeometeryImage",company.CompanyGeometeryImage }
                };
+                flag= db.Execute_Update_Delete_Stored_Procedure("Company_Update", sp_params);
 
-
-                company.CompanyID = db.Execute_Insert_Stored_Procedure("Company_Update", sp_params);
-                if (company.CompanyID > 0)
-                {
-                    return company;
-                }
-
-                return null;
+                return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

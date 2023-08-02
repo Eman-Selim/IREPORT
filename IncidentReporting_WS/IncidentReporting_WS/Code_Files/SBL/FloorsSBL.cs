@@ -30,7 +30,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public Floors Floors_Update(string username, string password, Floors Floors)
+        public bool Floors_Update(string username, string password, Floors Floors)
         {
             try
             {
@@ -40,12 +40,12 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 }
                 else
                 {
-                    return null;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

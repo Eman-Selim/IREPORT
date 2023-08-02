@@ -68,7 +68,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public FFstations FFstations_Update(string username, string password, FFstations FFstations )
+        public bool FFstations_Update(string username, string password, FFstations FFstations )
         {
             try
             {
@@ -92,17 +92,13 @@ namespace IncidentReporting_WS.Code_Files.DAL
 
                };
 
-                FFstations.FF_ID = db.Execute_Insert_Stored_Procedure("FFstations_Update", sp_params);
-                if (FFstations.FF_ID > 0)
-                {
-                    return FFstations;
-                }
-
-                return null;
+                flag = db.Execute_Update_Delete_Stored_Procedure("FFstations_Update", sp_params);
+                
+                    return flag;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

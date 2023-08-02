@@ -30,7 +30,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public ExitPathways ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
+        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
         {
             try
             {
@@ -40,12 +40,12 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 }
                 else
                 {
-                    return null;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

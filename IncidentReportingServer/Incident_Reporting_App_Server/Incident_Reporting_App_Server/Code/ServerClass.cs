@@ -15,6 +15,7 @@ namespace Incident_Reporting_App_Server.Code
         public delegate void del_Update_Log(string text);
         public event del_Update_Log log_Handler;
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
+
         #region Login Info
         public static string UserName { get; set; }
         public static string Password { get; set; }
@@ -86,7 +87,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company Update_Company(Company company)
+        public bool Update_Company(Company company)
         {
             try
             {
@@ -95,11 +96,11 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
-                return null;
+                return false;
             }
         }
 
-        public Buildings Update_Building(Buildings company)
+        public bool Update_Building(Buildings company)
         {
             try
             {
@@ -108,11 +109,11 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
-                return null;
+                return false;
             }
         }
 
-        public Floors Update_Floor(Floors floor)
+        public bool Update_Floor(Floors floor)
         {
             try
             {
@@ -121,12 +122,12 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
-                return null;
+                return false;
             }
         }
 
 
-        public FFstations Update_FFstations(FFstations FFstations)
+        public bool Update_FFstations(FFstations FFstations)
         {
             try
             {
@@ -135,11 +136,11 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
-                return null;
+                return false;
             }
         }
 
-        public DangerousPlaces Update_DangerousePlaces(DangerousPlaces place)
+        public bool Update_DangerousePlaces(DangerousPlaces place)
         {
             try
             {
@@ -148,9 +149,10 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
-                return null;
+                return false;
             }
         }
+
         public void Add_Account(Users user)
         {
             try
@@ -162,7 +164,8 @@ namespace Incident_Reporting_App_Server.Code
                 Auditing.Error(exception1.Message);
             }
         }
-        public Users Update_Account(Users user)
+
+        public bool Update_Account(Users user)
         {
             try
             {
@@ -171,7 +174,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
-                return null;
+                return false;
             }
         }
 
@@ -187,6 +190,7 @@ namespace Incident_Reporting_App_Server.Code
                 Auditing.Error(exception1.Message);
             }
         }
+
         public Company Add_Company(Company company)
         {
             try
@@ -225,6 +229,33 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
+
+        public ExitPathways Add_exitPath(ExitPathways exitPath)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.ExitPathways_Insert(UserName, Password, exitPath);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
+
+        public DangerousPlaces Add_DangerousPlace(DangerousPlaces Place)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.DangerousPlaces_Insert(UserName, Password, Place);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
+
         public void Delete_Company(int id)
         {
             try
@@ -262,7 +293,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public ExitPathways Update_ExitPathways(ExitPathways path)
+        public bool Update_ExitPathways(ExitPathways path)
         {
             try
             {
@@ -271,7 +302,7 @@ namespace Incident_Reporting_App_Server.Code
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
-                return null;
+                return false;
             }
         }
 
