@@ -178,16 +178,17 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public void Delete_Account(int UserID)
+        public bool Delete_Account(int UserID)
         {
             try
             {
                 
-                IncidentReporting_WS_Obj.Users_Delete(UserName, Password, UserID);
+                return IncidentReporting_WS_Obj.Users_Delete(UserName, Password, UserID);
             }
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
+                return false;
             }
         }
 

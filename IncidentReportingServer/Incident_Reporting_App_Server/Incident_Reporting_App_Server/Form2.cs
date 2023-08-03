@@ -732,6 +732,9 @@ namespace Incident_Reporting_App_Server
         private void DeleteCompany_Click(object sender, EventArgs e)
         {
             bool flag=server_Class_Obj.Delete_Company(Selected_Company_ID);
+            if(flag ==true)
+                statusfeild.AppendText("Company Deleted Successfully");
+
 
         }
         private void EditCompany_Click(object sender, EventArgs e)
