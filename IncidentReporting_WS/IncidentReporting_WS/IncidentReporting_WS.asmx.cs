@@ -28,9 +28,7 @@ namespace IncidentReporting_WS
         {
             try
             {
-
                 return UsersSBL_Obj.Users_Delete( username, password, user_id);
-
             }
             catch (Exception ex)
             {

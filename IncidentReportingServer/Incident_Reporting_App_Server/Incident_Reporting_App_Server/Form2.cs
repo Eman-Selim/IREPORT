@@ -21,7 +21,7 @@ namespace Incident_Reporting_App_Server
         ServerClass server_Class_Obj = new ServerClass();
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
         
-        byte[] imagenu = null;
+        byte[] imagenu = { 0x02,0x01};
         Users U1;
         Users LoginAccount;
         //Company[] companies;
@@ -649,8 +649,6 @@ namespace Incident_Reporting_App_Server
                 Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
                 if (B1 != null)
                     statusfeild.AppendText("Building added Successfully");
-
-
                 foreach (var kvp in NewFloors.FindAll(m => m.Key == i+1))
                 {
                     Floors floor = new Floors();
@@ -733,7 +731,8 @@ namespace Incident_Reporting_App_Server
 
         private void DeleteCompany_Click(object sender, EventArgs e)
         {
-            server_Class_Obj.Delete_Company(Selected_Company_ID);
+            bool flag=server_Class_Obj.Delete_Company(Selected_Company_ID);
+
         }
         private void EditCompany_Click(object sender, EventArgs e)
         {

@@ -46,12 +46,12 @@ namespace Incident_Reporting_App_Server
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -180,10 +180,26 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage8 = new C1.Win.C1Command.C1DockingTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.c1PictureBox4 = new C1.Win.C1Input.C1PictureBox();
+            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.c1DockingTabPage9 = new C1.Win.C1Command.C1DockingTabPage();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.DeleteStationsManPower = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.EditStationsManPower = new System.Windows.Forms.Button();
+            this.AddStationsManPower = new System.Windows.Forms.Button();
             this.c1DockingTab3 = new C1.Win.C1Command.C1DockingTab();
             this.c1DockingTabPage12 = new C1.Win.C1Command.C1DockingTabPage();
+            this.ff_ManPowerGrid = new System.Windows.Forms.DataGridView();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.CB_Stations_DT = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -254,22 +270,6 @@ namespace Incident_Reporting_App_Server
             this.accountName = new System.Windows.Forms.RichTextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.ff_ManPowerGrid = new System.Windows.Forms.DataGridView();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditStationsManPower = new System.Windows.Forms.Button();
-            this.DeleteStationsManPower = new System.Windows.Forms.Button();
-            this.AddStationsManPower = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -301,9 +301,11 @@ namespace Incident_Reporting_App_Server
             ((System.ComponentModel.ISupportInitialize)(this.c1PictureBox4)).BeginInit();
             this.c1DockingTabPage9.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.c1DockingTab3)).BeginInit();
             this.c1DockingTab3.SuspendLayout();
             this.c1DockingTabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ff_ManPowerGrid)).BeginInit();
             this.panel7.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -312,8 +314,6 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ff_ManPowerGrid)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -1986,6 +1986,38 @@ namespace Incident_Reporting_App_Server
             this.c1PictureBox4.TabIndex = 4;
             this.c1PictureBox4.TabStop = false;
             // 
+            // LeftCompany_UC
+            // 
+            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 268);
+            this.LeftCompany_UC.Name = "LeftCompany_UC";
+            this.LeftCompany_UC.Size = new System.Drawing.Size(385, 274);
+            this.LeftCompany_UC.TabIndex = 5;
+            // 
+            // RightCompany_UC
+            // 
+            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.RightCompany_UC.Location = new System.Drawing.Point(784, 268);
+            this.RightCompany_UC.Name = "RightCompany_UC";
+            this.RightCompany_UC.Size = new System.Drawing.Size(383, 274);
+            this.RightCompany_UC.TabIndex = 6;
+            // 
+            // FrontCompany_UC
+            // 
+            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.FrontCompany_UC.Location = new System.Drawing.Point(394, 3);
+            this.FrontCompany_UC.Name = "FrontCompany_UC";
+            this.FrontCompany_UC.Size = new System.Drawing.Size(384, 259);
+            this.FrontCompany_UC.TabIndex = 7;
+            // 
+            // BackCompany_UC
+            // 
+            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.BackCompany_UC.Location = new System.Drawing.Point(394, 548);
+            this.BackCompany_UC.Name = "BackCompany_UC";
+            this.BackCompany_UC.Size = new System.Drawing.Size(384, 264);
+            this.BackCompany_UC.TabIndex = 8;
+            // 
             // c1DockingTabPage9
             // 
             this.c1DockingTabPage9.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2014,6 +2046,66 @@ namespace Incident_Reporting_App_Server
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1182, 883);
             this.panel6.TabIndex = 97;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.panel4.Controls.Add(this.DeleteStationsManPower);
+            this.panel4.Controls.Add(this.richTextBox1);
+            this.panel4.Controls.Add(this.EditStationsManPower);
+            this.panel4.Controls.Add(this.AddStationsManPower);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 837);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1182, 46);
+            this.panel4.TabIndex = 143;
+            // 
+            // DeleteStationsManPower
+            // 
+            this.DeleteStationsManPower.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DeleteStationsManPower.FlatAppearance.BorderSize = 0;
+            this.DeleteStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("DeleteStationsManPower.Image")));
+            this.DeleteStationsManPower.Location = new System.Drawing.Point(18, 13);
+            this.DeleteStationsManPower.Name = "DeleteStationsManPower";
+            this.DeleteStationsManPower.Size = new System.Drawing.Size(37, 30);
+            this.DeleteStationsManPower.TabIndex = 141;
+            this.DeleteStationsManPower.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.richTextBox1.Location = new System.Drawing.Point(185, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(997, 46);
+            this.richTextBox1.TabIndex = 99;
+            this.richTextBox1.Text = "";
+            // 
+            // EditStationsManPower
+            // 
+            this.EditStationsManPower.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EditStationsManPower.FlatAppearance.BorderSize = 0;
+            this.EditStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("EditStationsManPower.Image")));
+            this.EditStationsManPower.Location = new System.Drawing.Point(61, 13);
+            this.EditStationsManPower.Name = "EditStationsManPower";
+            this.EditStationsManPower.Size = new System.Drawing.Size(28, 31);
+            this.EditStationsManPower.TabIndex = 142;
+            this.EditStationsManPower.UseVisualStyleBackColor = true;
+            // 
+            // AddStationsManPower
+            // 
+            this.AddStationsManPower.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddStationsManPower.FlatAppearance.BorderSize = 0;
+            this.AddStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("AddStationsManPower.Image")));
+            this.AddStationsManPower.Location = new System.Drawing.Point(102, 18);
+            this.AddStationsManPower.Name = "AddStationsManPower";
+            this.AddStationsManPower.Size = new System.Drawing.Size(30, 28);
+            this.AddStationsManPower.TabIndex = 140;
+            this.AddStationsManPower.UseVisualStyleBackColor = true;
             // 
             // c1DockingTab3
             // 
@@ -2048,6 +2140,78 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage12.TabForeColorSelected = System.Drawing.Color.Silver;
             this.c1DockingTabPage12.TabIndex = 0;
             this.c1DockingTabPage12.Text = "نقاط الإطفاء";
+            // 
+            // ff_ManPowerGrid
+            // 
+            this.ff_ManPowerGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ff_ManPowerGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.ff_ManPowerGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ff_ManPowerGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column18,
+            this.Column16,
+            this.Column17,
+            this.Column19,
+            this.Column20,
+            this.Column21});
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ff_ManPowerGrid.DefaultCellStyle = dataGridViewCellStyle16;
+            this.ff_ManPowerGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ff_ManPowerGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.ff_ManPowerGrid.Location = new System.Drawing.Point(0, 452);
+            this.ff_ManPowerGrid.Name = "ff_ManPowerGrid";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ff_ManPowerGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.ff_ManPowerGrid.Size = new System.Drawing.Size(1180, 406);
+            this.ff_ManPowerGrid.TabIndex = 139;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "الإسم";
+            this.Column18.Name = "Column18";
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "القطاع";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "المنطقة";
+            this.Column17.Name = "Column17";
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "الرتبة";
+            this.Column19.Name = "Column19";
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "الوظيفة";
+            this.Column20.Name = "Column20";
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "معلومات اضافية ";
+            this.Column21.Name = "Column21";
             // 
             // panel7
             // 
@@ -2907,170 +3071,6 @@ namespace Incident_Reporting_App_Server
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // LeftCompany_UC
-            // 
-            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 268);
-            this.LeftCompany_UC.Name = "LeftCompany_UC";
-            this.LeftCompany_UC.Size = new System.Drawing.Size(385, 274);
-            this.LeftCompany_UC.TabIndex = 5;
-            // 
-            // RightCompany_UC
-            // 
-            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.RightCompany_UC.Location = new System.Drawing.Point(784, 268);
-            this.RightCompany_UC.Name = "RightCompany_UC";
-            this.RightCompany_UC.Size = new System.Drawing.Size(383, 274);
-            this.RightCompany_UC.TabIndex = 6;
-            // 
-            // FrontCompany_UC
-            // 
-            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.FrontCompany_UC.Location = new System.Drawing.Point(394, 3);
-            this.FrontCompany_UC.Name = "FrontCompany_UC";
-            this.FrontCompany_UC.Size = new System.Drawing.Size(384, 259);
-            this.FrontCompany_UC.TabIndex = 7;
-            // 
-            // BackCompany_UC
-            // 
-            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.BackCompany_UC.Location = new System.Drawing.Point(394, 548);
-            this.BackCompany_UC.Name = "BackCompany_UC";
-            this.BackCompany_UC.Size = new System.Drawing.Size(384, 264);
-            this.BackCompany_UC.TabIndex = 8;
-            // 
-            // ff_ManPowerGrid
-            // 
-            this.ff_ManPowerGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ff_ManPowerGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.ff_ManPowerGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ff_ManPowerGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column18,
-            this.Column16,
-            this.Column17,
-            this.Column19,
-            this.Column20,
-            this.Column21});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ff_ManPowerGrid.DefaultCellStyle = dataGridViewCellStyle16;
-            this.ff_ManPowerGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ff_ManPowerGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.ff_ManPowerGrid.Location = new System.Drawing.Point(0, 452);
-            this.ff_ManPowerGrid.Name = "ff_ManPowerGrid";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ff_ManPowerGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.ff_ManPowerGrid.Size = new System.Drawing.Size(1180, 406);
-            this.ff_ManPowerGrid.TabIndex = 139;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "الإسم";
-            this.Column18.Name = "Column18";
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "القطاع";
-            this.Column16.Name = "Column16";
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "المنطقة";
-            this.Column17.Name = "Column17";
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "الرتبة";
-            this.Column19.Name = "Column19";
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "الوظيفة";
-            this.Column20.Name = "Column20";
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "معلومات اضافية ";
-            this.Column21.Name = "Column21";
-            // 
-            // EditStationsManPower
-            // 
-            this.EditStationsManPower.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.EditStationsManPower.FlatAppearance.BorderSize = 0;
-            this.EditStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("EditStationsManPower.Image")));
-            this.EditStationsManPower.Location = new System.Drawing.Point(61, 13);
-            this.EditStationsManPower.Name = "EditStationsManPower";
-            this.EditStationsManPower.Size = new System.Drawing.Size(28, 31);
-            this.EditStationsManPower.TabIndex = 142;
-            this.EditStationsManPower.UseVisualStyleBackColor = true;
-            // 
-            // DeleteStationsManPower
-            // 
-            this.DeleteStationsManPower.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DeleteStationsManPower.FlatAppearance.BorderSize = 0;
-            this.DeleteStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("DeleteStationsManPower.Image")));
-            this.DeleteStationsManPower.Location = new System.Drawing.Point(18, 13);
-            this.DeleteStationsManPower.Name = "DeleteStationsManPower";
-            this.DeleteStationsManPower.Size = new System.Drawing.Size(37, 30);
-            this.DeleteStationsManPower.TabIndex = 141;
-            this.DeleteStationsManPower.UseVisualStyleBackColor = true;
-            // 
-            // AddStationsManPower
-            // 
-            this.AddStationsManPower.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddStationsManPower.FlatAppearance.BorderSize = 0;
-            this.AddStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("AddStationsManPower.Image")));
-            this.AddStationsManPower.Location = new System.Drawing.Point(102, 18);
-            this.AddStationsManPower.Name = "AddStationsManPower";
-            this.AddStationsManPower.Size = new System.Drawing.Size(30, 28);
-            this.AddStationsManPower.TabIndex = 140;
-            this.AddStationsManPower.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox1.Location = new System.Drawing.Point(185, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(997, 46);
-            this.richTextBox1.TabIndex = 99;
-            this.richTextBox1.Text = "";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.panel4.Controls.Add(this.DeleteStationsManPower);
-            this.panel4.Controls.Add(this.richTextBox1);
-            this.panel4.Controls.Add(this.EditStationsManPower);
-            this.panel4.Controls.Add(this.AddStationsManPower);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 837);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1182, 46);
-            this.panel4.TabIndex = 143;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3124,9 +3124,11 @@ namespace Incident_Reporting_App_Server
             ((System.ComponentModel.ISupportInitialize)(this.c1PictureBox4)).EndInit();
             this.c1DockingTabPage9.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.c1DockingTab3)).EndInit();
             this.c1DockingTab3.ResumeLayout(false);
             this.c1DockingTabPage12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ff_ManPowerGrid)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -3140,8 +3142,6 @@ namespace Incident_Reporting_App_Server
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ff_ManPowerGrid)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

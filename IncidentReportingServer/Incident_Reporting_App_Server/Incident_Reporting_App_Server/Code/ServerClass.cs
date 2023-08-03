@@ -256,16 +256,17 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public void Delete_Company(int id)
+        public bool Delete_Company(int id)
         {
             try
             {
                 
-                IncidentReporting_WS_Obj.Company_Delete(UserName, Password, id);
+                return IncidentReporting_WS_Obj.Company_Delete(UserName, Password, id);
             }
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
+                return false;
             }
         }
 
