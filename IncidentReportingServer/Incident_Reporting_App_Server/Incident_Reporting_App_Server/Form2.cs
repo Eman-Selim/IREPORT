@@ -209,25 +209,27 @@ namespace Incident_Reporting_App_Server
             FrontCompany_UC.TB_DComapnyName_UC_ELe.Text = selectedCompany.FrontCompanyName;
             FrontCompany_UC.TB_DCompanyMediator_UC_ELe.Text = selectedCompany.FrontFireMediator;
             FrontCompany_UC.TB_DCompanyImageURL_UC_ELe.Text = selectedCompany.FrontCompanyImageURL;
-            FrontCompany_UC.TB_DCompanyImage_UC_ELe.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.FrontCompanyImage));
+            FrontCompany_UC.TB_DCompanyImage_UC_ELe.Image = selectedCompany.FrontCompanyImage == null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(imagenu))  : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.FrontCompanyImage));
 
             BackCompany_UC.TB_DCompanyBuisness_UC_ELe.Text = selectedCompany.BackCompanyBusiness;
             BackCompany_UC.TB_DComapnyName_UC_ELe.Text = selectedCompany.BackCompanyName;
             BackCompany_UC.TB_DCompanyMediator_UC_ELe.Text = selectedCompany.BackFireMediator;
             BackCompany_UC.TB_DCompanyImageURL_UC_ELe.Text = selectedCompany.BackCompanyImageURL;
-            BackCompany_UC.TB_DCompanyImage_UC_ELe.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.BackCompanyImage));
+            BackCompany_UC.TB_DCompanyImage_UC_ELe.Image = selectedCompany.BackCompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(imagenu)) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.BackCompanyImage));
+
+
 
             RightCompany_UC.TB_DCompanyBuisness_UC_ELe.Text = selectedCompany.RightCompanyBusiness;
             RightCompany_UC.TB_DComapnyName_UC_ELe.Text = selectedCompany.RightCompanyName;
             RightCompany_UC.TB_DCompanyMediator_UC_ELe.Text = selectedCompany.RightFireMediator;
             RightCompany_UC.TB_DCompanyImageURL_UC_ELe.Text = selectedCompany.RightCompanyImageURL;
-            RightCompany_UC.TB_DCompanyImage_UC_ELe.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.RightCompanyImage));
+            RightCompany_UC.TB_DCompanyImage_UC_ELe.Image = selectedCompany.RightCompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(imagenu)) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.RightCompanyImage));
 
             LeftCompany_UC.TB_DCompanyBuisness_UC_ELe.Text = selectedCompany.LeftCompanyBusiness;
             LeftCompany_UC.TB_DComapnyName_UC_ELe.Text = selectedCompany.LeftCompanyName;
             LeftCompany_UC.TB_DCompanyMediator_UC_ELe.Text = selectedCompany.LeftFireMediator;
             LeftCompany_UC.TB_DCompanyImageURL_UC_ELe.Text = selectedCompany.LeftCompanyImageURL;
-            LeftCompany_UC.TB_DCompanyImage_UC_ELe.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.RightCompanyImage));
+            LeftCompany_UC.TB_DCompanyImage_UC_ELe.Image = selectedCompany.LeftCompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(imagenu)) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.LeftCompanyImage));
 
             richTextBox38.AppendText(selectedCompany.GasTrapLocation);
            richTextBox38.AppendText( selectedCompany.OxygenTrapLocation);
@@ -635,8 +637,8 @@ namespace Incident_Reporting_App_Server
             c1.CompanyBuisiness = TB_CompanyBuisiness_DT.Text==null?"": Convert.ToString(TB_CompanyBuisiness_DT.Text);
             c1.StockVolume = TB_Stock_DT.Text==""?0: Convert.ToInt32(TB_Stock_DT.Text);
             c1.StockType = TB_StockType_DT.Text==""?"": TB_StockType_DT.Text;
-            c1.CompanyImage = ImageToByteArray(TB_CompanyImage_DT.Image);
-            c1.CompanyGeometeryImage = ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
+            c1.CompanyImage = TB_CompanyImage_DT.Image==null? imagenu : ImageToByteArray(TB_CompanyImage_DT.Image);
+            c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? imagenu : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
             c1 = server_Class_Obj.Add_Company(c1);
             if(c1!=null)
             {
@@ -965,7 +967,11 @@ namespace Incident_Reporting_App_Server
                 }
                 user.UserID = Selected_User_ID;
                 user.Info = AccountInfo.Text;
-                server_Class_Obj.Update_Account(user);
+                user.Password
+               bool flag= server_Class_Obj.Update_Account(user);
+                if(flag==true)
+                    statusfeild.AppendText("Account Updated Successfully");
+
             }
             catch (Exception exception1)
             {
