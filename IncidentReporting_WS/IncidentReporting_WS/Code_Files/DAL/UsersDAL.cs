@@ -70,7 +70,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 object[,] sp_params = new object[,]
                {
                     {"@username", username},
-                    {"@password", username},
+                    {"@password", password},
                     {"@newUser", Users.Username},
                     {"@newPass", Users.Password},
                     {"@userid",Users.UserID },

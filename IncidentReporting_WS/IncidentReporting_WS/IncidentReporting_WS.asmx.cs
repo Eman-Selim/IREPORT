@@ -1092,7 +1092,21 @@ namespace IncidentReporting_WS
             {
                 return null;
             }
-        }       
+        }
+        [WebMethod]
+        public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower)
+        {
+            try
+            {
+                return FF_ManPowerSBL_Obj.FF_ManPower_Update(username, password, ManPower);
+                
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
 
         [WebMethod]
         public FF_ManPowerCollection FF_ManPower_Select_All(string username, string password)

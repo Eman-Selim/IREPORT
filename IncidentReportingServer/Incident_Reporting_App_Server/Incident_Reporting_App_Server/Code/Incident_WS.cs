@@ -746,6 +746,18 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
+        public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FF_ManPower_Update(username, password, ManPower);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return false;
+            }
+        }
 
         public FF_ManPower FF_ManPower_Insert(string username, string password, FF_ManPower ManPower)
         {

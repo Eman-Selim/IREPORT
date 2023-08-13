@@ -29,7 +29,24 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return false;
             }
         }
-
+        public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return FF_ManPowerDAL_Obj.FF_ManPower_Update(username, password, ManPower);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public FF_ManPower FF_ManPower_Insert(string username, string password, FF_ManPower ManPower)
         {
             try

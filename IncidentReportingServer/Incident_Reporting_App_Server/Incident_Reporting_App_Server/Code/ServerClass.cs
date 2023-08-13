@@ -140,6 +140,18 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
+        public bool Update_FF_ManPower(FF_ManPower ManPower)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FF_ManPower_Update(UserName, Password, ManPower);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
         public bool Update_DangerousePlaces(DangerousPlaces place)
         {
             try
@@ -153,15 +165,16 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public void Add_Account(Users user)
+        public Users Add_Account(Users user)
         {
             try
             {
-                IncidentReporting_WS_Obj.Users_Insert(UserName, Password, user);
+                return IncidentReporting_WS_Obj.Users_Insert(UserName, Password, user);
             }
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
+                return null;
             }
         }
 
@@ -271,27 +284,54 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public void Add_FFstations_FF_ManPower(FFstations station)
+        public FFstations Add_FFstations(FFstations station)
         {
             try
             {
-                IncidentReporting_WS_Obj.FFstations_Insert(UserName, Password, station);
+                return IncidentReporting_WS_Obj.FFstations_Insert(UserName, Password, station);
             }
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
+        public FF_ManPower AddFF_ManPower(FF_ManPower ManPower)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FF_ManPower_Insert(UserName, Password, ManPower);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
+        public bool Delete_FFstations(int id)
+        {
+            try
+            {
+
+                return IncidentReporting_WS_Obj.FFstations_Delete(UserName, Password, id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
             }
         }
 
-        public void Add_FFPump(FF_pumps pump)
+        public FF_pumps Add_FFPump(FF_pumps pump)
         {
             try
             {
-                IncidentReporting_WS_Obj.FF_pumps_Insert(UserName, Password, pump);
+               return IncidentReporting_WS_Obj.FF_pumps_Insert(UserName, Password, pump);
             }
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
+                return null;
             }
         }
 

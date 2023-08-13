@@ -89,6 +89,8 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback FF_ManPower_InsertOperationCompleted;
         
+        private System.Threading.SendOrPostCallback FF_ManPower_UpdateOperationCompleted;
+        
         private System.Threading.SendOrPostCallback FF_ManPower_Select_AllOperationCompleted;
         
         private System.Threading.SendOrPostCallback FF_ManPower_Select_By_AreaOperationCompleted;
@@ -458,6 +460,9 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         public event FF_ManPower_InsertCompletedEventHandler FF_ManPower_InsertCompleted;
+        
+        /// <remarks/>
+        public event FF_ManPower_UpdateCompletedEventHandler FF_ManPower_UpdateCompleted;
         
         /// <remarks/>
         public event FF_ManPower_Select_AllCompletedEventHandler FF_ManPower_Select_AllCompleted;
@@ -1803,6 +1808,39 @@ namespace Incident_Reporting_App_Server.localhost {
             if ((this.FF_ManPower_InsertCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.FF_ManPower_InsertCompleted(this, new FF_ManPower_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_ManPower_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower) {
+            object[] results = this.Invoke("FF_ManPower_Update", new object[] {
+                        username,
+                        password,
+                        ManPower});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_ManPower_UpdateAsync(string username, string password, FF_ManPower ManPower) {
+            this.FF_ManPower_UpdateAsync(username, password, ManPower, null);
+        }
+        
+        /// <remarks/>
+        public void FF_ManPower_UpdateAsync(string username, string password, FF_ManPower ManPower, object userState) {
+            if ((this.FF_ManPower_UpdateOperationCompleted == null)) {
+                this.FF_ManPower_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_ManPower_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("FF_ManPower_Update", new object[] {
+                        username,
+                        password,
+                        ManPower}, this.FF_ManPower_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnFF_ManPower_UpdateOperationCompleted(object arg) {
+            if ((this.FF_ManPower_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_ManPower_UpdateCompleted(this, new FF_ManPower_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -8633,6 +8671,32 @@ namespace Incident_Reporting_App_Server.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((FF_ManPower)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_ManPower_UpdateCompletedEventHandler(object sender, FF_ManPower_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_ManPower_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_ManPower_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }

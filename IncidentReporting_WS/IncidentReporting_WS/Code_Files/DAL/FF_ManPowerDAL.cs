@@ -31,6 +31,36 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
+        public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower)
+        {
+            try
+            {
+                object[,] sp_params = new object[,]
+                 {
+                    {"@username", username},
+                    {"@password", password},
+                    {"@Sector", ManPower.Sector },
+                    {"@Area", ManPower.Area},
+                    {"@Point",ManPower.Point},
+                    {"@OfficerName",ManPower.OfficerName},
+                    {"@Rank",ManPower.Rank},
+                    {"@TimeSlot",ManPower.TimeSlot},
+                    {"@Availability",ManPower.Availability},
+                    {"@Job",ManPower.Job},
+                    {"@Additional_info",ManPower.Additional_info},
+                    {"@UserID",ManPower.UserID},
+                    {"@FF_ManPowerID",ManPower.FF_ManPowerID },
+                    {"@FF_ID", ManPower.FF_ID }
+
+                 };
+                bool flag = db.Execute_Update_Delete_Stored_Procedure("FF_ManPower_Update", sp_params);
+                return flag;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public FF_ManPower FF_ManPower_Insert(string username, string password, FF_ManPower ManPower)
         {
             try
@@ -53,7 +83,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@FF_ID", ManPower.FF_ID }
 
                };
-                ManPower.FF_ManPowerID = db.Execute_Insert_Stored_Procedure("Accident_Insert", sp_params);
+                ManPower.FF_ManPowerID = db.Execute_Insert_Stored_Procedure("FF_ManPower_Insert", sp_params);
                 if (ManPower.FF_ManPowerID > 0)
                 {
                     return ManPower;
@@ -91,18 +121,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID=Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -139,18 +169,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -187,18 +217,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -235,18 +265,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower=new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         };
                     }
                 }
@@ -283,18 +313,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -331,18 +361,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -379,18 +409,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -427,18 +457,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -475,18 +505,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -523,18 +553,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -571,18 +601,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
@@ -619,18 +649,18 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         FF_ManPower.Add(new FF_ManPower
                         {
-                            FF_ManPowerID = Convert.ToInt32(dr["FF_ManPowerID"]),
-                            Sector = Convert.ToString(dr["Sector"]),
-                            Area = Convert.ToString(dr["Area"]),
-                            Point = Convert.ToString(dr["Point"]),
-                            OfficerName = Convert.ToString(dr["OfficerName"]),
-                            Rank = Convert.ToString(dr["Rank"]),
-                            TimeSlot = dr["TimeSlot"].ToString(),
-                            Availability = dr["Availability"].ToString(),
-                            Job = dr["Job"].ToString(),
+                            FF_ManPowerID = dr["FF_ManPowerID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ManPowerID"]),
+                            Sector = dr["Sector"] is DBNull ? "" : Convert.ToString(dr["Sector"]),
+                            Area = dr["Area"] is DBNull ? "" : Convert.ToString(dr["Area"]),
+                            Point = dr["Point"] is DBNull ? "" : Convert.ToString(dr["Point"]),
+                            OfficerName = dr["OfficerName"] is DBNull ? "" : Convert.ToString(dr["OfficerName"]),
+                            Rank = dr["Rank"] is DBNull ? "" : Convert.ToString(dr["Rank"]),
+                            TimeSlot = dr["TimeSlot"] is DBNull ? "" : dr["TimeSlot"].ToString(),
+                            Availability = dr["Availability"] is DBNull ? "" : dr["Availability"].ToString(),
+                            Job = dr["Job"] is DBNull ? "" : dr["Job"].ToString(),
                             Additional_info = dr["Additional_info"] is DBNull ? "" : dr["Additional_info"].ToString(),
-                            UserID = Convert.ToInt32(dr["UserID"]),
-                            FF_ID = Convert.ToInt32(dr["FF_ID"])
+                            UserID = dr["UserID"] is DBNull ? -1 : Convert.ToInt32(dr["UserID"]),
+                            FF_ID = dr["FF_ID"] is DBNull ? -1 : Convert.ToInt32(dr["FF_ID"])
                         });
                     }
                 }
