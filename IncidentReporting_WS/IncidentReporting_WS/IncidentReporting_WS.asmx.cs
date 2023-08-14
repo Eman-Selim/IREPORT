@@ -916,6 +916,21 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
+        public bool FF_pumps_Update(string username, string password, FF_pumps FF_pumps)
+        {
+            try
+            {
+
+                return FF_pumpsSBL_Obj.FF_pumps_Update(username, password, FF_pumps);
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
         public FF_pumpsCollection FF_pumps_Select_All(string username, string password)
         {
             try
@@ -1077,7 +1092,8 @@ namespace IncidentReporting_WS
                 return false;
             }
         }
-         
+
+       
         [WebMethod]
         public FF_ManPower FF_ManPower_Insert(string username, string password, FF_ManPower ManPower)
         {

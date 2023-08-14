@@ -29,6 +29,24 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return false;
             }
         }
+        public bool FF_pumps_Update(string username, string password, FF_pumps FF_pumps)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return FF_pumpsDAL_Obj.FF_pumps_Update(username, password, FF_pumps);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
         public FF_pumps FF_pumps_Insert(string username, string password, FF_pumps FF_pumps)
         {

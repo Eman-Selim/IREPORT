@@ -334,12 +334,36 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
+        public bool Delete_FF_pumps(int id)
+        {
+            try
+            {
 
+                return IncidentReporting_WS_Obj.FF_pumps_Delete(UserName, Password, id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
         public bool Update_ExitPathways(ExitPathways path)
         {
             try
             {
                 return IncidentReporting_WS_Obj.ExitPathways_Update(UserName, Password, path);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
+        public bool Update_FFPump(FF_pumps pump)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FF_pumps_Update(UserName, Password, pump);
             }
             catch (Exception exception1)
             {

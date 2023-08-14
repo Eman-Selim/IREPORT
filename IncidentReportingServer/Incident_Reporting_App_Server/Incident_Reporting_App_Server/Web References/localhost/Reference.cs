@@ -29,6 +29,8 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="IncidentReporting_WSSoap", Namespace="http://tempuri.org/")]
     public partial class IncidentReporting_WS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback Company_Select_By_UserIDOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Managers_DeleteOperationCompleted;
         
         private System.Threading.SendOrPostCallback Managers_InsertOperationCompleted;
@@ -80,6 +82,8 @@ namespace Incident_Reporting_App_Server.localhost {
         private System.Threading.SendOrPostCallback Accident_Select_By_TypeOperationCompleted;
         
         private System.Threading.SendOrPostCallback Accident_Select_By_VehiclesToAccidentOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_By_SignsOperationCompleted;
         
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_StatusOperationCompleted;
         
@@ -207,8 +211,6 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback Company_Select_By_RightFireMediatorOperationCompleted;
         
-        private System.Threading.SendOrPostCallback Company_Select_By_UserIDOperationCompleted;
-        
         private System.Threading.SendOrPostCallback Users_DeleteOperationCompleted;
         
         private System.Threading.SendOrPostCallback Users_InsertOperationCompleted;
@@ -319,6 +321,8 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback FF_pumps_InsertOperationCompleted;
         
+        private System.Threading.SendOrPostCallback FF_pumps_UpdateOperationCompleted;
+        
         private System.Threading.SendOrPostCallback FF_pumps_Select_AllOperationCompleted;
         
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_AddressOperationCompleted;
@@ -330,8 +334,6 @@ namespace Incident_Reporting_App_Server.localhost {
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_PumpNumberOperationCompleted;
         
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_SectorOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_Select_By_SignsOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -370,6 +372,9 @@ namespace Incident_Reporting_App_Server.localhost {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event Company_Select_By_UserIDCompletedEventHandler Company_Select_By_UserIDCompleted;
         
         /// <remarks/>
         public event Managers_DeleteCompletedEventHandler Managers_DeleteCompleted;
@@ -448,6 +453,9 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         public event Accident_Select_By_VehiclesToAccidentCompletedEventHandler Accident_Select_By_VehiclesToAccidentCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_By_SignsCompletedEventHandler FF_pumps_Select_By_SignsCompleted;
         
         /// <remarks/>
         public event FF_pumps_Select_By_StatusCompletedEventHandler FF_pumps_Select_By_StatusCompleted;
@@ -639,9 +647,6 @@ namespace Incident_Reporting_App_Server.localhost {
         public event Company_Select_By_RightFireMediatorCompletedEventHandler Company_Select_By_RightFireMediatorCompleted;
         
         /// <remarks/>
-        public event Company_Select_By_UserIDCompletedEventHandler Company_Select_By_UserIDCompleted;
-        
-        /// <remarks/>
         public event Users_DeleteCompletedEventHandler Users_DeleteCompleted;
         
         /// <remarks/>
@@ -807,6 +812,9 @@ namespace Incident_Reporting_App_Server.localhost {
         public event FF_pumps_InsertCompletedEventHandler FF_pumps_InsertCompleted;
         
         /// <remarks/>
+        public event FF_pumps_UpdateCompletedEventHandler FF_pumps_UpdateCompleted;
+        
+        /// <remarks/>
         public event FF_pumps_Select_AllCompletedEventHandler FF_pumps_Select_AllCompleted;
         
         /// <remarks/>
@@ -825,7 +833,37 @@ namespace Incident_Reporting_App_Server.localhost {
         public event FF_pumps_Select_By_SectorCompletedEventHandler FF_pumps_Select_By_SectorCompleted;
         
         /// <remarks/>
-        public event FF_pumps_Select_By_SignsCompletedEventHandler FF_pumps_Select_By_SignsCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_UserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Company[] Company_Select_By_UserID(string username, string password, int UserID) {
+            object[] results = this.Invoke("Company_Select_By_UserID", new object[] {
+                        username,
+                        password,
+                        UserID});
+            return ((Company[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_UserIDAsync(string username, string password, int UserID) {
+            this.Company_Select_By_UserIDAsync(username, password, UserID, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_UserIDAsync(string username, string password, int UserID, object userState) {
+            if ((this.Company_Select_By_UserIDOperationCompleted == null)) {
+                this.Company_Select_By_UserIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_UserIDOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_UserID", new object[] {
+                        username,
+                        password,
+                        UserID}, this.Company_Select_By_UserIDOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_UserIDOperationCompleted(object arg) {
+            if ((this.Company_Select_By_UserIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_UserIDCompleted(this, new Company_Select_By_UserIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Managers_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1676,6 +1714,39 @@ namespace Incident_Reporting_App_Server.localhost {
             if ((this.Accident_Select_By_VehiclesToAccidentCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Accident_Select_By_VehiclesToAccidentCompleted(this, new Accident_Select_By_VehiclesToAccidentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Signs", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_By_Signs(string username, string password, string Signs) {
+            object[] results = this.Invoke("FF_pumps_Select_By_Signs", new object[] {
+                        username,
+                        password,
+                        Signs});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_SignsAsync(string username, string password, string Signs) {
+            this.FF_pumps_Select_By_SignsAsync(username, password, Signs, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_SignsAsync(string username, string password, string Signs, object userState) {
+            if ((this.FF_pumps_Select_By_SignsOperationCompleted == null)) {
+                this.FF_pumps_Select_By_SignsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_SignsOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_By_Signs", new object[] {
+                        username,
+                        password,
+                        Signs}, this.FF_pumps_Select_By_SignsOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_By_SignsOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_By_SignsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_By_SignsCompleted(this, new FF_pumps_Select_By_SignsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3749,39 +3820,6 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_UserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Company[] Company_Select_By_UserID(string username, string password, int UserID) {
-            object[] results = this.Invoke("Company_Select_By_UserID", new object[] {
-                        username,
-                        password,
-                        UserID});
-            return ((Company[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_UserIDAsync(string username, string password, int UserID) {
-            this.Company_Select_By_UserIDAsync(username, password, UserID, null);
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_UserIDAsync(string username, string password, int UserID, object userState) {
-            if ((this.Company_Select_By_UserIDOperationCompleted == null)) {
-                this.Company_Select_By_UserIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_UserIDOperationCompleted);
-            }
-            this.InvokeAsync("Company_Select_By_UserID", new object[] {
-                        username,
-                        password,
-                        UserID}, this.Company_Select_By_UserIDOperationCompleted, userState);
-        }
-        
-        private void OnCompany_Select_By_UserIDOperationCompleted(object arg) {
-            if ((this.Company_Select_By_UserIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Company_Select_By_UserIDCompleted(this, new Company_Select_By_UserIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool Users_Delete(string username, string password, int user_id) {
             object[] results = this.Invoke("Users_Delete", new object[] {
@@ -5583,6 +5621,39 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool FF_pumps_Update(string username, string password, FF_pumps FF_pumps) {
+            object[] results = this.Invoke("FF_pumps_Update", new object[] {
+                        username,
+                        password,
+                        FF_pumps});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_UpdateAsync(string username, string password, FF_pumps FF_pumps) {
+            this.FF_pumps_UpdateAsync(username, password, FF_pumps, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_UpdateAsync(string username, string password, FF_pumps FF_pumps, object userState) {
+            if ((this.FF_pumps_UpdateOperationCompleted == null)) {
+                this.FF_pumps_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Update", new object[] {
+                        username,
+                        password,
+                        FF_pumps}, this.FF_pumps_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_UpdateOperationCompleted(object arg) {
+            if ((this.FF_pumps_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_UpdateCompleted(this, new FF_pumps_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public FF_pumps[] FF_pumps_Select_All(string username, string password) {
             object[] results = this.Invoke("FF_pumps_Select_All", new object[] {
@@ -5779,39 +5850,6 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Signs", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_By_Signs(string username, string password, string Signs) {
-            object[] results = this.Invoke("FF_pumps_Select_By_Signs", new object[] {
-                        username,
-                        password,
-                        Signs});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_SignsAsync(string username, string password, string Signs) {
-            this.FF_pumps_Select_By_SignsAsync(username, password, Signs, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_SignsAsync(string username, string password, string Signs, object userState) {
-            if ((this.FF_pumps_Select_By_SignsOperationCompleted == null)) {
-                this.FF_pumps_Select_By_SignsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_SignsOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_By_Signs", new object[] {
-                        username,
-                        password,
-                        Signs}, this.FF_pumps_Select_By_SignsOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_By_SignsOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_By_SignsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_By_SignsCompleted(this, new FF_pumps_Select_By_SignsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -5827,567 +5865,6 @@ namespace Incident_Reporting_App_Server.localhost {
                 return true;
             }
             return false;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Managers {
-        
-        private string nameField;
-        
-        private string currentPositionField;
-        
-        private string phoneNumberField;
-        
-        private string infoField;
-        
-        private int companyIDField;
-        
-        private int managerIDField;
-        
-        /// <remarks/>
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CurrentPosition {
-            get {
-                return this.currentPositionField;
-            }
-            set {
-                this.currentPositionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string PhoneNumber {
-            get {
-                return this.phoneNumberField;
-            }
-            set {
-                this.phoneNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Info {
-            get {
-                return this.infoField;
-            }
-            set {
-                this.infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int CompanyID {
-            get {
-                return this.companyIDField;
-            }
-            set {
-                this.companyIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ManagerID {
-            get {
-                return this.managerIDField;
-            }
-            set {
-                this.managerIDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Users_Admin {
-        
-        private int admin_IDField;
-        
-        private int user_IDField;
-        
-        private string infoField;
-        
-        /// <remarks/>
-        public int Admin_ID {
-            get {
-                return this.admin_IDField;
-            }
-            set {
-                this.admin_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int User_ID {
-            get {
-                return this.user_IDField;
-            }
-            set {
-                this.user_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Info {
-            get {
-                return this.infoField;
-            }
-            set {
-                this.infoField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class FFstations {
-        
-        private int fF_IDField;
-        
-        private string sectorField;
-        
-        private string areaNameField;
-        
-        private string streetField;
-        
-        private string zoneNumberField;
-        
-        private string signsField;
-        
-        private string officersNumberField;
-        
-        private string soliderNumberField;
-        
-        private string carsNumberField;
-        
-        private string equipmentsField;
-        
-        private string additional_infoField;
-        
-        private int userIDField;
-        
-        private FF_ManPower[] station_ManPowerField;
-        
-        /// <remarks/>
-        public int FF_ID {
-            get {
-                return this.fF_IDField;
-            }
-            set {
-                this.fF_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Sector {
-            get {
-                return this.sectorField;
-            }
-            set {
-                this.sectorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string AreaName {
-            get {
-                return this.areaNameField;
-            }
-            set {
-                this.areaNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Street {
-            get {
-                return this.streetField;
-            }
-            set {
-                this.streetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ZoneNumber {
-            get {
-                return this.zoneNumberField;
-            }
-            set {
-                this.zoneNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Signs {
-            get {
-                return this.signsField;
-            }
-            set {
-                this.signsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string OfficersNumber {
-            get {
-                return this.officersNumberField;
-            }
-            set {
-                this.officersNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string SoliderNumber {
-            get {
-                return this.soliderNumberField;
-            }
-            set {
-                this.soliderNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CarsNumber {
-            get {
-                return this.carsNumberField;
-            }
-            set {
-                this.carsNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Equipments {
-            get {
-                return this.equipmentsField;
-            }
-            set {
-                this.equipmentsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Additional_info {
-            get {
-                return this.additional_infoField;
-            }
-            set {
-                this.additional_infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int UserID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                this.userIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FF_ManPower[] Station_ManPower {
-            get {
-                return this.station_ManPowerField;
-            }
-            set {
-                this.station_ManPowerField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class FF_ManPower {
-        
-        private int fF_ManPowerIDField;
-        
-        private string sectorField;
-        
-        private string areaField;
-        
-        private string pointField;
-        
-        private string officerNameField;
-        
-        private string rankField;
-        
-        private string timeSlotField;
-        
-        private string availabilityField;
-        
-        private string jobField;
-        
-        private string additional_infoField;
-        
-        private int userIDField;
-        
-        private int fF_IDField;
-        
-        /// <remarks/>
-        public int FF_ManPowerID {
-            get {
-                return this.fF_ManPowerIDField;
-            }
-            set {
-                this.fF_ManPowerIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Sector {
-            get {
-                return this.sectorField;
-            }
-            set {
-                this.sectorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Area {
-            get {
-                return this.areaField;
-            }
-            set {
-                this.areaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Point {
-            get {
-                return this.pointField;
-            }
-            set {
-                this.pointField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string OfficerName {
-            get {
-                return this.officerNameField;
-            }
-            set {
-                this.officerNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Rank {
-            get {
-                return this.rankField;
-            }
-            set {
-                this.rankField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TimeSlot {
-            get {
-                return this.timeSlotField;
-            }
-            set {
-                this.timeSlotField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Availability {
-            get {
-                return this.availabilityField;
-            }
-            set {
-                this.availabilityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Job {
-            get {
-                return this.jobField;
-            }
-            set {
-                this.jobField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Additional_info {
-            get {
-                return this.additional_infoField;
-            }
-            set {
-                this.additional_infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int UserID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                this.userIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int FF_ID {
-            get {
-                return this.fF_IDField;
-            }
-            set {
-                this.fF_IDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Users {
-        
-        private int userIDField;
-        
-        private string usernameField;
-        
-        private string passwordField;
-        
-        private string infoField;
-        
-        private string adminModeField;
-        
-        private Company[] user_CompaniesField;
-        
-        private FF_pumps[] user_FF_PumpsField;
-        
-        private FFstations[] user_FFstationsField;
-        
-        private Users[] users_of_UsersField;
-        
-        /// <remarks/>
-        public int UserID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                this.userIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Username {
-            get {
-                return this.usernameField;
-            }
-            set {
-                this.usernameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                this.passwordField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Info {
-            get {
-                return this.infoField;
-            }
-            set {
-                this.infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string AdminMode {
-            get {
-                return this.adminModeField;
-            }
-            set {
-                this.adminModeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Company[] User_Companies {
-            get {
-                return this.user_CompaniesField;
-            }
-            set {
-                this.user_CompaniesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] User_FF_Pumps {
-            get {
-                return this.user_FF_PumpsField;
-            }
-            set {
-                this.user_FF_PumpsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FFstations[] User_FFstations {
-            get {
-                return this.user_FFstationsField;
-            }
-            set {
-                this.user_FFstationsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Users[] Users_of_Users {
-            get {
-                return this.users_of_UsersField;
-            }
-            set {
-                this.users_of_UsersField = value;
-            }
         }
     }
     
@@ -7151,66 +6628,41 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Images {
+    public partial class Users_Admin {
         
-        private string imageDescriptionField;
+        private int admin_IDField;
         
-        private int buildingIDField;
+        private int user_IDField;
         
-        private byte[] imageField;
-        
-        private int imageIDField;
-        
-        private string imageURLField;
+        private string infoField;
         
         /// <remarks/>
-        public string ImageDescription {
+        public int Admin_ID {
             get {
-                return this.imageDescriptionField;
+                return this.admin_IDField;
             }
             set {
-                this.imageDescriptionField = value;
+                this.admin_IDField = value;
             }
         }
         
         /// <remarks/>
-        public int BuildingID {
+        public int User_ID {
             get {
-                return this.buildingIDField;
+                return this.user_IDField;
             }
             set {
-                this.buildingIDField = value;
+                this.user_IDField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] Image {
+        public string Info {
             get {
-                return this.imageField;
+                return this.infoField;
             }
             set {
-                this.imageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ImageID {
-            get {
-                return this.imageIDField;
-            }
-            set {
-                this.imageIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ImageURL {
-            get {
-                return this.imageURLField;
-            }
-            set {
-                this.imageURLField = value;
+                this.infoField = value;
             }
         }
     }
@@ -7221,66 +6673,161 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class ExitPathways {
+    public partial class FFstations {
         
-        private byte[] pathwaysImageField;
+        private int fF_IDField;
         
-        private string descriptionField;
+        private string sectorField;
         
-        private int buildingIDField;
+        private string areaNameField;
         
-        private string pathwaysImageURLField;
+        private string streetField;
         
-        private int exitPathwaysIDField;
+        private string zoneNumberField;
+        
+        private string signsField;
+        
+        private string officersNumberField;
+        
+        private string soliderNumberField;
+        
+        private string carsNumberField;
+        
+        private string equipmentsField;
+        
+        private string additional_infoField;
+        
+        private int userIDField;
+        
+        private FF_ManPower[] station_ManPowerField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] PathwaysImage {
+        public int FF_ID {
             get {
-                return this.pathwaysImageField;
+                return this.fF_IDField;
             }
             set {
-                this.pathwaysImageField = value;
+                this.fF_IDField = value;
             }
         }
         
         /// <remarks/>
-        public string Description {
+        public string Sector {
             get {
-                return this.descriptionField;
+                return this.sectorField;
             }
             set {
-                this.descriptionField = value;
+                this.sectorField = value;
             }
         }
         
         /// <remarks/>
-        public int BuildingID {
+        public string AreaName {
             get {
-                return this.buildingIDField;
+                return this.areaNameField;
             }
             set {
-                this.buildingIDField = value;
+                this.areaNameField = value;
             }
         }
         
         /// <remarks/>
-        public string PathwaysImageURL {
+        public string Street {
             get {
-                return this.pathwaysImageURLField;
+                return this.streetField;
             }
             set {
-                this.pathwaysImageURLField = value;
+                this.streetField = value;
             }
         }
         
         /// <remarks/>
-        public int ExitPathwaysID {
+        public string ZoneNumber {
             get {
-                return this.exitPathwaysIDField;
+                return this.zoneNumberField;
             }
             set {
-                this.exitPathwaysIDField = value;
+                this.zoneNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Signs {
+            get {
+                return this.signsField;
+            }
+            set {
+                this.signsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OfficersNumber {
+            get {
+                return this.officersNumberField;
+            }
+            set {
+                this.officersNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SoliderNumber {
+            get {
+                return this.soliderNumberField;
+            }
+            set {
+                this.soliderNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CarsNumber {
+            get {
+                return this.carsNumberField;
+            }
+            set {
+                this.carsNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Equipments {
+            get {
+                return this.equipmentsField;
+            }
+            set {
+                this.equipmentsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Additional_info {
+            get {
+                return this.additional_infoField;
+            }
+            set {
+                this.additional_infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int UserID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                this.userIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FF_ManPower[] Station_ManPower {
+            get {
+                return this.station_ManPowerField;
+            }
+            set {
+                this.station_ManPowerField = value;
             }
         }
     }
@@ -7291,90 +6838,605 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class DangerousPlaces {
+    public partial class FF_ManPower {
         
-        private string hazardousSubstanceField;
+        private int fF_ManPowerIDField;
         
-        private string locationField;
+        private string sectorField;
         
-        private string fireMediatorField;
+        private string areaField;
         
-        private int companyIDField;
+        private string pointField;
         
-        private byte[] imageField;
+        private string officerNameField;
         
-        private int dangerousPlaceIDField;
+        private string rankField;
         
-        private string imageURLField;
+        private string timeSlotField;
+        
+        private string availabilityField;
+        
+        private string jobField;
+        
+        private string additional_infoField;
+        
+        private int userIDField;
+        
+        private int fF_IDField;
         
         /// <remarks/>
-        public string HazardousSubstance {
+        public int FF_ManPowerID {
             get {
-                return this.hazardousSubstanceField;
+                return this.fF_ManPowerIDField;
             }
             set {
-                this.hazardousSubstanceField = value;
+                this.fF_ManPowerIDField = value;
             }
         }
         
         /// <remarks/>
-        public string Location {
+        public string Sector {
             get {
-                return this.locationField;
+                return this.sectorField;
             }
             set {
-                this.locationField = value;
+                this.sectorField = value;
             }
         }
         
         /// <remarks/>
-        public string FireMediator {
+        public string Area {
             get {
-                return this.fireMediatorField;
+                return this.areaField;
             }
             set {
-                this.fireMediatorField = value;
+                this.areaField = value;
             }
         }
         
         /// <remarks/>
-        public int CompanyID {
+        public string Point {
             get {
-                return this.companyIDField;
+                return this.pointField;
             }
             set {
-                this.companyIDField = value;
+                this.pointField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] Image {
+        public string OfficerName {
             get {
-                return this.imageField;
+                return this.officerNameField;
             }
             set {
-                this.imageField = value;
+                this.officerNameField = value;
             }
         }
         
         /// <remarks/>
-        public int DangerousPlaceID {
+        public string Rank {
             get {
-                return this.dangerousPlaceIDField;
+                return this.rankField;
             }
             set {
-                this.dangerousPlaceIDField = value;
+                this.rankField = value;
             }
         }
         
         /// <remarks/>
-        public string ImageURL {
+        public string TimeSlot {
             get {
-                return this.imageURLField;
+                return this.timeSlotField;
             }
             set {
-                this.imageURLField = value;
+                this.timeSlotField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Availability {
+            get {
+                return this.availabilityField;
+            }
+            set {
+                this.availabilityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Job {
+            get {
+                return this.jobField;
+            }
+            set {
+                this.jobField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Additional_info {
+            get {
+                return this.additional_infoField;
+            }
+            set {
+                this.additional_infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int UserID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                this.userIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int FF_ID {
+            get {
+                return this.fF_IDField;
+            }
+            set {
+                this.fF_IDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Users {
+        
+        private int userIDField;
+        
+        private string usernameField;
+        
+        private string passwordField;
+        
+        private string infoField;
+        
+        private string adminModeField;
+        
+        private Company[] user_CompaniesField;
+        
+        private FF_pumps[] user_FF_PumpsField;
+        
+        private FFstations[] user_FFstationsField;
+        
+        private Users[] users_of_UsersField;
+        
+        /// <remarks/>
+        public int UserID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                this.userIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                this.passwordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Info {
+            get {
+                return this.infoField;
+            }
+            set {
+                this.infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AdminMode {
+            get {
+                return this.adminModeField;
+            }
+            set {
+                this.adminModeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Company[] User_Companies {
+            get {
+                return this.user_CompaniesField;
+            }
+            set {
+                this.user_CompaniesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] User_FF_Pumps {
+            get {
+                return this.user_FF_PumpsField;
+            }
+            set {
+                this.user_FF_PumpsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FFstations[] User_FFstations {
+            get {
+                return this.user_FFstationsField;
+            }
+            set {
+                this.user_FFstationsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Users[] Users_of_Users {
+            get {
+                return this.users_of_UsersField;
+            }
+            set {
+                this.users_of_UsersField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class FF_pumps {
+        
+        private int fF_pumpsIDField;
+        
+        private string sectorField;
+        
+        private string addressField;
+        
+        private string pumpNumberField;
+        
+        private string pumpTypeField;
+        
+        private string signsField;
+        
+        private string statusField;
+        
+        private string areaField;
+        
+        private string additional_infoField;
+        
+        private int userIDField;
+        
+        /// <remarks/>
+        public int FF_pumpsID {
+            get {
+                return this.fF_pumpsIDField;
+            }
+            set {
+                this.fF_pumpsIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Sector {
+            get {
+                return this.sectorField;
+            }
+            set {
+                this.sectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PumpNumber {
+            get {
+                return this.pumpNumberField;
+            }
+            set {
+                this.pumpNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PumpType {
+            get {
+                return this.pumpTypeField;
+            }
+            set {
+                this.pumpTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Signs {
+            get {
+                return this.signsField;
+            }
+            set {
+                this.signsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Area {
+            get {
+                return this.areaField;
+            }
+            set {
+                this.areaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Additional_info {
+            get {
+                return this.additional_infoField;
+            }
+            set {
+                this.additional_infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int UserID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                this.userIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Death {
+        
+        private int deathIDField;
+        
+        private string nameField;
+        
+        private int ageField;
+        
+        private string civil_MilitaryField;
+        
+        private string rankField;
+        
+        private System.DateTime dateField;
+        
+        private string additional_infoField;
+        
+        private int accidentIDField;
+        
+        /// <remarks/>
+        public int DeathID {
+            get {
+                return this.deathIDField;
+            }
+            set {
+                this.deathIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Age {
+            get {
+                return this.ageField;
+            }
+            set {
+                this.ageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Civil_Military {
+            get {
+                return this.civil_MilitaryField;
+            }
+            set {
+                this.civil_MilitaryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Rank {
+            get {
+                return this.rankField;
+            }
+            set {
+                this.rankField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Additional_info {
+            get {
+                return this.additional_infoField;
+            }
+            set {
+                this.additional_infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int AccidentID {
+            get {
+                return this.accidentIDField;
+            }
+            set {
+                this.accidentIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Injured {
+        
+        private int injuredIDField;
+        
+        private string nameField;
+        
+        private int ageField;
+        
+        private string civil_MilitaryField;
+        
+        private string rankField;
+        
+        private System.DateTime dateField;
+        
+        private string additional_infoField;
+        
+        private int accidentIDField;
+        
+        /// <remarks/>
+        public int InjuredID {
+            get {
+                return this.injuredIDField;
+            }
+            set {
+                this.injuredIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Age {
+            get {
+                return this.ageField;
+            }
+            set {
+                this.ageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Civil_Military {
+            get {
+                return this.civil_MilitaryField;
+            }
+            set {
+                this.civil_MilitaryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Rank {
+            get {
+                return this.rankField;
+            }
+            set {
+                this.rankField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Additional_info {
+            get {
+                return this.additional_infoField;
+            }
+            set {
+                this.additional_infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int AccidentID {
+            get {
+                return this.accidentIDField;
+            }
+            set {
+                this.accidentIDField = value;
             }
         }
     }
@@ -7562,33 +7624,113 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Injured {
+    public partial class DangerousPlaces {
         
-        private int injuredIDField;
+        private string hazardousSubstanceField;
+        
+        private string locationField;
+        
+        private string fireMediatorField;
+        
+        private int companyIDField;
+        
+        private byte[] imageField;
+        
+        private int dangerousPlaceIDField;
+        
+        private string imageURLField;
+        
+        /// <remarks/>
+        public string HazardousSubstance {
+            get {
+                return this.hazardousSubstanceField;
+            }
+            set {
+                this.hazardousSubstanceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Location {
+            get {
+                return this.locationField;
+            }
+            set {
+                this.locationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FireMediator {
+            get {
+                return this.fireMediatorField;
+            }
+            set {
+                this.fireMediatorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int CompanyID {
+            get {
+                return this.companyIDField;
+            }
+            set {
+                this.companyIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] Image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int DangerousPlaceID {
+            get {
+                return this.dangerousPlaceIDField;
+            }
+            set {
+                this.dangerousPlaceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ImageURL {
+            get {
+                return this.imageURLField;
+            }
+            set {
+                this.imageURLField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Managers {
         
         private string nameField;
         
-        private int ageField;
+        private string currentPositionField;
         
-        private string civil_MilitaryField;
+        private string phoneNumberField;
         
-        private string rankField;
+        private string infoField;
         
-        private System.DateTime dateField;
+        private int companyIDField;
         
-        private string additional_infoField;
-        
-        private int accidentIDField;
-        
-        /// <remarks/>
-        public int InjuredID {
-            get {
-                return this.injuredIDField;
-            }
-            set {
-                this.injuredIDField = value;
-            }
-        }
+        private int managerIDField;
         
         /// <remarks/>
         public string Name {
@@ -7601,62 +7743,52 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public int Age {
+        public string CurrentPosition {
             get {
-                return this.ageField;
+                return this.currentPositionField;
             }
             set {
-                this.ageField = value;
+                this.currentPositionField = value;
             }
         }
         
         /// <remarks/>
-        public string Civil_Military {
+        public string PhoneNumber {
             get {
-                return this.civil_MilitaryField;
+                return this.phoneNumberField;
             }
             set {
-                this.civil_MilitaryField = value;
+                this.phoneNumberField = value;
             }
         }
         
         /// <remarks/>
-        public string Rank {
+        public string Info {
             get {
-                return this.rankField;
+                return this.infoField;
             }
             set {
-                this.rankField = value;
+                this.infoField = value;
             }
         }
         
         /// <remarks/>
-        public System.DateTime Date {
+        public int CompanyID {
             get {
-                return this.dateField;
+                return this.companyIDField;
             }
             set {
-                this.dateField = value;
+                this.companyIDField = value;
             }
         }
         
         /// <remarks/>
-        public string Additional_info {
+        public int ManagerID {
             get {
-                return this.additional_infoField;
+                return this.managerIDField;
             }
             set {
-                this.additional_infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int AccidentID {
-            get {
-                return this.accidentIDField;
-            }
-            set {
-                this.accidentIDField = value;
+                this.managerIDField = value;
             }
         }
     }
@@ -7667,101 +7799,66 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Death {
+    public partial class ExitPathways {
         
-        private int deathIDField;
+        private byte[] pathwaysImageField;
         
-        private string nameField;
+        private string descriptionField;
         
-        private int ageField;
+        private int buildingIDField;
         
-        private string civil_MilitaryField;
+        private string pathwaysImageURLField;
         
-        private string rankField;
-        
-        private System.DateTime dateField;
-        
-        private string additional_infoField;
-        
-        private int accidentIDField;
+        private int exitPathwaysIDField;
         
         /// <remarks/>
-        public int DeathID {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] PathwaysImage {
             get {
-                return this.deathIDField;
+                return this.pathwaysImageField;
             }
             set {
-                this.deathIDField = value;
+                this.pathwaysImageField = value;
             }
         }
         
         /// <remarks/>
-        public string Name {
+        public string Description {
             get {
-                return this.nameField;
+                return this.descriptionField;
             }
             set {
-                this.nameField = value;
+                this.descriptionField = value;
             }
         }
         
         /// <remarks/>
-        public int Age {
+        public int BuildingID {
             get {
-                return this.ageField;
+                return this.buildingIDField;
             }
             set {
-                this.ageField = value;
+                this.buildingIDField = value;
             }
         }
         
         /// <remarks/>
-        public string Civil_Military {
+        public string PathwaysImageURL {
             get {
-                return this.civil_MilitaryField;
+                return this.pathwaysImageURLField;
             }
             set {
-                this.civil_MilitaryField = value;
+                this.pathwaysImageURLField = value;
             }
         }
         
         /// <remarks/>
-        public string Rank {
+        public int ExitPathwaysID {
             get {
-                return this.rankField;
+                return this.exitPathwaysIDField;
             }
             set {
-                this.rankField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Date {
-            get {
-                return this.dateField;
-            }
-            set {
-                this.dateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Additional_info {
-            get {
-                return this.additional_infoField;
-            }
-            set {
-                this.additional_infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int AccidentID {
-            get {
-                return this.accidentIDField;
-            }
-            set {
-                this.accidentIDField = value;
+                this.exitPathwaysIDField = value;
             }
         }
     }
@@ -7772,125 +7869,92 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class FF_pumps {
+    public partial class Images {
         
-        private int fF_pumpsIDField;
+        private string imageDescriptionField;
         
-        private string sectorField;
+        private int buildingIDField;
         
-        private string addressField;
+        private byte[] imageField;
         
-        private string pumpNumberField;
+        private int imageIDField;
         
-        private string pumpTypeField;
-        
-        private string signsField;
-        
-        private string statusField;
-        
-        private string areaField;
-        
-        private string additional_infoField;
-        
-        private int userIDField;
+        private string imageURLField;
         
         /// <remarks/>
-        public int FF_pumpsID {
+        public string ImageDescription {
             get {
-                return this.fF_pumpsIDField;
+                return this.imageDescriptionField;
             }
             set {
-                this.fF_pumpsIDField = value;
+                this.imageDescriptionField = value;
             }
         }
         
         /// <remarks/>
-        public string Sector {
+        public int BuildingID {
             get {
-                return this.sectorField;
+                return this.buildingIDField;
             }
             set {
-                this.sectorField = value;
+                this.buildingIDField = value;
             }
         }
         
         /// <remarks/>
-        public string Address {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] Image {
             get {
-                return this.addressField;
+                return this.imageField;
             }
             set {
-                this.addressField = value;
+                this.imageField = value;
             }
         }
         
         /// <remarks/>
-        public string PumpNumber {
+        public int ImageID {
             get {
-                return this.pumpNumberField;
+                return this.imageIDField;
             }
             set {
-                this.pumpNumberField = value;
+                this.imageIDField = value;
             }
         }
         
         /// <remarks/>
-        public string PumpType {
+        public string ImageURL {
             get {
-                return this.pumpTypeField;
+                return this.imageURLField;
             }
             set {
-                this.pumpTypeField = value;
+                this.imageURLField = value;
             }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_UserIDCompletedEventHandler(object sender, Company_Select_By_UserIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_UserIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_UserIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
         }
         
         /// <remarks/>
-        public string Signs {
+        public Company[] Result {
             get {
-                return this.signsField;
-            }
-            set {
-                this.signsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Area {
-            get {
-                return this.areaField;
-            }
-            set {
-                this.areaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Additional_info {
-            get {
-                return this.additional_infoField;
-            }
-            set {
-                this.additional_infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int UserID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                this.userIDField = value;
+                this.RaiseExceptionIfNecessary();
+                return ((Company[])(this.results[0]));
             }
         }
     }
@@ -8567,6 +8631,32 @@ namespace Incident_Reporting_App_Server.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Accident[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_By_SignsCompletedEventHandler(object sender, FF_pumps_Select_By_SignsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_By_SignsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_By_SignsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
             }
         }
     }
@@ -10211,32 +10301,6 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Company_Select_By_UserIDCompletedEventHandler(object sender, Company_Select_By_UserIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Company_Select_By_UserIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Company_Select_By_UserIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Company[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Company[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void Users_DeleteCompletedEventHandler(object sender, Users_DeleteCompletedEventArgs e);
     
     /// <remarks/>
@@ -11667,6 +11731,32 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_UpdateCompletedEventHandler(object sender, FF_pumps_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void FF_pumps_Select_AllCompletedEventHandler(object sender, FF_pumps_Select_AllCompletedEventArgs e);
     
     /// <remarks/>
@@ -11808,32 +11898,6 @@ namespace Incident_Reporting_App_Server.localhost {
         private object[] results;
         
         internal FF_pumps_Select_By_SectorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_By_SignsCompletedEventHandler(object sender, FF_pumps_Select_By_SignsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_By_SignsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_By_SignsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

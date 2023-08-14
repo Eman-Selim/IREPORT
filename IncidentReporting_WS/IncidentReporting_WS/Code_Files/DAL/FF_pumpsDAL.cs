@@ -30,6 +30,33 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
+        public bool FF_pumps_Update(string username, string password, FF_pumps FF_pumps)
+        {
+            try
+            {
+                object[,] sp_params = new object[,]
+               {
+                    {"@username", username},
+                    {"@password", password},
+                    {"@Sector", FF_pumps.Sector },
+                    {"@Address", FF_pumps.Address},
+                    {"@PumpNumber",FF_pumps.PumpNumber},
+                    {"@PumpType",FF_pumps.PumpType },
+                    {"@Signs",FF_pumps.Signs },
+                    {"@Status",FF_pumps.Status },
+                    {"@Area",FF_pumps.Area},
+                    {"@Additional_info",FF_pumps.Additional_info },
+                    {"@UserID",FF_pumps.UserID }
+               };
+                bool flag = db.Execute_Update_Delete_Stored_Procedure("FF_pumps_Update", sp_params);
+                return flag;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public FF_pumps FF_pumps_Insert(string username, string password, FF_pumps FF_pumps)
         {
             try

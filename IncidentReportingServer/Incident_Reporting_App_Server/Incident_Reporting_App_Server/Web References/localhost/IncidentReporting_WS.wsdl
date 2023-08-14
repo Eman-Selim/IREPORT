@@ -2,125 +2,76 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="Managers_Delete">
+      <s:element name="Company_Select_By_UserID">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="ManagerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Managers_DeleteResponse">
+      <s:element name="Company_Select_By_UserIDResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Managers_DeleteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_UserIDResult" type="tns:ArrayOfCompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Managers_Insert">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Manager" type="tns:Managers" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="Managers">
+      <s:complexType name="ArrayOfCompany">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Company">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CurrentPosition" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LandlinePhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ElectricalPanelLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OxygenTrapLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GasTrapLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyBusiness" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyBusiness" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ManagerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyBusiness" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FrontFireMediator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeftFireMediator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BackFireMediator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RightFireMediator" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuildingsNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyImage" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyImage" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyImage" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyImage" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyImageURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyImageURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyImageURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyImageURL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyBuisiness" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockVolume" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="StockType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyImage" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyGeometeryImage" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="companyBuildings" type="tns:ArrayOfBuildings" />
+          <s:element minOccurs="0" maxOccurs="1" name="companyManagers" type="tns:ArrayOfManagers" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyDangerousPlaces" type="tns:ArrayOfDangerousPlaces" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyAccident" type="tns:ArrayOfAccident" />
         </s:sequence>
       </s:complexType>
-      <s:element name="Managers_InsertResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Managers_InsertResult" type="tns:Managers" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Managers_Select_All">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Managers_Select_AllResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Managers_Select_AllResult" type="tns:ArrayOfManagers" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfManagers">
+      <s:complexType name="ArrayOfBuildings">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Managers" nillable="true" type="tns:Managers" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Buildings" nillable="true" type="tns:Buildings" />
         </s:sequence>
       </s:complexType>
-      <s:element name="Managers_Select_By_CompanyID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Managers_Select_By_CompanyIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Managers_Select_By_CompanyIDResult" type="tns:ArrayOfManagers" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Managers_SelectByManagerID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="ManagerID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Managers_SelectByManagerIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Managers_SelectByManagerIDResult" type="tns:Managers" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Buildings_Delete">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Buildings_DeleteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Buildings_DeleteResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Buildings_Insert">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="buildings" type="tns:Buildings" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:complexType name="Buildings">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="BuildingNumber" type="s:int" />
@@ -182,6 +133,198 @@
           <s:element minOccurs="1" maxOccurs="1" name="ExitPathwaysID" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfManagers">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Managers" nillable="true" type="tns:Managers" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Managers">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentPosition" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ManagerID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDangerousPlaces">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DangerousPlaces" nillable="true" type="tns:DangerousPlaces" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DangerousPlaces">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="HazardousSubstance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FireMediator" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="DangerousPlaceID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAccident">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Accident" nillable="true" type="tns:Accident" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Accident">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccidentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehiclesToAccident" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Equipments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LossesType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LossesInfo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeToSend" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeToArrive" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccidentNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Additional_info" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accident_Injured" type="tns:ArrayOfInjured" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accident_Death" type="tns:ArrayOfDeath" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInjured">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Injured" nillable="true" type="tns:Injured" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Injured">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InjuredID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Civil_Military" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rank" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Additional_info" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDeath">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Death" nillable="true" type="tns:Death" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Death">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DeathID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Civil_Military" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rank" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Additional_info" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Managers_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Managers_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Manager" type="tns:Managers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Managers_InsertResult" type="tns:Managers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_Select_All">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_Select_AllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Managers_Select_AllResult" type="tns:ArrayOfManagers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_Select_By_CompanyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_Select_By_CompanyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Managers_Select_By_CompanyIDResult" type="tns:ArrayOfManagers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_SelectByManagerID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Managers_SelectByManagerIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Managers_SelectByManagerIDResult" type="tns:Managers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Buildings_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Buildings_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Buildings_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Buildings_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buildings" type="tns:Buildings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Buildings_InsertResponse">
         <s:complexType>
           <s:sequence>
@@ -220,11 +363,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfBuildings">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Buildings" nillable="true" type="tns:Buildings" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="Buildings_Select_By_BuildingID">
         <s:complexType>
           <s:sequence>
@@ -314,58 +452,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="Accident">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="AccidentType" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="VehiclesToAccident" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Equipments" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LossesType" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LossesInfo" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="TimeToSend" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="TimeToArrive" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="AccidentNumber" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Additional_info" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Accident_Injured" type="tns:ArrayOfInjured" />
-          <s:element minOccurs="0" maxOccurs="1" name="Accident_Death" type="tns:ArrayOfDeath" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfInjured">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Injured" nillable="true" type="tns:Injured" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Injured">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="InjuredID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Civil_Military" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Rank" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Additional_info" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfDeath">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Death" nillable="true" type="tns:Death" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Death">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="DeathID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Civil_Military" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Rank" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Additional_info" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="Accident_InsertResponse">
         <s:complexType>
           <s:sequence>
@@ -388,11 +474,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfAccident">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Accident" nillable="true" type="tns:Accident" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="Accident_Select_By_AccidentNumber">
         <s:complexType>
           <s:sequence>
@@ -553,19 +634,19 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="FF_pumps_Select_By_Status">
+      <s:element name="FF_pumps_Select_By_Signs">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Signs" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="FF_pumps_Select_By_StatusResponse">
+      <s:element name="FF_pumps_Select_By_SignsResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="FF_pumps_Select_By_StatusResult" type="tns:ArrayOfFF_pumps" />
+            <s:element minOccurs="0" maxOccurs="1" name="FF_pumps_Select_By_SignsResult" type="tns:ArrayOfFF_pumps" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -588,6 +669,22 @@
           <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="FF_pumps_Select_By_Status">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FF_pumps_Select_By_StatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FF_pumps_Select_By_StatusResult" type="tns:ArrayOfFF_pumps" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="FF_pumps_Select_By_UserID">
         <s:complexType>
           <s:sequence>
@@ -1095,17 +1192,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="DangerousPlaces">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="HazardousSubstance" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FireMediator" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:base64Binary" />
-          <s:element minOccurs="1" maxOccurs="1" name="DangerousPlaceID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="ImageURL" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="DangerousPlaces_InsertResponse">
         <s:complexType>
           <s:sequence>
@@ -1144,11 +1230,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfDangerousPlaces">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="DangerousPlaces" nillable="true" type="tns:DangerousPlaces" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="DangerousPlaces_Select_By_CompanyID">
         <s:complexType>
           <s:sequence>
@@ -1254,50 +1335,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="Company">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LandlinePhoneNumber" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ElectricalPanelLocation" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="OxygenTrapLocation" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="GasTrapLocation" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyBusiness" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyBusiness" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyBusiness" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FrontFireMediator" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LeftFireMediator" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="BackFireMediator" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RightFireMediator" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="BuildingsNumber" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyImage" type="s:base64Binary" />
-          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyImage" type="s:base64Binary" />
-          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyImage" type="s:base64Binary" />
-          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyImage" type="s:base64Binary" />
-          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="FrontCompanyImageURL" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="BackCompanyImageURL" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RightCompanyImageURL" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LeftCompanyImageURL" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:float" />
-          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:float" />
-          <s:element minOccurs="0" maxOccurs="1" name="CompanyBuisiness" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="StockVolume" type="s:float" />
-          <s:element minOccurs="0" maxOccurs="1" name="StockType" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CompanyImage" type="s:base64Binary" />
-          <s:element minOccurs="0" maxOccurs="1" name="CompanyGeometeryImage" type="s:base64Binary" />
-          <s:element minOccurs="0" maxOccurs="1" name="companyBuildings" type="tns:ArrayOfBuildings" />
-          <s:element minOccurs="0" maxOccurs="1" name="companyManagers" type="tns:ArrayOfManagers" />
-          <s:element minOccurs="0" maxOccurs="1" name="CompanyDangerousPlaces" type="tns:ArrayOfDangerousPlaces" />
-          <s:element minOccurs="0" maxOccurs="1" name="CompanyAccident" type="tns:ArrayOfAccident" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="Company_InsertResponse">
         <s:complexType>
           <s:sequence>
@@ -1336,11 +1373,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfCompany">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="Company_Select_By_Address">
         <s:complexType>
           <s:sequence>
@@ -1658,22 +1690,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightFireMediatorResult" type="tns:ArrayOfCompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_UserID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_UserIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_UserIDResult" type="tns:ArrayOfCompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2602,6 +2618,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="FF_pumps_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FF_pumps" type="tns:FF_pumps" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FF_pumps_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FF_pumps_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="FF_pumps_Select_All">
         <s:complexType>
           <s:sequence>
@@ -2697,24 +2729,14 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="FF_pumps_Select_By_Signs">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Signs" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="FF_pumps_Select_By_SignsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="FF_pumps_Select_By_SignsResult" type="tns:ArrayOfFF_pumps" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="Company_Select_By_UserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_UserID" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_UserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_UserIDResponse" />
+  </wsdl:message>
   <wsdl:message name="Managers_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:Managers_Delete" />
   </wsdl:message>
@@ -2870,6 +2892,12 @@
   </wsdl:message>
   <wsdl:message name="Accident_Select_By_VehiclesToAccidentSoapOut">
     <wsdl:part name="parameters" element="tns:Accident_Select_By_VehiclesToAccidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="FF_pumps_Select_By_SignsSoapIn">
+    <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_Signs" />
+  </wsdl:message>
+  <wsdl:message name="FF_pumps_Select_By_SignsSoapOut">
+    <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_SignsResponse" />
   </wsdl:message>
   <wsdl:message name="FF_pumps_Select_By_StatusSoapIn">
     <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_Status" />
@@ -3249,12 +3277,6 @@
   <wsdl:message name="Company_Select_By_RightFireMediatorSoapOut">
     <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediatorResponse" />
   </wsdl:message>
-  <wsdl:message name="Company_Select_By_UserIDSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_UserID" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_UserIDSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_UserIDResponse" />
-  </wsdl:message>
   <wsdl:message name="Users_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:Users_Delete" />
   </wsdl:message>
@@ -3585,6 +3607,12 @@
   <wsdl:message name="FF_pumps_InsertSoapOut">
     <wsdl:part name="parameters" element="tns:FF_pumps_InsertResponse" />
   </wsdl:message>
+  <wsdl:message name="FF_pumps_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:FF_pumps_Update" />
+  </wsdl:message>
+  <wsdl:message name="FF_pumps_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:FF_pumps_UpdateResponse" />
+  </wsdl:message>
   <wsdl:message name="FF_pumps_Select_AllSoapIn">
     <wsdl:part name="parameters" element="tns:FF_pumps_Select_All" />
   </wsdl:message>
@@ -3621,13 +3649,11 @@
   <wsdl:message name="FF_pumps_Select_By_SectorSoapOut">
     <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_SectorResponse" />
   </wsdl:message>
-  <wsdl:message name="FF_pumps_Select_By_SignsSoapIn">
-    <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_Signs" />
-  </wsdl:message>
-  <wsdl:message name="FF_pumps_Select_By_SignsSoapOut">
-    <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_SignsResponse" />
-  </wsdl:message>
   <wsdl:portType name="IncidentReporting_WSSoap">
+    <wsdl:operation name="Company_Select_By_UserID">
+      <wsdl:input message="tns:Company_Select_By_UserIDSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_UserIDSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Managers_Delete">
       <wsdl:input message="tns:Managers_DeleteSoapIn" />
       <wsdl:output message="tns:Managers_DeleteSoapOut" />
@@ -3731,6 +3757,10 @@
     <wsdl:operation name="Accident_Select_By_VehiclesToAccident">
       <wsdl:input message="tns:Accident_Select_By_VehiclesToAccidentSoapIn" />
       <wsdl:output message="tns:Accident_Select_By_VehiclesToAccidentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FF_pumps_Select_By_Signs">
+      <wsdl:input message="tns:FF_pumps_Select_By_SignsSoapIn" />
+      <wsdl:output message="tns:FF_pumps_Select_By_SignsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="FF_pumps_Select_By_Status">
       <wsdl:input message="tns:FF_pumps_Select_By_StatusSoapIn" />
@@ -3984,10 +4014,6 @@
       <wsdl:input message="tns:Company_Select_By_RightFireMediatorSoapIn" />
       <wsdl:output message="tns:Company_Select_By_RightFireMediatorSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_UserID">
-      <wsdl:input message="tns:Company_Select_By_UserIDSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_UserIDSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="Users_Delete">
       <wsdl:input message="tns:Users_DeleteSoapIn" />
       <wsdl:output message="tns:Users_DeleteSoapOut" />
@@ -4208,6 +4234,10 @@
       <wsdl:input message="tns:FF_pumps_InsertSoapIn" />
       <wsdl:output message="tns:FF_pumps_InsertSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="FF_pumps_Update">
+      <wsdl:input message="tns:FF_pumps_UpdateSoapIn" />
+      <wsdl:output message="tns:FF_pumps_UpdateSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="FF_pumps_Select_All">
       <wsdl:input message="tns:FF_pumps_Select_AllSoapIn" />
       <wsdl:output message="tns:FF_pumps_Select_AllSoapOut" />
@@ -4232,13 +4262,18 @@
       <wsdl:input message="tns:FF_pumps_Select_By_SectorSoapIn" />
       <wsdl:output message="tns:FF_pumps_Select_By_SectorSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="FF_pumps_Select_By_Signs">
-      <wsdl:input message="tns:FF_pumps_Select_By_SignsSoapIn" />
-      <wsdl:output message="tns:FF_pumps_Select_By_SignsSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="IncidentReporting_WSSoap" type="tns:IncidentReporting_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_UserID">
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Managers_Delete">
       <soap:operation soapAction="http://tempuri.org/Managers_Delete" style="document" />
       <wsdl:input>
@@ -4466,6 +4501,15 @@
     </wsdl:operation>
     <wsdl:operation name="Accident_Select_By_VehiclesToAccident">
       <soap:operation soapAction="http://tempuri.org/Accident_Select_By_VehiclesToAccident" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FF_pumps_Select_By_Signs">
+      <soap:operation soapAction="http://tempuri.org/FF_pumps_Select_By_Signs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5040,15 +5084,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_UserID">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Users_Delete">
       <soap:operation soapAction="http://tempuri.org/Users_Delete" style="document" />
       <wsdl:input>
@@ -5544,6 +5579,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FF_pumps_Update">
+      <soap:operation soapAction="http://tempuri.org/FF_pumps_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="FF_pumps_Select_All">
       <soap:operation soapAction="http://tempuri.org/FF_pumps_Select_All" style="document" />
       <wsdl:input>
@@ -5598,18 +5642,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="FF_pumps_Select_By_Signs">
-      <soap:operation soapAction="http://tempuri.org/FF_pumps_Select_By_Signs" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="IncidentReporting_WSSoap12" type="tns:IncidentReporting_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_UserID">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Managers_Delete">
       <soap12:operation soapAction="http://tempuri.org/Managers_Delete" style="document" />
       <wsdl:input>
@@ -5837,6 +5881,15 @@
     </wsdl:operation>
     <wsdl:operation name="Accident_Select_By_VehiclesToAccident">
       <soap12:operation soapAction="http://tempuri.org/Accident_Select_By_VehiclesToAccident" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FF_pumps_Select_By_Signs">
+      <soap12:operation soapAction="http://tempuri.org/FF_pumps_Select_By_Signs" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6411,15 +6464,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_UserID">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Users_Delete">
       <soap12:operation soapAction="http://tempuri.org/Users_Delete" style="document" />
       <wsdl:input>
@@ -6915,6 +6959,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FF_pumps_Update">
+      <soap12:operation soapAction="http://tempuri.org/FF_pumps_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="FF_pumps_Select_All">
       <soap12:operation soapAction="http://tempuri.org/FF_pumps_Select_All" style="document" />
       <wsdl:input>
@@ -6962,15 +7015,6 @@
     </wsdl:operation>
     <wsdl:operation name="FF_pumps_Select_By_Sector">
       <soap12:operation soapAction="http://tempuri.org/FF_pumps_Select_By_Sector" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FF_pumps_Select_By_Signs">
-      <soap12:operation soapAction="http://tempuri.org/FF_pumps_Select_By_Signs" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

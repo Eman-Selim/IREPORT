@@ -53,6 +53,19 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
+
+        public bool FF_pumps_Update(string username, string password, FF_pumps pump)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FF_pumps_Update(username, password, pump);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return false;
+            }
+        }
         public Users Users_SelectByNamePass(string username, string password)
         {
             try

@@ -40,6 +40,7 @@ namespace Incident_Reporting_App_Server
         FF_pumps[] pumps;
         FF_ManPower[] man;
         Company c1;
+        FF_pumps pump ;
         int buildingCount = 0;
         int Selected_User_ID;
         int Selected_Company_ID;
@@ -340,7 +341,7 @@ namespace Incident_Reporting_App_Server
             men.FF_ID = st.FF_ID;
             FF_ManPower MM = server_Class_Obj.AddFF_ManPower(men);
             if (MM != null)
-                richTextBox1.AppendText("Station_ManPower Updated Successfully");
+                richTextBox1.AppendText("\n Station_ManPower Updated Successfully");
         }
 
         private void EditStationsManPower_Click_1(object sender, EventArgs e)
@@ -364,14 +365,14 @@ namespace Incident_Reporting_App_Server
             men.FF_ID = station.FF_ID;
             bool flag = server_Class_Obj.Update_FF_ManPower(men);
             if (flag == true && flag1 == true)
-                richTextBox1.AppendText("Station_ManPower Updated Successfully");
+                richTextBox1.AppendText("\n Station_ManPower Updated Successfully");
         }
 
         private void DeleteStationsManPower_Click_1(object sender, EventArgs e)
         {
             bool flag = server_Class_Obj.Delete_FFstations(station.FF_ID);
             if (flag == true)
-                richTextBox1.AppendText("Station_ManPower Deleted Successfully");
+                richTextBox1.AppendText("\n Station_ManPower Deleted Successfully");
         }
 
         #endregion
@@ -412,65 +413,119 @@ namespace Incident_Reporting_App_Server
                 {
                     treeView3.BeginUpdate();
                     Users LoginAccount = server_Class_Obj.Select_Account();
-                    
+
                     treeView3.Nodes[0].Tag = LoginAccount.UserID;
                     treeView3.Nodes[0].Text = LoginAccount.Username;
                     treeView3.Nodes[0].Name = "User";
 
                     Company[] LoginCompany = LoginAccount.User_Companies;
-
                     int LoginCompany_length = LoginCompany != null ? LoginCompany.Length : 0;
-                    for (int i = 1; i < LoginCompany_length; i++)
-                    {
-                        TreeNode company_node = new TreeNode();
-                        treeView3.Nodes[0].Nodes[i].Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
-                        treeView3.Nodes[0].Nodes[i].Tag = LoginCompany[i].CompanyID;
-                        treeView3.Nodes[0].Nodes[i].Name = "Company";
-                    }
-
                     Users[] Users = LoginAccount.Users_of_Users;
                     int Users_length = Users != null ? Users.Length : 0;
-                    if (Users_length != 0)
+                    for (int j = 0; j < treeView3.Nodes[0].Nodes.Count; j++)
                     {
-                        for (int i = 0; i < Users_length; i++)
+                        if (LoginCompany_length > 0)
                         {
-                                treeView3.Nodes[0].Nodes[LoginCompany_length+i].Tag = Users[i].UserID;
-                                treeView3.Nodes[0].Nodes[LoginCompany_length+i].Text = Users[i].Username==null?"": Users[i].Username;
-                                treeView3.Nodes[0].Nodes[LoginCompany_length+i].Name = "User";
-                                break;
-                        }
-                        for (int i = 0; i < Users_length; i++)
-                        {
-                            Company[] companies = Users[i].User_Companies;
-                            int Companies_length = companies != null ? companies.Length : 0;
-                            if (Companies_length != 0)
+                            for (int i = 1; i < LoginCompany_length; i++)
                             {
-                               
-                                for (int j = 0; j < Companies_length; j++)
+                                bool Find_Flag = false;
+                                if (LoginCompany[i].CompanyID == (Int32)treeView3.Nodes[0].Nodes[i].Tag)
                                 {
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length+i].Nodes[j].Tag = companies[j].CompanyID;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length+i].Nodes[j].Text = companies[j].Name==null?"": companies[j].Name;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length+i].Nodes[j].Name = "Company";
+                                    //editCompany
+                                    Find_Flag = true;
+                                    treeView3.Nodes[0].Nodes[i].Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
+                                    treeView3.Nodes[0].Nodes[i].Tag = LoginCompany[i].CompanyID;
+                                    treeView3.Nodes[0].Nodes[i].Name = "Company";
                                 }
-
-                                Users[] UsersOfUser = Users[i].Users_of_Users;
-                                int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
-                                for (int k = 0; k < UsersOfUser_length; k++)
+                                if (Find_Flag == false)
                                 {
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length+i].Nodes[k + Companies_length].Tag = UsersOfUser[k].UserID;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length+i].Nodes[k + Companies_length].Text = UsersOfUser[k].Username==null?"": UsersOfUser[k].Username;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length+i].Nodes[k + Companies_length].Name = "User";
+                                    //addCompany
+                                    TreeNode company_node = new TreeNode();
+                                    company_node.Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
+                                    company_node.Tag = LoginCompany[i].CompanyID;
+                                    company_node.Name = "Company";
+                                    treeView3.Nodes[0].Nodes.Add(company_node);
                                 }
                             }
                         }
-                        treeView3.EndUpdate();
+                        if (Users_length > 0)
+                        {
+                            for (int k = 0; k < Users_length; k++)
+                            {
+                                bool Find_Flag1 = false;
+                                if (Users[k].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Tag)
+                                {
+                                    //EditUser
+                                    Find_Flag1 = true;
+                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Tag = Users[k].UserID;
+                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Text = Users[k].Username == null ? "" : Users[k].Username;
+                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Name = "User";
+
+                                    Company[] companies = Users[k].User_Companies;
+                                    int Companies_length = companies != null ? companies.Length : 0;
+                                    Users[] UsersOfUser = Users[k].Users_of_Users;
+                                    int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
+                                    if (Companies_length > 0)
+                                    {
+                                        for (int m = 0; m < Companies_length; m++)
+                                        {
+                                            bool Find_Flag2 = false;
+                                            if (companies[k].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Tag)
+                                            {
+                                                //EditUserCompany
+                                                Find_Flag2 = true;
+                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Tag = companies[m].CompanyID;
+                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Text = companies[m].Name == null ? "" : companies[m].Name;
+                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Name = "Company";
+                                            }
+                                            if (Find_Flag2 == false)
+                                            {
+                                                //AddUserCompany
+                                                TreeNode company_node = new TreeNode();
+                                                company_node.Text = companies[j].Name == null ? "" : companies[j].Name;
+                                                company_node.Tag = companies[j].CompanyID;
+                                                company_node.Name = "Company";
+                                                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(company_node);
+                                            }
+                                        }
+                                    }
+                                    for (int n = 0; n < UsersOfUser_length; n++)
+                                    {
+                                        bool Find_Flag2 = false;
+                                        if (UsersOfUser[k].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Tag)
+                                        {
+                                            //EditUsersOfUser
+                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Tag = UsersOfUser[n].UserID;
+                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Text = UsersOfUser[n].Username == null ? "" : UsersOfUser[n].Username;
+                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Name = "User";
+                                        }
+                                        if (Find_Flag2 == false)
+                                        {
+                                            //AddUsersOfUser
+                                            TreeNode moreUsers_node = new TreeNode();
+                                            moreUsers_node.Text = UsersOfUser[k].Username == null ? "" : UsersOfUser[k].Username;
+                                            moreUsers_node.Tag = Users[k].UserID;
+                                            moreUsers_node.Name = "User";
+                                            treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(moreUsers_node);
+                                        }
+                                    }
+
+                                }
+                                if (Find_Flag1 == false)
+                                {
+                                    //AddUser
+                                    TreeNode user_node = new TreeNode();
+                                    user_node.Text = Users[k].Username == null ? "" : Users[k].Username;
+                                    user_node.Tag = Users[k].UserID;
+                                    user_node.Name = "User";
+                                    treeView3.Nodes[0].Nodes.Add(user_node);
+                                }
+                            }
+                        }
                     }
-                    else
-                    {
-                        treeView3.Nodes.Clear();
-                        return;
-                    }
+                    treeView3.EndUpdate();
                 }
+                
             }
             catch (Exception ex)
             {
@@ -628,7 +683,7 @@ namespace Incident_Reporting_App_Server
             c1 = server_Class_Obj.Add_Company(c1);
             if(c1!=null)
             {
-                statusfeild.Text = "Company added Successfully";
+                statusfeild.Text = "\n Company added Successfully";
             }
 
             for (int i = 0; i < Newbuildings.Count; i++)
@@ -636,14 +691,14 @@ namespace Incident_Reporting_App_Server
                 Newbuildings[i].CompanyID = c1.CompanyID;
                 Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
                 if (B1 != null)
-                    statusfeild.AppendText("Building added Successfully");
+                    statusfeild.AppendText("\n Building added Successfully");
                 foreach (var kvp in NewFloors.FindAll(m => m.Key == i+1))
                 {
                     Floors floor = new Floors();
                     kvp.Value.BuildingID = B1.BuildingID;
                     floor=server_Class_Obj.Add_Floors(kvp.Value);
                     if (floor != null)
-                        statusfeild.AppendText("Floor added Successfully");
+                        statusfeild.AppendText("\n Floor added Successfully");
                 }
 
                 ExitPathways exitPathWay = new ExitPathways();
@@ -653,7 +708,7 @@ namespace Incident_Reporting_App_Server
                 exitPathWay.Description = "";
                 exitPathWay = server_Class_Obj.Add_exitPath(exitPathWay);
                 if (exitPathWay != null)
-                    statusfeild.AppendText("exitPathWay added Successfully");
+                    statusfeild.AppendText("\n exitPathWay added Successfully");
             }
             DangerousPlaces place = new DangerousPlaces();
             place.Location = DangerouseLocation.Text;
@@ -664,7 +719,7 @@ namespace Incident_Reporting_App_Server
             place.CompanyID = c1.CompanyID;
             place = server_Class_Obj.Add_DangerousPlace(place);
             if (place != null)
-                statusfeild.AppendText("DangerousPlaces added Successfully");
+                statusfeild.AppendText("\n DangerousPlaces added Successfully");
         }
 
         private void deleteBuildingList_Click(object sender, EventArgs e)
@@ -721,7 +776,7 @@ namespace Incident_Reporting_App_Server
         {
             bool flag=server_Class_Obj.Delete_Company(Selected_Company_ID);
             if(flag ==true)
-                statusfeild.AppendText("Company Deleted Successfully");
+                statusfeild.AppendText("\n Company Deleted Successfully");
 
 
         }
@@ -767,52 +822,55 @@ namespace Incident_Reporting_App_Server
             c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? imagenu : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
             bool flag= server_Class_Obj.Update_Company(c1);
             if(flag==true)
-                statusfeild.AppendText("Company updated Successfully");
+                statusfeild.AppendText("\n Company updated Successfully");
 
             Buildings building = new Buildings();
-            building.BuildingNumber = BuildingNumber.Text==null? -1 : Convert.ToInt32(BuildingNumber.Text);
-            building.FloorsNumber = floorNumbers.Text==null? -1 : Convert.ToInt32(floorNumbers.Text);
+            building.BuildingNumber = BuildingNumber.Text==""? -1 : Convert.ToInt32(BuildingNumber.Text);
+            building.FloorsNumber = floorNumbers.Text==""? -1 : Convert.ToInt32(floorNumbers.Text);
             building.CompanyID = Selected_Company_ID;
-            building.MainWaterTankCapacity = floorNumbers.Text == null? -1 : Convert.ToInt32(mainTankCapacity.Text);
+            building.MainWaterTankCapacity = floorNumbers.Text == ""? -1 : Convert.ToInt32(mainTankCapacity.Text);
             building.GeometricImage = BuildingGeoPic_DT.Image==null? imagenu : ImageToByteArray(BuildingGeoPic_DT.Image);
-            building.GeometricImageURL = GeoPicURL.Text==null? "" : GeoPicURL.Text;
+            building.GeometricImageURL = GeoPicURL.Text==""? "" : GeoPicURL.Text;
             flag = server_Class_Obj.Update_Building(building);
             if (flag == true)
-                statusfeild.AppendText("Building updated Successfully");
+            {
+                statusfeild.AppendText("\n Building updated Successfully");
 
-            Floors floor = new Floors();
-            floor.FloorNumber = (string)DG_Floors_DT.CurrentRow.Cells[0].Value;
-            floor.FireHydrantsNumber = (string)DG_Floors_DT.CurrentRow.Cells[1].Value;
-            floor.PowderExtinguishersNumber = (string)DG_Floors_DT.CurrentRow.Cells[2].Value;
-            floor.PowderExtinguishersWeight = Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[3].Value);
-            floor.CarbonDioxideExtinguishersNumbers = (string)DG_Floors_DT.CurrentRow.Cells[4].Value;
-            floor.CarbonDioxideExtinguishersWeight = Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[5].Value);
-            floor.FoamExtinguishersNumbers = (string)DG_Floors_DT.CurrentRow.Cells[6].Value;
-            floor.FoamExtinguishersWeight = Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[7].Value);
-            floor.BuildingID = building.BuildingID;
-            flag = server_Class_Obj.Update_Floor(floor);
-            if (flag == true)
-                statusfeild.AppendText("Floor updated Successfully");
+                Floors floor = new Floors();
+                floor.FloorNumber = DG_Floors_DT.CurrentRow.Cells[0].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[0].Value;
+                floor.FireHydrantsNumber = DG_Floors_DT.CurrentRow.Cells[1].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[1].Value;
+                floor.PowderExtinguishersNumber = DG_Floors_DT.CurrentRow.Cells[2].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[2].Value;
+                floor.PowderExtinguishersWeight = DG_Floors_DT.CurrentRow.Cells[3].Value == null ? -1 : Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[3].Value);
+                floor.CarbonDioxideExtinguishersNumbers = DG_Floors_DT.CurrentRow.Cells[4].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[4].Value;
+                floor.CarbonDioxideExtinguishersWeight = DG_Floors_DT.CurrentRow.Cells[5].Value == null ? -1 : Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[5].Value);
+                floor.FoamExtinguishersNumbers = DG_Floors_DT.CurrentRow.Cells[6].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[6].Value;
+                floor.FoamExtinguishersWeight = DG_Floors_DT.CurrentRow.Cells[7].Value == null ? -1 : Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[7].Value);
+                floor.BuildingID = building.BuildingID;
+                flag = server_Class_Obj.Update_Floor(floor);
+                if (flag == true)
+                    statusfeild.AppendText("\n Floor updated Successfully");
 
-            DangerousPlaces place = new DangerousPlaces();
-            place.Location = DangerouseLocation.Text==null?"": DangerouseLocation.Text;
-            place.HazardousSubstance = HazardousSubstance.Text==null?"": HazardousSubstance.Text;
-            place.FireMediator = FireMediator.Text==null?"": FireMediator.Text;
-            place.Image = imagenu;
-            place.ImageURL = "";
-            place.CompanyID = c1.CompanyID;
-            flag = server_Class_Obj.Update_DangerousePlaces(place);
-            if (flag == true)
-                statusfeild.AppendText("DangerousPlace updated Successfully");
+                DangerousPlaces place = new DangerousPlaces();
+                place.Location = DangerouseLocation.Text == null ? "" : DangerouseLocation.Text;
+                place.HazardousSubstance = HazardousSubstance.Text == null ? "" : HazardousSubstance.Text;
+                place.FireMediator = FireMediator.Text == null ? "" : FireMediator.Text;
+                place.Image = imagenu;
+                place.ImageURL = "";
+                place.CompanyID = c1.CompanyID;
+                flag = server_Class_Obj.Update_DangerousePlaces(place);
+                if (flag == true)
+                    statusfeild.AppendText("\n DangerousPlace updated Successfully");
 
-            ExitPathways exitPathWay = new ExitPathways();
-            exitPathWay.BuildingID = building.BuildingID;
-            exitPathWay.PathwaysImage = PB_ExitPathWayImage_DT.Image == null ? imagenu : ImageToByteArray(PB_ExitPathWayImage_DT.Image);
-            exitPathWay.PathwaysImageURL = "";
-            exitPathWay.Description = "";
-            flag = server_Class_Obj.Update_ExitPathways(exitPathWay);
-            if (flag == true)
-                statusfeild.AppendText("ExitPathway updated Successfully");
+                ExitPathways exitPathWay = new ExitPathways();
+                exitPathWay.BuildingID = building.BuildingID;
+                exitPathWay.PathwaysImage = PB_ExitPathWayImage_DT.Image == null ? imagenu : ImageToByteArray(PB_ExitPathWayImage_DT.Image);
+                exitPathWay.PathwaysImageURL = "";
+                exitPathWay.Description = "";
+                flag = server_Class_Obj.Update_ExitPathways(exitPathWay);
+                if (flag == true)
+                    statusfeild.AppendText("\n ExitPathway updated Successfully");
+            }
+              
         }
         #endregion
 
@@ -875,13 +933,13 @@ namespace Incident_Reporting_App_Server
             pump.UserID = Selected_User_ID;
             FF_pumps p=server_Class_Obj.Add_FFPump(pump);
             if(p!=null)
-                richTextBox1.AppendText("Account Updated Successfully");
+                richTextBox1.AppendText("\n FF_pumps Added Successfully");
 
         }
 
         private void EditPUMP_Click(object sender, EventArgs e)
         {
-            FF_pumps pump = new FF_pumps();
+            pump = new FF_pumps();
             pump.Additional_info = pumpInfo.Text==null?"": pumpInfo.Text;
             pump.Address = pumpAddress.Text==null?"": pumpAddress.Text;
             pump.Area = pumpArea.Text==null?"": pumpArea.Text;
@@ -891,7 +949,9 @@ namespace Incident_Reporting_App_Server
             pump.Sector = pumpSector.Text==null?"": pumpSector.Text;
             pump.PumpType = PumpType.Text==null?"": PumpType.Text;
             pump.UserID = Selected_User_ID;
-            server_Class_Obj.Add_FFPump(pump);
+            bool flag=server_Class_Obj.Update_FFPump(pump);
+            if (flag ==true)
+                richTextBox1.AppendText("\n FF_pumps Updated Successfully");
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -916,7 +976,9 @@ namespace Incident_Reporting_App_Server
             pumpAddress.Text = "";
             pumpSign.Text = "";
             pumpInfo.Text = "";
-
+            bool flag = server_Class_Obj.Delete_FF_pumps(pump.FF_pumpsID);
+            if (flag == true)
+                richTextBox1.AppendText("\n FF_pumps Deleted Successfully");
         }
         #endregion
 
@@ -937,7 +999,7 @@ namespace Incident_Reporting_App_Server
                 user.Info = AccountInfo.Text;
                 Users flag=server_Class_Obj.Add_Account(user);
                 if (flag !=null)
-                    AccountStatus.AppendText("Account Updated Successfully");
+                    AccountStatus.AppendText("\n Account Updated Successfully");
             }
             catch (Exception exception1)
             {
@@ -961,7 +1023,7 @@ namespace Incident_Reporting_App_Server
                 
                bool flag= server_Class_Obj.Update_Account(user);
                 if(flag==true)
-                    AccountStatus.AppendText("Account Updated Successfully");
+                    AccountStatus.AppendText("\n Account Updated Successfully");
 
             }
             catch (Exception exception1)
