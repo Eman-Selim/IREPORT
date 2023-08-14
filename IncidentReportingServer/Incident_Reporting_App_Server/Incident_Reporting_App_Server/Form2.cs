@@ -485,7 +485,7 @@ namespace Incident_Reporting_App_Server
                                                 company_node.Text = companies[j].Name == null ? "" : companies[j].Name;
                                                 company_node.Tag = companies[j].CompanyID;
                                                 company_node.Name = "Company";
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(company_node);
+                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes.Add(company_node);
                                             }
                                         }
                                     }
@@ -506,7 +506,7 @@ namespace Incident_Reporting_App_Server
                                             moreUsers_node.Text = UsersOfUser[k].Username == null ? "" : UsersOfUser[k].Username;
                                             moreUsers_node.Tag = Users[k].UserID;
                                             moreUsers_node.Name = "User";
-                                            treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(moreUsers_node);
+                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes.Add(moreUsers_node);
                                         }
                                     }
 
