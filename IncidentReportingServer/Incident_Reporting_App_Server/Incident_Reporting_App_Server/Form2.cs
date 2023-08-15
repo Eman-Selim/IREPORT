@@ -411,6 +411,8 @@ namespace Incident_Reporting_App_Server
                 }
                 else
                 {
+                    #region Company  (add, edit)
+
                     treeView3.BeginUpdate();
                     Users LoginAccount = server_Class_Obj.Select_Account();
 
@@ -422,110 +424,225 @@ namespace Incident_Reporting_App_Server
                     int LoginCompany_length = LoginCompany != null ? LoginCompany.Length : 0;
                     Users[] Users = LoginAccount.Users_of_Users;
                     int Users_length = Users != null ? Users.Length : 0;
-                    for (int j = 0; j < treeView3.Nodes[0].Nodes.Count; j++)
+                    
+                    if (LoginCompany_length > 0)
                     {
-                        if (LoginCompany_length > 0)
+                        for (int i = 1; i < LoginCompany_length; i++)
                         {
-                            for (int i = 1; i < LoginCompany_length; i++)
+                            bool Find_Flag = false;
+                            for (int j = 0; j < treeView3.Nodes[0].Nodes.Count; j++)
                             {
-                                bool Find_Flag = false;
-                                if (LoginCompany[i].CompanyID == (Int32)treeView3.Nodes[0].Nodes[i].Tag)
+                                if(treeView3.Nodes[0].Nodes[i].Name == "Company")
                                 {
-                                    //editCompany
-                                    Find_Flag = true;
-                                    treeView3.Nodes[0].Nodes[i].Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
-                                    treeView3.Nodes[0].Nodes[i].Tag = LoginCompany[i].CompanyID;
-                                    treeView3.Nodes[0].Nodes[i].Name = "Company";
-                                }
-                                if (Find_Flag == false)
-                                {
-                                    //addCompany
-                                    TreeNode company_node = new TreeNode();
-                                    company_node.Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
-                                    company_node.Tag = LoginCompany[i].CompanyID;
-                                    company_node.Name = "Company";
-                                    treeView3.Nodes[0].Nodes.Add(company_node);
-                                }
-                            }
+                                    if (LoginCompany[i].CompanyID == (Int32)treeView3.Nodes[0].Nodes[i].Tag)
+                                    {
+                                        //editCompany
+                                        Find_Flag = true;
+                                        treeView3.Nodes[0].Nodes[i].Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
+                                        treeView3.Nodes[0].Nodes[i].Tag = LoginCompany[i].CompanyID;
+                                        treeView3.Nodes[0].Nodes[i].Name = "Company";
+                                    }
+                                    if (Find_Flag == false)
+                                    {
+                                        //addCompany
+                                        TreeNode company_node = new TreeNode();
+                                        company_node.Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
+                                        company_node.Tag = LoginCompany[i].CompanyID;
+                                        company_node.Name = "Company";
+                                        treeView3.Nodes[0].Nodes.Add(company_node);
+                                    }
+                                }    
+                            }        
                         }
-                        if (Users_length > 0)
-                        {
-                            for (int k = 0; k < Users_length; k++)
-                            {
-                                bool Find_Flag1 = false;
-                                if (Users[k].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Tag)
-                                {
-                                    //EditUser
-                                    Find_Flag1 = true;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Tag = Users[k].UserID;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Text = Users[k].Username == null ? "" : Users[k].Username;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Name = "User";
+                    }
+                    #endregion
 
-                                    Company[] companies = Users[k].User_Companies;
+                    #region User  (add, edit)
+                    if (Users_length > 0)
+                    {
+                        for (int i = 0; i < Users_length; i++)
+                        {
+                            bool Find_Flag = false;
+                            for (int j = 0; j < treeView3.Nodes[0].Nodes.Count&& treeView3.Nodes[0].Nodes[i].Name == "User"; j++)
+                            {
+                                if (Users[i].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Tag)
+                                {
+                                    // EditUser
+                                    Find_Flag = true;
+                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Tag = Users[i].UserID;
+                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Text = Users[i].Username == null ? "" : Users[i].Username;
+                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Name = "User";
+
+                                    Company[] companies = Users[i].User_Companies;
                                     int Companies_length = companies != null ? companies.Length : 0;
-                                    Users[] UsersOfUser = Users[k].Users_of_Users;
+                                    Users[] UsersOfUser = Users[i].Users_of_Users;
                                     int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
+
+                                    #region UserCompany (Edit, Add)
+
                                     if (Companies_length > 0)
                                     {
                                         for (int m = 0; m < Companies_length; m++)
                                         {
-                                            bool Find_Flag2 = false;
-                                            if (companies[k].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Tag)
+                                            bool Find_Flag1 = false;
+                                            for (int n = 0; n < treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Count && treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m].Name == "Company"; n++)
                                             {
-                                                //EditUserCompany
-                                                Find_Flag2 = true;
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Tag = companies[m].CompanyID;
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Text = companies[m].Name == null ? "" : companies[m].Name;
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[m].Name = "Company";
+                                                if (companies[m].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n].Tag)
+                                                {
+                                                    //EditUserCompany
+                                                    Find_Flag1 = true;
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m].Tag = companies[m].CompanyID;
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m].Text = companies[m].Name == null ? "" : companies[m].Name;
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m].Name = "Company";
+                                                }
                                             }
-                                            if (Find_Flag2 == false)
+                                            if (Find_Flag1 == false)
                                             {
                                                 //AddUserCompany
                                                 TreeNode company_node = new TreeNode();
-                                                company_node.Text = companies[j].Name == null ? "" : companies[j].Name;
-                                                company_node.Tag = companies[j].CompanyID;
+                                                company_node.Text = companies[m].Name == null ? "" : companies[j].Name;
+                                                company_node.Tag = companies[m].CompanyID;
                                                 company_node.Name = "Company";
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes.Add(company_node);
+                                                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(company_node);
                                             }
                                         }
                                     }
-                                    for (int n = 0; n < UsersOfUser_length; n++)
+                                    #endregion
+
+                                    #region UsersOfUser (Edit, Add)
+                                    if (UsersOfUser_length > 0)
                                     {
-                                        bool Find_Flag2 = false;
-                                        if (UsersOfUser[k].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Tag)
+                                        for (int m = 0; m < UsersOfUser_length; m++)
                                         {
-                                            //EditUsersOfUser
-                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Tag = UsersOfUser[n].UserID;
-                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Text = UsersOfUser[n].Username == null ? "" : UsersOfUser[n].Username;
-                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[n + Companies_length].Name = "User";
-                                        }
-                                        if (Find_Flag2 == false)
-                                        {
-                                            //AddUsersOfUser
-                                            TreeNode moreUsers_node = new TreeNode();
-                                            moreUsers_node.Text = UsersOfUser[k].Username == null ? "" : UsersOfUser[k].Username;
-                                            moreUsers_node.Tag = Users[k].UserID;
-                                            moreUsers_node.Name = "User";
-                                            treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes.Add(moreUsers_node);
+                                            bool Find_Flag1 = false;
+                                            for (int n = 0; n < treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Count && treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m].Name == "User"; n++)
+                                            {
+                                                if (UsersOfUser[m].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Tag)
+                                                {
+                                                    //EditUsersOfUser
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m + Companies_length].Tag = UsersOfUser[m].UserID;
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m + Companies_length].Text = UsersOfUser[m].Username == null ? "" : UsersOfUser[n].Username;
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[m + Companies_length].Name = "User";
+                                                }
+                                            }
+                                            if (Find_Flag1 == false)
+                                            {
+                                                //AddUsersOfUser
+                                                TreeNode moreUsers_node = new TreeNode();
+                                                moreUsers_node.Text = UsersOfUser[m].Username == null ? "" : UsersOfUser[m].Username;
+                                                moreUsers_node.Tag = UsersOfUser[m].UserID;
+                                                moreUsers_node.Name = "User";
+                                                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(moreUsers_node);
+                                            }
                                         }
                                     }
 
+                                    #endregion
+
                                 }
-                                if (Find_Flag1 == false)
-                                {
-                                    //AddUser
-                                    TreeNode user_node = new TreeNode();
-                                    user_node.Text = Users[k].Username == null ? "" : Users[k].Username;
-                                    user_node.Tag = Users[k].UserID;
-                                    user_node.Name = "User";
-                                    treeView3.Nodes[0].Nodes.Add(user_node);
-                                }
+                            }
+                            if (Find_Flag == false)
+                            {
+                                //AddUser
+                                TreeNode user_node = new TreeNode();
+                                user_node.Text = Users[i].Username == null ? "" : Users[i].Username;
+                                user_node.Tag = Users[i].UserID;
+                                user_node.Name = "User";
+                                treeView3.Nodes[0].Nodes.Add(user_node);
                             }
                         }
                     }
+                    #endregion
+                   
+                    #region Company-User (DELETE)
+                    if (treeView3.Nodes[0].Nodes.Count>0)
+                    {
+                        treeView3.BeginUpdate();
+                        for (int j = 0; j < treeView3.Nodes[0].Nodes.Count; j++)
+                        {
+                            // delete operation
+                            bool Find_Flag = false;
+                            int CompanyID = (Int32)treeView3.Nodes[0].Nodes[j].Tag;
+
+                            //Check if company deleted
+                            if(LoginCompany_length > 0 )
+                            {
+                                for (int i = 0; i < LoginCompany.Length; i++)
+                                {
+                                    if (CompanyID == LoginCompany[i].CompanyID)
+                                    {
+                                        Find_Flag = true;
+                                        break;
+                                    }
+                                }
+                                //Remove Deleted Company
+                                if (Find_Flag == false)
+                                {
+                                    treeView3.Nodes[0].Nodes[j].Remove();
+                                }
+                            }
+                            if (Users_length > 0)
+                            {
+                                for (int k = 0; k < Users_length; k++)
+                                {
+                                    //Check if User deleted
+                                    Find_Flag = false;
+                                    int UserID = (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Tag;
+                                    for (int i = 0; i < Users.Length; i++)
+                                    {
+                                        if (UserID == Users[i].UserID)
+                                        {
+                                            Find_Flag = true;
+                                            for (int l = 0; l < treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes.Count; l++)
+                                            {
+                                                bool Find_Flag1 = false;
+
+                                                int UserCompanyID = (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[l].Tag;
+
+                                                Company[] companies = Users[i].User_Companies;
+                                                int Companies_length = companies != null ? companies.Length : 0;
+                                                Users[] UsersOfUser = Users[i].Users_of_Users;
+                                                int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
+
+                                                for (int m = 0; m < Companies_length; m++)
+                                                {
+                                                    if (companies[m].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[l].Tag)
+                                                    {
+                                                        Find_Flag1 = true;
+                                                    
+                                                    }
+                                                }
+                                                if (Find_Flag1 == false)
+                                                {
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[l].Remove();
+                                                }
+                                               Find_Flag1 = false;
+                                                for (int m = 0; m < UsersOfUser_length; m++)
+                                                {
+                                                    if (UsersOfUser[m].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[l + Companies_length].Tag)
+                                                    {
+                                                        Find_Flag1 = true;
+                                                    }
+                                                }
+                                                if (Find_Flag1 == false)
+                                                {
+                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + k].Nodes[l + Companies_length].Remove();
+                                                }
+                                            }
+                                        }  
+                                    }
+                                    //Remove Deleted User
+                                    if (Find_Flag == false)
+                                    {
+                                        treeView3.Nodes[0].Nodes[LoginCompany_length + j].Remove();
+                                    }
+                                }
+                            }    
+                        }
+                        #endregion
+                  }
                     treeView3.EndUpdate();
                 }
-                
             }
             catch (Exception ex)
             {
