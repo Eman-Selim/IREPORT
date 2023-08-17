@@ -178,6 +178,19 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
+        public Users_Admin Add_Users_Admin(Users_Admin user)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.Users_Admin_Insert(UserName, Password, user);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
+
         public bool Update_Account(Users user)
         {
             try
