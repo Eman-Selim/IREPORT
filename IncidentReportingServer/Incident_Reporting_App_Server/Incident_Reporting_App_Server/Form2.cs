@@ -44,10 +44,13 @@ namespace Incident_Reporting_App_Server
         int buildingCount = 0;
         int Selected_User_ID;
         int Selected_Company_ID;
+        private bool First_Time_Loading_User_Data_Flag = true;
         public Form2()
         {
             InitializeComponent();
             pictureBox5.MouseWheel += PictureBox5_MouseWheel;
+            Thread Main_Thread = new Thread(load_all_treeviews_cycle);
+            Main_Thread.Start();
 
             #region load acounts treeview
             //LoginAccount = server_Class_Obj.Select_Account();
@@ -55,7 +58,7 @@ namespace Incident_Reporting_App_Server
             //treeView3.Nodes[0].Text = LoginAccount.Username;
             //treeView3.Nodes[0].Name = "User";
             //TreeNode node = new TreeNode();
-            //node.Tag= LoginAccount.User_Companies;
+            //node.Tag = LoginAccount.User_Companies;
             //node.Text = "Companies";
             //treeView3.Nodes[0].Nodes.Add(node);
             //node.Tag = LoginAccount.Users_of_Users;
@@ -129,70 +132,70 @@ namespace Incident_Reporting_App_Server
             //}
             //Thread Main_Thread = new Thread(load_all_treeviews_cycle);
             //Main_Thread.Start();
-            #endregion
+            //#endregion
 
-            #region load acounts treeview
-            LoginAccount = server_Class_Obj.Select_Account();
-            treeView3.Nodes[0].Tag = LoginAccount.UserID;
-            treeView3.Nodes[0].Text = LoginAccount.Username;
-            treeView3.Nodes[0].Name = "User";
+            //#region load acounts treeview
+            //LoginAccount = server_Class_Obj.Select_Account();
+            //treeView3.Nodes[0].Tag = LoginAccount.UserID;
+            //treeView3.Nodes[0].Text = LoginAccount.Username;
+            //treeView3.Nodes[0].Name = "User";
 
-            Company[] LoginCompany = LoginAccount.User_Companies;
-            int LoginCompany_length = LoginCompany != null ? LoginCompany.Length : 0;
-            for (int i = 0; i < LoginCompany_length; i++)
-            {
-                TreeNode company_node = new TreeNode();
-                company_node.Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
-                company_node.Tag = LoginCompany[i].CompanyID;
-                company_node.Name = "Company";
-                treeView3.Nodes[0].Nodes.Add(company_node);
-            }
+            //Company[] LoginCompany = LoginAccount.User_Companies;
+            //int LoginCompany_length = LoginCompany != null ? LoginCompany.Length : 0;
+            //for (int i = 0; i < LoginCompany_length; i++)
+            //{
+            //    TreeNode company_node = new TreeNode();
+            //    company_node.Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
+            //    company_node.Tag = LoginCompany[i].CompanyID;
+            //    company_node.Name = "Company";
+            //    treeView3.Nodes[0].Nodes.Add(company_node);
+            //}
 
-            Users[] Users = LoginAccount.Users_of_Users;
-            int Users_length = Users != null ? Users.Length : 0;
-            if (Users_length != 0)
-            {
-                treeView3.BeginUpdate();
-                for (int i = 0; i < Users_length; i++)
-                {
-                    TreeNode user_node = new TreeNode();
-                    user_node.Text = Users[i].Username == null ? "" : Users[i].Username;
-                    user_node.Tag = Users[i].UserID;
-                    user_node.Name = "User";
-                    treeView3.Nodes[0].Nodes.Add(user_node);
-                    Company[] companies = Users[i].User_Companies;
-                    int Companies_length = companies != null ? companies.Length : 0;
-                    if (Companies_length != 0)
-                    {
-                        for (int j = 0; j < Companies_length; j++)
-                        {
-                            TreeNode company_node = new TreeNode();
-                            company_node.Text = companies[j].Name == null ? "" : companies[j].Name;
-                            company_node.Tag = companies[j].CompanyID;
-                            company_node.Name = "Company";
-                            treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(company_node);
-                        }
-                        Users[] UsersOfUser = Users[i].Users_of_Users;
-                        int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
-                        for (int k = 0; k < UsersOfUser_length; k++)
-                        {
-                            TreeNode moreUsers_node = new TreeNode();
-                            moreUsers_node.Text = UsersOfUser[k].Username == null ? "" : UsersOfUser[k].Username;
-                            moreUsers_node.Tag = UsersOfUser[k].UserID;
-                            moreUsers_node.Name = "User";
-                            treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(moreUsers_node);
-                        }
-                    }
-                }
-                treeView3.EndUpdate();
-            }
-            else
-            {
-                treeView3.Nodes.Clear();
-                return;
-            }
-            Thread Main_Thread = new Thread(load_all_treeviews_cycle);
-            Main_Thread.Start();
+            //Users[] Users = LoginAccount.Users_of_Users;
+            //int Users_length = Users != null ? Users.Length : 0;
+            //if (Users_length != 0)
+            //{
+            //    treeView3.BeginUpdate();
+            //    for (int i = 0; i < Users_length; i++)
+            //    {
+            //        TreeNode user_node = new TreeNode();
+            //        user_node.Text = Users[i].Username == null ? "" : Users[i].Username;
+            //        user_node.Tag = Users[i].UserID;
+            //        user_node.Name = "User";
+            //        treeView3.Nodes[0].Nodes.Add(user_node);
+            //        Company[] companies = Users[i].User_Companies;
+            //        int Companies_length = companies != null ? companies.Length : 0;
+            //        if (Companies_length != 0)
+            //        {
+            //            for (int j = 0; j < Companies_length; j++)
+            //            {
+            //                TreeNode company_node = new TreeNode();
+            //                company_node.Text = companies[j].Name == null ? "" : companies[j].Name;
+            //                company_node.Tag = companies[j].CompanyID;
+            //                company_node.Name = "Company";
+            //                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(company_node);
+            //            }
+            //            Users[] UsersOfUser = Users[i].Users_of_Users;
+            //            int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
+            //            for (int k = 0; k < UsersOfUser_length; k++)
+            //            {
+            //                TreeNode moreUsers_node = new TreeNode();
+            //                moreUsers_node.Text = UsersOfUser[k].Username == null ? "" : UsersOfUser[k].Username;
+            //                moreUsers_node.Tag = UsersOfUser[k].UserID;
+            //                moreUsers_node.Name = "User";
+            //                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(moreUsers_node);
+            //            }
+            //        }
+            //    }
+            //    treeView3.EndUpdate();
+            //}
+            //else
+            //{
+            //    treeView3.Nodes.Clear();
+            //    return;
+            //}
+            //Thread Main_Thread = new Thread(load_all_treeviews_cycle);
+            //Main_Thread.Start();
             #endregion
         }
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
@@ -799,336 +802,336 @@ namespace Incident_Reporting_App_Server
         //}
         #endregion
 
-        #region treeview 
-        public delegate void load_trv_delegate();
+        //#region treeview 
+        //public delegate void load_trv_delegate();
 
-        public void load_all_treeviews_cycle()
-        {
-            try
-            {
-                while (true)
-                {
-                    Thread.Sleep(20000);
-                    load_trv_User_Tab();
+        //public void load_all_treeviews_cycle()
+        //{
+        //    try
+        //    {
+        //        while (true)
+        //        {
+        //            Thread.Sleep(20000);
+        //            load_trv_User_Tab();
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Auditing.Error(ex.Message);
-            }
-        }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        Auditing.Error(ex.Message);
+        //    }
+        //}
 
-        /// <summary>
-        /// update the users-Company treeview 
-        /// </summary>
+        ///// <summary>
+        ///// update the users-Company treeview 
+        ///// </summary>
 
-        public void load_trv_User_Tab()
-        {
-            try
-            {
-                if (treeView3.InvokeRequired)
-                {
-                    treeView3.Invoke(new load_trv_delegate(load_trv_User_Tab));
-                }
-                else
-                {
-                    #region ss
-                    int CompanyCount = 0;
-                    for (int i = 0; i < treeView3.Nodes[0].Nodes.Count; i++)
-                    {
-                        if (treeView3.Nodes[0].Nodes[i].Name == "Company")
-                            CompanyCount++;
-                    }
-                    int UsersCount = 0;
-                    for (int i = 0; i < treeView3.Nodes[0].Nodes.Count; i++)
-                    {
-                        if (treeView3.Nodes[0].Nodes[i].Name == "User")
-                            UsersCount++;
-                    }
-                    treeView3.BeginUpdate();
-                    Users LoginAccount = server_Class_Obj.Select_Account();
+        //public void load_trv_User_Tab()
+        //{
+        //    try
+        //    {
+        //        if (treeView3.InvokeRequired)
+        //        {
+        //            treeView3.Invoke(new load_trv_delegate(load_trv_User_Tab));
+        //        }
+        //        else
+        //        {
+        //            #region ss
+        //            int CompanyCount = 0;
+        //            for (int i = 0; i < treeView3.Nodes[0].Nodes.Count; i++)
+        //            {
+        //                if (treeView3.Nodes[0].Nodes[i].Name == "Company")
+        //                    CompanyCount++;
+        //            }
+        //            int UsersCount = 0;
+        //            for (int i = 0; i < treeView3.Nodes[0].Nodes.Count; i++)
+        //            {
+        //                if (treeView3.Nodes[0].Nodes[i].Name == "User")
+        //                    UsersCount++;
+        //            }
+        //            treeView3.BeginUpdate();
+        //            Users LoginAccount = server_Class_Obj.Select_Account();
 
-                    treeView3.Nodes[0].Tag = LoginAccount.UserID;
-                    treeView3.Nodes[0].Text = LoginAccount.Username;
-                    treeView3.Nodes[0].Name = "User";
+        //            treeView3.Nodes[0].Tag = LoginAccount.UserID;
+        //            treeView3.Nodes[0].Text = LoginAccount.Username;
+        //            treeView3.Nodes[0].Name = "User";
 
-                    Company[] LoginCompany = LoginAccount.User_Companies;
-                    int LoginCompany_length = LoginCompany != null ? LoginCompany.Length : 0;
-                    Users[] Users = LoginAccount.Users_of_Users;
-                    int Users_length = Users != null ? Users.Length : 0;
-                    #endregion
-
-
-                    #region Company  (add, edit)
+        //            Company[] LoginCompany = LoginAccount.User_Companies;
+        //            int LoginCompany_length = LoginCompany != null ? LoginCompany.Length : 0;
+        //            Users[] Users = LoginAccount.Users_of_Users;
+        //            int Users_length = Users != null ? Users.Length : 0;
+        //            #endregion
 
 
+        //            #region Company  (add, edit)
 
-                    if (LoginCompany_length > 0 && LoginCompany_length >= CompanyCount)
-                    {
-                        for (int i = 1; i < LoginCompany_length; i++)
-                        {
-                            bool Find_Flag = false;
 
-                            for (int j = 0; j < CompanyCount; j++)
-                            {
-                                if (LoginCompany[i].CompanyID == (Int32)treeView3.Nodes[0].Nodes[i].Tag)
-                                {
-                                    //editCompany
-                                    Find_Flag = true;
-                                    treeView3.Nodes[0].Nodes[i].Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
-                                    treeView3.Nodes[0].Nodes[i].Tag = LoginCompany[i].CompanyID;
-                                    treeView3.Nodes[0].Nodes[i].Name = "Company";
-                                }
-                            }
-                            if (Find_Flag == false)
-                            {
-                                //addCompany
-                                TreeNode company_node = new TreeNode();
-                                company_node.Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
-                                company_node.Tag = LoginCompany[i].CompanyID;
-                                company_node.Name = "Company";
-                                treeView3.Nodes[0].Nodes.Add(company_node);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        for (int j = 0; j < CompanyCount; j++)
-                        {
-                            // delete operation
-                            bool Find_Flag = false;
-                            int CompanyID = (Int32)treeView3.Nodes[0].Nodes[j].Tag;
 
-                            //Check if company deleted
-                            if (LoginCompany_length > 0)
-                            {
-                                for (int i = 0; i < LoginCompany.Length; i++)
-                                {
-                                    if (CompanyID == LoginCompany[i].CompanyID)
-                                    {
-                                        Find_Flag = true;
-                                        break;
-                                    }
-                                }
-                                //Remove Deleted Company
-                                if (Find_Flag == false)
-                                {
-                                    treeView3.Nodes[0].Nodes[j].Remove();
-                                    CompanyCount--;
-                                }
-                            }
-                        }
-                    }
-                    #endregion
+        //            if (LoginCompany_length > 0 && LoginCompany_length >= CompanyCount)
+        //            {
+        //                for (int i = 1; i < LoginCompany_length; i++)
+        //                {
+        //                    bool Find_Flag = false;
 
-                    #region User  (add, edit)
-                    if (Users_length > 0 && Users_length >= UsersCount)
-                    {
+        //                    for (int j = 0; j < CompanyCount; j++)
+        //                    {
+        //                        if (LoginCompany[i].CompanyID == (Int32)treeView3.Nodes[0].Nodes[i].Tag)
+        //                        {
+        //                            //editCompany
+        //                            Find_Flag = true;
+        //                            treeView3.Nodes[0].Nodes[i].Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
+        //                            treeView3.Nodes[0].Nodes[i].Tag = LoginCompany[i].CompanyID;
+        //                            treeView3.Nodes[0].Nodes[i].Name = "Company";
+        //                        }
+        //                    }
+        //                    if (Find_Flag == false)
+        //                    {
+        //                        //addCompany
+        //                        TreeNode company_node = new TreeNode();
+        //                        company_node.Text = LoginCompany[i].Name == null ? "" : LoginCompany[i].Name;
+        //                        company_node.Tag = LoginCompany[i].CompanyID;
+        //                        company_node.Name = "Company";
+        //                        treeView3.Nodes[0].Nodes.Add(company_node);
+        //                    }
+        //                }
+        //            }
+        //            else
+        //            {
+        //                for (int j = 0; j < CompanyCount; j++)
+        //                {
+        //                    // delete operation
+        //                    bool Find_Flag = false;
+        //                    int CompanyID = (Int32)treeView3.Nodes[0].Nodes[j].Tag;
 
-                        for (int i = 0; i < Users_length; i++)
-                        {
-                            #region ss
-                            int UserCompanyCount = 0;
-                            for (int p = 0; p < treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Count; p++)
-                            {
-                                if (treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[p].Name == "Company")
-                                    UserCompanyCount++;
-                            }
-                            int UserUsersCount = 0;
-                            for (int p1 = 0; p1 < treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Count; p1++)
-                            {
-                                if (treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[p1].Name == "User")
-                                    UserUsersCount++;
-                            }
-                            #endregion
+        //                    //Check if company deleted
+        //                    if (LoginCompany_length > 0)
+        //                    {
+        //                        for (int i = 0; i < LoginCompany.Length; i++)
+        //                        {
+        //                            if (CompanyID == LoginCompany[i].CompanyID)
+        //                            {
+        //                                Find_Flag = true;
+        //                                break;
+        //                            }
+        //                        }
+        //                        //Remove Deleted Company
+        //                        if (Find_Flag == false)
+        //                        {
+        //                            treeView3.Nodes[0].Nodes[j].Remove();
+        //                            CompanyCount--;
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //            #endregion
 
-                            bool Find_Flag = false;
-                            for (int j = 0; j < UsersCount; j++)
-                            {
-                                if (Users[i].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + j].Tag)
-                                {
-                                    // EditUser
-                                    Find_Flag = true;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length + j].Tag = Users[i].UserID;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length + j].Text = Users[i].Username == null ? "" : Users[i].Username;
-                                    treeView3.Nodes[0].Nodes[LoginCompany_length + j].Name = "User";
+        //            #region User  (add, edit)
+        //            if (Users_length > 0 && Users_length >= UsersCount)
+        //            {
 
-                                    Company[] companies = Users[i].User_Companies;
-                                    int Companies_length = companies != null ? companies.Length : 0;
-                                    Users[] UsersOfUser = Users[i].Users_of_Users;
-                                    int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
+        //                for (int i = 0; i < Users_length; i++)
+        //                {
+        //                    #region ss
+        //                    int UserCompanyCount = 0;
+        //                    for (int p = 0; p < treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Count; p++)
+        //                    {
+        //                        if (treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[p].Name == "Company")
+        //                            UserCompanyCount++;
+        //                    }
+        //                    int UserUsersCount = 0;
+        //                    for (int p1 = 0; p1 < treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Count; p1++)
+        //                    {
+        //                        if (treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[p1].Name == "User")
+        //                            UserUsersCount++;
+        //                    }
+        //                    #endregion
 
-                                    #region UserCompany (Edit, Add)
+        //                    bool Find_Flag = false;
+        //                    for (int j = 0; j < UsersCount; j++)
+        //                    {
+        //                        if (Users[i].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + j].Tag)
+        //                        {
+        //                            // EditUser
+        //                            Find_Flag = true;
+        //                            treeView3.Nodes[0].Nodes[LoginCompany_length + j].Tag = Users[i].UserID;
+        //                            treeView3.Nodes[0].Nodes[LoginCompany_length + j].Text = Users[i].Username == null ? "" : Users[i].Username;
+        //                            treeView3.Nodes[0].Nodes[LoginCompany_length + j].Name = "User";
 
-                                    if (Companies_length > 0 && Companies_length >= UserCompanyCount)
-                                    {
+        //                            Company[] companies = Users[i].User_Companies;
+        //                            int Companies_length = companies != null ? companies.Length : 0;
+        //                            Users[] UsersOfUser = Users[i].Users_of_Users;
+        //                            int UsersOfUser_length = UsersOfUser != null ? UsersOfUser.Length : 0;
 
-                                        for (int m = 0; m < Companies_length; m++)
-                                        {
-                                            bool Find_Flag1 = false;
-                                            for (int n = 0; n < UserCompanyCount; n++)
-                                            {
-                                                if (companies[m].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n].Tag)
-                                                {
-                                                    //EditUserCompany
-                                                    Find_Flag1 = true;
-                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes[n].Tag = companies[m].CompanyID;
-                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes[n].Text = companies[m].Name == null ? "" : companies[m].Name;
-                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes[n].Name = "Company";
-                                                }
-                                            }
-                                            if (Find_Flag1 == false)
-                                            {
-                                                //AddUserCompany
-                                                TreeNode company_node = new TreeNode();
-                                                company_node.Text = companies[m].Name == null ? "" : companies[j].Name;
-                                                company_node.Tag = companies[m].CompanyID;
-                                                company_node.Name = "Company";
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes.Add(company_node);
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        for (int n = 0; n < UserCompanyCount; n++)
-                                        {
-                                            bool Find_Flag1 = false;
-                                            for (int m = 0; m < Companies_length; m++)
-                                            {
-                                                if (companies[m].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n].Tag)
-                                                {
-                                                    Find_Flag1 = true;
-                                                }
-                                            }
-                                            if (Find_Flag1 == false)
-                                            {
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n].Remove();
-                                                UserCompanyCount--;
-                                            }
-                                        }
+        //                            #region UserCompany (Edit, Add)
 
-                                    }
-                                    #endregion
+        //                            if (Companies_length > 0 && Companies_length >= UserCompanyCount)
+        //                            {
 
-                                    #region UsersOfUser (Edit, Add)
-                                    if (UsersOfUser_length > 0 && UsersOfUser_length >= UserUsersCount)
-                                    {
-                                        for (int m = 0; m < UsersOfUser_length; m++)
-                                        {
-                                            bool Find_Flag1 = false;
-                                            for (int n = 0; n < UserUsersCount; n++)
-                                            {
-                                                if (UsersOfUser[m].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Tag)
-                                                {
-                                                    //EditUsersOfUser
-                                                    Find_Flag1 = true;
-                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Tag = UsersOfUser[m].UserID;
-                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Text = UsersOfUser[m].Username == null ? "" : UsersOfUser[m].Username;
-                                                    treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Name = "User";
-                                                }
-                                            }
-                                            if (Find_Flag1 == false)
-                                            {
-                                                //AddUsersOfUser
-                                                TreeNode moreUsers_node = new TreeNode();
-                                                moreUsers_node.Text = UsersOfUser[m].Username == null ? "" : UsersOfUser[m].Username;
-                                                moreUsers_node.Tag = UsersOfUser[m].UserID;
-                                                moreUsers_node.Name = "User";
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(moreUsers_node);
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        for (int n = 0; n < UserUsersCount; n++)
-                                        {
-                                            bool Find_Flag1 = false;
-                                            for (int m = 0; m < UsersOfUser_length; m++)
-                                            {
-                                                if (UsersOfUser[m].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Tag)
-                                                {
-                                                    Find_Flag1 = true;
-                                                }
-                                            }
-                                            if (Find_Flag1 == false)
-                                            {
-                                                treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Remove();
-                                                UserUsersCount--;
-                                            }
-                                        }
-                                    }
-                                    #endregion
+        //                                for (int m = 0; m < Companies_length; m++)
+        //                                {
+        //                                    bool Find_Flag1 = false;
+        //                                    for (int n = 0; n < UserCompanyCount; n++)
+        //                                    {
+        //                                        if (companies[m].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n].Tag)
+        //                                        {
+        //                                            //EditUserCompany
+        //                                            Find_Flag1 = true;
+        //                                            treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes[n].Tag = companies[m].CompanyID;
+        //                                            treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes[n].Text = companies[m].Name == null ? "" : companies[m].Name;
+        //                                            treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes[n].Name = "Company";
+        //                                        }
+        //                                    }
+        //                                    if (Find_Flag1 == false)
+        //                                    {
+        //                                        //AddUserCompany
+        //                                        TreeNode company_node = new TreeNode();
+        //                                        company_node.Text = companies[m].Name == null ? "" : companies[j].Name;
+        //                                        company_node.Tag = companies[m].CompanyID;
+        //                                        company_node.Name = "Company";
+        //                                        treeView3.Nodes[0].Nodes[LoginCompany_length + j].Nodes.Add(company_node);
+        //                                    }
+        //                                }
+        //                            }
+        //                            else
+        //                            {
+        //                                for (int n = 0; n < UserCompanyCount; n++)
+        //                                {
+        //                                    bool Find_Flag1 = false;
+        //                                    for (int m = 0; m < Companies_length; m++)
+        //                                    {
+        //                                        if (companies[m].CompanyID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n].Tag)
+        //                                        {
+        //                                            Find_Flag1 = true;
+        //                                        }
+        //                                    }
+        //                                    if (Find_Flag1 == false)
+        //                                    {
+        //                                        treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n].Remove();
+        //                                        UserCompanyCount--;
+        //                                    }
+        //                                }
 
-                                }
-                            }
-                            if (Find_Flag == false)
-                            {
-                                //AddUser
-                                TreeNode user_node = new TreeNode();
-                                user_node.Text = Users[i].Username == null ? "" : Users[i].Username;
-                                user_node.Tag = Users[i].UserID;
-                                user_node.Name = "User";
-                                treeView3.Nodes[0].Nodes.Add(user_node);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        for (int j = 0; j < UsersCount; j++)
-                        {
-                            bool Find_Flag = false;
-                            for (int i = 0; i < Users.Length; i++)
-                            {
-                                if ((Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + j].Tag == Users[i].UserID)
-                                {
-                                    Find_Flag = true;
-                                }
+        //                            }
+        //                            #endregion
 
-                            }
-                            if (Find_Flag == false)
-                            {
-                                treeView3.Nodes[0].Nodes[LoginCompany_length + j].Remove();
-                                UsersCount--;
-                            }
-                        }
-                    }
-                    #endregion
-                }
-                treeView3.EndUpdate();
-            }
+        //                            #region UsersOfUser (Edit, Add)
+        //                            if (UsersOfUser_length > 0 && UsersOfUser_length >= UserUsersCount)
+        //                            {
+        //                                for (int m = 0; m < UsersOfUser_length; m++)
+        //                                {
+        //                                    bool Find_Flag1 = false;
+        //                                    for (int n = 0; n < UserUsersCount; n++)
+        //                                    {
+        //                                        if (UsersOfUser[m].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Tag)
+        //                                        {
+        //                                            //EditUsersOfUser
+        //                                            Find_Flag1 = true;
+        //                                            treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Tag = UsersOfUser[m].UserID;
+        //                                            treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Text = UsersOfUser[m].Username == null ? "" : UsersOfUser[m].Username;
+        //                                            treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Name = "User";
+        //                                        }
+        //                                    }
+        //                                    if (Find_Flag1 == false)
+        //                                    {
+        //                                        //AddUsersOfUser
+        //                                        TreeNode moreUsers_node = new TreeNode();
+        //                                        moreUsers_node.Text = UsersOfUser[m].Username == null ? "" : UsersOfUser[m].Username;
+        //                                        moreUsers_node.Tag = UsersOfUser[m].UserID;
+        //                                        moreUsers_node.Name = "User";
+        //                                        treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes.Add(moreUsers_node);
+        //                                    }
+        //                                }
+        //                            }
+        //                            else
+        //                            {
+        //                                for (int n = 0; n < UserUsersCount; n++)
+        //                                {
+        //                                    bool Find_Flag1 = false;
+        //                                    for (int m = 0; m < UsersOfUser_length; m++)
+        //                                    {
+        //                                        if (UsersOfUser[m].UserID == (Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Tag)
+        //                                        {
+        //                                            Find_Flag1 = true;
+        //                                        }
+        //                                    }
+        //                                    if (Find_Flag1 == false)
+        //                                    {
+        //                                        treeView3.Nodes[0].Nodes[LoginCompany_length + i].Nodes[n + Companies_length].Remove();
+        //                                        UserUsersCount--;
+        //                                    }
+        //                                }
+        //                            }
+        //                            #endregion
 
-            catch (Exception ex)
-            {
-                Auditing.Error(ex.Message);
-            }
-        }
+        //                        }
+        //                    }
+        //                    if (Find_Flag == false)
+        //                    {
+        //                        //AddUser
+        //                        TreeNode user_node = new TreeNode();
+        //                        user_node.Text = Users[i].Username == null ? "" : Users[i].Username;
+        //                        user_node.Tag = Users[i].UserID;
+        //                        user_node.Name = "User";
+        //                        treeView3.Nodes[0].Nodes.Add(user_node);
+        //                    }
+        //                }
+        //            }
+        //            else
+        //            {
+        //                for (int j = 0; j < UsersCount; j++)
+        //                {
+        //                    bool Find_Flag = false;
+        //                    for (int i = 0; i < Users.Length; i++)
+        //                    {
+        //                        if ((Int32)treeView3.Nodes[0].Nodes[LoginCompany_length + j].Tag == Users[i].UserID)
+        //                        {
+        //                            Find_Flag = true;
+        //                        }
 
-        private void treeView3_AfterSelect_1(object sender, TreeViewEventArgs e)
-        {
-            if (e.Node.Name == "Company")
-            {
-                Selected_Company_ID = Convert.ToInt32(e.Node.Tag);
-                Selected_User_ID = Convert.ToInt32(e.Node.Parent.Tag);
-                Load_Data(Selected_Company_ID);
-            }
-            else if (e.Node.Name == "User")
-            {
-                Selected_User_ID = Convert.ToInt32(e.Node.Tag);
-                Users U1 = server_Class_Obj.Select_User(Selected_User_ID);
-                accountName.Text = U1.Username == null ? "" : U1.Username;
-                AccountInfo.Text = U1.Info;
-                accountPassword.Clear();
-                ReAccountPassword.Clear();
-                for (int i = 0; i < U1.Password.Length; i++)
-                {
-                    accountPassword.Text += "*";
-                    ReAccountPassword.Text += "*";
-                }
-            }
-        }
-        #endregion
+        //                    }
+        //                    if (Find_Flag == false)
+        //                    {
+        //                        treeView3.Nodes[0].Nodes[LoginCompany_length + j].Remove();
+        //                        UsersCount--;
+        //                    }
+        //                }
+        //            }
+        //            #endregion
+        //        }
+        //        treeView3.EndUpdate();
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+        //        Auditing.Error(ex.Message);
+        //    }
+        //}
+
+        //private void treeView3_AfterSelect_1(object sender, TreeViewEventArgs e)
+        //{
+        //    if (e.Node.Name == "Company")
+        //    {
+        //        Selected_Company_ID = Convert.ToInt32(e.Node.Tag);
+        //        Selected_User_ID = Convert.ToInt32(e.Node.Parent.Tag);
+        //        Load_Data(Selected_Company_ID);
+        //    }
+        //    else if (e.Node.Name == "User")
+        //    {
+        //        Selected_User_ID = Convert.ToInt32(e.Node.Tag);
+        //        Users U1 = server_Class_Obj.Select_User(Selected_User_ID);
+        //        accountName.Text = U1.Username == null ? "" : U1.Username;
+        //        AccountInfo.Text = U1.Info;
+        //        accountPassword.Clear();
+        //        ReAccountPassword.Clear();
+        //        for (int i = 0; i < U1.Password.Length; i++)
+        //        {
+        //            accountPassword.Text += "*";
+        //            ReAccountPassword.Text += "*";
+        //        }
+        //    }
+        //}
+        //#endregion
 
         #region Building
 
@@ -1650,6 +1653,308 @@ namespace Incident_Reporting_App_Server
                 }
                
             }
+        }
+
+
+        private delegate void Update_Incident_Reporting_trv_Companies_Delegate();
+
+        public void load_all_treeviews_cycle()
+        {
+            try
+            {
+                while (true)
+                {
+                    Thread.Sleep(20000);
+                    Update_Incident_Reporting_trv_Companies();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Auditing.Error(ex.Message);
+            }
+        }
+
+        private void Update_Incident_Reporting_trv_Companies()
+        {
+            try
+            {
+                if (treeView3.InvokeRequired)
+                {
+                    Update_Incident_Reporting_trv_Companies_Delegate _delegate = new Update_Incident_Reporting_trv_Companies_Delegate(Update_Incident_Reporting_trv_Companies);
+                    treeView3.Invoke(_delegate, new object[] { });
+                }
+                else
+                {
+                    treeView3.BeginUpdate();
+
+                    #region Check the TV roots
+                    if (treeView3.Nodes.Count == 0)
+                    {
+                        treeView3.Nodes.Add(LoginAccount.Username);
+                        treeView3.Nodes[0].Tag = LoginAccount;
+                        treeView3.Nodes[0].Checked = true;
+
+                        //Add Main User Companies node
+                        treeView3.Nodes[0].Nodes.Add("Companies");
+                        treeView3.Nodes[0].Nodes[0].Nodes[0].Checked = true;
+
+                        //Add Main User Users node
+                        treeView3.Nodes[0].Nodes.Add("Users");
+                        treeView3.Nodes[0].Nodes[1].Checked = true;
+
+
+                    }
+                    else
+                    {
+                        treeView3.Nodes[0].Tag = LoginAccount;
+                    }
+
+                    #endregion
+
+
+                    #region Add , Edit and Delete main user Companies
+                    if (First_Time_Loading_User_Data_Flag == false)
+                    {
+                        if (LoginAccount.User_Companies != null)
+                        {
+                            for (int umn = treeView3.Nodes[0].Nodes[0].Nodes.Count - 1; umn > LoginAccount.User_Companies.Length - 1; umn--)
+                            {
+                                treeView3.Nodes[0].Nodes[0].Nodes.RemoveAt(umn);
+                            }
+
+                            for (int um = 0; um < LoginAccount.User_Companies.Length; um++)
+                            {
+                                if (um <= treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1)
+                                {
+                                    treeView3.Nodes[0].Nodes[0].Nodes[um].Text = LoginAccount.User_Companies[um].CompanyID.ToString();
+                                    treeView3.Nodes[0].Nodes[0].Nodes[um].Tag = LoginAccount.User_Companies[um];
+                                }
+                                else
+                                {
+                                    treeView3.Nodes[0].Nodes[0].Nodes.Add(LoginAccount.User_Companies[um].CompanyID.ToString());
+                                    treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Tag = LoginAccount.User_Companies[um];
+                                    treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Checked = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int udn = treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1; udn >= 0; udn--)
+                            {
+                                treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.RemoveAt(udn);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (LoginAccount.User_Companies != null)
+                        {
+                            for (int um = 0; um < LoginAccount.User_Companies.Length; um++)
+                            {
+                                treeView3.Nodes[0].Nodes[0].Nodes.Add(LoginAccount.User_Companies[um].CompanyID.ToString());
+                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1].Tag = LoginAccount.User_Companies[um];
+                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1].Checked = true;
+
+
+                            }
+                        }
+                    }
+                    #endregion
+
+
+
+                    Update_User_Users_Companies_TV(LoginAccount.Users_of_Users, treeView3.Nodes[0].Nodes[1]);
+                    First_Time_Loading_User_Data_Flag = false;
+
+
+                    treeView3.EndUpdate();
+                }
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+            }
+        }
+
+        private void Update_User_Users_Companies_TV(Users[] users, TreeNode node_obj)
+        {
+            try
+            {
+                #region Add , Edit and Delete main user usercollection 
+                if (First_Time_Loading_User_Data_Flag == false)
+                {
+                    if (users != null)
+                    {
+                        for (int un = node_obj.Nodes.Count - 1; un > users.Length - 1; un--)
+                        {
+                            node_obj.Nodes.RemoveAt(un);
+                        }
+
+                        for (int uc = 0; uc < users.Length; uc++)
+                        {
+                            if (uc <= node_obj.Nodes.Count - 1)
+                            {
+                                node_obj.Nodes[uc].Text = users[uc].Username;
+                                node_obj.Nodes[uc].Tag = users[uc];
+
+                                #region Add and Edit Companies
+                                if (users[uc].User_Companies != null)
+                                {
+                                    for (int umn = node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1; umn > users[uc].User_Companies.Length - 1; umn--)
+                                    {
+                                        node_obj.Nodes[uc].Nodes[0].Nodes.RemoveAt(umn);
+                                    }
+
+                                    for (int ucm = 0; ucm < users[uc].User_Companies.Length; ucm++)
+                                    {
+                                        if (ucm <= node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1)
+                                        {
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].CompanyID.ToString();
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
+                                        }
+                                        else
+                                        {
+                                            node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].CompanyID.ToString());
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
+                                            
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (node_obj.Nodes[uc].Nodes[0].Nodes != null)
+                                    {
+                                        for (int umn = node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1; umn >= 0; umn--)
+                                        {
+                                            node_obj.Nodes[uc].Nodes[0].Nodes.RemoveAt(umn);
+                                        }
+                                    }
+                                }
+                                #endregion
+                            }
+                            else
+                            {
+                                node_obj.Nodes.Add(users[uc].Username, users[uc].Username);
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Tag = users[uc];
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Checked = true;
+
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Companies");
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
+
+                                #region Add and Edit Companies
+                                if (users[uc].User_Companies != null)
+                                {
+                                    for (int umn = node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1; umn > users[uc].User_Companies.Length - 1; umn--)
+                                    {
+                                        node_obj.Nodes[uc].Nodes[0].Nodes.RemoveAt(umn);
+                                    }
+
+                                    for (int ucm = 0; ucm < users[uc].User_Companies.Length; ucm++)
+                                    {
+                                        if (ucm <= node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1)
+                                        {
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].CompanyID.ToString();
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
+                                        }
+                                        else
+                                        {
+                                            node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].CompanyID.ToString());
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
+
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    for (int umn = node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1; umn >= 0; umn--)
+                                    {
+                                        node_obj.Nodes[uc].Nodes[0].Nodes.RemoveAt(umn);
+                                    }
+                                }
+                                #endregion
+
+                                //Add  User Users node
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Users");
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
+                            }
+
+                            Update_User_Users_Companies_TV(users[uc].Users_of_Users, node_obj.Nodes[uc].Nodes[1]);
+                        }
+                    }
+                    else
+                    {
+                        for (int un = node_obj.Nodes.Count - 1; un >= 0; un--)
+                        {
+                            node_obj.Nodes.RemoveAt(un);
+                        }
+                    }
+                }
+                else
+                {
+                    if (users != null)
+                    {
+                        for (int uc = 0; uc < users.Length; uc++)
+                        {
+                            node_obj.Nodes.Add(users[uc].Username, users[uc].Username);
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Tag = users[uc];
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Checked = true;
+
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Companies");
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
+
+                            #region Add and Edit Companies
+                            if (users[uc].User_Companies != null)
+                            {
+                                for (int umn = node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1; umn > users[uc].User_Companies.Length - 1; umn--)
+                                {
+                                    node_obj.Nodes[uc].Nodes[0].Nodes.RemoveAt(umn);
+                                }
+
+                                for (int ucm = 0; ucm < users[uc].User_Companies.Length; ucm++)
+                                {
+                                    if (ucm <= node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1)
+                                    {
+                                        node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].CompanyID.ToString();
+                                        node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
+                                    }
+                                    else
+                                    {
+                                        node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].CompanyID.ToString());
+                                        node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
+                                        node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Checked = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (int umn = node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1; umn >= 0; umn--)
+                                {
+                                    node_obj.Nodes[uc].Nodes[0].Nodes.RemoveAt(umn);
+                                }
+                            }
+                            #endregion
+
+                            //Add  User Users node
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Users");
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
+
+                            Update_User_Users_Companies_TV(users[uc].Users_of_Users, node_obj.Nodes[uc].Nodes[1]);
+                        }
+                    }
+                }
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+            }
+        }
+
+        private void treeView3_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 

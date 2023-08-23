@@ -52,6 +52,9 @@ namespace Incident_Reporting_App_Server
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -593,7 +596,7 @@ namespace Incident_Reporting_App_Server
             this.treeView3.RightToLeftLayout = true;
             this.treeView3.Size = new System.Drawing.Size(169, 845);
             this.treeView3.TabIndex = 125;
-            this.treeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect_1);
+            this.treeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect);
             // 
             // c1DockingTab1
             // 
@@ -1596,7 +1599,7 @@ namespace Incident_Reporting_App_Server
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(201, 112);
+            this.label25.Location = new System.Drawing.Point(792, 47);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(121, 20);
             this.label25.TabIndex = 5;
@@ -1607,7 +1610,7 @@ namespace Incident_Reporting_App_Server
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(569, 112);
+            this.label24.Location = new System.Drawing.Point(806, 519);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(107, 20);
             this.label24.TabIndex = 4;
@@ -1618,7 +1621,7 @@ namespace Incident_Reporting_App_Server
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(888, 112);
+            this.label23.Location = new System.Drawing.Point(814, 286);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(99, 20);
             this.label23.TabIndex = 3;
@@ -1628,9 +1631,10 @@ namespace Incident_Reporting_App_Server
             // 
             this.PB_ExitPathWayImage_DT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_ExitPathWayImage_DT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PB_ExitPathWayImage_DT.BackgroundImage")));
-            this.PB_ExitPathWayImage_DT.Location = new System.Drawing.Point(101, 162);
+            this.PB_ExitPathWayImage_DT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PB_ExitPathWayImage_DT.Location = new System.Drawing.Point(102, 23);
             this.PB_ExitPathWayImage_DT.Name = "PB_ExitPathWayImage_DT";
-            this.PB_ExitPathWayImage_DT.Size = new System.Drawing.Size(327, 253);
+            this.PB_ExitPathWayImage_DT.Size = new System.Drawing.Size(541, 227);
             this.PB_ExitPathWayImage_DT.TabIndex = 2;
             this.PB_ExitPathWayImage_DT.TabStop = false;
             this.PB_ExitPathWayImage_DT.Click += new System.EventHandler(this.PB_ExitPathWayImage_DT_Click);
@@ -1640,9 +1644,10 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyGeometeryImage_DT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_CompanyGeometeryImage_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.TB_CompanyGeometeryImage_DT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TB_CompanyGeometeryImage_DT.BackgroundImage")));
-            this.TB_CompanyGeometeryImage_DT.Location = new System.Drawing.Point(449, 162);
+            this.TB_CompanyGeometeryImage_DT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TB_CompanyGeometeryImage_DT.Location = new System.Drawing.Point(102, 500);
             this.TB_CompanyGeometeryImage_DT.Name = "TB_CompanyGeometeryImage_DT";
-            this.TB_CompanyGeometeryImage_DT.Size = new System.Drawing.Size(316, 253);
+            this.TB_CompanyGeometeryImage_DT.Size = new System.Drawing.Size(541, 219);
             this.TB_CompanyGeometeryImage_DT.TabIndex = 1;
             this.TB_CompanyGeometeryImage_DT.TabStop = false;
             this.TB_CompanyGeometeryImage_DT.Click += new System.EventHandler(this.TB_CompanyGeometeryImage_DT_Click);
@@ -1652,9 +1657,10 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyImage_DT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_CompanyImage_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.TB_CompanyImage_DT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TB_CompanyImage_DT.BackgroundImage")));
-            this.TB_CompanyImage_DT.Location = new System.Drawing.Point(782, 162);
+            this.TB_CompanyImage_DT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TB_CompanyImage_DT.Location = new System.Drawing.Point(102, 266);
             this.TB_CompanyImage_DT.Name = "TB_CompanyImage_DT";
-            this.TB_CompanyImage_DT.Size = new System.Drawing.Size(301, 253);
+            this.TB_CompanyImage_DT.Size = new System.Drawing.Size(541, 221);
             this.TB_CompanyImage_DT.TabIndex = 0;
             this.TB_CompanyImage_DT.TabStop = false;
             this.TB_CompanyImage_DT.Click += new System.EventHandler(this.TB_CompanyImage_DT_Click);
@@ -1705,7 +1711,7 @@ namespace Incident_Reporting_App_Server
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.ForeColor = System.Drawing.Color.White;
-            this.label69.Location = new System.Drawing.Point(631, 413);
+            this.label69.Location = new System.Drawing.Point(725, 449);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(91, 20);
             this.label69.TabIndex = 122;
@@ -1717,7 +1723,7 @@ namespace Incident_Reporting_App_Server
             this.label70.AutoSize = true;
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.ForeColor = System.Drawing.Color.White;
-            this.label70.Location = new System.Drawing.Point(648, 336);
+            this.label70.Location = new System.Drawing.Point(748, 367);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(68, 20);
             this.label70.TabIndex = 121;
@@ -1729,7 +1735,7 @@ namespace Incident_Reporting_App_Server
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label71.ForeColor = System.Drawing.Color.White;
-            this.label71.Location = new System.Drawing.Point(670, 257);
+            this.label71.Location = new System.Drawing.Point(764, 289);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(52, 20);
             this.label71.TabIndex = 120;
@@ -1741,7 +1747,7 @@ namespace Incident_Reporting_App_Server
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.ForeColor = System.Drawing.Color.White;
-            this.label72.Location = new System.Drawing.Point(682, 186);
+            this.label72.Location = new System.Drawing.Point(776, 213);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(40, 20);
             this.label72.TabIndex = 119;
@@ -1842,7 +1848,7 @@ namespace Incident_Reporting_App_Server
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.ForeColor = System.Drawing.Color.White;
-            this.label73.Location = new System.Drawing.Point(628, 359);
+            this.label73.Location = new System.Drawing.Point(763, 396);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(97, 20);
             this.label73.TabIndex = 129;
@@ -1854,7 +1860,7 @@ namespace Incident_Reporting_App_Server
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label74.ForeColor = System.Drawing.Color.White;
-            this.label74.Location = new System.Drawing.Point(605, 273);
+            this.label74.Location = new System.Drawing.Point(740, 321);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(120, 20);
             this.label74.TabIndex = 128;
@@ -1866,7 +1872,7 @@ namespace Incident_Reporting_App_Server
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label75.ForeColor = System.Drawing.Color.White;
-            this.label75.Location = new System.Drawing.Point(632, 186);
+            this.label75.Location = new System.Drawing.Point(767, 223);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(93, 20);
             this.label75.TabIndex = 127;
@@ -2146,15 +2152,18 @@ namespace Incident_Reporting_App_Server
             // 
             // ff_ManPowerGrid
             // 
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            this.ff_ManPowerGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.ff_ManPowerGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ff_ManPowerGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ff_ManPowerGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.ff_ManPowerGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ff_ManPowerGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column18,
@@ -2163,26 +2172,26 @@ namespace Incident_Reporting_App_Server
             this.Column19,
             this.Column20,
             this.Column21});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ff_ManPowerGrid.DefaultCellStyle = dataGridViewCellStyle16;
-            this.ff_ManPowerGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ff_ManPowerGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.ff_ManPowerGrid.Location = new System.Drawing.Point(0, 442);
-            this.ff_ManPowerGrid.Name = "ff_ManPowerGrid";
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ff_ManPowerGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ff_ManPowerGrid.DefaultCellStyle = dataGridViewCellStyle17;
+            this.ff_ManPowerGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ff_ManPowerGrid.GridColor = System.Drawing.Color.DarkGray;
+            this.ff_ManPowerGrid.Location = new System.Drawing.Point(0, 442);
+            this.ff_ManPowerGrid.Name = "ff_ManPowerGrid";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ff_ManPowerGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.ff_ManPowerGrid.Size = new System.Drawing.Size(1180, 350);
             this.ff_ManPowerGrid.TabIndex = 139;
             // 
@@ -2611,16 +2620,18 @@ namespace Incident_Reporting_App_Server
             // 
             // DG_Pumps_DT
             // 
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DG_Pumps_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.DG_Pumps_DT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DG_Pumps_DT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_Pumps_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_Pumps_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.DG_Pumps_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG_Pumps_DT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column22,
@@ -2631,24 +2642,31 @@ namespace Incident_Reporting_App_Server
             this.Column27,
             this.Column28,
             this.Column29});
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_Pumps_DT.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_Pumps_DT.DefaultCellStyle = dataGridViewCellStyle21;
+            this.DG_Pumps_DT.GridColor = System.Drawing.Color.DarkGray;
             this.DG_Pumps_DT.Location = new System.Drawing.Point(0, 346);
             this.DG_Pumps_DT.Name = "DG_Pumps_DT";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_Pumps_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_Pumps_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.DG_Pumps_DT.RowsDefaultCellStyle = dataGridViewCellStyle23;
             this.DG_Pumps_DT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_Pumps_DT.Size = new System.Drawing.Size(1178, 477);
             this.DG_Pumps_DT.TabIndex = 41;

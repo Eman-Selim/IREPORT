@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Incident_Reporting_App_Server
 {
@@ -66,7 +67,10 @@ namespace Incident_Reporting_App_Server
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
-            TB_DCompanyImage_UC.Image = Image.FromFile(filePath);
+            if (File.Exists(filePath))
+            {
+                TB_DCompanyImage_UC.Image = Image.FromFile(filePath);
+            }
         }
     }
 }
