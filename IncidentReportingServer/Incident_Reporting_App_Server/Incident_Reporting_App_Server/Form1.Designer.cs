@@ -169,6 +169,7 @@ namespace Incident_Reporting_App_Server
             this.fleet_login_pnl_Username.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fleet_login_pnl_Username.Controls.Add(this.Login_txt_Username);
             this.fleet_login_pnl_Username.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fleet_login_pnl_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fleet_login_pnl_Username.Location = new System.Drawing.Point(3, 3);
             this.fleet_login_pnl_Username.Name = "fleet_login_pnl_Username";
             this.fleet_login_pnl_Username.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
@@ -209,12 +210,12 @@ namespace Incident_Reporting_App_Server
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Login_txt_Password.BackColor = System.Drawing.Color.White;
             this.Login_txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Login_txt_Password.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_txt_Password.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_txt_Password.ForeColor = System.Drawing.Color.Black;
             this.Login_txt_Password.Location = new System.Drawing.Point(32, 2);
             this.Login_txt_Password.Name = "Login_txt_Password";
             this.Login_txt_Password.PasswordChar = '*';
-            this.Login_txt_Password.Size = new System.Drawing.Size(108, 13);
+            this.Login_txt_Password.Size = new System.Drawing.Size(108, 14);
             this.Login_txt_Password.TabIndex = 100;
             this.Login_txt_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Login_txt_Password.UseSystemPasswordChar = true;
@@ -231,6 +232,7 @@ namespace Incident_Reporting_App_Server
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 23);

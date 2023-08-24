@@ -51,7 +51,7 @@ namespace Incident_Reporting_App_Server
             pictureBox5.MouseWheel += PictureBox5_MouseWheel;
             Thread Main_Thread = new Thread(load_all_treeviews_cycle);
             Main_Thread.Start();
-
+            LoginAccount = server_Class_Obj.Select_Account();
             #region load acounts treeview
             //LoginAccount = server_Class_Obj.Select_Account();
             //treeView3.Nodes[0].Tag = LoginAccount.UserID;
@@ -426,7 +426,7 @@ namespace Incident_Reporting_App_Server
             men.FF_ID = st.FF_ID;
             FF_ManPower MM = server_Class_Obj.AddFF_ManPower(men);
             if (MM != null)
-                richTextBox1.AppendText("\n Station_ManPower Updated Successfully");
+                richTextBox1.Text="\n Station_ManPower Updated Successfully";
         }
 
         private void EditStationsManPower_Click_1(object sender, EventArgs e)
@@ -450,14 +450,14 @@ namespace Incident_Reporting_App_Server
             men.FF_ID = station.FF_ID;
             bool flag = server_Class_Obj.Update_FF_ManPower(men);
             if (flag == true && flag1 == true)
-                richTextBox1.AppendText("\n Station_ManPower Updated Successfully");
+                richTextBox1.Text="\n Station_ManPower Updated Successfully";
         }
 
         private void DeleteStationsManPower_Click_1(object sender, EventArgs e)
         {
             bool flag = server_Class_Obj.Delete_FFstations(station.FF_ID);
             if (flag == true)
-                richTextBox1.AppendText("\n Station_ManPower Deleted Successfully");
+                richTextBox1.Text="\n Station_ManPower Deleted Successfully";
         }
 
         #endregion
@@ -800,7 +800,7 @@ namespace Incident_Reporting_App_Server
         //        }
         //    }
         //}
-        #endregion
+        //#endregion
 
         //#region treeview 
         //public delegate void load_trv_delegate();
@@ -1131,7 +1131,7 @@ namespace Incident_Reporting_App_Server
         //        }
         //    }
         //}
-        //#endregion
+        #endregion
 
         #region Building
 
@@ -1265,14 +1265,14 @@ namespace Incident_Reporting_App_Server
                 Newbuildings[i].CompanyID = c1.CompanyID;
                 Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
                 if (B1 != null)
-                    statusfeild.AppendText("\n Building added Successfully");
+                    statusfeild.Text="\n Building added Successfully";
                 foreach (var kvp in NewFloors.FindAll(m => m.Key == i+1))
                 {
                     Floors floor = new Floors();
                     kvp.Value.BuildingID = B1.BuildingID;
                     floor=server_Class_Obj.Add_Floors(kvp.Value);
                     if (floor != null)
-                        statusfeild.AppendText("\n Floor added Successfully");
+                        statusfeild.Text="\n Floor added Successfully";
                 }
 
                 ExitPathways exitPathWay = new ExitPathways();
@@ -1282,7 +1282,7 @@ namespace Incident_Reporting_App_Server
                 exitPathWay.Description = "";
                 exitPathWay = server_Class_Obj.Add_exitPath(exitPathWay);
                 if (exitPathWay != null)
-                    statusfeild.AppendText("\n exitPathWay added Successfully");
+                    statusfeild.Text="\n exitPathWay added Successfully";
             }
             DangerousPlaces place = new DangerousPlaces();
             place.Location = DangerouseLocation.Text;
@@ -1293,7 +1293,7 @@ namespace Incident_Reporting_App_Server
             place.CompanyID = c1.CompanyID;
             place = server_Class_Obj.Add_DangerousPlace(place);
             if (place != null)
-                statusfeild.AppendText("\n DangerousPlaces added Successfully");
+                statusfeild.Text="\n DangerousPlaces added Successfully";
         }
 
         private void deleteBuildingList_Click(object sender, EventArgs e)
@@ -1350,7 +1350,7 @@ namespace Incident_Reporting_App_Server
         {
             bool flag=server_Class_Obj.Delete_Company(Selected_Company_ID);
             if(flag ==true)
-                statusfeild.AppendText("\n Company Deleted Successfully");
+                statusfeild.Text="\n Company Deleted Successfully";
 
 
 
@@ -1397,7 +1397,7 @@ namespace Incident_Reporting_App_Server
             c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? imagenu : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
             bool flag= server_Class_Obj.Update_Company(c1);
             if(flag==true)
-                statusfeild.AppendText("\n Company updated Successfully");
+                statusfeild.Text="\n Company updated Successfully";
 
             Buildings building = new Buildings();
             building.BuildingNumber = BuildingNumber.Text==""? -1 : Convert.ToInt32(BuildingNumber.Text);
@@ -1409,7 +1409,7 @@ namespace Incident_Reporting_App_Server
             flag = server_Class_Obj.Update_Building(building);
             if (flag == true)
             {
-                statusfeild.AppendText("\n Building updated Successfully");
+                statusfeild.Text="\n Building updated Successfully";
 
                 Floors floor = new Floors();
                 floor.FloorNumber = DG_Floors_DT.CurrentRow.Cells[0].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[0].Value;
@@ -1423,7 +1423,7 @@ namespace Incident_Reporting_App_Server
                 floor.BuildingID = building.BuildingID;
                 flag = server_Class_Obj.Update_Floor(floor);
                 if (flag == true)
-                    statusfeild.AppendText("\n Floor updated Successfully");
+                    statusfeild.Text="\n Floor updated Successfully";
 
                 DangerousPlaces place = new DangerousPlaces();
                 place.Location = DangerouseLocation.Text == null ? "" : DangerouseLocation.Text;
@@ -1434,7 +1434,7 @@ namespace Incident_Reporting_App_Server
                 place.CompanyID = c1.CompanyID;
                 flag = server_Class_Obj.Update_DangerousePlaces(place);
                 if (flag == true)
-                    statusfeild.AppendText("\n DangerousPlace updated Successfully");
+                    statusfeild.Text="\n DangerousPlace updated Successfully";
 
                 ExitPathways exitPathWay = new ExitPathways();
                 exitPathWay.BuildingID = building.BuildingID;
@@ -1443,7 +1443,7 @@ namespace Incident_Reporting_App_Server
                 exitPathWay.Description = "";
                 flag = server_Class_Obj.Update_ExitPathways(exitPathWay);
                 if (flag == true)
-                    statusfeild.AppendText("\n ExitPathway updated Successfully");
+                    statusfeild.Text="\n ExitPathway updated Successfully";
             }
               
         }
@@ -1508,7 +1508,7 @@ namespace Incident_Reporting_App_Server
             pump.UserID = Selected_User_ID;
             FF_pumps p=server_Class_Obj.Add_FFPump(pump);
             if(p!=null)
-                richTextBox1.AppendText("\n FF_pumps Added Successfully");
+                richTextBox1.Text="\n FF_pumps Added Successfully";
 
         }
 
@@ -1526,7 +1526,7 @@ namespace Incident_Reporting_App_Server
             pump.UserID = Selected_User_ID;
             bool flag=server_Class_Obj.Update_FFPump(pump);
             if (flag ==true)
-                richTextBox1.AppendText("\n FF_pumps Updated Successfully");
+                richTextBox1.Text="\n FF_pumps Updated Successfully";
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1553,7 +1553,7 @@ namespace Incident_Reporting_App_Server
             pumpInfo.Text = "";
             bool flag = server_Class_Obj.Delete_FF_pumps(pump.FF_pumpsID);
             if (flag == true)
-                richTextBox1.AppendText("\n FF_pumps Deleted Successfully");
+                richTextBox1.Text="\n FF_pumps Deleted Successfully";
         }
         #endregion
 
@@ -1666,7 +1666,7 @@ namespace Incident_Reporting_App_Server
                 {
                     Thread.Sleep(20000);
                     Update_Incident_Reporting_trv_Companies();
-
+                    
                 }
             }
             catch (Exception ex)
@@ -1694,15 +1694,13 @@ namespace Incident_Reporting_App_Server
                     {
                         treeView3.Nodes.Add(LoginAccount.Username);
                         treeView3.Nodes[0].Tag = LoginAccount;
-                        treeView3.Nodes[0].Checked = true;
+                        //treeView3.Nodes[0].Checked = true;
 
                         //Add Main User Companies node
                         treeView3.Nodes[0].Nodes.Add("Companies");
-                        treeView3.Nodes[0].Nodes[0].Nodes[0].Checked = true;
 
                         //Add Main User Users node
                         treeView3.Nodes[0].Nodes.Add("Users");
-                        treeView3.Nodes[0].Nodes[1].Checked = true;
 
 
                     }
@@ -1726,24 +1724,26 @@ namespace Incident_Reporting_App_Server
 
                             for (int um = 0; um < LoginAccount.User_Companies.Length; um++)
                             {
-                                if (um <= treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1)
+                                if (um <= treeView3.Nodes[0].Nodes[0].Nodes.Count - 1)
                                 {
-                                    treeView3.Nodes[0].Nodes[0].Nodes[um].Text = LoginAccount.User_Companies[um].CompanyID.ToString();
+                                    treeView3.Nodes[0].Nodes[0].Nodes[um].Text = LoginAccount.User_Companies[um].Name.ToString();
                                     treeView3.Nodes[0].Nodes[0].Nodes[um].Tag = LoginAccount.User_Companies[um];
+                                    treeView3.Nodes[0].Nodes[0].Nodes[um].Name = "Company";
                                 }
                                 else
                                 {
-                                    treeView3.Nodes[0].Nodes[0].Nodes.Add(LoginAccount.User_Companies[um].CompanyID.ToString());
+                                    treeView3.Nodes[0].Nodes[0].Nodes.Add(LoginAccount.User_Companies[um].Name.ToString());
                                     treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Tag = LoginAccount.User_Companies[um];
+                                    treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Name = "Company";
                                     treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Checked = true;
                                 }
                             }
                         }
                         else
                         {
-                            for (int udn = treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1; udn >= 0; udn--)
+                            for (int udn = treeView3.Nodes[0].Nodes[0].Nodes.Count - 1; udn >= 0; udn--)
                             {
-                                treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.RemoveAt(udn);
+                                treeView3.Nodes[0].Nodes[0].Nodes.RemoveAt(udn);
                             }
                         }
                     }
@@ -1753,11 +1753,10 @@ namespace Incident_Reporting_App_Server
                         {
                             for (int um = 0; um < LoginAccount.User_Companies.Length; um++)
                             {
-                                treeView3.Nodes[0].Nodes[0].Nodes.Add(LoginAccount.User_Companies[um].CompanyID.ToString());
-                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1].Tag = LoginAccount.User_Companies[um];
-                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes[0].Nodes.Count - 1].Checked = true;
-
-
+                                treeView3.Nodes[0].Nodes[0].Nodes.Add(LoginAccount.User_Companies[um].Name.ToString());
+                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Tag = LoginAccount.User_Companies[um];
+                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Name ="Company";
+                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Checked = true;
                             }
                         }
                     }
@@ -1783,6 +1782,7 @@ namespace Incident_Reporting_App_Server
             try
             {
                 #region Add , Edit and Delete main user usercollection 
+
                 if (First_Time_Loading_User_Data_Flag == false)
                 {
                     if (users != null)
@@ -1811,12 +1811,12 @@ namespace Incident_Reporting_App_Server
                                     {
                                         if (ucm <= node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1)
                                         {
-                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].CompanyID.ToString();
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].Name.ToString();
                                             node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
                                         }
                                         else
                                         {
-                                            node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].CompanyID.ToString());
+                                            node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].Name.ToString());
                                             node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
                                             
                                         }
@@ -1855,12 +1855,12 @@ namespace Incident_Reporting_App_Server
                                     {
                                         if (ucm <= node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1)
                                         {
-                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].CompanyID.ToString();
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].Name.ToString();
                                             node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
                                         }
                                         else
                                         {
-                                            node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].CompanyID.ToString());
+                                            node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].Name.ToString());
                                             node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
 
                                         }
@@ -1916,12 +1916,12 @@ namespace Incident_Reporting_App_Server
                                 {
                                     if (ucm <= node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1)
                                     {
-                                        node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].CompanyID.ToString();
+                                        node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].Name.ToString();
                                         node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
                                     }
                                     else
                                     {
-                                        node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].CompanyID.ToString());
+                                        node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].Name.ToString());
                                         node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
                                         node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Checked = true;
                                     }
@@ -1954,7 +1954,26 @@ namespace Incident_Reporting_App_Server
 
         private void treeView3_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            if (e.Node.Name == "Company")
+            {
+                Selected_Company_ID = Convert.ToInt32(e.Node.Tag);
+                Selected_User_ID = Convert.ToInt32(e.Node.Parent.Tag);
+                Load_Data(Selected_Company_ID);
+            }
+            else if (e.Node.Name == "User")
+            {
+                Selected_User_ID = Convert.ToInt32(e.Node.Tag);
+                Users U1 = server_Class_Obj.Select_User(Selected_User_ID);
+                accountName.Text = U1.Username == null ? "" : U1.Username;
+                AccountInfo.Text = U1.Info;
+                accountPassword.Clear();
+                ReAccountPassword.Clear();
+                for (int i = 0; i < U1.Password.Length; i++)
+                {
+                    accountPassword.Text += "*";
+                    ReAccountPassword.Text += "*";
+                }
+            }
         }
     }
 
