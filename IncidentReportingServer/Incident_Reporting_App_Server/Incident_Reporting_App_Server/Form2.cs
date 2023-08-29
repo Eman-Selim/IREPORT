@@ -1468,28 +1468,40 @@ namespace Incident_Reporting_App_Server
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
-            BuildingGeoPic_DT.Image = Image.FromFile(filePath);
+            if (File.Exists(filePath))
+            {
+                BuildingGeoPic_DT.Image = Image.FromFile(filePath);
+            }
         }
 
         private void TB_CompanyImage_DT_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
-            TB_CompanyImage_DT.Image = Image.FromFile(filePath);
+            if (File.Exists(filePath))
+            {
+                TB_CompanyImage_DT.Image = Image.FromFile(filePath);
+            }
         }
 
         private void TB_CompanyGeometeryImage_DT_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
-            TB_CompanyGeometeryImage_DT.Image = Image.FromFile(filePath);
+            if (File.Exists(filePath))
+            {
+                TB_CompanyGeometeryImage_DT.Image = Image.FromFile(filePath);
+            }
         }
 
         private void PB_ExitPathWayImage_DT_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
-            PB_ExitPathWayImage_DT.Image = Image.FromFile(filePath);
+            if (File.Exists(filePath))
+            {
+                PB_ExitPathWayImage_DT.Image = Image.FromFile(filePath);
+            }
         }
         #endregion
 
@@ -1694,7 +1706,6 @@ namespace Incident_Reporting_App_Server
                     {
                         treeView3.Nodes.Add(LoginAccount.Username);
                         treeView3.Nodes[0].Tag = LoginAccount;
-                        //treeView3.Nodes[0].Checked = true;
 
                         //Add Main User Companies node
                         treeView3.Nodes[0].Nodes.Add("Companies");
@@ -1798,6 +1809,7 @@ namespace Incident_Reporting_App_Server
                             {
                                 node_obj.Nodes[uc].Text = users[uc].Username;
                                 node_obj.Nodes[uc].Tag = users[uc];
+                                node_obj.Nodes[uc].Name = "User";
 
                                 #region Add and Edit Companies
                                 if (users[uc].User_Companies != null)
@@ -1838,6 +1850,7 @@ namespace Incident_Reporting_App_Server
                             {
                                 node_obj.Nodes.Add(users[uc].Username, users[uc].Username);
                                 node_obj.Nodes[node_obj.Nodes.Count - 1].Tag = users[uc];
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Name = "User";
                                 node_obj.Nodes[node_obj.Nodes.Count - 1].Checked = true;
 
                                 node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Companies");
@@ -1899,6 +1912,7 @@ namespace Incident_Reporting_App_Server
                         {
                             node_obj.Nodes.Add(users[uc].Username, users[uc].Username);
                             node_obj.Nodes[node_obj.Nodes.Count - 1].Tag = users[uc];
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Name = "User";
                             node_obj.Nodes[node_obj.Nodes.Count - 1].Checked = true;
 
                             node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Companies");
@@ -1918,11 +1932,13 @@ namespace Incident_Reporting_App_Server
                                     {
                                         node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].Name.ToString();
                                         node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
+                                        node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Name = "Company";
                                     }
                                     else
                                     {
                                         node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].Name.ToString());
                                         node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
+                                        node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Name = "Company";
                                         node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Checked = true;
                                     }
                                 }
@@ -1956,13 +1972,16 @@ namespace Incident_Reporting_App_Server
         {
             if (e.Node.Name == "Company")
             {
-                Selected_Company_ID = Convert.ToInt32(e.Node.Tag);
-                Selected_User_ID = Convert.ToInt32(e.Node.Parent.Tag);
+                Company C1=(Company)e.Node.Tag;
+                Selected_Company_ID = Convert.ToInt32(C1.CompanyID);
+                Users U1 =(Users) e.Node.Parent.Parent.Tag;
+                Selected_User_ID = Convert.ToInt32(U1.UserID);
                 Load_Data(Selected_Company_ID);
             }
             else if (e.Node.Name == "User")
             {
-                Selected_User_ID = Convert.ToInt32(e.Node.Tag);
+                Users SelectedUser = (Users)e.Node.Tag;
+                Selected_User_ID = Convert.ToInt32(SelectedUser.UserID);
                 Users U1 = server_Class_Obj.Select_User(Selected_User_ID);
                 accountName.Text = U1.Username == null ? "" : U1.Username;
                 AccountInfo.Text = U1.Info;
