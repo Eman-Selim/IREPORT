@@ -225,8 +225,11 @@ namespace Incident_Reporting_App_Server
             this.txt_log.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_log.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.txt_log.Location = new System.Drawing.Point(3, 101);
+            this.txt_log.MarqueeAnimationSpeed = 1;
+            this.txt_log.Maximum = 10;
             this.txt_log.Name = "txt_log";
             this.txt_log.Size = new System.Drawing.Size(145, 13);
+            this.txt_log.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.txt_log.TabIndex = 101;
             // 
             // button1

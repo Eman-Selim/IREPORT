@@ -93,21 +93,16 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                if (Login_txt_Username.Text == "" && Login_txt_Password.Text == "")
-                {
-                    log_Handler("check all required data");
-                }
-                else if ((Login_txt_Username.Text == "" || Login_txt_Password.Text == ""))
-                {
-                    if ((Login_txt_Username.Text == ""))
-                        log_Handler("Please Enter your User name");
-                    if ((Login_txt_Password.Text == ""))
-                        log_Handler("Please Enter your Password");
-                }
-                else
-                {
+                
+               
                     server_Class_Obj.Start_Server(Login_txt_Username.Text, Login_txt_Password.Text);
-                }
+                    int i;
+                    txt_log.Minimum = 0;
+                    txt_log.Maximum = 5;
+                    for (i = 0; i <= 5; i++)
+                    {
+                        txt_log.Value = i;
+                    }
             }
             catch (Exception exception1)
             {
