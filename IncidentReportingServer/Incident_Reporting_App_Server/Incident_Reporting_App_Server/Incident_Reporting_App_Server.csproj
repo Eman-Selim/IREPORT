@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="C1.Win.C1Command.4, Version=4.0.20133.19597, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1Input.4, Version=4.0.20133.33326, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1InputPanel.4, Version=4.0.20133.168, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1List.2, Version=2.1.20133.240, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1List.4, Version=4.1.20133.240, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1TouchToolKit.4, Version=4.0.20133.2, Culture=neutral, PublicKeyToken=5e531fc0479701e7, processorArchitecture=MSIL" />

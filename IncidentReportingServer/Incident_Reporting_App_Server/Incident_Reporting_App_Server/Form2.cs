@@ -1008,9 +1008,9 @@ namespace Incident_Reporting_App_Server
             {
                 while (true)
                 {
-                    Thread.Sleep(20000);
-                    Update_Incident_Reporting_trv_Companies();
                     
+                    Update_Incident_Reporting_trv_Companies();
+                    Thread.Sleep(20000);
                 }
             }
             catch (Exception ex)

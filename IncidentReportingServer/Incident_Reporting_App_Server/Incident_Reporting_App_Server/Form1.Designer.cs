@@ -40,9 +40,9 @@ namespace Incident_Reporting_App_Server
             this.Login_txt_Username = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.Login_txt_Password = new System.Windows.Forms.TextBox();
-            this.txt_log = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_log = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -148,8 +148,8 @@ namespace Incident_Reporting_App_Server
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.fleet_login_pnl_Username, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel7, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.txt_log, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txt_log, 0, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(160, 115);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -220,18 +220,6 @@ namespace Incident_Reporting_App_Server
             this.Login_txt_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Login_txt_Password.UseSystemPasswordChar = true;
             // 
-            // txt_log
-            // 
-            this.txt_log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_log.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.txt_log.Location = new System.Drawing.Point(3, 101);
-            this.txt_log.MarqueeAnimationSpeed = 1;
-            this.txt_log.Maximum = 10;
-            this.txt_log.Name = "txt_log";
-            this.txt_log.Size = new System.Drawing.Size(145, 13);
-            this.txt_log.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.txt_log.TabIndex = 101;
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -251,6 +239,15 @@ namespace Incident_Reporting_App_Server
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 19);
             this.panel1.TabIndex = 3;
+            // 
+            // txt_log
+            // 
+            this.txt_log.Location = new System.Drawing.Point(3, 101);
+            this.txt_log.MarqueeAnimationSpeed = 1;
+            this.txt_log.Maximum = 10;
+            this.txt_log.Name = "txt_log";
+            this.txt_log.Size = new System.Drawing.Size(145, 13);
+            this.txt_log.TabIndex = 101;
             // 
             // Form1
             // 

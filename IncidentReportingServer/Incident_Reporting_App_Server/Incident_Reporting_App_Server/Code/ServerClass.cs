@@ -28,7 +28,7 @@ namespace Incident_Reporting_App_Server.Code
         /// </summary>
         /// <param name="userName">Contains the Super admin user name</param>
         /// <param name="passWord">Contains the Super admin Password</param>
-        public void Start_Server(string userName, string passWord)
+        public bool Start_Server(string userName, string passWord)
         {
             try
             {
@@ -39,11 +39,18 @@ namespace Incident_Reporting_App_Server.Code
                 {
                     Form2 f2 = new Form2();
                     f2.Show();
+                    if (f2.Visible)
+                    {
+                        return true;
+                    }
+                    
                 }
+                return false;
             }
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
+                return false;
             }
         }
 
@@ -385,7 +392,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-
+        
 
         #endregion
     }

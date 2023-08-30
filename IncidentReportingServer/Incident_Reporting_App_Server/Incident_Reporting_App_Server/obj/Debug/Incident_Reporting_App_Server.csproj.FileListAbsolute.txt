@@ -108,3 +108,5 @@ D:\incident-reporting\IR\IncidentReportingServer\Incident_Reporting_App_Server\I
 D:\incident-reporting\IR\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.UserControl1.resources
 D:\incident-reporting\IR\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.csproj.GenerateResource.Cache
 D:\incident-reporting\IR\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\obj\Debug\Incident_Reporting_App_Server.exe.licenses
+D:\incident-reporting\IR\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1InputPanel.4.dll
+D:\incident-reporting\IR\IncidentReportingServer\Incident_Reporting_App_Server\Incident_Reporting_App_Server\bin\Debug\C1.Win.C1InputPanel.4.xml
