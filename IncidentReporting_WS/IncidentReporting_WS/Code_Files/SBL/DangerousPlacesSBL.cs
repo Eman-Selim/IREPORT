@@ -10,7 +10,24 @@ namespace IncidentReporting_WS.Code_Files.SBL
 	{
         ChkCBL Chk = new ChkCBL();
         DangerousPlacesDAL DangerousPlacesDAL_Obj = new DangerousPlacesDAL();
-
+        public bool DangerousPlaces_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return DangerousPlacesDAL_Obj.DangerousPlaces_Delete_By_CompanyID(username, password, CompanyID);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces DangerousPlaces)
         {
             try

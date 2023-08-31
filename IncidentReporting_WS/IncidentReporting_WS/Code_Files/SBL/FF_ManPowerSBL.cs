@@ -29,6 +29,26 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return false;
             }
         }
+
+        public bool FF_ManPower_DeleteAll(string username, string password, int FF_ID)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return FF_ManPowerDAL_Obj.FF_ManPower_DeleteAll(username, password, FF_ID);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower)
         {
             try

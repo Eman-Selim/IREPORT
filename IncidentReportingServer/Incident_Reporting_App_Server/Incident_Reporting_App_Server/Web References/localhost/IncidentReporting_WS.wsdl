@@ -2,19 +2,19 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="Company_Select_By_UserID">
+      <s:element name="Company_Select_By_RightCompanyName">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Company_Select_By_UserIDResponse">
+      <s:element name="Company_Select_By_RightCompanyNameResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_UserIDResult" type="tns:ArrayOfCompany" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyNameResult" type="tns:ArrayOfCompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -221,6 +221,38 @@
           <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="Company_Select_By_RightFireMediator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightFireMediator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightFireMediatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightFireMediatorResult" type="tns:ArrayOfCompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_UserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_UserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_UserIDResult" type="tns:ArrayOfCompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Managers_Delete">
         <s:complexType>
           <s:sequence>
@@ -313,6 +345,22 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="Buildings_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Buildings_Delete_By_CompanyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Buildings_Delete_By_CompanyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Buildings_Delete_By_CompanyIDResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -714,6 +762,22 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="FF_ManPower_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FF_ManPower_DeleteAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FF_ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FF_ManPower_DeleteAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FF_ManPower_DeleteAllResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1180,6 +1244,22 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="Death_Select_By_RankResult" type="tns:ArrayOfDeath" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DangerousPlaces_Delete_By_CompanyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DangerousPlaces_Delete_By_CompanyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DangerousPlaces_Delete_By_CompanyIDResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1658,38 +1738,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyBusinessResult" type="tns:ArrayOfCompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightCompanyName">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightCompanyNameResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyNameResult" type="tns:ArrayOfCompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightFireMediator">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightFireMediator" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightFireMediatorResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightFireMediatorResult" type="tns:ArrayOfCompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2731,6 +2779,18 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="Company_Select_By_RightCompanyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyName" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightCompanyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightFireMediatorSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediator" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightFireMediatorSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediatorResponse" />
+  </wsdl:message>
   <wsdl:message name="Company_Select_By_UserIDSoapIn">
     <wsdl:part name="parameters" element="tns:Company_Select_By_UserID" />
   </wsdl:message>
@@ -2772,6 +2832,12 @@
   </wsdl:message>
   <wsdl:message name="Buildings_DeleteSoapOut">
     <wsdl:part name="parameters" element="tns:Buildings_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Buildings_Delete_By_CompanyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Buildings_Delete_By_CompanyID" />
+  </wsdl:message>
+  <wsdl:message name="Buildings_Delete_By_CompanyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Buildings_Delete_By_CompanyIDResponse" />
   </wsdl:message>
   <wsdl:message name="Buildings_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:Buildings_Insert" />
@@ -2916,6 +2982,12 @@
   </wsdl:message>
   <wsdl:message name="FF_ManPower_DeleteSoapOut">
     <wsdl:part name="parameters" element="tns:FF_ManPower_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="FF_ManPower_DeleteAllSoapIn">
+    <wsdl:part name="parameters" element="tns:FF_ManPower_DeleteAll" />
+  </wsdl:message>
+  <wsdl:message name="FF_ManPower_DeleteAllSoapOut">
+    <wsdl:part name="parameters" element="tns:FF_ManPower_DeleteAllResponse" />
   </wsdl:message>
   <wsdl:message name="FF_ManPower_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:FF_ManPower_Insert" />
@@ -3084,6 +3156,12 @@
   </wsdl:message>
   <wsdl:message name="Death_Select_By_RankSoapOut">
     <wsdl:part name="parameters" element="tns:Death_Select_By_RankResponse" />
+  </wsdl:message>
+  <wsdl:message name="DangerousPlaces_Delete_By_CompanyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DangerousPlaces_Delete_By_CompanyID" />
+  </wsdl:message>
+  <wsdl:message name="DangerousPlaces_Delete_By_CompanyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DangerousPlaces_Delete_By_CompanyIDResponse" />
   </wsdl:message>
   <wsdl:message name="DangerousPlaces_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:DangerousPlaces_Insert" />
@@ -3264,18 +3342,6 @@
   </wsdl:message>
   <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapOut">
     <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusinessResponse" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyNameSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyName" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyNameSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyNameResponse" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightFireMediatorSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediator" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightFireMediatorSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediatorResponse" />
   </wsdl:message>
   <wsdl:message name="Users_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:Users_Delete" />
@@ -3650,6 +3716,14 @@
     <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_SectorResponse" />
   </wsdl:message>
   <wsdl:portType name="IncidentReporting_WSSoap">
+    <wsdl:operation name="Company_Select_By_RightCompanyName">
+      <wsdl:input message="tns:Company_Select_By_RightCompanyNameSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_RightCompanyNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightFireMediator">
+      <wsdl:input message="tns:Company_Select_By_RightFireMediatorSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_RightFireMediatorSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_UserID">
       <wsdl:input message="tns:Company_Select_By_UserIDSoapIn" />
       <wsdl:output message="tns:Company_Select_By_UserIDSoapOut" />
@@ -3677,6 +3751,10 @@
     <wsdl:operation name="Buildings_Delete">
       <wsdl:input message="tns:Buildings_DeleteSoapIn" />
       <wsdl:output message="tns:Buildings_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Buildings_Delete_By_CompanyID">
+      <wsdl:input message="tns:Buildings_Delete_By_CompanyIDSoapIn" />
+      <wsdl:output message="tns:Buildings_Delete_By_CompanyIDSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Buildings_Insert">
       <wsdl:input message="tns:Buildings_InsertSoapIn" />
@@ -3773,6 +3851,10 @@
     <wsdl:operation name="FF_ManPower_Delete">
       <wsdl:input message="tns:FF_ManPower_DeleteSoapIn" />
       <wsdl:output message="tns:FF_ManPower_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FF_ManPower_DeleteAll">
+      <wsdl:input message="tns:FF_ManPower_DeleteAllSoapIn" />
+      <wsdl:output message="tns:FF_ManPower_DeleteAllSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="FF_ManPower_Insert">
       <wsdl:input message="tns:FF_ManPower_InsertSoapIn" />
@@ -3885,6 +3967,10 @@
     <wsdl:operation name="Death_Select_By_Rank">
       <wsdl:input message="tns:Death_Select_By_RankSoapIn" />
       <wsdl:output message="tns:Death_Select_By_RankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DangerousPlaces_Delete_By_CompanyID">
+      <wsdl:input message="tns:DangerousPlaces_Delete_By_CompanyIDSoapIn" />
+      <wsdl:output message="tns:DangerousPlaces_Delete_By_CompanyIDSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DangerousPlaces_Insert">
       <wsdl:input message="tns:DangerousPlaces_InsertSoapIn" />
@@ -4005,14 +4091,6 @@
     <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
       <wsdl:input message="tns:Company_Select_By_RightCompanyBusinessSoapIn" />
       <wsdl:output message="tns:Company_Select_By_RightCompanyBusinessSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyName">
-      <wsdl:input message="tns:Company_Select_By_RightCompanyNameSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_RightCompanyNameSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightFireMediator">
-      <wsdl:input message="tns:Company_Select_By_RightFireMediatorSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_RightFireMediatorSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Users_Delete">
       <wsdl:input message="tns:Users_DeleteSoapIn" />
@@ -4265,6 +4343,24 @@
   </wsdl:portType>
   <wsdl:binding name="IncidentReporting_WSSoap" type="tns:IncidentReporting_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_RightCompanyName">
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightFireMediator">
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_UserID">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
       <wsdl:input>
@@ -4321,6 +4417,15 @@
     </wsdl:operation>
     <wsdl:operation name="Buildings_Delete">
       <soap:operation soapAction="http://tempuri.org/Buildings_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buildings_Delete_By_CompanyID">
+      <soap:operation soapAction="http://tempuri.org/Buildings_Delete_By_CompanyID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4537,6 +4642,15 @@
     </wsdl:operation>
     <wsdl:operation name="FF_ManPower_Delete">
       <soap:operation soapAction="http://tempuri.org/FF_ManPower_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FF_ManPower_DeleteAll">
+      <soap:operation soapAction="http://tempuri.org/FF_ManPower_DeleteAll" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4789,6 +4903,15 @@
     </wsdl:operation>
     <wsdl:operation name="Death_Select_By_Rank">
       <soap:operation soapAction="http://tempuri.org/Death_Select_By_Rank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DangerousPlaces_Delete_By_CompanyID">
+      <soap:operation soapAction="http://tempuri.org/DangerousPlaces_Delete_By_CompanyID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5059,24 +5182,6 @@
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyName">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightFireMediator">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5645,6 +5750,24 @@
   </wsdl:binding>
   <wsdl:binding name="IncidentReporting_WSSoap12" type="tns:IncidentReporting_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_RightCompanyName">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightFireMediator">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_UserID">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
       <wsdl:input>
@@ -5701,6 +5824,15 @@
     </wsdl:operation>
     <wsdl:operation name="Buildings_Delete">
       <soap12:operation soapAction="http://tempuri.org/Buildings_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buildings_Delete_By_CompanyID">
+      <soap12:operation soapAction="http://tempuri.org/Buildings_Delete_By_CompanyID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5917,6 +6049,15 @@
     </wsdl:operation>
     <wsdl:operation name="FF_ManPower_Delete">
       <soap12:operation soapAction="http://tempuri.org/FF_ManPower_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FF_ManPower_DeleteAll">
+      <soap12:operation soapAction="http://tempuri.org/FF_ManPower_DeleteAll" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6169,6 +6310,15 @@
     </wsdl:operation>
     <wsdl:operation name="Death_Select_By_Rank">
       <soap12:operation soapAction="http://tempuri.org/Death_Select_By_Rank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DangerousPlaces_Delete_By_CompanyID">
+      <soap12:operation soapAction="http://tempuri.org/DangerousPlaces_Delete_By_CompanyID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6439,24 +6589,6 @@
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyName">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightFireMediator">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

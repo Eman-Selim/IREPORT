@@ -328,6 +328,18 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
+        public bool DeleteFF_ManPower(int FF_ID)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FF_ManPower_DeleteAll(UserName, Password, FF_ID);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
         public bool Delete_FFstations(int id)
         {
             try
@@ -341,7 +353,32 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
+        public bool Delete_Building(int id)
+        {
+            try
+            {
 
+                return IncidentReporting_WS_Obj.Buildings_Delete_By_CompanyID(UserName, Password, id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
+        public bool Delete_DangerousPlaces(int id)
+        {
+            try
+            {
+
+                return IncidentReporting_WS_Obj.DangerousPlaces_Delete_By_CompanyID(UserName, Password, id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
         public FF_pumps Add_FFPump(FF_pumps pump)
         {
             try

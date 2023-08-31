@@ -31,6 +31,25 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
+        public bool FF_ManPower_DeleteAll(string username, string password, int FF_ID)
+        {
+            try
+            {
+                object[,] sp_Params = new object[,]
+                {
+                    {"@username", username},
+                    {"@password", password},
+                    {"@FF_ID", FF_ID}
+                };
+                bool flag = db.Execute_Update_Delete_Stored_Procedure("FF_ManPower_DeleteAll", sp_Params);
+                return flag;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower)
         {
             try

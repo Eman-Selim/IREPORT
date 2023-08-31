@@ -105,7 +105,13 @@ namespace Incident_Reporting_App_Server
                 else
                 {
                     txt_log.Value = value;
-                    txt_log.Update();
+                    //txt_log.Update();
+                    //if(workdone)
+                    //{
+                    //    foreach (Form f in Application.OpenForms)
+                    //        if (f.Name == "Form1")
+                    //            f.Close();
+                    //}
                 }
             }
             catch (Exception ex)
@@ -125,9 +131,7 @@ namespace Incident_Reporting_App_Server
                 Thread.Sleep(100);
             }
             change_loadingbar_percentage(10);
-            foreach (Form f in Application.OpenForms)
-                if (f.Name == "Form1")
-                    f.Close();
+            
         }
 
 

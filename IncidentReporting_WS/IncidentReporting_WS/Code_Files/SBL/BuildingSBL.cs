@@ -34,6 +34,24 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
+        public bool Buildings_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return BuildingsDAL_Obj.Buildings_Delete_By_CompanyID(username, password, CompanyID);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public Buildings Buildings_Insert(string username, string password, Buildings buildings)
         {
             try

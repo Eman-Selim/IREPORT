@@ -12,6 +12,24 @@ namespace IncidentReporting_WS.Code_Files.DAL
     {
         DBL.DBL db = new DBL.DBL();
 
+        public bool DangerousPlaces_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                object[,] sp_Params = new object[,]
+                {
+                    {"@username", username},
+                    {"@password", password},
+                    {"@CompanyID", CompanyID}
+                };
+                bool flag = db.Execute_Update_Delete_Stored_Procedure("DangerousPlaces_Delete_By_CompanyID", sp_Params);
+                return flag;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces DangerousPlaces)
         {
             try

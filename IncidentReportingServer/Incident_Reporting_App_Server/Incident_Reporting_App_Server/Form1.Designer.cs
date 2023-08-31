@@ -41,8 +41,8 @@ namespace Incident_Reporting_App_Server
             this.panel7 = new System.Windows.Forms.Panel();
             this.Login_txt_Password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txt_log = new System.Windows.Forms.ProgressBar();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -232,6 +232,17 @@ namespace Incident_Reporting_App_Server
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // txt_log
+            // 
+            this.txt_log.ForeColor = System.Drawing.Color.YellowGreen;
+            this.txt_log.Location = new System.Drawing.Point(3, 101);
+            this.txt_log.MarqueeAnimationSpeed = 1;
+            this.txt_log.Maximum = 10;
+            this.txt_log.Name = "txt_log";
+            this.txt_log.Size = new System.Drawing.Size(145, 13);
+            this.txt_log.Step = 1;
+            this.txt_log.TabIndex = 101;
+            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -239,15 +250,6 @@ namespace Incident_Reporting_App_Server
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 19);
             this.panel1.TabIndex = 3;
-            // 
-            // txt_log
-            // 
-            this.txt_log.Location = new System.Drawing.Point(3, 101);
-            this.txt_log.MarqueeAnimationSpeed = 1;
-            this.txt_log.Maximum = 10;
-            this.txt_log.Name = "txt_log";
-            this.txt_log.Size = new System.Drawing.Size(145, 13);
-            this.txt_log.TabIndex = 101;
             // 
             // Form1
             // 

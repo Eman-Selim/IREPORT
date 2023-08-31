@@ -30,6 +30,24 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
+        public bool Buildings_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                object[,] sp_Params = new object[,]
+                {
+                    {"@username", username},
+                    {"@password", password},
+                    {"@CompanyID", CompanyID}
+                };
+                bool flag = db.Execute_Update_Delete_Stored_Procedure("Buildings_Delete_By_CompanyID", sp_Params);
+                return flag;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public Buildings Buildings_Insert(string username, string password, Buildings   buildings)
         {
             try

@@ -1093,7 +1093,22 @@ namespace IncidentReporting_WS
             }
         }
 
-       
+
+        [WebMethod]
+        public bool FF_ManPower_DeleteAll(string username, string password, int FF_ID)
+        {
+            try
+            {
+
+                return FF_ManPowerSBL_Obj.FF_ManPower_DeleteAll(username, password, FF_ID);
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         [WebMethod]
         public FF_ManPower FF_ManPower_Insert(string username, string password, FF_ManPower ManPower)
         {
@@ -1550,6 +1565,19 @@ namespace IncidentReporting_WS
         
         #region DangerousPlacesSBL
         DangerousPlacesSBL DangerousPlacesSBL_Obj =new DangerousPlacesSBL();
+
+        [WebMethod]
+        public bool DangerousPlaces_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                return DangerousPlacesSBL_Obj.DangerousPlaces_Delete_By_CompanyID(username, password, CompanyID);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
         [WebMethod]
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces dangerousPlaces)
@@ -2152,6 +2180,18 @@ namespace IncidentReporting_WS
             }
         }
 
+        [WebMethod]
+        public bool Buildings_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                return BuildingSBL_Obj.Buildings_Delete_By_CompanyID(username, password, CompanyID);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         [WebMethod]
         public Buildings Buildings_Insert(string username, string password, Buildings buildings)
         {

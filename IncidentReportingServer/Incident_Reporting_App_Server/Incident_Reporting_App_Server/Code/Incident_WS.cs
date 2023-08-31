@@ -759,6 +759,20 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
+
+        public bool FF_ManPower_DeleteAll(string username, string password, int FF_ID)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.FF_ManPower_DeleteAll(username, password, FF_ID);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return false;
+            }
+        }
+
         public bool FF_ManPower_Update(string username, string password, FF_ManPower ManPower)
         {
             try
@@ -1135,6 +1149,19 @@ namespace Incident_Reporting_App_Server.Code
         #endregion
 
         #region DangerousPlaces
+
+        public bool DangerousPlaces_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.DangerousPlaces_Delete_By_CompanyID(username, password, CompanyID);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return false;
+            }
+        }
 
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces dangerousPlaces)
         {
@@ -1642,6 +1669,19 @@ namespace Incident_Reporting_App_Server.Code
             try
             {
                 return IncidentReporting_WS_Obj.Buildings_Delete(username, password, BuildingID);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return false;
+            }
+        }
+
+        public bool Buildings_Delete_By_CompanyID(string username, string password, int CompanyID)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.Buildings_Delete_By_CompanyID(username, password, CompanyID);
             }
             catch (Exception ex)
             {
