@@ -30,7 +30,7 @@ namespace Incident_Reporting_App_Server
         Managers[] managers;
         DangerousPlaces[] places;
         FFstations[] points;
-        FFstations station=new FFstations();
+        FFstations station = new FFstations();
         FF_ManPower men;
         Floors[] floors;
         ExitPathways[] exitPathWays;
@@ -38,7 +38,7 @@ namespace Incident_Reporting_App_Server
         FF_pumps[] pumps;
         FF_ManPower[] man;
         Company c1;
-        FF_pumps pump ;
+        FF_pumps pump;
         int buildingCount = 0;
         int Selected_User_ID;
         int Selected_Company_ID;
@@ -130,14 +130,14 @@ namespace Incident_Reporting_App_Server
         #endregion
 
         #region load_Data
-        private void Load_Data( int Selected_Company_ID )
+        private void Load_Data(int Selected_Company_ID)
         {
 
             //load account info
 
-             U1 = server_Class_Obj.Select_User(Selected_User_ID);
-            accountName.Text = U1.Username==null?"": U1.Username;
-            AccountInfo.Text = U1.Info==null?"": U1.Info;
+            U1 = server_Class_Obj.Select_User(Selected_User_ID);
+            accountName.Text = U1.Username == null ? "" : U1.Username;
+            AccountInfo.Text = U1.Info == null ? "" : U1.Info;
             accountPassword.Clear();
             ReAccountPassword.Clear();
             for (int i = 0; i < U1.Password.Length; i++)
@@ -147,29 +147,29 @@ namespace Incident_Reporting_App_Server
             }
 
             //load selected company Data
-            
+
             selectedCompany = server_Class_Obj.Select_Company(Selected_Company_ID);
-            TB_companyName_DT.Text = selectedCompany.Name==null?"": selectedCompany.Name;
-            govern.Text = selectedCompany.Address==null?"": selectedCompany.Address;
-            TB_Address_DT.Text = selectedCompany.Address==null?"": selectedCompany.Address;
-            district.Text= selectedCompany.Address == null ? "" : selectedCompany.Address;
-            TB_LandlinePhone_DT.Text = selectedCompany.LandlinePhoneNumber==null?"": selectedCompany.LandlinePhoneNumber;
-            TB_BuildingsNumber_DT.Text = Convert.ToString(selectedCompany.BuildingsNumber)==null?"": Convert.ToString(selectedCompany.BuildingsNumber);
-            TB_ElectricalPanelLocation_DT.Text = selectedCompany.ElectricalPanelLocation==null?"": selectedCompany.ElectricalPanelLocation;
-            TB_GasTrapLocation_DT.Text = selectedCompany.GasTrapLocation==null?"": selectedCompany.GasTrapLocation;
-            TB_OxygenTrapLocation_DT.Text = selectedCompany.OxygenTrapLocation==null?"": selectedCompany.OxygenTrapLocation;
-            TB_CompanyImage_DT.Image = selectedCompany.RightCompanyImage==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.RightCompanyImage));
-            
+            TB_companyName_DT.Text = selectedCompany.Name == null ? "" : selectedCompany.Name;
+            govern.Text = selectedCompany.Address == null ? "" : selectedCompany.Address;
+            TB_Address_DT.Text = selectedCompany.Address == null ? "" : selectedCompany.Address;
+            district.Text = selectedCompany.Address == null ? "" : selectedCompany.Address;
+            TB_LandlinePhone_DT.Text = selectedCompany.LandlinePhoneNumber == null ? "" : selectedCompany.LandlinePhoneNumber;
+            TB_BuildingsNumber_DT.Text = Convert.ToString(selectedCompany.BuildingsNumber) == null ? "" : Convert.ToString(selectedCompany.BuildingsNumber);
+            TB_ElectricalPanelLocation_DT.Text = selectedCompany.ElectricalPanelLocation == null ? "" : selectedCompany.ElectricalPanelLocation;
+            TB_GasTrapLocation_DT.Text = selectedCompany.GasTrapLocation == null ? "" : selectedCompany.GasTrapLocation;
+            TB_OxygenTrapLocation_DT.Text = selectedCompany.OxygenTrapLocation == null ? "" : selectedCompany.OxygenTrapLocation;
+            TB_CompanyImage_DT.Image = selectedCompany.RightCompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.RightCompanyImage));
+
             //Loading the neighboring companies
 
             PictureBox P1 = new PictureBox();
-            P1.Image= System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.BackCompanyImage));
-            
-            FrontCompany_UC.TB_DCompanyBuisness_UC_ELe.Text= selectedCompany.FrontCompanyBusiness;
+            P1.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.BackCompanyImage));
+
+            FrontCompany_UC.TB_DCompanyBuisness_UC_ELe.Text = selectedCompany.FrontCompanyBusiness;
             FrontCompany_UC.TB_DComapnyName_UC_ELe.Text = selectedCompany.FrontCompanyName;
             FrontCompany_UC.TB_DCompanyMediator_UC_ELe.Text = selectedCompany.FrontFireMediator;
             FrontCompany_UC.TB_DCompanyImageURL_UC_ELe.Text = selectedCompany.FrontCompanyImageURL;
-            FrontCompany_UC.TB_DCompanyImage_UC_ELe.Image = selectedCompany.FrontCompanyImage == null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)))  : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.FrontCompanyImage));
+            FrontCompany_UC.TB_DCompanyImage_UC_ELe.Image = selectedCompany.FrontCompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.FrontCompanyImage));
 
             BackCompany_UC.TB_DCompanyBuisness_UC_ELe.Text = selectedCompany.BackCompanyBusiness;
             BackCompany_UC.TB_DComapnyName_UC_ELe.Text = selectedCompany.BackCompanyName;
@@ -192,9 +192,9 @@ namespace Incident_Reporting_App_Server
             LeftCompany_UC.TB_DCompanyImage_UC_ELe.Image = selectedCompany.LeftCompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.LeftCompanyImage));
 
             richTextBox38.AppendText(selectedCompany.GasTrapLocation);
-           richTextBox38.AppendText( selectedCompany.OxygenTrapLocation);
+            richTextBox38.AppendText(selectedCompany.OxygenTrapLocation);
             richTextBox38.AppendText(selectedCompany.ElectricalPanelLocation);
-           
+
             //load buildings of selected company
 
 
@@ -235,28 +235,28 @@ namespace Incident_Reporting_App_Server
                 CB_Stations_DT.Items.Add(points[i].FF_ID);
             }
 
-            
+
 
             //load User Pumps
             pumps = U1.User_FF_Pumps;
             int pumps_length = pumps != null ? pumps.Length : 0;
             DG_Pumps_DT.Rows.Clear();
-            for (int i=0;i< pumps_length; i++)
+            for (int i = 0; i < pumps_length; i++)
             {
                 string[] row = new string[] {Convert.ToString(pumps[i].FF_pumpsID), pumps[i].PumpNumber, pumps[i].Area, pumps[i].Sector,
                     pumps[i].PumpType,pumps[i].Status,pumps[i].Address,pumps[i].Signs,pumps[i].Additional_info };
-               
+
                 DG_Pumps_DT.Rows.Add(row);
             }
 
-            
+
 
         }
 
         #endregion
 
         #region Manager
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
             selectedManagerIndex = cmb.SelectedIndex;
@@ -268,7 +268,7 @@ namespace Incident_Reporting_App_Server
         #endregion
 
         #region Dangerous
-        private void Dangerous_SelectedIndexChanged(object sender, EventArgs e)
+        private void Dangerous_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
             selectedDangerousIndex = cmb.SelectedIndex;
@@ -293,7 +293,7 @@ namespace Incident_Reporting_App_Server
 
             FFstations st = server_Class_Obj.Add_FFstations(station);
             men = new FF_ManPower();
-            if(ff_ManPowerGrid.CurrentRow!=null)
+            if (ff_ManPowerGrid.CurrentRow != null)
             {
                 men.OfficerName = ff_ManPowerGrid.CurrentRow.Cells[0].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[0].Value;
                 men.Sector = ff_ManPowerGrid.CurrentRow.Cells[1].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[1].Value;
@@ -306,7 +306,7 @@ namespace Incident_Reporting_App_Server
                 if (MM != null)
                     richTextBox1.Text = "\n Station_ManPower Updated Successfully";
             }
-            else if(st!=null)
+            else if (st != null)
                 richTextBox1.Text = "\n Station Updated Successfully";
 
 
@@ -322,14 +322,14 @@ namespace Incident_Reporting_App_Server
             station.ZoneNumber = TB_area_DT.Text == null ? "" : Convert.ToString(TB_area_DT.Text);
             station.Additional_info = TB_Additional_info_DT.Text == null ? "" : Convert.ToString(TB_Additional_info_DT.Text);
             station.UserID = Selected_User_ID;
-            station.FF_ID =points[selectedStationIndex].FF_ID;
+            station.FF_ID = points[selectedStationIndex].FF_ID;
             bool flag1 = server_Class_Obj.Update_FFstations(station);
-            if(flag1==true)
+            if (flag1 == true)
                 richTextBox1.Text = "\n Station Updated Successfully";
 
             server_Class_Obj.DeleteFF_ManPower(station.FF_ID);
             men = new FF_ManPower();
-            for(int i=0;i< ff_ManPowerGrid.RowCount-1; i++)
+            for (int i = 0; i < ff_ManPowerGrid.RowCount - 1; i++)
             {
                 if (ff_ManPowerGrid.Rows[i] != null)
                 {
@@ -345,9 +345,9 @@ namespace Incident_Reporting_App_Server
                         richTextBox1.Text += "\n ManPower Updated Successfully";
                 }
             }
-            
-            
-            
+
+
+
         }
 
         private void CB_Stations_DT_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -385,24 +385,24 @@ namespace Incident_Reporting_App_Server
         {
             bool flag = server_Class_Obj.Delete_FFstations(station.FF_ID);
             if (flag == true)
-                richTextBox1.Text="\n Station_ManPower Deleted Successfully";
+                richTextBox1.Text = "\n Station_ManPower Deleted Successfully";
         }
 
         #endregion
-        
+
         #region Building
 
         private void AddBuildings_Click(object sender, EventArgs e)
         {
             buildingCount++;
             Buildings building = new Buildings();
-            building.BuildingNumber = BuildingNumber.Text==null?0:Convert.ToInt32(BuildingNumber.Text);
+            building.BuildingNumber = BuildingNumber.Text == null ? 0 : Convert.ToInt32(BuildingNumber.Text);
             building.FloorsNumber = floorNumbers.Text == null ? 0 : Convert.ToInt32(floorNumbers.Text);
             building.MainWaterTankCapacity = mainTankCapacity.Text == null ? 0 : Convert.ToInt32(mainTankCapacity.Text);
             building.GeometricImage = BuildingGeoPic_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(BuildingGeoPic_DT.Image);
             building.GeometricImageURL = GeoPicURL.Text;
             Newbuildings.Add(building);
-            for (int i = 0; i < DG_Floors_DT.Rows.Count-1; i++)
+            for (int i = 0; i < DG_Floors_DT.Rows.Count - 1; i++)
             {
                 Floors floor = new Floors();
                 if (DG_Floors_DT.Rows[i].Cells[0].Value != null)
@@ -472,7 +472,7 @@ namespace Incident_Reporting_App_Server
                 NewFloors.Add(new KeyValuePair<int, Floors>(buildingCount, floor));
             }
         }
-        
+
 
         private void deleteBuildingList_Click(object sender, EventArgs e)
         {
@@ -485,7 +485,7 @@ namespace Incident_Reporting_App_Server
             DG_Floors_DT.Rows.Clear();
         }
 
-        private void buildingCB_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void buildingCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
             selectedBuildingIndex = cmb.SelectedIndex;
@@ -496,8 +496,8 @@ namespace Incident_Reporting_App_Server
                 mainTankCapacity.Text = Convert.ToString(buildings[selectedBuildingIndex].MainWaterTankCapacity);
                 GeoPicURL.Text = buildings[selectedBuildingIndex].GeometricImageURL;
                 if (buildings[selectedBuildingIndex].BuildingExitPaths != null)
-                    PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage));
-                BuildingGeoPic_DT.Image = buildings[selectedBuildingIndex].GeometricImage==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))): System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].GeometricImage));
+                    PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage));
+                BuildingGeoPic_DT.Image = buildings[selectedBuildingIndex].GeometricImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].GeometricImage));
                 Floors[] floor = buildings[selectedBuildingIndex].BuildingFloors;
                 int floor_length = floor != null ? floor.Length : 0;
                 DG_Floors_DT.Rows.Clear();
@@ -516,12 +516,12 @@ namespace Incident_Reporting_App_Server
                 int img_length = img != null ? img.Length : 0;
                 if (img_length > 0)
                 {
-                    TB_CompanyImage_DT.Image = img[0].Image==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(img[0].Image));
+                    TB_CompanyImage_DT.Image = img[0].Image == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(img[0].Image));
                     if (img_length > 1)
                     {
-                        TB_CompanyGeometeryImage_DT.Image = img[1].Image==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(img[1].Image));
+                        TB_CompanyGeometeryImage_DT.Image = img[1].Image == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(img[1].Image));
                         if (img_length > 2)
-                            PB_ExitPathWayImage_DT.Image = img[2].Image==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(img[2].Image));
+                            PB_ExitPathWayImage_DT.Image = img[2].Image == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(img[2].Image));
                     }
                 }
             }
@@ -533,9 +533,9 @@ namespace Incident_Reporting_App_Server
 
         private void DeleteCompany_Click_1(object sender, EventArgs e)
         {
-            bool flag=server_Class_Obj.Delete_Company(Selected_Company_ID);
-            if(flag ==true)
-                statusfeild.Text ="\n Company Deleted Successfully";
+            bool flag = server_Class_Obj.Delete_Company(Selected_Company_ID);
+            if (flag == true)
+                statusfeild.Text = "\n Company Deleted Successfully";
         }
 
         private void SaveAddedBuildings_Click_1(object sender, EventArgs e)
@@ -580,22 +580,20 @@ namespace Incident_Reporting_App_Server
             c1 = server_Class_Obj.Add_Company(c1);
             if (c1 != null)
             {
-                statusfeild.Text += "\n Company added Successfully";
+                statusfeild.Text = "\n Company added Successfully";
             }
 
             for (int i = 0; i < Newbuildings.Count; i++)
             {
                 Newbuildings[i].CompanyID = c1.CompanyID;
                 Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
-                if (B1 != null)
-                    statusfeild.Text += "\n Building added Successfully";
+                
                 foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
                 {
                     Floors floor = new Floors();
                     kvp.Value.BuildingID = B1.BuildingID;
                     floor = server_Class_Obj.Add_Floors(kvp.Value);
-                    if (floor != null)
-                        statusfeild.Text += "\n Floor added Successfully";
+                    
                 }
 
                 ExitPathways exitPathWay = new ExitPathways();
@@ -604,8 +602,7 @@ namespace Incident_Reporting_App_Server
                 exitPathWay.PathwaysImageURL = "";
                 exitPathWay.Description = "";
                 exitPathWay = server_Class_Obj.Add_exitPath(exitPathWay);
-                if (exitPathWay != null)
-                    statusfeild.Text += "\n exitPathWay added Successfully";
+               
             }
             DangerousPlaces place = new DangerousPlaces();
             place.Location = DangerouseLocation.Text;
@@ -615,8 +612,7 @@ namespace Incident_Reporting_App_Server
             place.ImageURL = "";
             place.CompanyID = c1.CompanyID;
             place = server_Class_Obj.Add_DangerousPlace(place);
-            if (place != null)
-                statusfeild.Text += "\n DangerousPlaces added Successfully";
+           
         }
 
         private void EditCompany_Click_1(object sender, EventArgs e)
@@ -661,7 +657,7 @@ namespace Incident_Reporting_App_Server
             c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
             bool flag = server_Class_Obj.Update_Company(c1);
             if (flag == true)
-                statusfeild.Text += "\n Company updated Successfully";
+                statusfeild.Text = "\n Company updated Successfully";
             buildings = selectedCompany.companyBuildings;
             server_Class_Obj.Delete_Building(c1.CompanyID);
             int BuildingLength = buildings.Length > 0 ? buildings.Length : 0;
@@ -669,15 +665,13 @@ namespace Incident_Reporting_App_Server
             {
                 buildings[i].CompanyID = c1.CompanyID;
                 Buildings B1 = server_Class_Obj.Add_Building(buildings[i]);
-                if (B1 != null)
-                    statusfeild.Text += "\n Building updated Successfully";
-                for (int j= 0; j<buildings[i].BuildingFloors.Length;j++)
+                
+                for (int j = 0; j < buildings[i].BuildingFloors.Length; j++)
                 {
                     Floors floor = new Floors();
                     buildings[i].BuildingFloors[j].BuildingID = B1.BuildingID;
                     floor = server_Class_Obj.Add_Floors(buildings[i].BuildingFloors[j]);
-                    if (floor != null)
-                        statusfeild.Text += "\n Floor updated Successfully";
+                   
                 }
 
                 ExitPathways exitPathWay = new ExitPathways();
@@ -686,8 +680,7 @@ namespace Incident_Reporting_App_Server
                 exitPathWay.PathwaysImageURL = "";
                 exitPathWay.Description = "";
                 exitPathWay = server_Class_Obj.Add_exitPath(exitPathWay);
-                if (exitPathWay != null)
-                    statusfeild.Text += "\n exitPathWay updated Successfully";
+                
             }
             server_Class_Obj.Delete_DangerousPlaces(c1.CompanyID);
             DangerousPlaces place = new DangerousPlaces();
@@ -698,8 +691,7 @@ namespace Incident_Reporting_App_Server
             place.ImageURL = "";
             place.CompanyID = c1.CompanyID;
             place = server_Class_Obj.Add_DangerousPlace(place);
-            if (place != null)
-                statusfeild.Text += "\n DangerousPlaces updated Successfully";
+           
 
             Managers M = new Managers();
             M.Name = TB_SelectedUserName_DT.Text;
@@ -707,11 +699,7 @@ namespace Incident_Reporting_App_Server
             M.PhoneNumber = TB_SelectedUserPhone_DT.Text;
             M.Info = TB_SelectedUserInfo_DT.Text;
             M.CompanyID = Selected_Company_ID;
-            M=server_Class_Obj.Add_Manager(M);
-            if (M != null)
-                statusfeild.Text += "\n Managers updated Successfully";
-
-           
+            M = server_Class_Obj.Add_Manager(M);
         }
 
 
@@ -772,18 +760,18 @@ namespace Incident_Reporting_App_Server
         private void button2_Click_1(object sender, EventArgs e)
         {
             FF_pumps pump = new FF_pumps();
-            pump.Additional_info = pumpInfo.Text==null?"": pumpInfo.Text;
-            pump.Address = pumpAddress.Text==null?"": pumpAddress.Text;
-            pump.Area = pumpArea.Text==null?"": pumpArea.Text;
-            pump.PumpNumber = PumpNumber.Text==null?"": PumpNumber.Text;
-            pump.Status = Status.Text==null?"": Status.Text;
-            pump.Signs = pumpSign.Text == null?"": pumpSign.Text;
-            pump.Sector = pumpSector.Text==null?"": pumpSector.Text;
-            pump.PumpType = PumpType.Text==null?"": PumpType.Text;
+            pump.Additional_info = pumpInfo.Text == null ? "" : pumpInfo.Text;
+            pump.Address = pumpAddress.Text == null ? "" : pumpAddress.Text;
+            pump.Area = pumpArea.Text == null ? "" : pumpArea.Text;
+            pump.PumpNumber = PumpNumber.Text == null ? "" : PumpNumber.Text;
+            pump.Status = Status.Text == null ? "" : Status.Text;
+            pump.Signs = pumpSign.Text == null ? "" : pumpSign.Text;
+            pump.Sector = pumpSector.Text == null ? "" : pumpSector.Text;
+            pump.PumpType = PumpType.Text == null ? "" : PumpType.Text;
             pump.UserID = Selected_User_ID;
-            FF_pumps p=server_Class_Obj.Add_FFPump(pump);
-            if(p!=null)
-                label22.Text="\n FF_pumps Added Successfully";
+            FF_pumps p = server_Class_Obj.Add_FFPump(pump);
+            if (p != null)
+                label22.Text = "\n FF_pumps Added Successfully";
 
         }
 
@@ -791,29 +779,29 @@ namespace Incident_Reporting_App_Server
         {
             pump = new FF_pumps();
             pump.FF_pumpsID = PumpID;
-            pump.Additional_info = pumpInfo.Text==null?"": pumpInfo.Text;
-            pump.Address = pumpAddress.Text==null?"": pumpAddress.Text;
-            pump.Area = pumpArea.Text==null?"": pumpArea.Text;
-            pump.PumpNumber = PumpNumber.Text==null?"": PumpNumber.Text;
-            pump.Status = Status.Text==null?"": Status.Text;
-            pump.Signs = pumpSign.Text==null?"": pumpSign.Text;
-            pump.Sector = pumpSector.Text==null?"": pumpSector.Text;
-            pump.PumpType = PumpType.Text==null?"": PumpType.Text;
+            pump.Additional_info = pumpInfo.Text == null ? "" : pumpInfo.Text;
+            pump.Address = pumpAddress.Text == null ? "" : pumpAddress.Text;
+            pump.Area = pumpArea.Text == null ? "" : pumpArea.Text;
+            pump.PumpNumber = PumpNumber.Text == null ? "" : PumpNumber.Text;
+            pump.Status = Status.Text == null ? "" : Status.Text;
+            pump.Signs = pumpSign.Text == null ? "" : pumpSign.Text;
+            pump.Sector = pumpSector.Text == null ? "" : pumpSector.Text;
+            pump.PumpType = PumpType.Text == null ? "" : PumpType.Text;
             pump.UserID = Selected_User_ID;
-            bool flag=server_Class_Obj.Update_FFPump(pump);
-            if (flag ==true)
-                label22.Text="\n FF_pumps Updated Successfully";
+            bool flag = server_Class_Obj.Update_FFPump(pump);
+            if (flag == true)
+                label22.Text = "\n FF_pumps Updated Successfully";
         }
         private void DG_Pumps_DT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            PumpNumber.Text = (string)DG_Pumps_DT.CurrentRow.Cells[1].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[1].Value;
-            pumpArea.Text = (string)DG_Pumps_DT.CurrentRow.Cells[2].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[2].Value;
-            pumpSector.Text = (string)DG_Pumps_DT.CurrentRow.Cells[3].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[3].Value;
-            PumpType.Text = (string)DG_Pumps_DT.CurrentRow.Cells[4].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[4].Value;
-            Status.Text = (string)DG_Pumps_DT.CurrentRow.Cells[5].Value == null?"": (string)DG_Pumps_DT.CurrentRow.Cells[5].Value;
-            pumpAddress.Text = (string)DG_Pumps_DT.CurrentRow.Cells[6].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[6].Value;
-            pumpSign.Text = (string)DG_Pumps_DT.CurrentRow.Cells[7].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[7].Value;
-            pumpInfo.Text = (string)DG_Pumps_DT.CurrentRow.Cells[8].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[8].Value;
+            PumpNumber.Text = (string)DG_Pumps_DT.CurrentRow.Cells[1].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[1].Value;
+            pumpArea.Text = (string)DG_Pumps_DT.CurrentRow.Cells[2].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[2].Value;
+            pumpSector.Text = (string)DG_Pumps_DT.CurrentRow.Cells[3].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[3].Value;
+            PumpType.Text = (string)DG_Pumps_DT.CurrentRow.Cells[4].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[4].Value;
+            Status.Text = (string)DG_Pumps_DT.CurrentRow.Cells[5].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[5].Value;
+            pumpAddress.Text = (string)DG_Pumps_DT.CurrentRow.Cells[6].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[6].Value;
+            pumpSign.Text = (string)DG_Pumps_DT.CurrentRow.Cells[7].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[7].Value;
+            pumpInfo.Text = (string)DG_Pumps_DT.CurrentRow.Cells[8].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[8].Value;
             PumpID = Convert.ToInt32(DG_Pumps_DT.CurrentRow.Cells[0].Value);
         }
 
@@ -829,7 +817,7 @@ namespace Incident_Reporting_App_Server
             pumpInfo.Text = "";
             bool flag = server_Class_Obj.Delete_FF_pumps(pump.FF_pumpsID);
             if (flag == true)
-                label22.Text="\n FF_pumps Deleted Successfully";
+                label22.Text = "\n FF_pumps Deleted Successfully";
         }
         #endregion
 
@@ -848,7 +836,7 @@ namespace Incident_Reporting_App_Server
                     user.Info = AccountInfo.Text;
                     Users newUser = server_Class_Obj.Add_Account(user);
                     Users_Admin User = new Users_Admin();
-                    User.Admin_ID = Selected_User_ID!=0? Selected_User_ID:LoginAccount.UserID;
+                    User.Admin_ID = Selected_User_ID != 0 ? Selected_User_ID : LoginAccount.UserID;
                     User.User_ID = newUser.UserID;
                     User.Info = Selected_User_ID + " over " + newUser.UserID;
                     Users_Admin flag = server_Class_Obj.Add_Users_Admin(User);
@@ -879,10 +867,10 @@ namespace Incident_Reporting_App_Server
                 }
                 user.UserID = Selected_User_ID;
                 user.Info = AccountInfo.Text;
-                
-               bool flag= server_Class_Obj.Update_Account(user);
-                if(flag==true)
-                    AccountStatus.Text="\n Account Updated Successfully";
+
+                bool flag = server_Class_Obj.Update_Account(user);
+                if (flag == true)
+                    AccountStatus.Text = "\n Account Updated Successfully";
 
             }
             catch (Exception exception1)
@@ -895,7 +883,7 @@ namespace Incident_Reporting_App_Server
         {
             bool flag = server_Class_Obj.Delete_Account(Selected_User_ID);
             if (flag == true)
-                AccountStatus.Text="\n Account Deleted Successfully";
+                AccountStatus.Text = "\n Account Deleted Successfully";
         }
 
         #endregion
@@ -910,7 +898,7 @@ namespace Incident_Reporting_App_Server
             {
                 while (true)
                 {
-                    
+
                     Update_Incident_Reporting_trv_Companies();
                     Thread.Sleep(20000);
                 }
@@ -1000,7 +988,7 @@ namespace Incident_Reporting_App_Server
                             {
                                 treeView3.Nodes[0].Nodes[0].Nodes.Add(LoginAccount.User_Companies[um].Name.ToString());
                                 treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Tag = LoginAccount.User_Companies[um];
-                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Name ="Company";
+                                treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Name = "Company";
                                 treeView3.Nodes[0].Nodes[0].Nodes[treeView3.Nodes[0].Nodes[0].Nodes.Count - 1].Checked = true;
                             }
                         }
@@ -1204,7 +1192,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void treeView3_AfterSelect_1(object sender, TreeViewEventArgs e)
+        private void treeView3_AfterSelect(object sender, TreeViewEventArgs e)
         {
             BuildingNumber.Clear();
             floorNumbers.Clear();
@@ -1256,7 +1244,7 @@ namespace Incident_Reporting_App_Server
                     accountPassword.Text += "*";
                     ReAccountPassword.Text += "*";
                 }
-                
+
             }
         }
 
@@ -1264,15 +1252,15 @@ namespace Incident_Reporting_App_Server
 
         private void Deleted_SelectedManager_Click(object sender, EventArgs e)
         {
-            bool flag=server_Class_Obj.Delete_Manager(managers[selectedManagerIndex].ManagerID);
-            if (flag ==true)
+            bool flag = server_Class_Obj.Delete_Manager(managers[selectedManagerIndex].ManagerID);
+            if (flag == true)
             {
                 TB_SelectedUserName_DT.Clear();
                 TB_SelectedUserBuisiness_DT.Clear();
                 TB_SelectedUserPhone_DT.Clear();
                 TB_SelectedUserInfo_DT.Clear();
                 statusfeild.Text = "\n Managers updated Successfully";
-            }  
+            }
         }
 
         private void Delete_SelectedDangerous_Click(object sender, EventArgs e)
@@ -1284,9 +1272,9 @@ namespace Incident_Reporting_App_Server
                 DangerouseLocation.Clear();
                 FireMediator.Clear();
                 statusfeild.Text = "\n DangerousPlaces updated Successfully";
-            }  
+            }
         }
-    }
 
-    
-}
+      
+    }
+    }
