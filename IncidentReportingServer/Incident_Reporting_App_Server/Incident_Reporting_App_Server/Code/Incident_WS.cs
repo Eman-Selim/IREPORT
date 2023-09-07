@@ -1163,6 +1163,19 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
+        public bool DangerousPlaces_Delete(string username, string password, int DangerousPlaceID)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.DangerousPlaces_Delete(username, password, DangerousPlaceID);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return false;
+            }
+        }
+
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces dangerousPlaces)
         {
             try

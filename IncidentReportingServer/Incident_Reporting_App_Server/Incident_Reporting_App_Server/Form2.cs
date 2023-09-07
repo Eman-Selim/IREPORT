@@ -21,11 +21,7 @@ namespace Incident_Reporting_App_Server
         int menu_Selected_Index = 0;
         ServerClass server_Class_Obj = new ServerClass();
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
-
-        #region tempImage
         Image imagenu = Image.FromFile("C:\\Users\\PC 1\\Pictures\\11.PNG");
-        #endregion
-
         Users U1;
         Users LoginAccount;
         Buildings[] buildings;
@@ -47,6 +43,10 @@ namespace Incident_Reporting_App_Server
         int Selected_User_ID;
         int Selected_Company_ID;
         int selectedStationIndex;
+        int selectedBuildingIndex;
+        int selectedManagerIndex;
+        int selectedDangerousIndex;
+        int PumpID;
         private bool First_Time_Loading_User_Data_Flag = true;
         #endregion
 
@@ -240,10 +240,12 @@ namespace Incident_Reporting_App_Server
             //load User Pumps
             pumps = U1.User_FF_Pumps;
             int pumps_length = pumps != null ? pumps.Length : 0;
-            for(int i=0;i< pumps_length; i++)
+            DG_Pumps_DT.Rows.Clear();
+            for (int i=0;i< pumps_length; i++)
             {
-                string[] row = new string[] { pumps[i].PumpNumber, pumps[i].Area, pumps[i].Sector,
+                string[] row = new string[] {Convert.ToString(pumps[i].FF_pumpsID), pumps[i].PumpNumber, pumps[i].Area, pumps[i].Sector,
                     pumps[i].PumpType,pumps[i].Status,pumps[i].Address,pumps[i].Signs,pumps[i].Additional_info };
+               
                 DG_Pumps_DT.Rows.Add(row);
             }
 
@@ -257,11 +259,11 @@ namespace Incident_Reporting_App_Server
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
-            int selectedIndex = cmb.SelectedIndex;
-            TB_SelectedUserName_DT.Text = managers[selectedIndex].Name;
-            TB_SelectedUserBuisiness_DT.Text = managers[selectedIndex].CurrentPosition;
-            TB_SelectedUserPhone_DT.Text = managers[selectedIndex].PhoneNumber;
-            TB_SelectedUserInfo_DT.Text = managers[selectedIndex].Info;
+            selectedManagerIndex = cmb.SelectedIndex;
+            TB_SelectedUserName_DT.Text = managers[selectedManagerIndex].Name;
+            TB_SelectedUserBuisiness_DT.Text = managers[selectedManagerIndex].CurrentPosition;
+            TB_SelectedUserPhone_DT.Text = managers[selectedManagerIndex].PhoneNumber;
+            TB_SelectedUserInfo_DT.Text = managers[selectedManagerIndex].Info;
         }
         #endregion
 
@@ -269,10 +271,10 @@ namespace Incident_Reporting_App_Server
         private void Dangerous_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
-            int selectedIndex = cmb.SelectedIndex;
-            HazardousSubstance.Text = places[selectedIndex].HazardousSubstance;
-            DangerouseLocation.Text = places[selectedIndex].Location;
-            FireMediator.Text = places[selectedIndex].FireMediator;
+            selectedDangerousIndex = cmb.SelectedIndex;
+            HazardousSubstance.Text = places[selectedDangerousIndex].HazardousSubstance;
+            DangerouseLocation.Text = places[selectedDangerousIndex].Location;
+            FireMediator.Text = places[selectedDangerousIndex].FireMediator;
         }
         #endregion
 
@@ -322,22 +324,28 @@ namespace Incident_Reporting_App_Server
             station.UserID = Selected_User_ID;
             station.FF_ID =points[selectedStationIndex].FF_ID;
             bool flag1 = server_Class_Obj.Update_FFstations(station);
+            if(flag1==true)
+                richTextBox1.Text = "\n Station Updated Successfully";
 
             server_Class_Obj.DeleteFF_ManPower(station.FF_ID);
             men = new FF_ManPower();
-            if (ff_ManPowerGrid.CurrentRow != null)
+            for(int i=0;i< ff_ManPowerGrid.RowCount-1; i++)
             {
-                men.OfficerName = ff_ManPowerGrid.CurrentRow.Cells[0].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[0].Value;
-                men.Sector = ff_ManPowerGrid.CurrentRow.Cells[1].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[1].Value;
-                men.Area = ff_ManPowerGrid.CurrentRow.Cells[2].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[2].Value;
-                men.Rank = ff_ManPowerGrid.CurrentRow.Cells[3].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[3].Value;
-                men.Job = ff_ManPowerGrid.CurrentRow.Cells[4].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[4].Value;
-                men.Additional_info = ff_ManPowerGrid.CurrentRow.Cells[5].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[5].Value;
-                men.FF_ID = station.FF_ID;
-                FF_ManPower flag = server_Class_Obj.AddFF_ManPower(men);
-                if (flag != null && flag1 == true)
-                    richTextBox1.Text = "\n Station_ManPower Updated Successfully";
+                if (ff_ManPowerGrid.Rows[i] != null)
+                {
+                    men.OfficerName = ff_ManPowerGrid.CurrentRow.Cells[0].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[0].Value;
+                    men.Sector = ff_ManPowerGrid.CurrentRow.Cells[1].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[1].Value;
+                    men.Area = ff_ManPowerGrid.CurrentRow.Cells[2].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[2].Value;
+                    men.Rank = ff_ManPowerGrid.CurrentRow.Cells[3].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[3].Value;
+                    men.Job = ff_ManPowerGrid.CurrentRow.Cells[4].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[4].Value;
+                    men.Additional_info = ff_ManPowerGrid.CurrentRow.Cells[5].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[5].Value;
+                    men.FF_ID = station.FF_ID;
+                    FF_ManPower flag = server_Class_Obj.AddFF_ManPower(men);
+                    if (flag != null && flag1 == true)
+                        richTextBox1.Text += "\n ManPower Updated Successfully";
+                }
             }
+            
             
             
         }
@@ -394,7 +402,7 @@ namespace Incident_Reporting_App_Server
             building.GeometricImage = BuildingGeoPic_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(BuildingGeoPic_DT.Image);
             building.GeometricImageURL = GeoPicURL.Text;
             Newbuildings.Add(building);
-            for (int i = 0; i < DG_Floors_DT.Rows.Count; i++)
+            for (int i = 0; i < DG_Floors_DT.Rows.Count-1; i++)
             {
                 Floors floor = new Floors();
                 if (DG_Floors_DT.Rows[i].Cells[0].Value != null)
@@ -469,22 +477,28 @@ namespace Incident_Reporting_App_Server
         private void deleteBuildingList_Click(object sender, EventArgs e)
         {
             Newbuildings.Clear();
+            BuildingNumber.Clear();
+            floorNumbers.Clear();
+            mainTankCapacity.Clear();
+            GeoPicURL.Clear();
+            BuildingGeoPic_DT.Image = null;
+            DG_Floors_DT.Rows.Clear();
         }
 
         private void buildingCB_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
-            int selectedIndex = cmb.SelectedIndex;
-            if (buildings.Length >= selectedIndex)
+            selectedBuildingIndex = cmb.SelectedIndex;
+            if (buildings.Length >= selectedBuildingIndex)
             {
-                BuildingNumber.Text = Convert.ToString(buildings[selectedIndex].BuildingNumber);
-                floorNumbers.Text = Convert.ToString(buildings[selectedIndex].FloorsNumber);
-                mainTankCapacity.Text = Convert.ToString(buildings[selectedIndex].MainWaterTankCapacity);
-                GeoPicURL.Text = buildings[selectedIndex].GeometricImageURL;
-                if (buildings[selectedIndex].BuildingExitPaths != null)
-                    PB_ExitPathWayImage_DT.Image = buildings[selectedIndex].BuildingExitPaths[0].PathwaysImage==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedIndex].BuildingExitPaths[0].PathwaysImage));
-                BuildingGeoPic_DT.Image = buildings[selectedIndex].GeometricImage==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))): System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedIndex].GeometricImage));
-                Floors[] floor = buildings[selectedIndex].BuildingFloors;
+                BuildingNumber.Text = Convert.ToString(buildings[selectedBuildingIndex].BuildingNumber);
+                floorNumbers.Text = Convert.ToString(buildings[selectedBuildingIndex].FloorsNumber);
+                mainTankCapacity.Text = Convert.ToString(buildings[selectedBuildingIndex].MainWaterTankCapacity);
+                GeoPicURL.Text = buildings[selectedBuildingIndex].GeometricImageURL;
+                if (buildings[selectedBuildingIndex].BuildingExitPaths != null)
+                    PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage));
+                BuildingGeoPic_DT.Image = buildings[selectedBuildingIndex].GeometricImage==null? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))): System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].GeometricImage));
+                Floors[] floor = buildings[selectedBuildingIndex].BuildingFloors;
                 int floor_length = floor != null ? floor.Length : 0;
                 DG_Floors_DT.Rows.Clear();
                 for (int i = 0; i < floor_length; i++)
@@ -493,12 +507,12 @@ namespace Incident_Reporting_App_Server
                     Convert.ToString(floor[i].PowderExtinguishersWeight),
                     floor[i].CarbonDioxideExtinguishersNumbers,
                     Convert.ToString(floor[i].CarbonDioxideExtinguishersWeight),
-                    floor[0].PowderExtinguishersNumber,
-                    Convert.ToString(floor[0].PowderExtinguishersWeight)};
+                    floor[0].FoamExtinguishersNumbers,
+                    Convert.ToString(floor[0].FoamExtinguishersWeight)};
 
                     DG_Floors_DT.Rows.Add(row);
                 }
-                Images[] img = buildings[selectedIndex].BuildingImageCollection;
+                Images[] img = buildings[selectedBuildingIndex].BuildingImageCollection;
                 int img_length = img != null ? img.Length : 0;
                 if (img_length > 0)
                 {
@@ -512,6 +526,7 @@ namespace Incident_Reporting_App_Server
                 }
             }
         }
+
         #endregion
 
         #region Company
@@ -520,7 +535,7 @@ namespace Incident_Reporting_App_Server
         {
             bool flag=server_Class_Obj.Delete_Company(Selected_Company_ID);
             if(flag ==true)
-                statusfeild.Text +="\n Company Deleted Successfully";
+                statusfeild.Text ="\n Company Deleted Successfully";
         }
 
         private void SaveAddedBuildings_Click_1(object sender, EventArgs e)
@@ -647,18 +662,20 @@ namespace Incident_Reporting_App_Server
             bool flag = server_Class_Obj.Update_Company(c1);
             if (flag == true)
                 statusfeild.Text += "\n Company updated Successfully";
+            buildings = selectedCompany.companyBuildings;
             server_Class_Obj.Delete_Building(c1.CompanyID);
-            for (int i = 0; i < Newbuildings.Count; i++)
+            int BuildingLength = buildings.Length > 0 ? buildings.Length : 0;
+            for (int i = 0; i < BuildingLength; i++)
             {
-                Newbuildings[i].CompanyID = c1.CompanyID;
-                Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
+                buildings[i].CompanyID = c1.CompanyID;
+                Buildings B1 = server_Class_Obj.Add_Building(buildings[i]);
                 if (B1 != null)
                     statusfeild.Text += "\n Building updated Successfully";
-                foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
+                for (int j= 0; j<buildings[i].BuildingFloors.Length;j++)
                 {
                     Floors floor = new Floors();
-                    kvp.Value.BuildingID = B1.BuildingID;
-                    floor = server_Class_Obj.Add_Floors(kvp.Value);
+                    buildings[i].BuildingFloors[j].BuildingID = B1.BuildingID;
+                    floor = server_Class_Obj.Add_Floors(buildings[i].BuildingFloors[j]);
                     if (floor != null)
                         statusfeild.Text += "\n Floor updated Successfully";
                 }
@@ -683,71 +700,28 @@ namespace Incident_Reporting_App_Server
             place = server_Class_Obj.Add_DangerousPlace(place);
             if (place != null)
                 statusfeild.Text += "\n DangerousPlaces updated Successfully";
-            #region deleted
-            //    Buildings building = new Buildings();
-            //building.BuildingNumber = BuildingNumber.Text==""? -1 : Convert.ToInt32(BuildingNumber.Text);
-            //building.FloorsNumber = floorNumbers.Text==""? -1 : Convert.ToInt32(floorNumbers.Text);
-            //building.CompanyID = Selected_Company_ID;
-            //building.MainWaterTankCapacity = floorNumbers.Text == ""? -1 : Convert.ToInt32(mainTankCapacity.Text);
-            //building.GeometricImage = BuildingGeoPic_DT.Image==null? imagenu : ImageToByteArray(BuildingGeoPic_DT.Image);
-            //building.GeometricImageURL = GeoPicURL.Text==""? "" : GeoPicURL.Text;
-            //flag = server_Class_Obj.Update_Building(building);
-            //if (flag == true)
-            //{
-            //    statusfeild.Text +="\n Building updated Successfully";
 
-            //    Floors floor = new Floors();
-            //    floor.FloorNumber = DG_Floors_DT.CurrentRow.Cells[0].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[0].Value;
-            //    floor.FireHydrantsNumber = DG_Floors_DT.CurrentRow.Cells[1].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[1].Value;
-            //    floor.PowderExtinguishersNumber = DG_Floors_DT.CurrentRow.Cells[2].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[2].Value;
-            //    floor.PowderExtinguishersWeight = DG_Floors_DT.CurrentRow.Cells[3].Value == null ? -1 : Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[3].Value);
-            //    floor.CarbonDioxideExtinguishersNumbers = DG_Floors_DT.CurrentRow.Cells[4].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[4].Value;
-            //    floor.CarbonDioxideExtinguishersWeight = DG_Floors_DT.CurrentRow.Cells[5].Value == null ? -1 : Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[5].Value);
-            //    floor.FoamExtinguishersNumbers = DG_Floors_DT.CurrentRow.Cells[6].Value == null ? "" : (string)DG_Floors_DT.CurrentRow.Cells[6].Value;
-            //    floor.FoamExtinguishersWeight = DG_Floors_DT.CurrentRow.Cells[7].Value == null ? -1 : Convert.ToInt32(DG_Floors_DT.CurrentRow.Cells[7].Value);
-            //    floor.BuildingID = building.BuildingID;
-            //    flag = server_Class_Obj.Update_Floor(floor);
-            //    if (flag == true)
-            //        statusfeild.Text +="\n Floor updated Successfully";
+            Managers M = new Managers();
+            M.Name = TB_SelectedUserName_DT.Text;
+            M.CurrentPosition = TB_SelectedUserBuisiness_DT.Text;
+            M.PhoneNumber = TB_SelectedUserPhone_DT.Text;
+            M.Info = TB_SelectedUserInfo_DT.Text;
+            M.CompanyID = Selected_Company_ID;
+            M=server_Class_Obj.Add_Manager(M);
+            if (M != null)
+                statusfeild.Text += "\n Managers updated Successfully";
 
-            //    DangerousPlaces place = new DangerousPlaces();
-            //    place.Location = DangerouseLocation.Text == null ? "" : DangerouseLocation.Text;
-            //    place.HazardousSubstance = HazardousSubstance.Text == null ? "" : HazardousSubstance.Text;
-            //    place.FireMediator = FireMediator.Text == null ? "" : FireMediator.Text;
-            //    place.Image = imagenu;
-            //    place.ImageURL = "";
-            //    place.CompanyID = c1.CompanyID;
-            //    flag = server_Class_Obj.Update_DangerousePlaces(place);
-            //    if (flag == true)
-            //        statusfeild.Text +="\n DangerousPlace updated Successfully";
-
-            //    ExitPathways exitPathWay = new ExitPathways();
-            //    exitPathWay.BuildingID = building.BuildingID;
-            //    exitPathWay.PathwaysImage = PB_ExitPathWayImage_DT.Image == null ? imagenu : ImageToByteArray(PB_ExitPathWayImage_DT.Image);
-            //    exitPathWay.PathwaysImageURL = "";
-            //    exitPathWay.Description = "";
-            //    flag = server_Class_Obj.Update_ExitPathways(exitPathWay);
-            //    if (flag == true)
-            //        statusfeild.Text +="\n ExitPathway updated Successfully";
-        //}
-            #endregion
-        
-
-    }
+           
+        }
 
 
         #endregion
 
         #region clear
 
-        private void clearData_Click(object sender, EventArgs e)
+        private void Delete_SelectedBuilding_Click(object sender, EventArgs e)
         {
-            BuildingNumber.Clear();
-            floorNumbers.Clear();
-            mainTankCapacity.Clear();
-            GeoPicURL.Clear();
-            BuildingGeoPic_DT.Image = null;
-            DG_Floors_DT.Rows.Clear();
+            server_Class_Obj.Delete_SelectedBuilding(buildings[selectedBuildingIndex].BuildingID);
         }
 
         #endregion
@@ -809,13 +783,14 @@ namespace Incident_Reporting_App_Server
             pump.UserID = Selected_User_ID;
             FF_pumps p=server_Class_Obj.Add_FFPump(pump);
             if(p!=null)
-                richTextBox1.Text="\n FF_pumps Added Successfully";
+                label22.Text="\n FF_pumps Added Successfully";
 
         }
 
         private void EditPUMP_Click_1(object sender, EventArgs e)
         {
             pump = new FF_pumps();
+            pump.FF_pumpsID = PumpID;
             pump.Additional_info = pumpInfo.Text==null?"": pumpInfo.Text;
             pump.Address = pumpAddress.Text==null?"": pumpAddress.Text;
             pump.Area = pumpArea.Text==null?"": pumpArea.Text;
@@ -827,19 +802,19 @@ namespace Incident_Reporting_App_Server
             pump.UserID = Selected_User_ID;
             bool flag=server_Class_Obj.Update_FFPump(pump);
             if (flag ==true)
-                richTextBox1.Text="\n FF_pumps Updated Successfully";
+                label22.Text="\n FF_pumps Updated Successfully";
         }
         private void DG_Pumps_DT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            PumpNumber.Text = (string)DG_Pumps_DT.CurrentRow.Cells[0].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[0].Value;
-            pumpArea.Text = (string)DG_Pumps_DT.CurrentRow.Cells[1].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[1].Value;
-            pumpSector.Text = (string)DG_Pumps_DT.CurrentRow.Cells[2].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[2].Value;
-            PumpType.Text = (string)DG_Pumps_DT.CurrentRow.Cells[3].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[3].Value;
-            Status.Text = (string)DG_Pumps_DT.CurrentRow.Cells[4].Value == null?"": (string)DG_Pumps_DT.CurrentRow.Cells[4].Value;
-            pumpAddress.Text = (string)DG_Pumps_DT.CurrentRow.Cells[5].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[5].Value;
-            pumpSign.Text = (string)DG_Pumps_DT.CurrentRow.Cells[6].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[6].Value;
-            pumpInfo.Text = (string)DG_Pumps_DT.CurrentRow.Cells[7].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[7].Value;
-
+            PumpNumber.Text = (string)DG_Pumps_DT.CurrentRow.Cells[1].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[1].Value;
+            pumpArea.Text = (string)DG_Pumps_DT.CurrentRow.Cells[2].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[2].Value;
+            pumpSector.Text = (string)DG_Pumps_DT.CurrentRow.Cells[3].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[3].Value;
+            PumpType.Text = (string)DG_Pumps_DT.CurrentRow.Cells[4].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[4].Value;
+            Status.Text = (string)DG_Pumps_DT.CurrentRow.Cells[5].Value == null?"": (string)DG_Pumps_DT.CurrentRow.Cells[5].Value;
+            pumpAddress.Text = (string)DG_Pumps_DT.CurrentRow.Cells[6].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[6].Value;
+            pumpSign.Text = (string)DG_Pumps_DT.CurrentRow.Cells[7].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[7].Value;
+            pumpInfo.Text = (string)DG_Pumps_DT.CurrentRow.Cells[8].Value==null?"": (string)DG_Pumps_DT.CurrentRow.Cells[8].Value;
+            PumpID = Convert.ToInt32(DG_Pumps_DT.CurrentRow.Cells[0].Value);
         }
 
         private void DeletePump_Click(object sender, EventArgs e)
@@ -854,7 +829,7 @@ namespace Incident_Reporting_App_Server
             pumpInfo.Text = "";
             bool flag = server_Class_Obj.Delete_FF_pumps(pump.FF_pumpsID);
             if (flag == true)
-                richTextBox1.Text="\n FF_pumps Deleted Successfully";
+                label22.Text="\n FF_pumps Deleted Successfully";
         }
         #endregion
 
@@ -884,8 +859,6 @@ namespace Incident_Reporting_App_Server
                 {
                     AccountStatus.Text = "\n Password not matched";
                 }
-
-                
             }
             catch (Exception exception1)
             {
@@ -925,9 +898,6 @@ namespace Incident_Reporting_App_Server
                 AccountStatus.Text="\n Account Deleted Successfully";
         }
 
-
-
-
         #endregion
 
         #region TreeView
@@ -966,22 +936,22 @@ namespace Incident_Reporting_App_Server
                     treeView3.BeginUpdate();
 
                     #region Check the TV roots
+
                     if (treeView3.Nodes.Count == 0)
                     {
                         treeView3.Nodes.Add(LoginAccount.Username);
                         treeView3.Nodes[0].Tag = LoginAccount;
-
+                        treeView3.Nodes[0].Name = "User";
                         //Add Main User Companies node
                         treeView3.Nodes[0].Nodes.Add("Companies");
 
                         //Add Main User Users node
                         treeView3.Nodes[0].Nodes.Add("Users");
-
-
                     }
                     else
                     {
                         treeView3.Nodes[0].Tag = LoginAccount;
+                        treeView3.Nodes[0].Name = "User";
                     }
 
                     #endregion
@@ -1089,12 +1059,13 @@ namespace Incident_Reporting_App_Server
                                         {
                                             node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].Name.ToString();
                                             node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Name = "Company";
                                         }
                                         else
                                         {
                                             node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].Name.ToString());
                                             node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
-                                            
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Name = "Company";
                                         }
                                     }
                                 }
@@ -1134,12 +1105,13 @@ namespace Incident_Reporting_App_Server
                                         {
                                             node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Text = users[uc].User_Companies[ucm].Name.ToString();
                                             node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Tag = users[uc].User_Companies[ucm];
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[ucm].Name = "Company";
                                         }
                                         else
                                         {
                                             node_obj.Nodes[uc].Nodes[0].Nodes.Add(users[uc].User_Companies[ucm].Name.ToString());
                                             node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Tag = users[uc].User_Companies[ucm];
-
+                                            node_obj.Nodes[uc].Nodes[0].Nodes[node_obj.Nodes[uc].Nodes[0].Nodes.Count - 1].Name = "Company";
                                         }
                                     }
                                 }
@@ -1240,7 +1212,7 @@ namespace Incident_Reporting_App_Server
             GeoPicURL.Clear();
             BuildingGeoPic_DT.Image = null;
             DG_Floors_DT.Rows.Clear();
-
+            statusfeild.Text = " ";
 
             if (e.Node.Name == "Company")
             {
@@ -1255,6 +1227,26 @@ namespace Incident_Reporting_App_Server
                 Users SelectedUser = (Users)e.Node.Tag;
                 Selected_User_ID = Convert.ToInt32(SelectedUser.UserID);
                 Users U1 = server_Class_Obj.Select_User(Selected_User_ID);
+                //load Station points 
+
+                points = U1.User_FFstations;
+                int points_length = points != null ? points.Length : 0;
+                CB_Stations_DT.Items.Clear();
+                for (int i = 0; i < points_length; i++)
+                {
+                    CB_Stations_DT.Items.Add(points[i].FF_ID);
+                }
+                //load User Pumps
+                pumps = U1.User_FF_Pumps;
+                int pumps_length = pumps != null ? pumps.Length : 0;
+                DG_Pumps_DT.Rows.Clear();
+                for (int i = 0; i < pumps_length; i++)
+                {
+                    string[] row = new string[] {Convert.ToString(pumps[i].FF_pumpsID), pumps[i].PumpNumber, pumps[i].Area, pumps[i].Sector,
+                    pumps[i].PumpType,pumps[i].Status,pumps[i].Address,pumps[i].Signs,pumps[i].Additional_info };
+
+                    DG_Pumps_DT.Rows.Add(row);
+                }
                 accountName.Text = U1.Username == null ? "" : U1.Username;
                 AccountInfo.Text = U1.Info;
                 accountPassword.Clear();
@@ -1264,11 +1256,36 @@ namespace Incident_Reporting_App_Server
                     accountPassword.Text += "*";
                     ReAccountPassword.Text += "*";
                 }
+                
             }
         }
 
         #endregion
-        
+
+        private void Deleted_SelectedManager_Click(object sender, EventArgs e)
+        {
+            bool flag=server_Class_Obj.Delete_Manager(managers[selectedManagerIndex].ManagerID);
+            if (flag ==true)
+            {
+                TB_SelectedUserName_DT.Clear();
+                TB_SelectedUserBuisiness_DT.Clear();
+                TB_SelectedUserPhone_DT.Clear();
+                TB_SelectedUserInfo_DT.Clear();
+                statusfeild.Text = "\n Managers updated Successfully";
+            }  
+        }
+
+        private void Delete_SelectedDangerous_Click(object sender, EventArgs e)
+        {
+            bool flag = server_Class_Obj.Delete_SelectedDangerousPlaces(places[selectedDangerousIndex].DangerousPlaceID);
+            if (flag == true)
+            {
+                HazardousSubstance.Clear();
+                DangerouseLocation.Clear();
+                FireMediator.Clear();
+                statusfeild.Text = "\n DangerousPlaces updated Successfully";
+            }  
+        }
     }
 
     

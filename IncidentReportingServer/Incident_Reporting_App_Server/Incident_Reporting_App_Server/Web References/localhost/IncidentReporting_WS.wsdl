@@ -2,19 +2,19 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="Company_Select_By_RightCompanyName">
+      <s:element name="Company_Select_By_RightCompanyBusiness">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Company_Select_By_RightCompanyNameResponse">
+      <s:element name="Company_Select_By_RightCompanyBusinessResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyNameResult" type="tns:ArrayOfCompany" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyBusinessResult" type="tns:ArrayOfCompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -221,6 +221,22 @@
           <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="Company_Select_By_RightCompanyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightCompanyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyNameResult" type="tns:ArrayOfCompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Company_Select_By_RightFireMediator">
         <s:complexType>
           <s:sequence>
@@ -1263,6 +1279,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="DangerousPlaces_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DangerousPlaceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DangerousPlaces_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DangerousPlaces_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="DangerousPlaces_Insert">
         <s:complexType>
           <s:sequence>
@@ -1722,22 +1754,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_OxygenTrapLocationResult" type="tns:ArrayOfCompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightCompanyBusiness">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightCompanyBusinessResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyBusinessResult" type="tns:ArrayOfCompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2779,6 +2795,12 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusiness" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusinessResponse" />
+  </wsdl:message>
   <wsdl:message name="Company_Select_By_RightCompanyNameSoapIn">
     <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyName" />
   </wsdl:message>
@@ -3163,6 +3185,12 @@
   <wsdl:message name="DangerousPlaces_Delete_By_CompanyIDSoapOut">
     <wsdl:part name="parameters" element="tns:DangerousPlaces_Delete_By_CompanyIDResponse" />
   </wsdl:message>
+  <wsdl:message name="DangerousPlaces_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:DangerousPlaces_Delete" />
+  </wsdl:message>
+  <wsdl:message name="DangerousPlaces_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DangerousPlaces_DeleteResponse" />
+  </wsdl:message>
   <wsdl:message name="DangerousPlaces_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:DangerousPlaces_Insert" />
   </wsdl:message>
@@ -3336,12 +3364,6 @@
   </wsdl:message>
   <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapOut">
     <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocationResponse" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusiness" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusinessResponse" />
   </wsdl:message>
   <wsdl:message name="Users_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:Users_Delete" />
@@ -3716,6 +3738,10 @@
     <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_SectorResponse" />
   </wsdl:message>
   <wsdl:portType name="IncidentReporting_WSSoap">
+    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
+      <wsdl:input message="tns:Company_Select_By_RightCompanyBusinessSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_RightCompanyBusinessSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyName">
       <wsdl:input message="tns:Company_Select_By_RightCompanyNameSoapIn" />
       <wsdl:output message="tns:Company_Select_By_RightCompanyNameSoapOut" />
@@ -3972,6 +3998,10 @@
       <wsdl:input message="tns:DangerousPlaces_Delete_By_CompanyIDSoapIn" />
       <wsdl:output message="tns:DangerousPlaces_Delete_By_CompanyIDSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="DangerousPlaces_Delete">
+      <wsdl:input message="tns:DangerousPlaces_DeleteSoapIn" />
+      <wsdl:output message="tns:DangerousPlaces_DeleteSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="DangerousPlaces_Insert">
       <wsdl:input message="tns:DangerousPlaces_InsertSoapIn" />
       <wsdl:output message="tns:DangerousPlaces_InsertSoapOut" />
@@ -4087,10 +4117,6 @@
     <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
       <wsdl:input message="tns:Company_Select_By_OxygenTrapLocationSoapIn" />
       <wsdl:output message="tns:Company_Select_By_OxygenTrapLocationSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
-      <wsdl:input message="tns:Company_Select_By_RightCompanyBusinessSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_RightCompanyBusinessSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Users_Delete">
       <wsdl:input message="tns:Users_DeleteSoapIn" />
@@ -4343,6 +4369,15 @@
   </wsdl:portType>
   <wsdl:binding name="IncidentReporting_WSSoap" type="tns:IncidentReporting_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyName">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
       <wsdl:input>
@@ -4919,6 +4954,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DangerousPlaces_Delete">
+      <soap:operation soapAction="http://tempuri.org/DangerousPlaces_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DangerousPlaces_Insert">
       <soap:operation soapAction="http://tempuri.org/DangerousPlaces_Insert" style="document" />
       <wsdl:input>
@@ -5173,15 +5217,6 @@
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5750,6 +5785,15 @@
   </wsdl:binding>
   <wsdl:binding name="IncidentReporting_WSSoap12" type="tns:IncidentReporting_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyName">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
       <wsdl:input>
@@ -6326,6 +6370,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DangerousPlaces_Delete">
+      <soap12:operation soapAction="http://tempuri.org/DangerousPlaces_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DangerousPlaces_Insert">
       <soap12:operation soapAction="http://tempuri.org/DangerousPlaces_Insert" style="document" />
       <wsdl:input>
@@ -6580,15 +6633,6 @@
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

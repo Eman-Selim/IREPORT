@@ -30,6 +30,25 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 return false;
             }
         }
+
+        public bool DangerousPlaces_Delete(string username, string password, int DangerousPlaceID)
+        {
+            try
+            {
+                object[,] sp_Params = new object[,]
+                {
+                    {"@username", username},
+                    {"@password", password},
+                    {"@DangerousPlaceID", DangerousPlaceID}
+                };
+                bool flag = db.Execute_Update_Delete_Stored_Procedure("DangerousPlaces_Delete", sp_Params);
+                return flag;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces DangerousPlaces)
         {
             try

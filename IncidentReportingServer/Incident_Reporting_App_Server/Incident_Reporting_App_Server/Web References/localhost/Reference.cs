@@ -29,6 +29,8 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="IncidentReporting_WSSoap", Namespace="http://tempuri.org/")]
     public partial class IncidentReporting_WS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyBusinessOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyNameOperationCompleted;
         
         private System.Threading.SendOrPostCallback Company_Select_By_RightFireMediatorOperationCompleted;
@@ -157,6 +159,8 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback DangerousPlaces_Delete_By_CompanyIDOperationCompleted;
         
+        private System.Threading.SendOrPostCallback DangerousPlaces_DeleteOperationCompleted;
+        
         private System.Threading.SendOrPostCallback DangerousPlaces_InsertOperationCompleted;
         
         private System.Threading.SendOrPostCallback DangerousPlaces_UpdateOperationCompleted;
@@ -214,8 +218,6 @@ namespace Incident_Reporting_App_Server.localhost {
         private System.Threading.SendOrPostCallback Company_Select_By_NameOperationCompleted;
         
         private System.Threading.SendOrPostCallback Company_Select_By_OxygenTrapLocationOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyBusinessOperationCompleted;
         
         private System.Threading.SendOrPostCallback Users_DeleteOperationCompleted;
         
@@ -378,6 +380,9 @@ namespace Incident_Reporting_App_Server.localhost {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event Company_Select_By_RightCompanyBusinessCompletedEventHandler Company_Select_By_RightCompanyBusinessCompleted;
         
         /// <remarks/>
         public event Company_Select_By_RightCompanyNameCompletedEventHandler Company_Select_By_RightCompanyNameCompleted;
@@ -572,6 +577,9 @@ namespace Incident_Reporting_App_Server.localhost {
         public event DangerousPlaces_Delete_By_CompanyIDCompletedEventHandler DangerousPlaces_Delete_By_CompanyIDCompleted;
         
         /// <remarks/>
+        public event DangerousPlaces_DeleteCompletedEventHandler DangerousPlaces_DeleteCompleted;
+        
+        /// <remarks/>
         public event DangerousPlaces_InsertCompletedEventHandler DangerousPlaces_InsertCompleted;
         
         /// <remarks/>
@@ -657,9 +665,6 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         public event Company_Select_By_OxygenTrapLocationCompletedEventHandler Company_Select_By_OxygenTrapLocationCompleted;
-        
-        /// <remarks/>
-        public event Company_Select_By_RightCompanyBusinessCompletedEventHandler Company_Select_By_RightCompanyBusinessCompleted;
         
         /// <remarks/>
         public event Users_DeleteCompletedEventHandler Users_DeleteCompleted;
@@ -846,6 +851,39 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         public event FF_pumps_Select_By_SectorCompletedEventHandler FF_pumps_Select_By_SectorCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyBusiness", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Company[] Company_Select_By_RightCompanyBusiness(string username, string password, string RightCompanyBusiness) {
+            object[] results = this.Invoke("Company_Select_By_RightCompanyBusiness", new object[] {
+                        username,
+                        password,
+                        RightCompanyBusiness});
+            return ((Company[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness) {
+            this.Company_Select_By_RightCompanyBusinessAsync(username, password, RightCompanyBusiness, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness, object userState) {
+            if ((this.Company_Select_By_RightCompanyBusinessOperationCompleted == null)) {
+                this.Company_Select_By_RightCompanyBusinessOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightCompanyBusinessOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_RightCompanyBusiness", new object[] {
+                        username,
+                        password,
+                        RightCompanyBusiness}, this.Company_Select_By_RightCompanyBusinessOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_RightCompanyBusinessOperationCompleted(object arg) {
+            if ((this.Company_Select_By_RightCompanyBusinessCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_RightCompanyBusinessCompleted(this, new Company_Select_By_RightCompanyBusinessCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -2948,6 +2986,39 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DangerousPlaces_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool DangerousPlaces_Delete(string username, string password, int DangerousPlaceID) {
+            object[] results = this.Invoke("DangerousPlaces_Delete", new object[] {
+                        username,
+                        password,
+                        DangerousPlaceID});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DangerousPlaces_DeleteAsync(string username, string password, int DangerousPlaceID) {
+            this.DangerousPlaces_DeleteAsync(username, password, DangerousPlaceID, null);
+        }
+        
+        /// <remarks/>
+        public void DangerousPlaces_DeleteAsync(string username, string password, int DangerousPlaceID, object userState) {
+            if ((this.DangerousPlaces_DeleteOperationCompleted == null)) {
+                this.DangerousPlaces_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDangerousPlaces_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("DangerousPlaces_Delete", new object[] {
+                        username,
+                        password,
+                        DangerousPlaceID}, this.DangerousPlaces_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnDangerousPlaces_DeleteOperationCompleted(object arg) {
+            if ((this.DangerousPlaces_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DangerousPlaces_DeleteCompleted(this, new DangerousPlaces_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DangerousPlaces_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces dangerousPlaces) {
             object[] results = this.Invoke("DangerousPlaces_Insert", new object[] {
@@ -3897,39 +3968,6 @@ namespace Incident_Reporting_App_Server.localhost {
             if ((this.Company_Select_By_OxygenTrapLocationCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Company_Select_By_OxygenTrapLocationCompleted(this, new Company_Select_By_OxygenTrapLocationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyBusiness", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Company[] Company_Select_By_RightCompanyBusiness(string username, string password, string RightCompanyBusiness) {
-            object[] results = this.Invoke("Company_Select_By_RightCompanyBusiness", new object[] {
-                        username,
-                        password,
-                        RightCompanyBusiness});
-            return ((Company[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness) {
-            this.Company_Select_By_RightCompanyBusinessAsync(username, password, RightCompanyBusiness, null);
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness, object userState) {
-            if ((this.Company_Select_By_RightCompanyBusinessOperationCompleted == null)) {
-                this.Company_Select_By_RightCompanyBusinessOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightCompanyBusinessOperationCompleted);
-            }
-            this.InvokeAsync("Company_Select_By_RightCompanyBusiness", new object[] {
-                        username,
-                        password,
-                        RightCompanyBusiness}, this.Company_Select_By_RightCompanyBusinessOperationCompleted, userState);
-        }
-        
-        private void OnCompany_Select_By_RightCompanyBusinessOperationCompleted(object arg) {
-            if ((this.Company_Select_By_RightCompanyBusinessCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Company_Select_By_RightCompanyBusinessCompleted(this, new Company_Select_By_RightCompanyBusinessCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -8049,6 +8087,32 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_RightCompanyBusinessCompletedEventHandler(object sender, Company_Select_By_RightCompanyBusinessCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_RightCompanyBusinessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_RightCompanyBusinessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Company[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Company[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void Company_Select_By_RightCompanyNameCompletedEventHandler(object sender, Company_Select_By_RightCompanyNameCompletedEventArgs e);
     
     /// <remarks/>
@@ -9713,6 +9777,32 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void DangerousPlaces_DeleteCompletedEventHandler(object sender, DangerousPlaces_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DangerousPlaces_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DangerousPlaces_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void DangerousPlaces_InsertCompletedEventHandler(object sender, DangerousPlaces_InsertCompletedEventArgs e);
     
     /// <remarks/>
@@ -10452,32 +10542,6 @@ namespace Incident_Reporting_App_Server.localhost {
         private object[] results;
         
         internal Company_Select_By_OxygenTrapLocationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Company[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Company[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Company_Select_By_RightCompanyBusinessCompletedEventHandler(object sender, Company_Select_By_RightCompanyBusinessCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Company_Select_By_RightCompanyBusinessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Company_Select_By_RightCompanyBusinessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

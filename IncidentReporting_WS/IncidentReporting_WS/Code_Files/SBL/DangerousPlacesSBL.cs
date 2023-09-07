@@ -28,6 +28,25 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return false;
             }
         }
+
+        public bool DangerousPlaces_Delete(string username, string password, int DangerousPlaceID)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return DangerousPlacesDAL_Obj.DangerousPlaces_Delete(username, password, DangerousPlaceID);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces DangerousPlaces)
         {
             try

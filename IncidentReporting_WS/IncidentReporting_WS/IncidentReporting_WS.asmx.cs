@@ -1580,6 +1580,19 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
+        public bool DangerousPlaces_Delete(string username, string password, int DangerousPlaceID)
+        {
+            try
+            {
+                return DangerousPlacesSBL_Obj.DangerousPlaces_Delete(username, password, DangerousPlaceID);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
         public DangerousPlaces DangerousPlaces_Insert(string username, string password, DangerousPlaces dangerousPlaces)
         {
             try

@@ -289,7 +289,18 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-
+        public Managers Add_Manager(Managers Manager)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.Managers_Insert(UserName, Password, Manager);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
         public bool Delete_Company(int id)
         {
             try
@@ -366,6 +377,19 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
+        public bool Delete_SelectedBuilding(int id)
+        {
+            try
+            {
+
+                return IncidentReporting_WS_Obj.Buildings_Delete(UserName, Password, id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
         public bool Delete_DangerousPlaces(int id)
         {
             try
@@ -379,6 +403,33 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
+        public bool Delete_SelectedDangerousPlaces(int id)
+        {
+            try
+            {
+
+                return IncidentReporting_WS_Obj.DangerousPlaces_Delete(UserName, Password, id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
+        public bool Delete_Manager(int id)
+        {
+            try
+            {
+
+                return IncidentReporting_WS_Obj.Managers_Delete(UserName, Password, id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return false;
+            }
+        }
+
         public FF_pumps Add_FFPump(FF_pumps pump)
         {
             try

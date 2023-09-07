@@ -38,6 +38,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                {
                     {"@username", username},
                     {"@password", password},
+                    {"@FF_pumpsID", FF_pumps.FF_pumpsID},
                     {"@Sector", FF_pumps.Sector },
                     {"@Address", FF_pumps.Address},
                     {"@PumpNumber",FF_pumps.PumpNumber},
