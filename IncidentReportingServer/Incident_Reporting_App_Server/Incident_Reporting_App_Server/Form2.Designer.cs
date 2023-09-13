@@ -99,13 +99,13 @@ namespace Incident_Reporting_App_Server
             this.accountName = new System.Windows.Forms.RichTextBox();
             this.c1DockingTabPage9 = new C1.Win.C1Command.C1DockingTabPage();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.c1DockingTab3 = new C1.Win.C1Command.C1DockingTab();
             this.c1DockingTabPage12 = new C1.Win.C1Command.C1DockingTabPage();
-            this.richTextBox1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.DeleteStationsManPower = new System.Windows.Forms.Button();
             this.EditStationsManPower = new System.Windows.Forms.Button();
             this.AddStationsManPower = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.Label();
             this.ff_ManPowerGrid = new System.Windows.Forms.DataGridView();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,12 +137,13 @@ namespace Incident_Reporting_App_Server
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.c1DockingTabPage13 = new C1.Win.C1Command.C1DockingTabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.Status = new System.Windows.Forms.RichTextBox();
-            this.PumpType = new System.Windows.Forms.RichTextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.DeletePump = new System.Windows.Forms.Button();
             this.EditPUMP = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.Status = new System.Windows.Forms.RichTextBox();
+            this.PumpType = new System.Windows.Forms.RichTextBox();
             this.DG_Pumps_DT = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -239,7 +240,7 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyImage_DT = new C1.Win.C1Input.C1PictureBox();
             this.c1DockingTabPage8 = new C1.Win.C1Command.C1DockingTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.c1PictureBox4 = new C1.Win.C1Input.C1PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.c1DockingTabPage6 = new C1.Win.C1Command.C1DockingTabPage();
             this.Deleted_SelectedManager = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -272,10 +273,10 @@ namespace Incident_Reporting_App_Server
             this.statusfeild = new System.Windows.Forms.Label();
             this.SaveAddedBuildings = new System.Windows.Forms.Button();
             this.c1DockingTab1 = new C1.Win.C1Command.C1DockingTab();
-            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -289,11 +290,13 @@ namespace Incident_Reporting_App_Server
             ((System.ComponentModel.ISupportInitialize)(this.c1DockingTab3)).BeginInit();
             this.c1DockingTab3.SuspendLayout();
             this.c1DockingTabPage12.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ff_ManPowerGrid)).BeginInit();
             this.panel7.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.c1DockingTabPage13.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Pumps_DT)).BeginInit();
             this.c1DockingTabPage1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -312,7 +315,7 @@ namespace Incident_Reporting_App_Server
             ((System.ComponentModel.ISupportInitialize)(this.TB_CompanyImage_DT)).BeginInit();
             this.c1DockingTabPage8.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.c1PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.c1DockingTabPage6.SuspendLayout();
             this.c1DockingTabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.c1CommandDock1)).BeginInit();
@@ -641,9 +644,9 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage10.Controls.Add(this.panel2);
             this.c1DockingTabPage10.ImageIndex = 30;
-            this.c1DockingTabPage10.Location = new System.Drawing.Point(0, 1);
+            this.c1DockingTabPage10.Location = new System.Drawing.Point(0, 28);
             this.c1DockingTabPage10.Name = "c1DockingTabPage10";
-            this.c1DockingTabPage10.Size = new System.Drawing.Size(1753, 999);
+            this.c1DockingTabPage10.Size = new System.Drawing.Size(1753, 972);
             this.c1DockingTabPage10.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
             this.c1DockingTabPage10.TabForeColor = System.Drawing.Color.DeepSkyBlue;
             this.c1DockingTabPage10.TabIndex = 4;
@@ -652,7 +655,6 @@ namespace Incident_Reporting_App_Server
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.panel2.Controls.Add(this.AccountStatus);
             this.panel2.Controls.Add(this.panel14);
             this.panel2.Controls.Add(this.label36);
             this.panel2.Controls.Add(this.label37);
@@ -666,7 +668,7 @@ namespace Incident_Reporting_App_Server
             this.panel2.ForeColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1753, 999);
+            this.panel2.Size = new System.Drawing.Size(1753, 972);
             this.panel2.TabIndex = 100;
             // 
             // AccountStatus
@@ -674,20 +676,22 @@ namespace Incident_Reporting_App_Server
             this.AccountStatus.AutoSize = true;
             this.AccountStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountStatus.ForeColor = System.Drawing.Color.YellowGreen;
-            this.AccountStatus.Location = new System.Drawing.Point(926, 770);
+            this.AccountStatus.Location = new System.Drawing.Point(735, 11);
             this.AccountStatus.Name = "AccountStatus";
             this.AccountStatus.Size = new System.Drawing.Size(0, 20);
             this.AccountStatus.TabIndex = 126;
             // 
             // panel14
             // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
+            this.panel14.Controls.Add(this.AccountStatus);
             this.panel14.Controls.Add(this.EditUser);
             this.panel14.Controls.Add(this.DeleteUser);
             this.panel14.Controls.Add(this.AddAccount);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(0, 906);
+            this.panel14.Location = new System.Drawing.Point(0, 927);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1753, 93);
+            this.panel14.Size = new System.Drawing.Size(1753, 45);
             this.panel14.TabIndex = 125;
             // 
             // EditUser
@@ -696,9 +700,9 @@ namespace Incident_Reporting_App_Server
             this.EditUser.FlatAppearance.BorderSize = 0;
             this.EditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditUser.Image = ((System.Drawing.Image)(resources.GetObject("EditUser.Image")));
-            this.EditUser.Location = new System.Drawing.Point(416, 6);
+            this.EditUser.Location = new System.Drawing.Point(168, 3);
             this.EditUser.Name = "EditUser";
-            this.EditUser.Size = new System.Drawing.Size(41, 47);
+            this.EditUser.Size = new System.Drawing.Size(41, 39);
             this.EditUser.TabIndex = 51;
             this.EditUser.UseVisualStyleBackColor = true;
             this.EditUser.Click += new System.EventHandler(this.EditUser_Click);
@@ -709,9 +713,9 @@ namespace Incident_Reporting_App_Server
             this.DeleteUser.FlatAppearance.BorderSize = 0;
             this.DeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteUser.Image = ((System.Drawing.Image)(resources.GetObject("DeleteUser.Image")));
-            this.DeleteUser.Location = new System.Drawing.Point(387, 9);
+            this.DeleteUser.Location = new System.Drawing.Point(139, 3);
             this.DeleteUser.Name = "DeleteUser";
-            this.DeleteUser.Size = new System.Drawing.Size(33, 46);
+            this.DeleteUser.Size = new System.Drawing.Size(33, 41);
             this.DeleteUser.TabIndex = 50;
             this.DeleteUser.UseVisualStyleBackColor = true;
             this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
@@ -722,7 +726,7 @@ namespace Incident_Reporting_App_Server
             this.AddAccount.FlatAppearance.BorderSize = 0;
             this.AddAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddAccount.Image = ((System.Drawing.Image)(resources.GetObject("AddAccount.Image")));
-            this.AddAccount.Location = new System.Drawing.Point(453, 12);
+            this.AddAccount.Location = new System.Drawing.Point(205, 1);
             this.AddAccount.Name = "AddAccount";
             this.AddAccount.Size = new System.Drawing.Size(40, 41);
             this.AddAccount.TabIndex = 49;
@@ -735,7 +739,7 @@ namespace Incident_Reporting_App_Server
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(1099, 564);
+            this.label36.Location = new System.Drawing.Point(1099, 551);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(129, 25);
             this.label36.TabIndex = 122;
@@ -747,7 +751,7 @@ namespace Incident_Reporting_App_Server
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(1076, 460);
+            this.label37.Location = new System.Drawing.Point(1076, 447);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(152, 25);
             this.label37.TabIndex = 121;
@@ -759,7 +763,7 @@ namespace Incident_Reporting_App_Server
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(1142, 373);
+            this.label38.Location = new System.Drawing.Point(1142, 360);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(86, 25);
             this.label38.TabIndex = 120;
@@ -771,7 +775,7 @@ namespace Incident_Reporting_App_Server
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(1174, 285);
+            this.label39.Location = new System.Drawing.Point(1174, 272);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(54, 25);
             this.label39.TabIndex = 119;
@@ -783,7 +787,7 @@ namespace Incident_Reporting_App_Server
             this.AccountInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.AccountInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountInfo.ForeColor = System.Drawing.Color.White;
-            this.AccountInfo.Location = new System.Drawing.Point(679, 555);
+            this.AccountInfo.Location = new System.Drawing.Point(679, 542);
             this.AccountInfo.MaxLength = 300;
             this.AccountInfo.Name = "AccountInfo";
             this.AccountInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -798,7 +802,7 @@ namespace Incident_Reporting_App_Server
             this.ReAccountPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.ReAccountPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReAccountPassword.ForeColor = System.Drawing.Color.White;
-            this.ReAccountPassword.Location = new System.Drawing.Point(679, 460);
+            this.ReAccountPassword.Location = new System.Drawing.Point(679, 447);
             this.ReAccountPassword.MaxLength = 300;
             this.ReAccountPassword.Name = "ReAccountPassword";
             this.ReAccountPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -813,7 +817,7 @@ namespace Incident_Reporting_App_Server
             this.accountPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.accountPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountPassword.ForeColor = System.Drawing.Color.White;
-            this.accountPassword.Location = new System.Drawing.Point(679, 373);
+            this.accountPassword.Location = new System.Drawing.Point(679, 360);
             this.accountPassword.MaxLength = 300;
             this.accountPassword.Name = "accountPassword";
             this.accountPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -828,7 +832,7 @@ namespace Incident_Reporting_App_Server
             this.accountName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.accountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountName.ForeColor = System.Drawing.Color.White;
-            this.accountName.Location = new System.Drawing.Point(679, 285);
+            this.accountName.Location = new System.Drawing.Point(679, 272);
             this.accountName.MaxLength = 300;
             this.accountName.Name = "accountName";
             this.accountName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -846,9 +850,9 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTabPage9.ForeColor = System.Drawing.Color.White;
             this.c1DockingTabPage9.ImageIndex = 0;
-            this.c1DockingTabPage9.Location = new System.Drawing.Point(0, 1);
+            this.c1DockingTabPage9.Location = new System.Drawing.Point(0, 28);
             this.c1DockingTabPage9.Name = "c1DockingTabPage9";
-            this.c1DockingTabPage9.Size = new System.Drawing.Size(1753, 999);
+            this.c1DockingTabPage9.Size = new System.Drawing.Size(1753, 972);
             this.c1DockingTabPage9.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.c1DockingTabPage9.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
             this.c1DockingTabPage9.TabForeColor = System.Drawing.Color.DeepSkyBlue;
@@ -858,22 +862,12 @@ namespace Incident_Reporting_App_Server
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.c1DockingTab3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1753, 999);
+            this.panel6.Size = new System.Drawing.Size(1753, 972);
             this.panel6.TabIndex = 97;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 989);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1753, 10);
-            this.panel4.TabIndex = 143;
             // 
             // c1DockingTab3
             // 
@@ -881,11 +875,12 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab3.Controls.Add(this.c1DockingTabPage12);
             this.c1DockingTab3.Controls.Add(this.c1DockingTabPage13);
             this.c1DockingTab3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.c1DockingTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTab3.Location = new System.Drawing.Point(0, 0);
             this.c1DockingTab3.Name = "c1DockingTab3";
             this.c1DockingTab3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.c1DockingTab3.SelectedIndex = 2;
-            this.c1DockingTab3.Size = new System.Drawing.Size(1753, 999);
+            this.c1DockingTab3.Size = new System.Drawing.Size(1753, 972);
             this.c1DockingTab3.TabAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTab3.TabIndex = 98;
             this.c1DockingTab3.TabStyle = C1.Win.C1Command.TabStyleEnum.Sloping;
@@ -895,34 +890,34 @@ namespace Incident_Reporting_App_Server
             // 
             this.c1DockingTabPage12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.c1DockingTabPage12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.c1DockingTabPage12.Controls.Add(this.richTextBox1);
-            this.c1DockingTabPage12.Controls.Add(this.DeleteStationsManPower);
-            this.c1DockingTabPage12.Controls.Add(this.EditStationsManPower);
-            this.c1DockingTabPage12.Controls.Add(this.AddStationsManPower);
+            this.c1DockingTabPage12.Controls.Add(this.panel4);
             this.c1DockingTabPage12.Controls.Add(this.ff_ManPowerGrid);
             this.c1DockingTabPage12.Controls.Add(this.panel7);
             this.c1DockingTabPage12.Controls.Add(this.groupBox4);
             this.c1DockingTabPage12.Controls.Add(this.groupBox3);
             this.c1DockingTabPage12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTabPage12.ImageIndex = 5;
-            this.c1DockingTabPage12.Location = new System.Drawing.Point(1, 24);
+            this.c1DockingTabPage12.Location = new System.Drawing.Point(1, 30);
             this.c1DockingTabPage12.Name = "c1DockingTabPage12";
-            this.c1DockingTabPage12.Size = new System.Drawing.Size(1751, 974);
+            this.c1DockingTabPage12.Size = new System.Drawing.Size(1751, 941);
             this.c1DockingTabPage12.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage12.TabForeColor = System.Drawing.Color.DeepSkyBlue;
             this.c1DockingTabPage12.TabForeColorSelected = System.Drawing.Color.Silver;
             this.c1DockingTabPage12.TabIndex = 0;
             this.c1DockingTabPage12.Text = "نقاط الإطفاء";
             // 
-            // richTextBox1
+            // panel4
             // 
-            this.richTextBox1.AutoSize = true;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.richTextBox1.Location = new System.Drawing.Point(1073, 497);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(0, 20);
-            this.richTextBox1.TabIndex = 100;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
+            this.panel4.Controls.Add(this.DeleteStationsManPower);
+            this.panel4.Controls.Add(this.richTextBox1);
+            this.panel4.Controls.Add(this.EditStationsManPower);
+            this.panel4.Controls.Add(this.AddStationsManPower);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 552);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1751, 39);
+            this.panel4.TabIndex = 144;
             // 
             // DeleteStationsManPower
             // 
@@ -930,7 +925,7 @@ namespace Incident_Reporting_App_Server
             this.DeleteStationsManPower.FlatAppearance.BorderSize = 0;
             this.DeleteStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("DeleteStationsManPower.Image")));
-            this.DeleteStationsManPower.Location = new System.Drawing.Point(292, 565);
+            this.DeleteStationsManPower.Location = new System.Drawing.Point(137, 0);
             this.DeleteStationsManPower.Name = "DeleteStationsManPower";
             this.DeleteStationsManPower.Size = new System.Drawing.Size(37, 36);
             this.DeleteStationsManPower.TabIndex = 142;
@@ -943,7 +938,7 @@ namespace Incident_Reporting_App_Server
             this.EditStationsManPower.FlatAppearance.BorderSize = 0;
             this.EditStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("EditStationsManPower.Image")));
-            this.EditStationsManPower.Location = new System.Drawing.Point(325, 561);
+            this.EditStationsManPower.Location = new System.Drawing.Point(180, -5);
             this.EditStationsManPower.Name = "EditStationsManPower";
             this.EditStationsManPower.Size = new System.Drawing.Size(40, 41);
             this.EditStationsManPower.TabIndex = 141;
@@ -956,18 +951,28 @@ namespace Incident_Reporting_App_Server
             this.AddStationsManPower.FlatAppearance.BorderSize = 0;
             this.AddStationsManPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddStationsManPower.Image = ((System.Drawing.Image)(resources.GetObject("AddStationsManPower.Image")));
-            this.AddStationsManPower.Location = new System.Drawing.Point(365, 564);
+            this.AddStationsManPower.Location = new System.Drawing.Point(226, -2);
             this.AddStationsManPower.Name = "AddStationsManPower";
             this.AddStationsManPower.Size = new System.Drawing.Size(40, 37);
             this.AddStationsManPower.TabIndex = 140;
             this.AddStationsManPower.UseVisualStyleBackColor = true;
             this.AddStationsManPower.Click += new System.EventHandler(this.AddStationsManPower_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.AutoSize = true;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.YellowGreen;
+            this.richTextBox1.Location = new System.Drawing.Point(1043, 5);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(0, 20);
+            this.richTextBox1.TabIndex = 100;
+            // 
             // ff_ManPowerGrid
             // 
             this.ff_ManPowerGrid.AllowUserToOrderColumns = true;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -995,11 +1000,12 @@ namespace Incident_Reporting_App_Server
             this.ff_ManPowerGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ff_ManPowerGrid.EnableHeadersVisualStyles = false;
             this.ff_ManPowerGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ff_ManPowerGrid.Location = new System.Drawing.Point(0, 624);
+            this.ff_ManPowerGrid.Location = new System.Drawing.Point(0, 591);
             this.ff_ManPowerGrid.MultiSelect = false;
             this.ff_ManPowerGrid.Name = "ff_ManPowerGrid";
             this.ff_ManPowerGrid.RowHeadersVisible = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             this.ff_ManPowerGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -1070,16 +1076,17 @@ namespace Incident_Reporting_App_Server
             // 
             this.label40.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.Location = new System.Drawing.Point(1259, 23);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(73, 20);
+            this.label40.Size = new System.Drawing.Size(94, 25);
             this.label40.TabIndex = 4;
             this.label40.Text = "نقاط الاطفاء";
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.groupBox4.Controls.Add(this.TB_Equipments_DT);
             this.groupBox4.Controls.Add(this.TB_CarsNumber_DT);
             this.groupBox4.Controls.Add(this.TB_SoliderNumber_DT);
@@ -1090,7 +1097,7 @@ namespace Incident_Reporting_App_Server
             this.groupBox4.Controls.Add(this.label55);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(415, 105);
+            this.groupBox4.Location = new System.Drawing.Point(415, 88);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(467, 384);
             this.groupBox4.TabIndex = 4;
@@ -1196,6 +1203,7 @@ namespace Incident_Reporting_App_Server
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.groupBox3.Controls.Add(this.label42);
             this.groupBox3.Controls.Add(this.TB_area_DT);
             this.groupBox3.Controls.Add(this.TB_Additional_info_DT);
@@ -1208,7 +1216,7 @@ namespace Incident_Reporting_App_Server
             this.groupBox3.Controls.Add(this.label48);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(917, 105);
+            this.groupBox3.Location = new System.Drawing.Point(917, 88);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(482, 384);
             this.groupBox3.TabIndex = 3;
@@ -1330,12 +1338,9 @@ namespace Incident_Reporting_App_Server
             // 
             this.c1DockingTabPage13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.c1DockingTabPage13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.c1DockingTabPage13.Controls.Add(this.label22);
+            this.c1DockingTabPage13.Controls.Add(this.panel5);
             this.c1DockingTabPage13.Controls.Add(this.Status);
             this.c1DockingTabPage13.Controls.Add(this.PumpType);
-            this.c1DockingTabPage13.Controls.Add(this.DeletePump);
-            this.c1DockingTabPage13.Controls.Add(this.EditPUMP);
-            this.c1DockingTabPage13.Controls.Add(this.button2);
             this.c1DockingTabPage13.Controls.Add(this.DG_Pumps_DT);
             this.c1DockingTabPage13.Controls.Add(this.label60);
             this.c1DockingTabPage13.Controls.Add(this.label59);
@@ -1353,20 +1358,72 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage13.Controls.Add(this.label56);
             this.c1DockingTabPage13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTabPage13.ImageIndex = 2;
-            this.c1DockingTabPage13.Location = new System.Drawing.Point(1, 24);
+            this.c1DockingTabPage13.Location = new System.Drawing.Point(1, 30);
             this.c1DockingTabPage13.Name = "c1DockingTabPage13";
-            this.c1DockingTabPage13.Size = new System.Drawing.Size(1751, 974);
+            this.c1DockingTabPage13.Size = new System.Drawing.Size(1751, 941);
             this.c1DockingTabPage13.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage13.TabForeColor = System.Drawing.Color.DeepSkyBlue;
             this.c1DockingTabPage13.TabForeColorSelected = System.Drawing.Color.Silver;
             this.c1DockingTabPage13.TabIndex = 1;
             this.c1DockingTabPage13.Text = "حنفيات الحريق";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
+            this.panel5.Controls.Add(this.DeletePump);
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Controls.Add(this.EditPUMP);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 505);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1751, 39);
+            this.panel5.TabIndex = 145;
+            // 
+            // DeletePump
+            // 
+            this.DeletePump.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DeletePump.FlatAppearance.BorderSize = 0;
+            this.DeletePump.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeletePump.Image = ((System.Drawing.Image)(resources.GetObject("DeletePump.Image")));
+            this.DeletePump.Location = new System.Drawing.Point(167, 7);
+            this.DeletePump.Name = "DeletePump";
+            this.DeletePump.Size = new System.Drawing.Size(28, 29);
+            this.DeletePump.TabIndex = 50;
+            this.DeletePump.UseVisualStyleBackColor = true;
+            this.DeletePump.Click += new System.EventHandler(this.DeletePump_Click);
+            // 
+            // EditPUMP
+            // 
+            this.EditPUMP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EditPUMP.FlatAppearance.BorderSize = 0;
+            this.EditPUMP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditPUMP.Image = ((System.Drawing.Image)(resources.GetObject("EditPUMP.Image")));
+            this.EditPUMP.Location = new System.Drawing.Point(201, 0);
+            this.EditPUMP.Name = "EditPUMP";
+            this.EditPUMP.Size = new System.Drawing.Size(45, 41);
+            this.EditPUMP.TabIndex = 49;
+            this.EditPUMP.UseVisualStyleBackColor = true;
+            this.EditPUMP.Click += new System.EventHandler(this.EditPUMP_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(252, -2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 41);
+            this.button2.TabIndex = 46;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.Color.YellowGreen;
-            this.label22.Location = new System.Drawing.Point(1006, 373);
+            this.label22.Location = new System.Drawing.Point(1003, 8);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(0, 20);
             this.label22.TabIndex = 53;
@@ -1376,7 +1433,7 @@ namespace Incident_Reporting_App_Server
             this.Status.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.Status.ForeColor = System.Drawing.Color.White;
-            this.Status.Location = new System.Drawing.Point(1029, 299);
+            this.Status.Location = new System.Drawing.Point(1029, 282);
             this.Status.MaxLength = 300;
             this.Status.Name = "Status";
             this.Status.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1390,7 +1447,7 @@ namespace Incident_Reporting_App_Server
             this.PumpType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PumpType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.PumpType.ForeColor = System.Drawing.Color.White;
-            this.PumpType.Location = new System.Drawing.Point(1029, 246);
+            this.PumpType.Location = new System.Drawing.Point(1029, 229);
             this.PumpType.MaxLength = 300;
             this.PumpType.Name = "PumpType";
             this.PumpType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1398,45 +1455,6 @@ namespace Incident_Reporting_App_Server
             this.PumpType.Size = new System.Drawing.Size(269, 35);
             this.PumpType.TabIndex = 51;
             this.PumpType.Text = "";
-            // 
-            // DeletePump
-            // 
-            this.DeletePump.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DeletePump.FlatAppearance.BorderSize = 0;
-            this.DeletePump.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeletePump.Image = ((System.Drawing.Image)(resources.GetObject("DeletePump.Image")));
-            this.DeletePump.Location = new System.Drawing.Point(220, 501);
-            this.DeletePump.Name = "DeletePump";
-            this.DeletePump.Size = new System.Drawing.Size(28, 29);
-            this.DeletePump.TabIndex = 50;
-            this.DeletePump.UseVisualStyleBackColor = true;
-            this.DeletePump.Click += new System.EventHandler(this.DeletePump_Click);
-            // 
-            // EditPUMP
-            // 
-            this.EditPUMP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.EditPUMP.FlatAppearance.BorderSize = 0;
-            this.EditPUMP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditPUMP.Image = ((System.Drawing.Image)(resources.GetObject("EditPUMP.Image")));
-            this.EditPUMP.Location = new System.Drawing.Point(244, 495);
-            this.EditPUMP.Name = "EditPUMP";
-            this.EditPUMP.Size = new System.Drawing.Size(45, 41);
-            this.EditPUMP.TabIndex = 49;
-            this.EditPUMP.UseVisualStyleBackColor = true;
-            this.EditPUMP.Click += new System.EventHandler(this.EditPUMP_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(285, 495);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 41);
-            this.button2.TabIndex = 46;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // DG_Pumps_DT
             // 
@@ -1479,7 +1497,7 @@ namespace Incident_Reporting_App_Server
             this.DG_Pumps_DT.EnableHeadersVisualStyles = false;
             this.DG_Pumps_DT.GridColor = System.Drawing.Color.DarkGray;
             this.DG_Pumps_DT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DG_Pumps_DT.Location = new System.Drawing.Point(0, 577);
+            this.DG_Pumps_DT.Location = new System.Drawing.Point(0, 544);
             this.DG_Pumps_DT.MultiSelect = false;
             this.DG_Pumps_DT.Name = "DG_Pumps_DT";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1554,7 +1572,7 @@ namespace Incident_Reporting_App_Server
             this.label60.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(800, 165);
+            this.label60.Location = new System.Drawing.Point(800, 148);
             this.label60.Name = "label60";
             this.label60.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label60.Size = new System.Drawing.Size(102, 25);
@@ -1566,7 +1584,7 @@ namespace Incident_Reporting_App_Server
             this.label59.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(836, 105);
+            this.label59.Location = new System.Drawing.Point(836, 88);
             this.label59.Name = "label59";
             this.label59.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label59.Size = new System.Drawing.Size(66, 25);
@@ -1578,7 +1596,7 @@ namespace Incident_Reporting_App_Server
             this.label58.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(1313, 299);
+            this.label58.Location = new System.Drawing.Point(1313, 282);
             this.label58.Name = "label58";
             this.label58.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label58.Size = new System.Drawing.Size(57, 25);
@@ -1590,7 +1608,7 @@ namespace Incident_Reporting_App_Server
             this.label57.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(1313, 99);
+            this.label57.Location = new System.Drawing.Point(1313, 82);
             this.label57.Name = "label57";
             this.label57.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label57.Size = new System.Drawing.Size(92, 25);
@@ -1602,7 +1620,7 @@ namespace Incident_Reporting_App_Server
             this.pumpInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pumpInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.pumpInfo.ForeColor = System.Drawing.Color.White;
-            this.pumpInfo.Location = new System.Drawing.Point(441, 217);
+            this.pumpInfo.Location = new System.Drawing.Point(441, 200);
             this.pumpInfo.MaxLength = 300;
             this.pumpInfo.Name = "pumpInfo";
             this.pumpInfo.Size = new System.Drawing.Size(319, 70);
@@ -1614,7 +1632,7 @@ namespace Incident_Reporting_App_Server
             this.pumpArea.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pumpArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.pumpArea.ForeColor = System.Drawing.Color.White;
-            this.pumpArea.Location = new System.Drawing.Point(1029, 137);
+            this.pumpArea.Location = new System.Drawing.Point(1029, 120);
             this.pumpArea.MaxLength = 300;
             this.pumpArea.Name = "pumpArea";
             this.pumpArea.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1628,7 +1646,7 @@ namespace Incident_Reporting_App_Server
             this.pumpAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pumpAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.pumpAddress.ForeColor = System.Drawing.Color.White;
-            this.pumpAddress.Location = new System.Drawing.Point(491, 105);
+            this.pumpAddress.Location = new System.Drawing.Point(491, 88);
             this.pumpAddress.MaxLength = 300;
             this.pumpAddress.Name = "pumpAddress";
             this.pumpAddress.Size = new System.Drawing.Size(269, 35);
@@ -1640,7 +1658,7 @@ namespace Incident_Reporting_App_Server
             this.PumpNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PumpNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.PumpNumber.ForeColor = System.Drawing.Color.White;
-            this.PumpNumber.Location = new System.Drawing.Point(1199, 91);
+            this.PumpNumber.Location = new System.Drawing.Point(1199, 74);
             this.PumpNumber.MaxLength = 300;
             this.PumpNumber.Name = "PumpNumber";
             this.PumpNumber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1654,7 +1672,7 @@ namespace Incident_Reporting_App_Server
             this.pumpSign.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pumpSign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.pumpSign.ForeColor = System.Drawing.Color.White;
-            this.pumpSign.Location = new System.Drawing.Point(491, 165);
+            this.pumpSign.Location = new System.Drawing.Point(491, 148);
             this.pumpSign.MaxLength = 300;
             this.pumpSign.Name = "pumpSign";
             this.pumpSign.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
@@ -1674,7 +1692,7 @@ namespace Incident_Reporting_App_Server
             "شرق",
             "غرب",
             "جنوب"});
-            this.pumpSector.Location = new System.Drawing.Point(1029, 193);
+            this.pumpSector.Location = new System.Drawing.Point(1029, 176);
             this.pumpSector.MaxLength = 200;
             this.pumpSector.Name = "pumpSector";
             this.pumpSector.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1686,7 +1704,7 @@ namespace Incident_Reporting_App_Server
             this.label49.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(773, 217);
+            this.label49.Location = new System.Drawing.Point(773, 200);
             this.label49.Name = "label49";
             this.label49.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label49.Size = new System.Drawing.Size(129, 25);
@@ -1698,7 +1716,7 @@ namespace Incident_Reporting_App_Server
             this.label50.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(1315, 246);
+            this.label50.Location = new System.Drawing.Point(1315, 229);
             this.label50.Name = "label50";
             this.label50.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label50.Size = new System.Drawing.Size(53, 25);
@@ -1710,7 +1728,7 @@ namespace Incident_Reporting_App_Server
             this.label51.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(1315, 195);
+            this.label51.Location = new System.Drawing.Point(1315, 178);
             this.label51.Name = "label51";
             this.label51.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label51.Size = new System.Drawing.Size(62, 25);
@@ -1722,7 +1740,7 @@ namespace Incident_Reporting_App_Server
             this.label56.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(1315, 145);
+            this.label56.Location = new System.Drawing.Point(1315, 128);
             this.label56.Name = "label56";
             this.label56.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label56.Size = new System.Drawing.Size(67, 25);
@@ -1736,9 +1754,9 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage1.Controls.Add(this.panel8);
             this.c1DockingTabPage1.ForeColor = System.Drawing.Color.White;
             this.c1DockingTabPage1.ImageIndex = 28;
-            this.c1DockingTabPage1.Location = new System.Drawing.Point(0, 1);
+            this.c1DockingTabPage1.Location = new System.Drawing.Point(0, 28);
             this.c1DockingTabPage1.Name = "c1DockingTabPage1";
-            this.c1DockingTabPage1.Size = new System.Drawing.Size(1753, 999);
+            this.c1DockingTabPage1.Size = new System.Drawing.Size(1753, 972);
             this.c1DockingTabPage1.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
             this.c1DockingTabPage1.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
             this.c1DockingTabPage1.TabForeColor = System.Drawing.Color.DeepSkyBlue;
@@ -1755,7 +1773,7 @@ namespace Incident_Reporting_App_Server
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1753, 999);
+            this.panel8.Size = new System.Drawing.Size(1753, 972);
             this.panel8.TabIndex = 96;
             // 
             // c1DockingTab2
@@ -1768,14 +1786,15 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab2.Controls.Add(this.c1DockingTabPage6);
             this.c1DockingTab2.Controls.Add(this.c1DockingTabPage7);
             this.c1DockingTab2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.c1DockingTab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTab2.ImageList = this.imageList1;
             this.c1DockingTab2.Location = new System.Drawing.Point(0, 0);
             this.c1DockingTab2.Name = "c1DockingTab2";
             this.c1DockingTab2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.c1DockingTab2.RightToLeftLayout = true;
             this.c1DockingTab2.SelectedIndex = 6;
-            this.c1DockingTab2.Size = new System.Drawing.Size(1480, 960);
-            this.c1DockingTab2.TabAreaBackColor = System.Drawing.Color.DimGray;
+            this.c1DockingTab2.Size = new System.Drawing.Size(1480, 933);
+            this.c1DockingTab2.TabAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(95)))), ((int)(((byte)(125)))));
             this.c1DockingTab2.TabIndex = 127;
             this.c1DockingTab2.TabSizeMode = C1.Win.C1Command.TabSizeModeEnum.Fit;
             this.c1DockingTab2.TabStyle = C1.Win.C1Command.TabStyleEnum.Sloping;
@@ -1790,10 +1809,10 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTabPage2.ForeColor = System.Drawing.SystemColors.Window;
             this.c1DockingTabPage2.ImageIndex = 0;
-            this.c1DockingTabPage2.Location = new System.Drawing.Point(0, 29);
+            this.c1DockingTabPage2.Location = new System.Drawing.Point(0, 30);
             this.c1DockingTabPage2.Name = "c1DockingTabPage2";
             this.c1DockingTabPage2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.c1DockingTabPage2.Size = new System.Drawing.Size(1480, 931);
+            this.c1DockingTabPage2.Size = new System.Drawing.Size(1480, 903);
             this.c1DockingTabPage2.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage2.TabForeColor = System.Drawing.Color.Silver;
             this.c1DockingTabPage2.TabForeColorSelected = System.Drawing.Color.DeepSkyBlue;
@@ -1803,6 +1822,7 @@ namespace Incident_Reporting_App_Server
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.TB_OxygenTrapLocation_DT);
             this.groupBox2.Controls.Add(this.TB_GasTrapLocation_DT);
@@ -1820,7 +1840,7 @@ namespace Incident_Reporting_App_Server
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(200, 165);
+            this.groupBox2.Location = new System.Drawing.Point(200, 151);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(553, 574);
             this.groupBox2.TabIndex = 1;
@@ -2002,7 +2022,7 @@ namespace Incident_Reporting_App_Server
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.AdditionalInfo);
             this.groupBox1.Controls.Add(this.TB_LandlinePhone_DT);
@@ -2021,7 +2041,7 @@ namespace Incident_Reporting_App_Server
             this.groupBox1.Controls.Add(this.CB_Sector_DT);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(789, 165);
+            this.groupBox1.Location = new System.Drawing.Point(789, 151);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(571, 574);
             this.groupBox1.TabIndex = 0;
@@ -2227,9 +2247,9 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage3.Controls.Add(this.DG_Floors_DT);
             this.c1DockingTabPage3.ForeColor = System.Drawing.SystemColors.Window;
             this.c1DockingTabPage3.ImageIndex = 13;
-            this.c1DockingTabPage3.Location = new System.Drawing.Point(0, 29);
+            this.c1DockingTabPage3.Location = new System.Drawing.Point(0, 30);
             this.c1DockingTabPage3.Name = "c1DockingTabPage3";
-            this.c1DockingTabPage3.Size = new System.Drawing.Size(1480, 931);
+            this.c1DockingTabPage3.Size = new System.Drawing.Size(1480, 903);
             this.c1DockingTabPage3.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage3.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage3.TabForeColor = System.Drawing.Color.Silver;
@@ -2242,7 +2262,7 @@ namespace Incident_Reporting_App_Server
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(1206, 232);
+            this.label21.Location = new System.Drawing.Point(1206, 218);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(87, 25);
             this.label21.TabIndex = 39;
@@ -2254,7 +2274,7 @@ namespace Incident_Reporting_App_Server
             this.BuildingNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.BuildingNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuildingNumber.ForeColor = System.Drawing.Color.White;
-            this.BuildingNumber.Location = new System.Drawing.Point(833, 232);
+            this.BuildingNumber.Location = new System.Drawing.Point(833, 218);
             this.BuildingNumber.Name = "BuildingNumber";
             this.BuildingNumber.Size = new System.Drawing.Size(309, 40);
             this.BuildingNumber.TabIndex = 38;
@@ -2265,7 +2285,7 @@ namespace Incident_Reporting_App_Server
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(403, 122);
+            this.label20.Location = new System.Drawing.Point(403, 108);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(121, 29);
             this.label20.TabIndex = 37;
@@ -2277,7 +2297,7 @@ namespace Incident_Reporting_App_Server
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.buildingCB);
-            this.panel1.Location = new System.Drawing.Point(833, 122);
+            this.panel1.Location = new System.Drawing.Point(833, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(516, 71);
             this.panel1.TabIndex = 36;
@@ -2313,11 +2333,12 @@ namespace Incident_Reporting_App_Server
             this.Delete_SelectedBuilding.FlatAppearance.BorderSize = 0;
             this.Delete_SelectedBuilding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_SelectedBuilding.Image = ((System.Drawing.Image)(resources.GetObject("Delete_SelectedBuilding.Image")));
-            this.Delete_SelectedBuilding.Location = new System.Drawing.Point(144, 532);
+            this.Delete_SelectedBuilding.Location = new System.Drawing.Point(144, 518);
             this.Delete_SelectedBuilding.Name = "Delete_SelectedBuilding";
             this.Delete_SelectedBuilding.Size = new System.Drawing.Size(47, 43);
             this.Delete_SelectedBuilding.TabIndex = 35;
             this.Delete_SelectedBuilding.UseVisualStyleBackColor = true;
+            this.Delete_SelectedBuilding.Click += new System.EventHandler(this.Delete_SelectedBuilding_Click_1);
             // 
             // AddBuildings
             // 
@@ -2325,29 +2346,31 @@ namespace Incident_Reporting_App_Server
             this.AddBuildings.FlatAppearance.BorderSize = 0;
             this.AddBuildings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddBuildings.Image = ((System.Drawing.Image)(resources.GetObject("AddBuildings.Image")));
-            this.AddBuildings.Location = new System.Drawing.Point(97, 532);
+            this.AddBuildings.Location = new System.Drawing.Point(97, 518);
             this.AddBuildings.Name = "AddBuildings";
             this.AddBuildings.Size = new System.Drawing.Size(51, 43);
             this.AddBuildings.TabIndex = 34;
             this.AddBuildings.UseVisualStyleBackColor = true;
+            this.AddBuildings.Click += new System.EventHandler(this.AddBuildings_Click_1);
             // 
             // BuildingGeoPic_DT
             // 
             this.BuildingGeoPic_DT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BuildingGeoPic_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.BuildingGeoPic_DT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BuildingGeoPic_DT.BackgroundImage")));
-            this.BuildingGeoPic_DT.Location = new System.Drawing.Point(194, 159);
+            this.BuildingGeoPic_DT.Location = new System.Drawing.Point(194, 145);
             this.BuildingGeoPic_DT.Name = "BuildingGeoPic_DT";
             this.BuildingGeoPic_DT.Size = new System.Drawing.Size(561, 339);
             this.BuildingGeoPic_DT.TabIndex = 33;
             this.BuildingGeoPic_DT.TabStop = false;
+            this.BuildingGeoPic_DT.Click += new System.EventHandler(this.BuildingGeoPic_DT_Click_1);
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1206, 418);
+            this.label3.Location = new System.Drawing.Point(1206, 404);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 25);
             this.label3.TabIndex = 32;
@@ -2358,7 +2381,7 @@ namespace Incident_Reporting_App_Server
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1206, 354);
+            this.label2.Location = new System.Drawing.Point(1206, 340);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 25);
             this.label2.TabIndex = 31;
@@ -2369,7 +2392,7 @@ namespace Incident_Reporting_App_Server
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1206, 289);
+            this.label1.Location = new System.Drawing.Point(1206, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 25);
             this.label1.TabIndex = 30;
@@ -2381,7 +2404,7 @@ namespace Incident_Reporting_App_Server
             this.GeoPicURL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.GeoPicURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GeoPicURL.ForeColor = System.Drawing.Color.White;
-            this.GeoPicURL.Location = new System.Drawing.Point(833, 418);
+            this.GeoPicURL.Location = new System.Drawing.Point(833, 404);
             this.GeoPicURL.Name = "GeoPicURL";
             this.GeoPicURL.Size = new System.Drawing.Size(309, 43);
             this.GeoPicURL.TabIndex = 29;
@@ -2393,7 +2416,7 @@ namespace Incident_Reporting_App_Server
             this.mainTankCapacity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.mainTankCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainTankCapacity.ForeColor = System.Drawing.Color.White;
-            this.mainTankCapacity.Location = new System.Drawing.Point(833, 354);
+            this.mainTankCapacity.Location = new System.Drawing.Point(833, 340);
             this.mainTankCapacity.Name = "mainTankCapacity";
             this.mainTankCapacity.Size = new System.Drawing.Size(309, 43);
             this.mainTankCapacity.TabIndex = 28;
@@ -2405,7 +2428,7 @@ namespace Incident_Reporting_App_Server
             this.floorNumbers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.floorNumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.floorNumbers.ForeColor = System.Drawing.Color.White;
-            this.floorNumbers.Location = new System.Drawing.Point(833, 289);
+            this.floorNumbers.Location = new System.Drawing.Point(833, 275);
             this.floorNumbers.Name = "floorNumbers";
             this.floorNumbers.Size = new System.Drawing.Size(309, 41);
             this.floorNumbers.TabIndex = 27;
@@ -2417,11 +2440,12 @@ namespace Incident_Reporting_App_Server
             this.deleteBuildingList.FlatAppearance.BorderSize = 0;
             this.deleteBuildingList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBuildingList.Image = ((System.Drawing.Image)(resources.GetObject("deleteBuildingList.Image")));
-            this.deleteBuildingList.Location = new System.Drawing.Point(52, 532);
+            this.deleteBuildingList.Location = new System.Drawing.Point(52, 518);
             this.deleteBuildingList.Name = "deleteBuildingList";
             this.deleteBuildingList.Size = new System.Drawing.Size(48, 43);
             this.deleteBuildingList.TabIndex = 26;
             this.deleteBuildingList.UseVisualStyleBackColor = true;
+            this.deleteBuildingList.Click += new System.EventHandler(this.deleteBuildingList_Click_1);
             // 
             // DG_Floors_DT
             // 
@@ -2459,7 +2483,7 @@ namespace Incident_Reporting_App_Server
             this.DG_Floors_DT.DefaultCellStyle = dataGridViewCellStyle21;
             this.DG_Floors_DT.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DG_Floors_DT.EnableHeadersVisualStyles = false;
-            this.DG_Floors_DT.Location = new System.Drawing.Point(0, 615);
+            this.DG_Floors_DT.Location = new System.Drawing.Point(0, 587);
             this.DG_Floors_DT.MultiSelect = false;
             this.DG_Floors_DT.Name = "DG_Floors_DT";
             dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -2595,9 +2619,9 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage5.Controls.Add(this.TB_CompanyGeometeryImage_DT);
             this.c1DockingTabPage5.Controls.Add(this.TB_CompanyImage_DT);
             this.c1DockingTabPage5.ImageIndex = 25;
-            this.c1DockingTabPage5.Location = new System.Drawing.Point(0, 29);
+            this.c1DockingTabPage5.Location = new System.Drawing.Point(0, 30);
             this.c1DockingTabPage5.Name = "c1DockingTabPage5";
-            this.c1DockingTabPage5.Size = new System.Drawing.Size(1480, 931);
+            this.c1DockingTabPage5.Size = new System.Drawing.Size(1480, 903);
             this.c1DockingTabPage5.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage5.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage5.TabForeColor = System.Drawing.Color.Silver;
@@ -2610,7 +2634,7 @@ namespace Incident_Reporting_App_Server
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(949, 177);
+            this.label25.Location = new System.Drawing.Point(949, 163);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(164, 25);
             this.label25.TabIndex = 5;
@@ -2621,7 +2645,7 @@ namespace Incident_Reporting_App_Server
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(963, 649);
+            this.label24.Location = new System.Drawing.Point(963, 635);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(144, 25);
             this.label24.TabIndex = 4;
@@ -2632,7 +2656,7 @@ namespace Incident_Reporting_App_Server
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(971, 416);
+            this.label23.Location = new System.Drawing.Point(971, 402);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(134, 25);
             this.label23.TabIndex = 3;
@@ -2643,11 +2667,12 @@ namespace Incident_Reporting_App_Server
             this.PB_ExitPathWayImage_DT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_ExitPathWayImage_DT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PB_ExitPathWayImage_DT.BackgroundImage")));
             this.PB_ExitPathWayImage_DT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PB_ExitPathWayImage_DT.Location = new System.Drawing.Point(259, 124);
+            this.PB_ExitPathWayImage_DT.Location = new System.Drawing.Point(259, 110);
             this.PB_ExitPathWayImage_DT.Name = "PB_ExitPathWayImage_DT";
             this.PB_ExitPathWayImage_DT.Size = new System.Drawing.Size(541, 266);
             this.PB_ExitPathWayImage_DT.TabIndex = 2;
             this.PB_ExitPathWayImage_DT.TabStop = false;
+            this.PB_ExitPathWayImage_DT.Click += new System.EventHandler(this.PB_ExitPathWayImage_DT_Click_1);
             // 
             // TB_CompanyGeometeryImage_DT
             // 
@@ -2655,11 +2680,12 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyGeometeryImage_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.TB_CompanyGeometeryImage_DT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TB_CompanyGeometeryImage_DT.BackgroundImage")));
             this.TB_CompanyGeometeryImage_DT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TB_CompanyGeometeryImage_DT.Location = new System.Drawing.Point(259, 630);
+            this.TB_CompanyGeometeryImage_DT.Location = new System.Drawing.Point(259, 616);
             this.TB_CompanyGeometeryImage_DT.Name = "TB_CompanyGeometeryImage_DT";
             this.TB_CompanyGeometeryImage_DT.Size = new System.Drawing.Size(541, 219);
             this.TB_CompanyGeometeryImage_DT.TabIndex = 1;
             this.TB_CompanyGeometeryImage_DT.TabStop = false;
+            this.TB_CompanyGeometeryImage_DT.Click += new System.EventHandler(this.TB_CompanyGeometeryImage_DT_Click);
             // 
             // TB_CompanyImage_DT
             // 
@@ -2667,11 +2693,12 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyImage_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.TB_CompanyImage_DT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TB_CompanyImage_DT.BackgroundImage")));
             this.TB_CompanyImage_DT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TB_CompanyImage_DT.Location = new System.Drawing.Point(259, 396);
+            this.TB_CompanyImage_DT.Location = new System.Drawing.Point(259, 382);
             this.TB_CompanyImage_DT.Name = "TB_CompanyImage_DT";
             this.TB_CompanyImage_DT.Size = new System.Drawing.Size(541, 221);
             this.TB_CompanyImage_DT.TabIndex = 0;
             this.TB_CompanyImage_DT.TabStop = false;
+            this.TB_CompanyImage_DT.Click += new System.EventHandler(this.TB_CompanyImage_DT_Click_1);
             // 
             // c1DockingTabPage8
             // 
@@ -2679,9 +2706,9 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage8.CaptionText = "اﻠﻤﻨﺷﺂﺕ المجاورة";
             this.c1DockingTabPage8.Controls.Add(this.tableLayoutPanel3);
             this.c1DockingTabPage8.ImageIndex = 19;
-            this.c1DockingTabPage8.Location = new System.Drawing.Point(0, 29);
+            this.c1DockingTabPage8.Location = new System.Drawing.Point(0, 30);
             this.c1DockingTabPage8.Name = "c1DockingTabPage8";
-            this.c1DockingTabPage8.Size = new System.Drawing.Size(1480, 931);
+            this.c1DockingTabPage8.Size = new System.Drawing.Size(1480, 903);
             this.c1DockingTabPage8.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage8.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage8.TabForeColor = System.Drawing.Color.Silver;
@@ -2691,35 +2718,33 @@ namespace Incident_Reporting_App_Server
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.90348F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.09652F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 506F));
-            this.tableLayoutPanel3.Controls.Add(this.c1PictureBox4, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.LeftCompany_UC, 2, 1);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.89691F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.10309F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 498F));
             this.tableLayoutPanel3.Controls.Add(this.RightCompany_UC, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.FrontCompany_UC, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.BackCompany_UC, 1, 2);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.LeftCompany_UC, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 1, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.41736F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.58264F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 286F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1480, 931);
-            this.tableLayoutPanel3.TabIndex = 27;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 311F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1477, 931);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // c1PictureBox4
+            // pictureBox1
             // 
-            this.c1PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.c1PictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("c1PictureBox4.BackgroundImage")));
-            this.c1PictureBox4.Location = new System.Drawing.Point(603, 347);
-            this.c1PictureBox4.Name = "c1PictureBox4";
-            this.c1PictureBox4.Size = new System.Drawing.Size(295, 274);
-            this.c1PictureBox4.TabIndex = 4;
-            this.c1PictureBox4.TabStop = false;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(594, 323);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 283);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // c1DockingTabPage6
             // 
@@ -2736,10 +2761,11 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage6.Controls.Add(this.TB_SelectedUserBuisiness_DT);
             this.c1DockingTabPage6.Controls.Add(this.TB_SelectedUserName_DT);
             this.c1DockingTabPage6.Controls.Add(this.label44);
+            this.c1DockingTabPage6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTabPage6.ImageIndex = 30;
-            this.c1DockingTabPage6.Location = new System.Drawing.Point(0, 29);
+            this.c1DockingTabPage6.Location = new System.Drawing.Point(0, 30);
             this.c1DockingTabPage6.Name = "c1DockingTabPage6";
-            this.c1DockingTabPage6.Size = new System.Drawing.Size(1480, 931);
+            this.c1DockingTabPage6.Size = new System.Drawing.Size(1480, 903);
             this.c1DockingTabPage6.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage6.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage6.TabForeColor = System.Drawing.Color.Silver;
@@ -2753,11 +2779,12 @@ namespace Incident_Reporting_App_Server
             this.Deleted_SelectedManager.FlatAppearance.BorderSize = 0;
             this.Deleted_SelectedManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Deleted_SelectedManager.Image = ((System.Drawing.Image)(resources.GetObject("Deleted_SelectedManager.Image")));
-            this.Deleted_SelectedManager.Location = new System.Drawing.Point(470, 202);
+            this.Deleted_SelectedManager.Location = new System.Drawing.Point(470, 188);
             this.Deleted_SelectedManager.Name = "Deleted_SelectedManager";
             this.Deleted_SelectedManager.Size = new System.Drawing.Size(47, 43);
             this.Deleted_SelectedManager.TabIndex = 124;
             this.Deleted_SelectedManager.UseVisualStyleBackColor = true;
+            this.Deleted_SelectedManager.Click += new System.EventHandler(this.Deleted_SelectedManager_Click_1);
             // 
             // comboBox1
             // 
@@ -2767,7 +2794,7 @@ namespace Incident_Reporting_App_Server
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(542, 205);
+            this.comboBox1.Location = new System.Drawing.Point(542, 191);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(331, 33);
             this.comboBox1.TabIndex = 123;
@@ -2779,7 +2806,7 @@ namespace Incident_Reporting_App_Server
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.ForeColor = System.Drawing.Color.White;
-            this.label69.Location = new System.Drawing.Point(925, 557);
+            this.label69.Location = new System.Drawing.Point(925, 543);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(129, 25);
             this.label69.TabIndex = 122;
@@ -2791,7 +2818,7 @@ namespace Incident_Reporting_App_Server
             this.label70.AutoSize = true;
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.ForeColor = System.Drawing.Color.White;
-            this.label70.Location = new System.Drawing.Point(925, 484);
+            this.label70.Location = new System.Drawing.Point(925, 470);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(92, 25);
             this.label70.TabIndex = 121;
@@ -2803,7 +2830,7 @@ namespace Incident_Reporting_App_Server
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label71.ForeColor = System.Drawing.Color.White;
-            this.label71.Location = new System.Drawing.Point(925, 407);
+            this.label71.Location = new System.Drawing.Point(925, 393);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(68, 25);
             this.label71.TabIndex = 120;
@@ -2815,7 +2842,7 @@ namespace Incident_Reporting_App_Server
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.ForeColor = System.Drawing.Color.White;
-            this.label72.Location = new System.Drawing.Point(925, 332);
+            this.label72.Location = new System.Drawing.Point(925, 318);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(54, 25);
             this.label72.TabIndex = 119;
@@ -2827,7 +2854,7 @@ namespace Incident_Reporting_App_Server
             this.TB_SelectedUserInfo_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_SelectedUserInfo_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_SelectedUserInfo_DT.ForeColor = System.Drawing.Color.White;
-            this.TB_SelectedUserInfo_DT.Location = new System.Drawing.Point(517, 554);
+            this.TB_SelectedUserInfo_DT.Location = new System.Drawing.Point(517, 540);
             this.TB_SelectedUserInfo_DT.MaxLength = 300;
             this.TB_SelectedUserInfo_DT.Name = "TB_SelectedUserInfo_DT";
             this.TB_SelectedUserInfo_DT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2842,7 +2869,7 @@ namespace Incident_Reporting_App_Server
             this.TB_SelectedUserPhone_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_SelectedUserPhone_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_SelectedUserPhone_DT.ForeColor = System.Drawing.Color.White;
-            this.TB_SelectedUserPhone_DT.Location = new System.Drawing.Point(517, 481);
+            this.TB_SelectedUserPhone_DT.Location = new System.Drawing.Point(517, 467);
             this.TB_SelectedUserPhone_DT.MaxLength = 300;
             this.TB_SelectedUserPhone_DT.Name = "TB_SelectedUserPhone_DT";
             this.TB_SelectedUserPhone_DT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2857,7 +2884,7 @@ namespace Incident_Reporting_App_Server
             this.TB_SelectedUserBuisiness_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_SelectedUserBuisiness_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_SelectedUserBuisiness_DT.ForeColor = System.Drawing.Color.White;
-            this.TB_SelectedUserBuisiness_DT.Location = new System.Drawing.Point(517, 407);
+            this.TB_SelectedUserBuisiness_DT.Location = new System.Drawing.Point(517, 393);
             this.TB_SelectedUserBuisiness_DT.MaxLength = 300;
             this.TB_SelectedUserBuisiness_DT.Name = "TB_SelectedUserBuisiness_DT";
             this.TB_SelectedUserBuisiness_DT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2872,7 +2899,7 @@ namespace Incident_Reporting_App_Server
             this.TB_SelectedUserName_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_SelectedUserName_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_SelectedUserName_DT.ForeColor = System.Drawing.Color.White;
-            this.TB_SelectedUserName_DT.Location = new System.Drawing.Point(517, 331);
+            this.TB_SelectedUserName_DT.Location = new System.Drawing.Point(517, 317);
             this.TB_SelectedUserName_DT.MaxLength = 300;
             this.TB_SelectedUserName_DT.Name = "TB_SelectedUserName_DT";
             this.TB_SelectedUserName_DT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2886,7 +2913,7 @@ namespace Incident_Reporting_App_Server
             this.label44.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(925, 213);
+            this.label44.Location = new System.Drawing.Point(925, 199);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(96, 25);
             this.label44.TabIndex = 26;
@@ -2906,10 +2933,11 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage7.Controls.Add(this.HazardousSubstance);
             this.c1DockingTabPage7.Controls.Add(this.label76);
             this.c1DockingTabPage7.Controls.Add(this.Dangerous);
+            this.c1DockingTabPage7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1DockingTabPage7.ImageIndex = 20;
-            this.c1DockingTabPage7.Location = new System.Drawing.Point(0, 29);
+            this.c1DockingTabPage7.Location = new System.Drawing.Point(0, 30);
             this.c1DockingTabPage7.Name = "c1DockingTabPage7";
-            this.c1DockingTabPage7.Size = new System.Drawing.Size(1480, 931);
+            this.c1DockingTabPage7.Size = new System.Drawing.Size(1480, 903);
             this.c1DockingTabPage7.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTabPage7.TabForeColor = System.Drawing.Color.Silver;
             this.c1DockingTabPage7.TabForeColorSelected = System.Drawing.Color.DeepSkyBlue;
@@ -2922,11 +2950,12 @@ namespace Incident_Reporting_App_Server
             this.Delete_SelectedDangerous.FlatAppearance.BorderSize = 0;
             this.Delete_SelectedDangerous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_SelectedDangerous.Image = ((System.Drawing.Image)(resources.GetObject("Delete_SelectedDangerous.Image")));
-            this.Delete_SelectedDangerous.Location = new System.Drawing.Point(432, 223);
+            this.Delete_SelectedDangerous.Location = new System.Drawing.Point(432, 209);
             this.Delete_SelectedDangerous.Name = "Delete_SelectedDangerous";
             this.Delete_SelectedDangerous.Size = new System.Drawing.Size(47, 43);
             this.Delete_SelectedDangerous.TabIndex = 130;
             this.Delete_SelectedDangerous.UseVisualStyleBackColor = true;
+            this.Delete_SelectedDangerous.Click += new System.EventHandler(this.Delete_SelectedDangerous_Click_1);
             // 
             // label73
             // 
@@ -2934,7 +2963,7 @@ namespace Incident_Reporting_App_Server
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.ForeColor = System.Drawing.Color.White;
-            this.label73.Location = new System.Drawing.Point(912, 541);
+            this.label73.Location = new System.Drawing.Point(912, 527);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(129, 25);
             this.label73.TabIndex = 129;
@@ -2946,7 +2975,7 @@ namespace Incident_Reporting_App_Server
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label74.ForeColor = System.Drawing.Color.White;
-            this.label74.Location = new System.Drawing.Point(894, 455);
+            this.label74.Location = new System.Drawing.Point(894, 441);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(164, 25);
             this.label74.TabIndex = 128;
@@ -2958,7 +2987,7 @@ namespace Incident_Reporting_App_Server
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label75.ForeColor = System.Drawing.Color.White;
-            this.label75.Location = new System.Drawing.Point(916, 368);
+            this.label75.Location = new System.Drawing.Point(916, 354);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(126, 25);
             this.label75.TabIndex = 127;
@@ -2970,7 +2999,7 @@ namespace Incident_Reporting_App_Server
             this.FireMediator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.FireMediator.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FireMediator.ForeColor = System.Drawing.Color.White;
-            this.FireMediator.Location = new System.Drawing.Point(514, 541);
+            this.FireMediator.Location = new System.Drawing.Point(514, 527);
             this.FireMediator.MaxLength = 300;
             this.FireMediator.Name = "FireMediator";
             this.FireMediator.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2985,7 +3014,7 @@ namespace Incident_Reporting_App_Server
             this.DangerouseLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.DangerouseLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangerouseLocation.ForeColor = System.Drawing.Color.White;
-            this.DangerouseLocation.Location = new System.Drawing.Point(514, 455);
+            this.DangerouseLocation.Location = new System.Drawing.Point(514, 441);
             this.DangerouseLocation.MaxLength = 300;
             this.DangerouseLocation.Name = "DangerouseLocation";
             this.DangerouseLocation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -3000,7 +3029,7 @@ namespace Incident_Reporting_App_Server
             this.HazardousSubstance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.HazardousSubstance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HazardousSubstance.ForeColor = System.Drawing.Color.White;
-            this.HazardousSubstance.Location = new System.Drawing.Point(514, 368);
+            this.HazardousSubstance.Location = new System.Drawing.Point(514, 354);
             this.HazardousSubstance.MaxLength = 300;
             this.HazardousSubstance.Name = "HazardousSubstance";
             this.HazardousSubstance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -3014,7 +3043,7 @@ namespace Incident_Reporting_App_Server
             this.label76.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label76.AutoSize = true;
             this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.Location = new System.Drawing.Point(874, 222);
+            this.label76.Location = new System.Drawing.Point(874, 208);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(168, 25);
             this.label76.TabIndex = 123;
@@ -3028,7 +3057,7 @@ namespace Incident_Reporting_App_Server
             this.Dangerous.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dangerous.ForeColor = System.Drawing.Color.White;
             this.Dangerous.FormattingEnabled = true;
-            this.Dangerous.Location = new System.Drawing.Point(514, 226);
+            this.Dangerous.Location = new System.Drawing.Point(514, 212);
             this.Dangerous.Name = "Dangerous";
             this.Dangerous.Size = new System.Drawing.Size(331, 33);
             this.Dangerous.TabIndex = 122;
@@ -3041,13 +3070,13 @@ namespace Incident_Reporting_App_Server
             this.c1CommandDock1.Id = 4;
             this.c1CommandDock1.Location = new System.Drawing.Point(1480, 0);
             this.c1CommandDock1.Name = "c1CommandDock1";
-            this.c1CommandDock1.Size = new System.Drawing.Size(273, 960);
+            this.c1CommandDock1.Size = new System.Drawing.Size(273, 933);
             // 
             // c1DockingTab4
             // 
             this.c1DockingTab4.Alignment = System.Windows.Forms.TabAlignment.Right;
             this.c1DockingTab4.AllowDrop = true;
-            this.c1DockingTab4.BackColor = System.Drawing.Color.DimGray;
+            this.c1DockingTab4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(95)))), ((int)(((byte)(125)))));
             this.c1DockingTab4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.c1DockingTab4.CanAutoHide = true;
             this.c1DockingTab4.CanCloseTabs = true;
@@ -3062,7 +3091,7 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab4.ShowCaption = true;
             this.c1DockingTab4.ShowTabList = true;
             this.c1DockingTab4.ShowToolTips = true;
-            this.c1DockingTab4.Size = new System.Drawing.Size(273, 960);
+            this.c1DockingTab4.Size = new System.Drawing.Size(273, 933);
             this.c1DockingTab4.TabIndex = 0;
             this.c1DockingTab4.TabSizeMode = C1.Win.C1Command.TabSizeModeEnum.Fit;
             this.c1DockingTab4.TabsShowFocusCues = false;
@@ -3081,7 +3110,7 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage4.ImageIndex = 28;
             this.c1DockingTabPage4.Location = new System.Drawing.Point(3, 0);
             this.c1DockingTabPage4.Name = "c1DockingTabPage4";
-            this.c1DockingTabPage4.Size = new System.Drawing.Size(240, 960);
+            this.c1DockingTabPage4.Size = new System.Drawing.Size(240, 933);
             this.c1DockingTabPage4.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage4.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage4.TabForeColor = System.Drawing.Color.White;
@@ -3100,19 +3129,19 @@ namespace Incident_Reporting_App_Server
             this.treeView3.Name = "treeView3";
             this.treeView3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.treeView3.RightToLeftLayout = true;
-            this.treeView3.Size = new System.Drawing.Size(240, 940);
+            this.treeView3.Size = new System.Drawing.Size(240, 913);
             this.treeView3.TabIndex = 134;
             this.treeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect);
             // 
             // panel13
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
             this.panel13.Controls.Add(this.EditCompany);
             this.panel13.Controls.Add(this.DeleteCompany);
             this.panel13.Controls.Add(this.statusfeild);
             this.panel13.Controls.Add(this.SaveAddedBuildings);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(0, 960);
+            this.panel13.Location = new System.Drawing.Point(0, 933);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(1753, 39);
             this.panel13.TabIndex = 126;
@@ -3148,7 +3177,7 @@ namespace Incident_Reporting_App_Server
             this.statusfeild.AutoSize = true;
             this.statusfeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusfeild.ForeColor = System.Drawing.Color.YellowGreen;
-            this.statusfeild.Location = new System.Drawing.Point(815, 3);
+            this.statusfeild.Location = new System.Drawing.Point(820, 7);
             this.statusfeild.Name = "statusfeild";
             this.statusfeild.Size = new System.Drawing.Size(0, 20);
             this.statusfeild.TabIndex = 50;
@@ -3179,7 +3208,7 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab1.Name = "c1DockingTab1";
             this.c1DockingTab1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.c1DockingTab1.RightToLeftLayout = true;
-            this.c1DockingTab1.ShowTabs = false;
+            this.c1DockingTab1.ShowSingleTab = false;
             this.c1DockingTab1.Size = new System.Drawing.Size(1753, 1000);
             this.c1DockingTab1.TabAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             this.c1DockingTab1.TabIndex = 131;
@@ -3187,42 +3216,41 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab1.TabStyle = C1.Win.C1Command.TabStyleEnum.Sloping;
             this.c1DockingTab1.VisualStyle = C1.Win.C1Command.VisualStyle.Custom;
             // 
-            // LeftCompany_UC
-            // 
-            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeftCompany_UC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 328);
-            this.LeftCompany_UC.Name = "LeftCompany_UC";
-            this.LeftCompany_UC.Size = new System.Drawing.Size(501, 313);
-            this.LeftCompany_UC.TabIndex = 5;
-            // 
             // RightCompany_UC
             // 
             this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.RightCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightCompany_UC.Location = new System.Drawing.Point(997, 328);
+            this.RightCompany_UC.Location = new System.Drawing.Point(992, 313);
             this.RightCompany_UC.Name = "RightCompany_UC";
-            this.RightCompany_UC.Size = new System.Drawing.Size(480, 313);
-            this.RightCompany_UC.TabIndex = 6;
+            this.RightCompany_UC.Size = new System.Drawing.Size(482, 304);
+            this.RightCompany_UC.TabIndex = 0;
             // 
             // FrontCompany_UC
             // 
             this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.FrontCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FrontCompany_UC.Location = new System.Drawing.Point(510, 3);
+            this.FrontCompany_UC.Location = new System.Drawing.Point(502, 3);
             this.FrontCompany_UC.Name = "FrontCompany_UC";
-            this.FrontCompany_UC.Size = new System.Drawing.Size(481, 319);
-            this.FrontCompany_UC.TabIndex = 7;
+            this.FrontCompany_UC.Size = new System.Drawing.Size(484, 304);
+            this.FrontCompany_UC.TabIndex = 1;
             // 
             // BackCompany_UC
             // 
             this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.BackCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackCompany_UC.Location = new System.Drawing.Point(510, 647);
+            this.BackCompany_UC.Location = new System.Drawing.Point(502, 623);
             this.BackCompany_UC.Name = "BackCompany_UC";
-            this.BackCompany_UC.Size = new System.Drawing.Size(481, 281);
-            this.BackCompany_UC.TabIndex = 8;
+            this.BackCompany_UC.Size = new System.Drawing.Size(484, 305);
+            this.BackCompany_UC.TabIndex = 2;
+            // 
+            // LeftCompany_UC
+            // 
+            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 313);
+            this.LeftCompany_UC.Name = "LeftCompany_UC";
+            this.LeftCompany_UC.Size = new System.Drawing.Size(493, 304);
+            this.LeftCompany_UC.TabIndex = 3;
             // 
             // Form2
             // 
@@ -3252,12 +3280,14 @@ namespace Incident_Reporting_App_Server
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.c1DockingTabPage9.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.c1DockingTab3)).EndInit();
             this.c1DockingTab3.ResumeLayout(false);
             this.c1DockingTabPage12.ResumeLayout(false);
-            this.c1DockingTabPage12.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ff_ManPowerGrid)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -3267,6 +3297,8 @@ namespace Incident_Reporting_App_Server
             this.groupBox3.PerformLayout();
             this.c1DockingTabPage13.ResumeLayout(false);
             this.c1DockingTabPage13.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Pumps_DT)).EndInit();
             this.c1DockingTabPage1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -3290,7 +3322,7 @@ namespace Incident_Reporting_App_Server
             ((System.ComponentModel.ISupportInitialize)(this.TB_CompanyImage_DT)).EndInit();
             this.c1DockingTabPage8.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.c1PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.c1DockingTabPage6.ResumeLayout(false);
             this.c1DockingTabPage6.PerformLayout();
             this.c1DockingTabPage7.ResumeLayout(false);
@@ -3357,7 +3389,6 @@ namespace Incident_Reporting_App_Server
         private System.Windows.Forms.RichTextBox accountName;
         private C1.Win.C1Command.C1DockingTabPage c1DockingTabPage9;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel4;
         private C1.Win.C1Command.C1DockingTab c1DockingTab3;
         private C1.Win.C1Command.C1DockingTabPage c1DockingTabPage12;
         private System.Windows.Forms.Button DeleteStationsManPower;
@@ -3506,12 +3537,6 @@ namespace Incident_Reporting_App_Server
         private C1.Win.C1Input.C1PictureBox TB_CompanyGeometeryImage_DT;
         private C1.Win.C1Input.C1PictureBox TB_CompanyImage_DT;
         private C1.Win.C1Command.C1DockingTabPage c1DockingTabPage8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private C1.Win.C1Input.C1PictureBox c1PictureBox4;
-        private UserControl1 LeftCompany_UC;
-        private UserControl1 RightCompany_UC;
-        private UserControl1 FrontCompany_UC;
-        private UserControl1 BackCompany_UC;
         private C1.Win.C1Command.C1DockingTabPage c1DockingTabPage6;
         private System.Windows.Forms.Button Deleted_SelectedManager;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -3534,5 +3559,13 @@ namespace Incident_Reporting_App_Server
         private System.Windows.Forms.RichTextBox HazardousSubstance;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.ComboBox Dangerous;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private UserControl1 RightCompany_UC;
+        private UserControl1 FrontCompany_UC;
+        private UserControl1 BackCompany_UC;
+        private UserControl1 LeftCompany_UC;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

@@ -47,7 +47,8 @@
             // 
             this.TB_DCompanyImage_UC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_DCompanyImage_UC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TB_DCompanyImage_UC.BackgroundImage")));
-            this.TB_DCompanyImage_UC.Location = new System.Drawing.Point(13, 55);
+            this.TB_DCompanyImage_UC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TB_DCompanyImage_UC.Location = new System.Drawing.Point(5, 52);
             this.TB_DCompanyImage_UC.Name = "TB_DCompanyImage_UC";
             this.TB_DCompanyImage_UC.Size = new System.Drawing.Size(276, 193);
             this.TB_DCompanyImage_UC.TabIndex = 0;
@@ -60,7 +61,7 @@
             this.CompanyName.AutoSize = true;
             this.CompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyName.ForeColor = System.Drawing.Color.White;
-            this.CompanyName.Location = new System.Drawing.Point(444, 10);
+            this.CompanyName.Location = new System.Drawing.Point(436, 7);
             this.CompanyName.Name = "CompanyName";
             this.CompanyName.Size = new System.Drawing.Size(65, 20);
             this.CompanyName.TabIndex = 1;
@@ -73,7 +74,7 @@
             this.CompanyBusiness.AutoSize = true;
             this.CompanyBusiness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyBusiness.ForeColor = System.Drawing.Color.White;
-            this.CompanyBusiness.Location = new System.Drawing.Point(438, 78);
+            this.CompanyBusiness.Location = new System.Drawing.Point(430, 75);
             this.CompanyBusiness.Name = "CompanyBusiness";
             this.CompanyBusiness.Size = new System.Drawing.Size(73, 20);
             this.CompanyBusiness.TabIndex = 3;
@@ -86,7 +87,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(416, 146);
+            this.label2.Location = new System.Drawing.Point(408, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 8;
@@ -99,7 +100,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(108, 20);
+            this.label3.Location = new System.Drawing.Point(100, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 9;
@@ -111,7 +112,7 @@
             this.TB_DComapnyName_UC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_DComapnyName_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_DComapnyName_UC.ForeColor = System.Drawing.Color.White;
-            this.TB_DComapnyName_UC.Location = new System.Drawing.Point(304, 36);
+            this.TB_DComapnyName_UC.Location = new System.Drawing.Point(296, 33);
             this.TB_DComapnyName_UC.MaxLength = 300;
             this.TB_DComapnyName_UC.Name = "TB_DComapnyName_UC";
             this.TB_DComapnyName_UC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -126,7 +127,7 @@
             this.TB_DCompanyBuisness_UC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_DCompanyBuisness_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_DCompanyBuisness_UC.ForeColor = System.Drawing.Color.White;
-            this.TB_DCompanyBuisness_UC.Location = new System.Drawing.Point(304, 103);
+            this.TB_DCompanyBuisness_UC.Location = new System.Drawing.Point(296, 100);
             this.TB_DCompanyBuisness_UC.MaxLength = 300;
             this.TB_DCompanyBuisness_UC.Name = "TB_DCompanyBuisness_UC";
             this.TB_DCompanyBuisness_UC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -141,7 +142,7 @@
             this.TB_DCompanyMediator_UC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_DCompanyMediator_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_DCompanyMediator_UC.ForeColor = System.Drawing.Color.White;
-            this.TB_DCompanyMediator_UC.Location = new System.Drawing.Point(304, 179);
+            this.TB_DCompanyMediator_UC.Location = new System.Drawing.Point(296, 176);
             this.TB_DCompanyMediator_UC.MaxLength = 300;
             this.TB_DCompanyMediator_UC.Name = "TB_DCompanyMediator_UC";
             this.TB_DCompanyMediator_UC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -156,7 +157,7 @@
             this.TB_DCompanyImageURL_UC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TB_DCompanyImageURL_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_DCompanyImageURL_UC.ForeColor = System.Drawing.Color.White;
-            this.TB_DCompanyImageURL_UC.Location = new System.Drawing.Point(304, 254);
+            this.TB_DCompanyImageURL_UC.Location = new System.Drawing.Point(296, 251);
             this.TB_DCompanyImageURL_UC.MaxLength = 300;
             this.TB_DCompanyImageURL_UC.Name = "TB_DCompanyImageURL_UC";
             this.TB_DCompanyImageURL_UC.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -171,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(399, 228);
+            this.label1.Location = new System.Drawing.Point(391, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 22;
@@ -183,8 +184,7 @@
             // 
             // UserControl1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TB_DCompanyImageURL_UC);
@@ -197,7 +197,7 @@
             this.Controls.Add(this.CompanyName);
             this.Controls.Add(this.TB_DCompanyImage_UC);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(523, 306);
+            this.Size = new System.Drawing.Size(507, 300);
             ((System.ComponentModel.ISupportInitialize)(this.TB_DCompanyImage_UC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,7 +258,7 @@
                 return TB_DCompanyImageURL_UC;
             }
         }
-        
+
         #endregion
 
     }
