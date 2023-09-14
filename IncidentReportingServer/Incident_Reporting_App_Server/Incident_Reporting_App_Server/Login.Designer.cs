@@ -165,7 +165,6 @@ namespace Incident_Reporting_App_Server
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(149, 120);
             this.tableLayoutPanel3.TabIndex = 4;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // fleet_login_pnl_Username
             // 

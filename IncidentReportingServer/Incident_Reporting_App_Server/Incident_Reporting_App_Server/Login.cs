@@ -96,9 +96,10 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                if (!workdone)
+                while (!workdone)
                 {
                     startserver();
+                    Thread.Sleep(100);
                 }
             }
             catch (Exception ex)
@@ -117,7 +118,7 @@ namespace Incident_Reporting_App_Server
                 workdone = false;
                 Thread loading_operation_thread = new Thread(loading_bar_progress_cycle);
                 loading_operation_thread.Start();
-                startserver();
+                ////startserver();
                 //Thread start_thread = new Thread(start);
                 //start_thread.Start();
             }
@@ -156,11 +157,6 @@ namespace Incident_Reporting_App_Server
         private void button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
