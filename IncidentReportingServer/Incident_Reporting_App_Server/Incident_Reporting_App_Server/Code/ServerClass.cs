@@ -20,6 +20,7 @@ namespace Incident_Reporting_App_Server.Code
         public static string UserName { get; set; }
         public static string Password { get; set; }
         #endregion
+
         #region Connect
         
 
@@ -37,13 +38,20 @@ namespace Incident_Reporting_App_Server.Code
                 Password = passWord;
                 if (IncidentReporting_WS_Obj.Users_SelectByNamePass(UserName, Password)!=null)
                 {
-                    Form2 f2 = new Form2();
+                   
+                    Main f2 = new Main();
                     f2.Show();
                     if (f2.Visible)
                     {
                         return true;
                     }
-                    
+                    //Thread Main_Thread = new Thread(f2.load_all_treeviews_cycle);
+                    //Main_Thread.Start();
+                    //if(f2.workdone)
+                    //{
+                    //    return true;
+                    //}
+                    //f2.load_all_treeviews_cycle();
                 }
                 return false;
             }
@@ -53,7 +61,6 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
-
         public Users Select_Account()
         {
             try

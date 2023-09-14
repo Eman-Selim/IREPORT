@@ -13,84 +13,19 @@ using System.Windows.Forms;
 
 namespace Incident_Reporting_App_Server
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         ServerClass server_Class_Obj = new ServerClass();
-        public Form1()
+        private bool form_status;
+        public Login()
         {
             InitializeComponent();
-            server_Class_Obj.log_Handler += log_Handler;
             
         }
         public bool workdone { get; set; }
         public delegate void txt_log_Update_Delegate(string text);
 
-        public void log_Handler(string text)
-        {
-            try
-            {
-                if (true)
-                {
-                    txt_log_Update_Delegate method = new txt_log_Update_Delegate(this.log_Handler);
-                    this.txt_log.Invoke(method, new object[] { text });
-                }
-                else
-                {
-                    //this.txt_log.AppendText("- " + text + "\r\n");
-                }
-            }
-            catch (Exception exception1)
-            {
-                Auditing.Error(exception1.Message);
-            }
-        }
 
-        private void panel3_MouseHover(object sender, EventArgs e)
-        {
-            panel3.BackgroundImage = Properties.Resources.Fire_FighterSH1;
-
-        }
-
-        private void panel3_MouseLeave(object sender, EventArgs e)
-        {
-            panel3.BackgroundImage = Properties.Resources.Fire_FighterN1;
-
-        }
-
-        private void panel3_Click(object sender, EventArgs e)
-        {
-            //tableLayoutPanel2.BackgroundImage = Properties.Resources.Fire_Fighter_S_H;
-        }
-
-        private void panel1_MouseHover(object sender, EventArgs e)
-        {
-            panel2.BackgroundImage = Properties.Resources.BuildingSH1;
-        }
-
-        private void panel1_MouseLeave(object sender, EventArgs e)
-        {
-            panel2.BackgroundImage = Properties.Resources.BuildingN1;
-        }
-
-        private void panel2_MouseHover(object sender, EventArgs e)
-        {
-            panel5.BackgroundImage = Properties.Resources.Phone_BookSH1;
-        }
-
-        private void panel2_MouseLeave(object sender, EventArgs e)
-        {
-            panel5.BackgroundImage = Properties.Resources.Phone_BookN1;
-        }
-
-        private void panel4_MouseHover(object sender, EventArgs e)
-        {
-            panel4.BackgroundImage = Properties.Resources.UsersSH1;
-        }
-
-        private void panel4_MouseLeave(object sender, EventArgs e)
-        {
-            panel4.BackgroundImage = Properties.Resources.UsersN1;
-        }
 
         #region loading bar
         public delegate void Change_loading_bar_percentage(int value);
@@ -98,13 +33,13 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                if (txt_log.InvokeRequired)
+                if (prog_bar.InvokeRequired)
                 {
-                    txt_log.Invoke(new Change_loading_bar_percentage(change_loadingbar_percentage), new object[] { value });
+                    prog_bar.Invoke(new Change_loading_bar_percentage(change_loadingbar_percentage), new object[] { value });
                 }
                 else
                 {
-                    txt_log.Value = value;
+                    prog_bar.Value = value;
                     //txt_log.Update();
                     //if(workdone)
                     //{
@@ -131,7 +66,6 @@ namespace Incident_Reporting_App_Server
                 Thread.Sleep(100);
             }
             change_loadingbar_percentage(10);
-            
         }
 
 
@@ -143,12 +77,13 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                if (txt_log.InvokeRequired)
+                if (prog_bar.InvokeRequired)
                 {
-                    txt_log.Invoke(new start_delegate(startserver));
+                    prog_bar.Invoke(new start_delegate(startserver));
                 }
                 else
                 {
+
                     workdone = server_Class_Obj.Start_Server(Login_txt_Username.Text, Login_txt_Password.Text);
                 }
             }
@@ -182,14 +117,50 @@ namespace Incident_Reporting_App_Server
                 workdone = false;
                 Thread loading_operation_thread = new Thread(loading_bar_progress_cycle);
                 loading_operation_thread.Start();
-
-                Thread start_thread = new Thread(start);
-                start_thread.Start();
+                startserver();
+                //Thread start_thread = new Thread(start);
+                //start_thread.Start();
             }
             catch (Exception exception1)
             {
                 Auditing.Error(exception1.Message);
             }
+        }
+
+        private void Header_pic_Close_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+            }
+        }
+
+        private void Maxmized_btn_Click(object sender, EventArgs e)
+        {
+            if (form_status == false)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                form_status = true;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                form_status = false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
