@@ -33,18 +33,15 @@ namespace Incident_Reporting_App_Server.Code
         {
             try
             {
-               // WS1.HelloWorld();
                 UserName = userName;
                 Password = passWord;
                 if (IncidentReporting_WS_Obj.Users_SelectByNamePass(UserName, Password)!=null)
                 {
+
+                    //Main f2 = new Main();
+                    //f2.Show();
+                    return true;
                    
-                    Main f2 = new Main();
-                    f2.Show();
-                    if (f2.Visible)
-                    {
-                        return true;
-                    }
                     //Thread Main_Thread = new Thread(f2.load_all_treeviews_cycle);
                     //Main_Thread.Start();
                     //if(f2.workdone)

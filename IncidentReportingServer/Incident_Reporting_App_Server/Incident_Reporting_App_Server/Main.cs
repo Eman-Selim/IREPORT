@@ -408,7 +408,7 @@ namespace Incident_Reporting_App_Server
                 TB_street_DT.Text = Convert.ToString(points[selectedStationIndex].Street);
                 TB_signs_DT.Text = points[selectedStationIndex].Signs;
                 TB_Additional_info_DT.Text = points[selectedStationIndex].Additional_info;
-                TB_OfficersNumber_DT.Text = points[selectedStationIndex].OfficersNumber;
+                TB_OfficersNumber_DT.Text = points[selectedStationIndex].OfficersNumber==null?"": Convert.ToString(points[selectedStationIndex].OfficersNumber);
                 TB_SoliderNumber_DT.Text = points[selectedStationIndex].SoliderNumber;
                 TB_CarsNumber_DT.Text = points[selectedStationIndex].CarsNumber;
                 TB_Equipments_DT.Text = points[selectedStationIndex].Equipments;

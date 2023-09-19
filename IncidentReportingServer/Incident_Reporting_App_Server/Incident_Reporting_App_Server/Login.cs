@@ -40,13 +40,6 @@ namespace Incident_Reporting_App_Server
                 else
                 {
                     prog_bar.Value = value;
-                    //txt_log.Update();
-                    //if(workdone)
-                    //{
-                    //    foreach (Form f in Application.OpenForms)
-                    //        if (f.Name == "Form1")
-                    //            f.Close();
-                    //}
                 }
             }
             catch (Exception ex)
@@ -54,6 +47,7 @@ namespace Incident_Reporting_App_Server
                 Auditing.Error(ex.Message);
             }
         }
+        
         public void loading_bar_progress_cycle()
         {
             int prg_Value = 0;
@@ -73,6 +67,7 @@ namespace Incident_Reporting_App_Server
 
         #region start
         public delegate void start_delegate();
+       
         public void startserver()
         {
             try
@@ -83,8 +78,12 @@ namespace Incident_Reporting_App_Server
                 }
                 else
                 {
-
                     workdone = server_Class_Obj.Start_Server(Login_txt_Username.Text, Login_txt_Password.Text);
+                    if (workdone)
+                    {
+                        Main f2 = new Main();
+                        f2.Show();
+                    }
                 }
             }
             catch (Exception ex)
@@ -101,6 +100,7 @@ namespace Incident_Reporting_App_Server
                     startserver();
                     Thread.Sleep(100);
                 }
+                
             }
             catch (Exception ex)
             {
@@ -118,9 +118,10 @@ namespace Incident_Reporting_App_Server
                 workdone = false;
                 Thread loading_operation_thread = new Thread(loading_bar_progress_cycle);
                 loading_operation_thread.Start();
-                ////startserver();
-                //Thread start_thread = new Thread(start);
-                //start_thread.Start();
+
+                Thread start_thread = new Thread(start);
+                start_thread.Start();
+                
             }
             catch (Exception exception1)
             {
