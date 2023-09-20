@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Incident_Reporting_App_Server.localhost;
+using Incident_Reporting_App_Server.localhost1;
 
 namespace Incident_Reporting_App_Server.Code
 {
@@ -15,6 +16,7 @@ namespace Incident_Reporting_App_Server.Code
         public delegate void del_Update_Log(string text);
         public event del_Update_Log log_Handler;
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
+        Alarm_WS Alarm_WS_Obj = new Alarm_WS();
 
         #region Login Info
         public static string UserName { get; set; }
@@ -37,18 +39,7 @@ namespace Incident_Reporting_App_Server.Code
                 Password = passWord;
                 if (IncidentReporting_WS_Obj.Users_SelectByNamePass(UserName, Password)!=null)
                 {
-
-                    //Main f2 = new Main();
-                    //f2.Show();
                     return true;
-                   
-                    //Thread Main_Thread = new Thread(f2.load_all_treeviews_cycle);
-                    //Main_Thread.Start();
-                    //if(f2.workdone)
-                    //{
-                    //    return true;
-                    //}
-                    //f2.load_all_treeviews_cycle();
                 }
                 return false;
             }
@@ -58,7 +49,7 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
-        public Users Select_Account()
+        public User Select_Account()
         {
             try
             {
@@ -72,11 +63,24 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Users Select_User(int UserId)
+        public User Select_User(int UserId)
         {
             try
             {
                 return IncidentReporting_WS_Obj.Users_SelectByUserId(UserName, Password, UserId);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
+
+        public Alarms[] Select_Alarms()
+        {
+            try
+            {
+                return Alarm_WS_Obj.Alarms_Select_ALL(UserName, Password);
             }
             catch (Exception exception1)
             {
@@ -176,7 +180,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Users Add_Account(Users user)
+        public User Add_Account(User user)
         {
             try
             {
@@ -202,7 +206,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public bool Update_Account(Users user)
+        public bool Update_Account(User user)
         {
             try
             {

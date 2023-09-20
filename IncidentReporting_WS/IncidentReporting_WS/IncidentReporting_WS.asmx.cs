@@ -21,7 +21,7 @@ namespace IncidentReporting_WS
     public class IncidentReporting_WS : System.Web.Services.WebService
     {
         #region UsersSBL
-        UsersSBL UsersSBL_Obj = new UsersSBL();
+        UserSBL UsersSBL_Obj = new UserSBL();
 
         [WebMethod]
         public bool Users_Delete(string username, string password, int user_id)
@@ -37,7 +37,7 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Users Users_Insert(string username, string password, Users Users)
+        public User Users_Insert(string username, string password, User Users)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public bool Users_Update(string username, string password, Users Users)
+        public bool Users_Update(string username, string password, User Users)
         {
             try
             {
@@ -63,11 +63,11 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public UsersCollection Users_Select_All(string username, string password)
+        public UserCollection Users_Select_All(string username, string password)
         {
             try
             {
-                UsersCollection users_obj = new UsersCollection();
+                UserCollection users_obj = new UserCollection();
                 users_obj = UsersSBL_Obj.Users_Select_All( username, password);
                 return Load_Users_Data(username, password, users_obj);
             }
@@ -78,11 +78,11 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public UsersCollection Users_Select_Users_Of_User(string username, string password, int UserId)
+        public UserCollection Users_Select_Users_Of_User(string username, string password, int UserId)
         {
             try
             {
-                UsersCollection users_obj = new UsersCollection();
+                UserCollection users_obj = new UserCollection();
                 users_obj = UsersSBL_Obj.Users_Select_Users_Of_User(username, password, UserId);
                 return Load_Users_Data(username, password,users_obj );
             }
@@ -93,13 +93,13 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Users Users_SelectByUserId(string username, string password, int UserId)
+        public User Users_SelectByUserId(string username, string password, int UserId)
         {
             try
             {
-                Users users_obj = new Users();
+                User users_obj = new User();
                 users_obj = UsersSBL_Obj.Users_SelectByUserId( username, password, UserId);
-                return Load_Users_Data(username, password, new UsersCollection() { users_obj })[0];
+                return Load_Users_Data(username, password, new UserCollection() { users_obj })[0];
 
             }
             catch (Exception e)
@@ -109,13 +109,13 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Users Users_SelectByNamePass(string username, string password)
+        public User Users_SelectByNamePass(string username, string password)
         {
             try
             {
-                Users users_obj = new Users();
+                User users_obj = new User();
                 users_obj = UsersSBL_Obj.Users_SelectByNamePass( username,   password);
-                return Load_Users_Data(username, password, new UsersCollection() { users_obj })[0];
+                return Load_Users_Data(username, password, new UserCollection() { users_obj })[0];
 
             }
             catch (Exception e)
@@ -126,13 +126,13 @@ namespace IncidentReporting_WS
 
        
         [WebMethod]
-        public Users Users_SelectByName(string username, string password, string name)
+        public User Users_SelectByName(string username, string password, string name)
         {
             try
             {
-                Users users_obj = new Users();
+                User users_obj = new User();
                 users_obj = UsersSBL_Obj.Users_SelectByName( username,  password,  name);
-                return Load_Users_Data(username, password, new UsersCollection() { users_obj })[0];
+                return Load_Users_Data(username, password, new UserCollection() { users_obj })[0];
 
             }
             catch (Exception e)
@@ -141,11 +141,11 @@ namespace IncidentReporting_WS
             }
         }
         [WebMethod]
-        public UsersCollection Users_Select_Super_Admin(string username, string password)
+        public UserCollection Users_Select_Super_Admin(string username, string password)
         {
             try
             {
-                UsersCollection users_obj = new UsersCollection();
+                UserCollection users_obj = new UserCollection();
                 users_obj = UsersSBL_Obj.Users_Select_Super_Admin( username, password);
                 return Load_Users_Data(username, password, users_obj);
 
@@ -156,7 +156,7 @@ namespace IncidentReporting_WS
             }
         }
 
-        private UsersCollection Load_Users_Data(string username, string password, UsersCollection Users_Array)
+        private UserCollection Load_Users_Data(string username, string password, UserCollection Users_Array)
         {
             if (Users_Array != null)
                 for (int loop = 0; loop < Users_Array.Count; loop++)
@@ -1823,6 +1823,20 @@ namespace IncidentReporting_WS
             }
         }
 
+        [WebMethod]
+        public Company Company_Select_By_ISSI(string username, string password, string ISSI)
+        {
+            try
+            {
+                Company Company_obj = new Company();
+                Company_obj = CompanySBL_Obj.Company_Select_By_ISSI(username, password, ISSI);
+                return Load_Company_Data(username, password, new CompanyCollection() { Company_obj })[0];
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         [WebMethod]
         public CompanyCollection Company_Select_By_BackFireMediator(string username, string password, string BackFireMediator)
         {

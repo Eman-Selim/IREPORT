@@ -2,19 +2,19 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="Company_Select_By_RightCompanyBusiness">
+      <s:element name="Company_Select_By_OxygenTrapLocation">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OxygenTrapLocation" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Company_Select_By_RightCompanyBusinessResponse">
+      <s:element name="Company_Select_By_OxygenTrapLocationResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyBusinessResult" type="tns:ArrayOfCompany" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_OxygenTrapLocationResult" type="tns:ArrayOfCompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -65,6 +65,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="companyManagers" type="tns:ArrayOfManagers" />
           <s:element minOccurs="0" maxOccurs="1" name="CompanyDangerousPlaces" type="tns:ArrayOfDangerousPlaces" />
           <s:element minOccurs="0" maxOccurs="1" name="CompanyAccident" type="tns:ArrayOfAccident" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISSI" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfBuildings">
@@ -221,6 +222,22 @@
           <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="Company_Select_By_RightCompanyBusiness">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightCompanyBusinessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyBusinessResult" type="tns:ArrayOfCompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Company_Select_By_RightCompanyName">
         <s:complexType>
           <s:sequence>
@@ -1533,6 +1550,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Company_Select_By_ISSI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ISSI" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_ISSIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_ISSIResult" type="tns:Company" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Company_Select_By_BackFireMediator">
         <s:complexType>
           <s:sequence>
@@ -1741,22 +1774,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Company_Select_By_OxygenTrapLocation">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OxygenTrapLocation" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_OxygenTrapLocationResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_OxygenTrapLocationResult" type="tns:ArrayOfCompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="Users_Delete">
         <s:complexType>
           <s:sequence>
@@ -1778,11 +1795,11 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:Users" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:User" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="Users">
+      <s:complexType name="User">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
@@ -1792,7 +1809,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="User_Companies" type="tns:ArrayOfCompany" />
           <s:element minOccurs="0" maxOccurs="1" name="User_FF_Pumps" type="tns:ArrayOfFF_pumps" />
           <s:element minOccurs="0" maxOccurs="1" name="User_FFstations" type="tns:ArrayOfFFstations" />
-          <s:element minOccurs="0" maxOccurs="1" name="Users_of_Users" type="tns:ArrayOfUsers" />
+          <s:element minOccurs="0" maxOccurs="1" name="Users_of_Users" type="tns:ArrayOfUser" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfFFstations">
@@ -1817,15 +1834,15 @@
           <s:element minOccurs="0" maxOccurs="1" name="Station_ManPower" type="tns:ArrayOfFF_ManPower" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfUsers">
+      <s:complexType name="ArrayOfUser">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Users" nillable="true" type="tns:Users" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
         </s:sequence>
       </s:complexType>
       <s:element name="Users_InsertResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_InsertResult" type="tns:Users" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_InsertResult" type="tns:User" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1834,7 +1851,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:Users" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:User" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1856,7 +1873,7 @@
       <s:element name="Users_Select_AllResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_AllResult" type="tns:ArrayOfUsers" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_AllResult" type="tns:ArrayOfUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1872,7 +1889,7 @@
       <s:element name="Users_Select_Users_Of_UserResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Users_Of_UserResult" type="tns:ArrayOfUsers" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Users_Of_UserResult" type="tns:ArrayOfUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1888,7 +1905,7 @@
       <s:element name="Users_SelectByUserIdResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByUserIdResult" type="tns:Users" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByUserIdResult" type="tns:User" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1903,7 +1920,7 @@
       <s:element name="Users_SelectByNamePassResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNamePassResult" type="tns:Users" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNamePassResult" type="tns:User" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1919,7 +1936,7 @@
       <s:element name="Users_SelectByNameResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNameResult" type="tns:Users" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNameResult" type="tns:User" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1934,7 +1951,7 @@
       <s:element name="Users_Select_Super_AdminResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Super_AdminResult" type="tns:ArrayOfUsers" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Super_AdminResult" type="tns:ArrayOfUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2795,6 +2812,12 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocation" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocationResponse" />
+  </wsdl:message>
   <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapIn">
     <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusiness" />
   </wsdl:message>
@@ -3281,6 +3304,12 @@
   <wsdl:message name="Company_Select_By_BackCompanyNameSoapOut">
     <wsdl:part name="parameters" element="tns:Company_Select_By_BackCompanyNameResponse" />
   </wsdl:message>
+  <wsdl:message name="Company_Select_By_ISSISoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_ISSI" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_ISSISoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_ISSIResponse" />
+  </wsdl:message>
   <wsdl:message name="Company_Select_By_BackFireMediatorSoapIn">
     <wsdl:part name="parameters" element="tns:Company_Select_By_BackFireMediator" />
   </wsdl:message>
@@ -3358,12 +3387,6 @@
   </wsdl:message>
   <wsdl:message name="Company_Select_By_NameSoapOut">
     <wsdl:part name="parameters" element="tns:Company_Select_By_NameResponse" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocation" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocationResponse" />
   </wsdl:message>
   <wsdl:message name="Users_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:Users_Delete" />
@@ -3738,6 +3761,10 @@
     <wsdl:part name="parameters" element="tns:FF_pumps_Select_By_SectorResponse" />
   </wsdl:message>
   <wsdl:portType name="IncidentReporting_WSSoap">
+    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
+      <wsdl:input message="tns:Company_Select_By_OxygenTrapLocationSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_OxygenTrapLocationSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
       <wsdl:input message="tns:Company_Select_By_RightCompanyBusinessSoapIn" />
       <wsdl:output message="tns:Company_Select_By_RightCompanyBusinessSoapOut" />
@@ -4062,6 +4089,10 @@
       <wsdl:input message="tns:Company_Select_By_BackCompanyNameSoapIn" />
       <wsdl:output message="tns:Company_Select_By_BackCompanyNameSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_ISSI">
+      <wsdl:input message="tns:Company_Select_By_ISSISoapIn" />
+      <wsdl:output message="tns:Company_Select_By_ISSISoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_BackFireMediator">
       <wsdl:input message="tns:Company_Select_By_BackFireMediatorSoapIn" />
       <wsdl:output message="tns:Company_Select_By_BackFireMediatorSoapOut" />
@@ -4113,10 +4144,6 @@
     <wsdl:operation name="Company_Select_By_Name">
       <wsdl:input message="tns:Company_Select_By_NameSoapIn" />
       <wsdl:output message="tns:Company_Select_By_NameSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
-      <wsdl:input message="tns:Company_Select_By_OxygenTrapLocationSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_OxygenTrapLocationSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Users_Delete">
       <wsdl:input message="tns:Users_DeleteSoapIn" />
@@ -4369,6 +4396,15 @@
   </wsdl:portType>
   <wsdl:binding name="IncidentReporting_WSSoap" type="tns:IncidentReporting_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
       <wsdl:input>
@@ -5098,6 +5134,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_ISSI">
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_ISSI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_BackFireMediator">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_BackFireMediator" style="document" />
       <wsdl:input>
@@ -5208,15 +5253,6 @@
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_Name">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_Name" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5785,6 +5821,15 @@
   </wsdl:binding>
   <wsdl:binding name="IncidentReporting_WSSoap12" type="tns:IncidentReporting_WSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
       <wsdl:input>
@@ -6514,6 +6559,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_ISSI">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_ISSI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_BackFireMediator">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_BackFireMediator" style="document" />
       <wsdl:input>
@@ -6624,15 +6678,6 @@
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_Name">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_Name" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

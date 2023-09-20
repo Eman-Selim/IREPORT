@@ -28,7 +28,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Users Users_Insert(string username, string password, Users Users)
+        public User Users_Insert(string username, string password, User Users)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public bool Users_Update(string username, string password, Users Users)
+        public bool Users_Update(string username, string password, User Users)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
-        public Users Users_SelectByNamePass(string username, string password)
+        public User Users_SelectByNamePass(string username, string password)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Users[] Users_Select_All(string username, string password)
+        public User[] Users_Select_All(string username, string password)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Users[] Users_Select_Users_Of_User(string username, string password,int UserID)
+        public User[] Users_Select_Users_Of_User(string username, string password,int UserID)
         {
             try
             {
@@ -105,7 +105,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Users Users_SelectByUserId(string username, string password, int UserId)
+        public User Users_SelectByUserId(string username, string password, int UserId)
         {
             try
             {
@@ -119,7 +119,7 @@ namespace Incident_Reporting_App_Server.Code
         }
        
 
-        public Users Users_SelectByName(string username, string password, string name)
+        public User Users_SelectByName(string username, string password, string name)
         {
             try
             {
@@ -131,7 +131,7 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-        public Users[] Users_Select_Super_Admin(string username, string password)
+        public User[] Users_Select_Super_Admin(string username, string password)
         {
             try
             {

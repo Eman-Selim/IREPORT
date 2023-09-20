@@ -142,7 +142,24 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return null;
             }
         }
-
+        public Company Company_Select_By_ISSI(string username, string password, string ISSI)
+        {
+            try
+            {
+                if (Chk.check_authority(username, password))
+                {
+                    return CompanyDAL_Obj.Company_Select_By_ISSI(username, password, ISSI);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public CompanyCollection Company_Select_By_BackFireMediator(string username, string password, string BackFireMediator)
         {
             try

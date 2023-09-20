@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Incident_Reporting_App_Server.localhost;
+using Incident_Reporting_App_Server.localhost1;
 using SDS_Remote_Control_Application_Server.Code;
 using System.Threading;
 using System.IO;
@@ -23,8 +24,8 @@ namespace Incident_Reporting_App_Server
         ServerClass server_Class_Obj = new ServerClass();
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
         Image imagenu = Image.FromFile("C:\\Users\\PC 1\\Pictures\\11.PNG");
-        Users U1;
-        Users LoginAccount;
+        User U1;
+        User LoginAccount;
         Buildings[] buildings;
         List<Buildings> Newbuildings = new List<Buildings>();
         List<KeyValuePair<int, Floors>> NewFloors = new List<KeyValuePair<int, Floors>>();
@@ -979,14 +980,14 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                Users user = new Users();
+                User user = new User();
                 user.Username = accountName.Text;
                 user.AdminMode = "";
                 if (string.Compare(accountPassword.Text, ReAccountPassword.Text) == 0)
                 {
                     user.Password = accountPassword.Text;
                     user.Info = AccountInfo.Text;
-                    Users newUser = server_Class_Obj.Add_Account(user);
+                    User newUser = server_Class_Obj.Add_Account(user);
                     Users_Admin User = new Users_Admin();
                     User.Admin_ID = Selected_User_ID != 0 ? Selected_User_ID : LoginAccount.UserID;
                     User.User_ID = newUser.UserID;
@@ -1014,7 +1015,7 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                Users user = new Users();
+                User user = new User();
                 user.Username = accountName.Text;
                 user.AdminMode = "";
                 if (string.Compare(accountPassword.Text, ReAccountPassword.Text) == 0)
@@ -1050,6 +1051,54 @@ namespace Incident_Reporting_App_Server
             }  
         }
 
+        #endregion
+
+        #region Alarm
+        private delegate void CheckAlarm_Delegate();
+
+        public void CheckAlarm_Thread()
+        {
+            try
+            {
+                while (true)
+                {
+
+                    CheckAlarm();
+                    Thread.Sleep(20000);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Auditing.Error(ex.Message);
+            }
+        }
+
+        private void CheckAlarm()
+        {
+            try
+            {
+                if (treeView3.InvokeRequired)
+                {
+                    CheckAlarm_Delegate _delegate = new CheckAlarm_Delegate(CheckAlarm);
+                    treeView3.Invoke(_delegate, new object[] { });
+                }
+                else
+                {
+                    Alarms[] a=server_Class_Obj.Select_Alarms();
+                   int alarmLength = a.Length == null ? 0 : a.Length;
+                    for(int i=0;i< alarmLength;i++)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Auditing.Error(ex.Message);
+            }
+        }
         #endregion
 
         #region TreeView

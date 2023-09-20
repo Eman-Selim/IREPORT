@@ -29,6 +29,8 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="IncidentReporting_WSSoap", Namespace="http://tempuri.org/")]
     public partial class IncidentReporting_WS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback Company_Select_By_OxygenTrapLocationOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyBusinessOperationCompleted;
         
         private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyNameOperationCompleted;
@@ -191,6 +193,8 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private System.Threading.SendOrPostCallback Company_Select_By_BackCompanyNameOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Company_Select_By_ISSIOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Company_Select_By_BackFireMediatorOperationCompleted;
         
         private System.Threading.SendOrPostCallback Company_Select_By_BuildingsNumberOperationCompleted;
@@ -216,8 +220,6 @@ namespace Incident_Reporting_App_Server.localhost {
         private System.Threading.SendOrPostCallback Company_Select_By_LeftFireMediatorOperationCompleted;
         
         private System.Threading.SendOrPostCallback Company_Select_By_NameOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Company_Select_By_OxygenTrapLocationOperationCompleted;
         
         private System.Threading.SendOrPostCallback Users_DeleteOperationCompleted;
         
@@ -380,6 +382,9 @@ namespace Incident_Reporting_App_Server.localhost {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event Company_Select_By_OxygenTrapLocationCompletedEventHandler Company_Select_By_OxygenTrapLocationCompleted;
         
         /// <remarks/>
         public event Company_Select_By_RightCompanyBusinessCompletedEventHandler Company_Select_By_RightCompanyBusinessCompleted;
@@ -625,6 +630,9 @@ namespace Incident_Reporting_App_Server.localhost {
         public event Company_Select_By_BackCompanyNameCompletedEventHandler Company_Select_By_BackCompanyNameCompleted;
         
         /// <remarks/>
+        public event Company_Select_By_ISSICompletedEventHandler Company_Select_By_ISSICompleted;
+        
+        /// <remarks/>
         public event Company_Select_By_BackFireMediatorCompletedEventHandler Company_Select_By_BackFireMediatorCompleted;
         
         /// <remarks/>
@@ -662,9 +670,6 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         public event Company_Select_By_NameCompletedEventHandler Company_Select_By_NameCompleted;
-        
-        /// <remarks/>
-        public event Company_Select_By_OxygenTrapLocationCompletedEventHandler Company_Select_By_OxygenTrapLocationCompleted;
         
         /// <remarks/>
         public event Users_DeleteCompletedEventHandler Users_DeleteCompleted;
@@ -851,6 +856,39 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         public event FF_pumps_Select_By_SectorCompletedEventHandler FF_pumps_Select_By_SectorCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_OxygenTrapLocation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Company[] Company_Select_By_OxygenTrapLocation(string username, string password, string OxygenTrapLocation) {
+            object[] results = this.Invoke("Company_Select_By_OxygenTrapLocation", new object[] {
+                        username,
+                        password,
+                        OxygenTrapLocation});
+            return ((Company[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation) {
+            this.Company_Select_By_OxygenTrapLocationAsync(username, password, OxygenTrapLocation, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation, object userState) {
+            if ((this.Company_Select_By_OxygenTrapLocationOperationCompleted == null)) {
+                this.Company_Select_By_OxygenTrapLocationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_OxygenTrapLocationOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_OxygenTrapLocation", new object[] {
+                        username,
+                        password,
+                        OxygenTrapLocation}, this.Company_Select_By_OxygenTrapLocationOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_OxygenTrapLocationOperationCompleted(object arg) {
+            if ((this.Company_Select_By_OxygenTrapLocationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_OxygenTrapLocationCompleted(this, new Company_Select_By_OxygenTrapLocationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyBusiness", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -3510,6 +3548,39 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_ISSI", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Company Company_Select_By_ISSI(string username, string password, string ISSI) {
+            object[] results = this.Invoke("Company_Select_By_ISSI", new object[] {
+                        username,
+                        password,
+                        ISSI});
+            return ((Company)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_ISSIAsync(string username, string password, string ISSI) {
+            this.Company_Select_By_ISSIAsync(username, password, ISSI, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_ISSIAsync(string username, string password, string ISSI, object userState) {
+            if ((this.Company_Select_By_ISSIOperationCompleted == null)) {
+                this.Company_Select_By_ISSIOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_ISSIOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_ISSI", new object[] {
+                        username,
+                        password,
+                        ISSI}, this.Company_Select_By_ISSIOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_ISSIOperationCompleted(object arg) {
+            if ((this.Company_Select_By_ISSICompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_ISSICompleted(this, new Company_Select_By_ISSICompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_BackFireMediator", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public Company[] Company_Select_By_BackFireMediator(string username, string password, string BackFireMediator) {
             object[] results = this.Invoke("Company_Select_By_BackFireMediator", new object[] {
@@ -3939,39 +4010,6 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_OxygenTrapLocation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Company[] Company_Select_By_OxygenTrapLocation(string username, string password, string OxygenTrapLocation) {
-            object[] results = this.Invoke("Company_Select_By_OxygenTrapLocation", new object[] {
-                        username,
-                        password,
-                        OxygenTrapLocation});
-            return ((Company[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation) {
-            this.Company_Select_By_OxygenTrapLocationAsync(username, password, OxygenTrapLocation, null);
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation, object userState) {
-            if ((this.Company_Select_By_OxygenTrapLocationOperationCompleted == null)) {
-                this.Company_Select_By_OxygenTrapLocationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_OxygenTrapLocationOperationCompleted);
-            }
-            this.InvokeAsync("Company_Select_By_OxygenTrapLocation", new object[] {
-                        username,
-                        password,
-                        OxygenTrapLocation}, this.Company_Select_By_OxygenTrapLocationOperationCompleted, userState);
-        }
-        
-        private void OnCompany_Select_By_OxygenTrapLocationOperationCompleted(object arg) {
-            if ((this.Company_Select_By_OxygenTrapLocationCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Company_Select_By_OxygenTrapLocationCompleted(this, new Company_Select_By_OxygenTrapLocationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool Users_Delete(string username, string password, int user_id) {
             object[] results = this.Invoke("Users_Delete", new object[] {
@@ -4006,21 +4044,21 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users Users_Insert(string username, string password, Users Users) {
+        public User Users_Insert(string username, string password, User Users) {
             object[] results = this.Invoke("Users_Insert", new object[] {
                         username,
                         password,
                         Users});
-            return ((Users)(results[0]));
+            return ((User)(results[0]));
         }
         
         /// <remarks/>
-        public void Users_InsertAsync(string username, string password, Users Users) {
+        public void Users_InsertAsync(string username, string password, User Users) {
             this.Users_InsertAsync(username, password, Users, null);
         }
         
         /// <remarks/>
-        public void Users_InsertAsync(string username, string password, Users Users, object userState) {
+        public void Users_InsertAsync(string username, string password, User Users, object userState) {
             if ((this.Users_InsertOperationCompleted == null)) {
                 this.Users_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_InsertOperationCompleted);
             }
@@ -4039,7 +4077,7 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Users_Update(string username, string password, Users Users) {
+        public bool Users_Update(string username, string password, User Users) {
             object[] results = this.Invoke("Users_Update", new object[] {
                         username,
                         password,
@@ -4048,12 +4086,12 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public void Users_UpdateAsync(string username, string password, Users Users) {
+        public void Users_UpdateAsync(string username, string password, User Users) {
             this.Users_UpdateAsync(username, password, Users, null);
         }
         
         /// <remarks/>
-        public void Users_UpdateAsync(string username, string password, Users Users, object userState) {
+        public void Users_UpdateAsync(string username, string password, User Users, object userState) {
             if ((this.Users_UpdateOperationCompleted == null)) {
                 this.Users_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_UpdateOperationCompleted);
             }
@@ -4072,11 +4110,11 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users[] Users_Select_All(string username, string password) {
+        public User[] Users_Select_All(string username, string password) {
             object[] results = this.Invoke("Users_Select_All", new object[] {
                         username,
                         password});
-            return ((Users[])(results[0]));
+            return ((User[])(results[0]));
         }
         
         /// <remarks/>
@@ -4103,12 +4141,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Users_Of_User", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users[] Users_Select_Users_Of_User(string username, string password, int UserId) {
+        public User[] Users_Select_Users_Of_User(string username, string password, int UserId) {
             object[] results = this.Invoke("Users_Select_Users_Of_User", new object[] {
                         username,
                         password,
                         UserId});
-            return ((Users[])(results[0]));
+            return ((User[])(results[0]));
         }
         
         /// <remarks/>
@@ -4136,12 +4174,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByUserId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users Users_SelectByUserId(string username, string password, int UserId) {
+        public User Users_SelectByUserId(string username, string password, int UserId) {
             object[] results = this.Invoke("Users_SelectByUserId", new object[] {
                         username,
                         password,
                         UserId});
-            return ((Users)(results[0]));
+            return ((User)(results[0]));
         }
         
         /// <remarks/>
@@ -4169,11 +4207,11 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByNamePass", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users Users_SelectByNamePass(string username, string password) {
+        public User Users_SelectByNamePass(string username, string password) {
             object[] results = this.Invoke("Users_SelectByNamePass", new object[] {
                         username,
                         password});
-            return ((Users)(results[0]));
+            return ((User)(results[0]));
         }
         
         /// <remarks/>
@@ -4200,12 +4238,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users Users_SelectByName(string username, string password, string name) {
+        public User Users_SelectByName(string username, string password, string name) {
             object[] results = this.Invoke("Users_SelectByName", new object[] {
                         username,
                         password,
                         name});
-            return ((Users)(results[0]));
+            return ((User)(results[0]));
         }
         
         /// <remarks/>
@@ -4233,11 +4271,11 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Super_Admin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users[] Users_Select_Super_Admin(string username, string password) {
+        public User[] Users_Select_Super_Admin(string username, string password) {
             object[] results = this.Invoke("Users_Select_Super_Admin", new object[] {
                         username,
                         password});
-            return ((Users[])(results[0]));
+            return ((User[])(results[0]));
         }
         
         /// <remarks/>
@@ -6108,6 +6146,8 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private Accident[] companyAccidentField;
         
+        private string iSSIField;
+        
         /// <remarks/>
         public string Name {
             get {
@@ -6511,6 +6551,16 @@ namespace Incident_Reporting_App_Server.localhost {
             }
             set {
                 this.companyAccidentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ISSI {
+            get {
+                return this.iSSIField;
+            }
+            set {
+                this.iSSIField = value;
             }
         }
     }
@@ -7143,7 +7193,7 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Users {
+    public partial class User {
         
         private int userIDField;
         
@@ -7161,7 +7211,7 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private FFstations[] user_FFstationsField;
         
-        private Users[] users_of_UsersField;
+        private User[] users_of_UsersField;
         
         /// <remarks/>
         public int UserID {
@@ -7244,7 +7294,7 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users[] Users_of_Users {
+        public User[] Users_of_Users {
             get {
                 return this.users_of_UsersField;
             }
@@ -8081,6 +8131,32 @@ namespace Incident_Reporting_App_Server.localhost {
             }
             set {
                 this.imageURLField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_OxygenTrapLocationCompletedEventHandler(object sender, Company_Select_By_OxygenTrapLocationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_OxygenTrapLocationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_OxygenTrapLocationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Company[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Company[])(this.results[0]));
             }
         }
     }
@@ -10193,6 +10269,32 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_ISSICompletedEventHandler(object sender, Company_Select_By_ISSICompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_ISSICompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_ISSICompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Company Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Company)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void Company_Select_By_BackFireMediatorCompletedEventHandler(object sender, Company_Select_By_BackFireMediatorCompletedEventArgs e);
     
     /// <remarks/>
@@ -10531,32 +10633,6 @@ namespace Incident_Reporting_App_Server.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Company_Select_By_OxygenTrapLocationCompletedEventHandler(object sender, Company_Select_By_OxygenTrapLocationCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Company_Select_By_OxygenTrapLocationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Company_Select_By_OxygenTrapLocationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Company[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Company[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void Users_DeleteCompletedEventHandler(object sender, Users_DeleteCompletedEventArgs e);
     
     /// <remarks/>
@@ -10599,10 +10675,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users Result {
+        public User Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users)(this.results[0]));
+                return ((User)(this.results[0]));
             }
         }
     }
@@ -10651,10 +10727,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users[] Result {
+        public User[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users[])(this.results[0]));
+                return ((User[])(this.results[0]));
             }
         }
     }
@@ -10677,10 +10753,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users[] Result {
+        public User[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users[])(this.results[0]));
+                return ((User[])(this.results[0]));
             }
         }
     }
@@ -10703,10 +10779,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users Result {
+        public User Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users)(this.results[0]));
+                return ((User)(this.results[0]));
             }
         }
     }
@@ -10729,10 +10805,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users Result {
+        public User Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users)(this.results[0]));
+                return ((User)(this.results[0]));
             }
         }
     }
@@ -10755,10 +10831,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users Result {
+        public User Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users)(this.results[0]));
+                return ((User)(this.results[0]));
             }
         }
     }
@@ -10781,10 +10857,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public Users[] Result {
+        public User[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Users[])(this.results[0]));
+                return ((User[])(this.results[0]));
             }
         }
     }
