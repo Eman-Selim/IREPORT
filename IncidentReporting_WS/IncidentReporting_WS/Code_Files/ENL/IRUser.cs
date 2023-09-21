@@ -6,7 +6,7 @@ using IncidentReporting_WS.Code_Files.COL;
 
 namespace IncidentReporting_WS.Code_Files.ENL
 {
-    public class User
+    public class IRUser
     {
         public int UserID { get; set; }
         public string Username { get; set; }
@@ -16,6 +16,6 @@ namespace IncidentReporting_WS.Code_Files.ENL
         public CompanyCollection User_Companies { get; set; }
         public FF_pumpsCollection User_FF_Pumps { get; set; }
         public FFstationsCollection User_FFstations { get; set; }
-        public UserCollection Users_of_Users { get; set; }
+        public IRUserCollection Users_of_Users { get; set; }
     }
 }

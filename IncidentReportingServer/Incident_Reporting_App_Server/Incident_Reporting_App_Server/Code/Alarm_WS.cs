@@ -13,13 +13,31 @@ namespace Incident_Reporting_App_Server.Code
         SC3_Alarm_Module_WS SC3_Alarm_WS_Obj = new SC3_Alarm_Module_WS();
 
 
-        #region Users
+        #region Alarms
 
         public Alarms[] Alarms_Select_ALL(string username, string password )
         {
             try
             {
                 return SC3_Alarm_WS_Obj.Alarms_Select_ALL(username, password );
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return null;
+            }
+        }
+
+
+        #endregion
+
+        #region Alarms
+
+        public Building_Alarm_Unit[] Building_AlarmUnit_Select(string username, string password,int id)
+        {
+            try
+            {
+                return SC3_Alarm_WS_Obj.Building_AlarmUnit_Select(username, password,id);
             }
             catch (Exception ex)
             {

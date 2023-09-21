@@ -49,7 +49,7 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
-        public User Select_Account()
+        public IRUser Select_Account()
         {
             try
             {
@@ -63,7 +63,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public User Select_User(int UserId)
+        public IRUser Select_User(int UserId)
         {
             try
             {
@@ -101,7 +101,31 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
+        public Company Select_CompanyByISSI(string ISSI)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.Company_Select_By_ISSI(UserName, Password, ISSI);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
 
+        public Building_Alarm_Unit[] Select_Building_Alarm_Unit(int Id)
+        {
+            try
+            {
+                return Alarm_WS_Obj.Building_AlarmUnit_Select(UserName, Password, Id);
+            }
+            catch (Exception exception1)
+            {
+                Auditing.Error(exception1.Message);
+                return null;
+            }
+        }
         public bool Update_Company(Company company)
         {
             try
@@ -180,7 +204,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public User Add_Account(User user)
+        public IRUser Add_Account(IRUser user)
         {
             try
             {
@@ -206,7 +230,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public bool Update_Account(User user)
+        public bool Update_Account(IRUser user)
         {
             try
             {

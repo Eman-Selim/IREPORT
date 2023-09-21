@@ -4044,21 +4044,21 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public User Users_Insert(string username, string password, User Users) {
+        public IRUser Users_Insert(string username, string password, IRUser Users) {
             object[] results = this.Invoke("Users_Insert", new object[] {
                         username,
                         password,
                         Users});
-            return ((User)(results[0]));
+            return ((IRUser)(results[0]));
         }
         
         /// <remarks/>
-        public void Users_InsertAsync(string username, string password, User Users) {
+        public void Users_InsertAsync(string username, string password, IRUser Users) {
             this.Users_InsertAsync(username, password, Users, null);
         }
         
         /// <remarks/>
-        public void Users_InsertAsync(string username, string password, User Users, object userState) {
+        public void Users_InsertAsync(string username, string password, IRUser Users, object userState) {
             if ((this.Users_InsertOperationCompleted == null)) {
                 this.Users_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_InsertOperationCompleted);
             }
@@ -4077,7 +4077,7 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Users_Update(string username, string password, User Users) {
+        public bool Users_Update(string username, string password, IRUser Users) {
             object[] results = this.Invoke("Users_Update", new object[] {
                         username,
                         password,
@@ -4086,12 +4086,12 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public void Users_UpdateAsync(string username, string password, User Users) {
+        public void Users_UpdateAsync(string username, string password, IRUser Users) {
             this.Users_UpdateAsync(username, password, Users, null);
         }
         
         /// <remarks/>
-        public void Users_UpdateAsync(string username, string password, User Users, object userState) {
+        public void Users_UpdateAsync(string username, string password, IRUser Users, object userState) {
             if ((this.Users_UpdateOperationCompleted == null)) {
                 this.Users_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_UpdateOperationCompleted);
             }
@@ -4110,11 +4110,11 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public User[] Users_Select_All(string username, string password) {
+        public IRUser[] Users_Select_All(string username, string password) {
             object[] results = this.Invoke("Users_Select_All", new object[] {
                         username,
                         password});
-            return ((User[])(results[0]));
+            return ((IRUser[])(results[0]));
         }
         
         /// <remarks/>
@@ -4141,12 +4141,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Users_Of_User", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public User[] Users_Select_Users_Of_User(string username, string password, int UserId) {
+        public IRUser[] Users_Select_Users_Of_User(string username, string password, int UserId) {
             object[] results = this.Invoke("Users_Select_Users_Of_User", new object[] {
                         username,
                         password,
                         UserId});
-            return ((User[])(results[0]));
+            return ((IRUser[])(results[0]));
         }
         
         /// <remarks/>
@@ -4174,12 +4174,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByUserId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public User Users_SelectByUserId(string username, string password, int UserId) {
+        public IRUser Users_SelectByUserId(string username, string password, int UserId) {
             object[] results = this.Invoke("Users_SelectByUserId", new object[] {
                         username,
                         password,
                         UserId});
-            return ((User)(results[0]));
+            return ((IRUser)(results[0]));
         }
         
         /// <remarks/>
@@ -4207,11 +4207,11 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByNamePass", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public User Users_SelectByNamePass(string username, string password) {
+        public IRUser Users_SelectByNamePass(string username, string password) {
             object[] results = this.Invoke("Users_SelectByNamePass", new object[] {
                         username,
                         password});
-            return ((User)(results[0]));
+            return ((IRUser)(results[0]));
         }
         
         /// <remarks/>
@@ -4238,12 +4238,12 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public User Users_SelectByName(string username, string password, string name) {
+        public IRUser Users_SelectByName(string username, string password, string name) {
             object[] results = this.Invoke("Users_SelectByName", new object[] {
                         username,
                         password,
                         name});
-            return ((User)(results[0]));
+            return ((IRUser)(results[0]));
         }
         
         /// <remarks/>
@@ -4271,11 +4271,11 @@ namespace Incident_Reporting_App_Server.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Super_Admin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public User[] Users_Select_Super_Admin(string username, string password) {
+        public IRUser[] Users_Select_Super_Admin(string username, string password) {
             object[] results = this.Invoke("Users_Select_Super_Admin", new object[] {
                         username,
                         password});
-            return ((User[])(results[0]));
+            return ((IRUser[])(results[0]));
         }
         
         /// <remarks/>
@@ -7193,7 +7193,7 @@ namespace Incident_Reporting_App_Server.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class User {
+    public partial class IRUser {
         
         private int userIDField;
         
@@ -7211,7 +7211,7 @@ namespace Incident_Reporting_App_Server.localhost {
         
         private FFstations[] user_FFstationsField;
         
-        private User[] users_of_UsersField;
+        private IRUser[] users_of_UsersField;
         
         /// <remarks/>
         public int UserID {
@@ -7294,7 +7294,7 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User[] Users_of_Users {
+        public IRUser[] Users_of_Users {
             get {
                 return this.users_of_UsersField;
             }
@@ -10675,10 +10675,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User Result {
+        public IRUser Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((User)(this.results[0]));
+                return ((IRUser)(this.results[0]));
             }
         }
     }
@@ -10727,10 +10727,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User[] Result {
+        public IRUser[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((User[])(this.results[0]));
+                return ((IRUser[])(this.results[0]));
             }
         }
     }
@@ -10753,10 +10753,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User[] Result {
+        public IRUser[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((User[])(this.results[0]));
+                return ((IRUser[])(this.results[0]));
             }
         }
     }
@@ -10779,10 +10779,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User Result {
+        public IRUser Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((User)(this.results[0]));
+                return ((IRUser)(this.results[0]));
             }
         }
     }
@@ -10805,10 +10805,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User Result {
+        public IRUser Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((User)(this.results[0]));
+                return ((IRUser)(this.results[0]));
             }
         }
     }
@@ -10831,10 +10831,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User Result {
+        public IRUser Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((User)(this.results[0]));
+                return ((IRUser)(this.results[0]));
             }
         }
     }
@@ -10857,10 +10857,10 @@ namespace Incident_Reporting_App_Server.localhost {
         }
         
         /// <remarks/>
-        public User[] Result {
+        public IRUser[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((User[])(this.results[0]));
+                return ((IRUser[])(this.results[0]));
             }
         }
     }

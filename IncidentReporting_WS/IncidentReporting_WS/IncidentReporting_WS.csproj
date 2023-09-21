@@ -109,7 +109,9 @@
   <ItemGroup>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code_Files\CBL\ChkCBL.cs" />
@@ -126,7 +128,7 @@
     <Compile Include="Code_Files\COL\ImagesCollection.cs" />
     <Compile Include="Code_Files\COL\InjuredCollection.cs" />
     <Compile Include="Code_Files\COL\ManagersCollection.cs" />
-    <Compile Include="Code_Files\COL\UserCollection.cs" />
+    <Compile Include="Code_Files\COL\IRUserCollection.cs" />
     <Compile Include="Code_Files\COL\Users_AdminCollection.cs" />
     <Compile Include="Code_Files\DAL\AccidentDAL.cs" />
     <Compile Include="Code_Files\DAL\BuildingsDAL.cs" />
@@ -141,7 +143,7 @@
     <Compile Include="Code_Files\DAL\ImagesDAL.cs" />
     <Compile Include="Code_Files\DAL\InjuredDAL.cs" />
     <Compile Include="Code_Files\DAL\ManagersDAL.cs" />
-    <Compile Include="Code_Files\DAL\UserDAL.cs" />
+    <Compile Include="Code_Files\DAL\IRUserDAL.cs" />
     <Compile Include="Code_Files\DAL\Users_AdminDAL.cs" />
     <Compile Include="Code_Files\DBL\DBL.cs" />
     <Compile Include="Code_Files\ENL\Accident.cs" />
@@ -157,7 +159,7 @@
     <Compile Include="Code_Files\ENL\Images.cs" />
     <Compile Include="Code_Files\ENL\Injured.cs" />
     <Compile Include="Code_Files\ENL\Managers.cs" />
-    <Compile Include="Code_Files\ENL\User.cs" />
+    <Compile Include="Code_Files\ENL\IRUser.cs" />
     <Compile Include="Code_Files\ENL\Users_Admin.cs" />
     <Compile Include="Code_Files\SBL\AccidentSBL.cs" />
     <Compile Include="Code_Files\SBL\BuildingSBL.cs" />
@@ -172,7 +174,7 @@
     <Compile Include="Code_Files\SBL\ImagesSBL.cs" />
     <Compile Include="Code_Files\SBL\InjuredSBL.cs" />
     <Compile Include="Code_Files\SBL\ManagersSBL.cs" />
-    <Compile Include="Code_Files\SBL\UserSBL.cs" />
+    <Compile Include="Code_Files\SBL\IRUserSBL.cs" />
     <Compile Include="Code_Files\SBL\Users_AdminSBL.cs" />
     <Compile Include="IncidentReporting_WS.asmx.cs">
       <DependentUpon>IncidentReporting_WS.asmx</DependentUpon>

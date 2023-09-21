@@ -89,7 +89,6 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab2 = new C1.Win.C1Command.C1DockingTab();
             this.c1DockingTabPage2 = new C1.Win.C1Command.C1DockingTabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.TB_OxygenTrapLocation_DT = new System.Windows.Forms.RichTextBox();
             this.TB_GasTrapLocation_DT = new System.Windows.Forms.RichTextBox();
             this.TB_ElectricalPanelLocation_DT = new System.Windows.Forms.RichTextBox();
@@ -156,6 +155,10 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyImage_DT = new C1.Win.C1Input.C1PictureBox();
             this.c1DockingTabPage8 = new C1.Win.C1Command.C1DockingTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.c1DockingTabPage6 = new C1.Win.C1Command.C1DockingTabPage();
             this.Deleted_SelectedManager = new System.Windows.Forms.Button();
@@ -278,10 +281,8 @@ namespace Incident_Reporting_App_Server
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.ISSI = new System.Windows.Forms.RichTextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.application_pnl_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Maxmized_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).BeginInit();
@@ -762,7 +763,8 @@ namespace Incident_Reporting_App_Server
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.ISSI);
+            this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.TB_OxygenTrapLocation_DT);
             this.groupBox2.Controls.Add(this.TB_GasTrapLocation_DT);
             this.groupBox2.Controls.Add(this.TB_ElectricalPanelLocation_DT);
@@ -785,17 +787,6 @@ namespace Incident_Reporting_App_Server
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات المنشأة";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(44, 483);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox1.Size = new System.Drawing.Size(268, 29);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.Text = "المنشأة مجهزة بنظام الأطفاء الذاتي";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // TB_OxygenTrapLocation_DT
             // 
@@ -1675,6 +1666,42 @@ namespace Incident_Reporting_App_Server
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1480, 880);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // RightCompany_UC
+            // 
+            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.RightCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightCompany_UC.Location = new System.Drawing.Point(992, 293);
+            this.RightCompany_UC.Name = "RightCompany_UC";
+            this.RightCompany_UC.Size = new System.Drawing.Size(485, 284);
+            this.RightCompany_UC.TabIndex = 0;
+            // 
+            // FrontCompany_UC
+            // 
+            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.FrontCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FrontCompany_UC.Location = new System.Drawing.Point(503, 3);
+            this.FrontCompany_UC.Name = "FrontCompany_UC";
+            this.FrontCompany_UC.Size = new System.Drawing.Size(483, 284);
+            this.FrontCompany_UC.TabIndex = 1;
+            // 
+            // BackCompany_UC
+            // 
+            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.BackCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackCompany_UC.Location = new System.Drawing.Point(503, 583);
+            this.BackCompany_UC.Name = "BackCompany_UC";
+            this.BackCompany_UC.Size = new System.Drawing.Size(483, 294);
+            this.BackCompany_UC.TabIndex = 2;
+            // 
+            // LeftCompany_UC
+            // 
+            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 293);
+            this.LeftCompany_UC.Name = "LeftCompany_UC";
+            this.LeftCompany_UC.Size = new System.Drawing.Size(494, 284);
+            this.LeftCompany_UC.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -3296,41 +3323,28 @@ namespace Incident_Reporting_App_Server
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // RightCompany_UC
+            // ISSI
             // 
-            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.RightCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightCompany_UC.Location = new System.Drawing.Point(992, 293);
-            this.RightCompany_UC.Name = "RightCompany_UC";
-            this.RightCompany_UC.Size = new System.Drawing.Size(485, 284);
-            this.RightCompany_UC.TabIndex = 0;
+            this.ISSI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.ISSI.ForeColor = System.Drawing.Color.White;
+            this.ISSI.Location = new System.Drawing.Point(33, 469);
+            this.ISSI.MaxLength = 300;
+            this.ISSI.Name = "ISSI";
+            this.ISSI.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ISSI.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.ISSI.Size = new System.Drawing.Size(269, 39);
+            this.ISSI.TabIndex = 26;
+            this.ISSI.Text = "";
             // 
-            // FrontCompany_UC
+            // label26
             // 
-            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.FrontCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FrontCompany_UC.Location = new System.Drawing.Point(503, 3);
-            this.FrontCompany_UC.Name = "FrontCompany_UC";
-            this.FrontCompany_UC.Size = new System.Drawing.Size(483, 284);
-            this.FrontCompany_UC.TabIndex = 1;
-            // 
-            // BackCompany_UC
-            // 
-            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.BackCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackCompany_UC.Location = new System.Drawing.Point(503, 583);
-            this.BackCompany_UC.Name = "BackCompany_UC";
-            this.BackCompany_UC.Size = new System.Drawing.Size(483, 294);
-            this.BackCompany_UC.TabIndex = 2;
-            // 
-            // LeftCompany_UC
-            // 
-            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 293);
-            this.LeftCompany_UC.Name = "LeftCompany_UC";
-            this.LeftCompany_UC.Size = new System.Drawing.Size(494, 284);
-            this.LeftCompany_UC.TabIndex = 3;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(332, 483);
+            this.label26.Name = "label26";
+            this.label26.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label26.Size = new System.Drawing.Size(50, 25);
+            this.label26.TabIndex = 25;
+            this.label26.Text = "ISSI";
             // 
             // Main
             // 
@@ -3460,7 +3474,6 @@ namespace Incident_Reporting_App_Server
         private C1.Win.C1Command.C1DockingTab c1DockingTab2;
         private C1.Win.C1Command.C1DockingTabPage c1DockingTabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RichTextBox TB_OxygenTrapLocation_DT;
         private System.Windows.Forms.RichTextBox TB_GasTrapLocation_DT;
         private System.Windows.Forms.RichTextBox TB_ElectricalPanelLocation_DT;
@@ -3653,5 +3666,7 @@ namespace Incident_Reporting_App_Server
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.RichTextBox ISSI;
+        private System.Windows.Forms.Label label26;
     }
 }

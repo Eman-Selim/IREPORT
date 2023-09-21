@@ -24,8 +24,8 @@ namespace Incident_Reporting_App_Server
         ServerClass server_Class_Obj = new ServerClass();
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
         Image imagenu = Image.FromFile("C:\\Users\\PC 1\\Pictures\\11.PNG");
-        User U1;
-        User LoginAccount;
+        IRUser U1;
+        IRUser LoginAccount;
         Buildings[] buildings;
         List<Buildings> Newbuildings = new List<Buildings>();
         List<KeyValuePair<int, Floors>> NewFloors = new List<KeyValuePair<int, Floors>>();
@@ -61,6 +61,9 @@ namespace Incident_Reporting_App_Server
             Thread Main_Thread = new Thread(load_all_treeviews_cycle);
             Main_Thread.Start();
             LoginAccount = server_Class_Obj.Select_Account();
+            Thread AlarmCheck_Thread = new Thread(CheckAlarm_Thread);
+            AlarmCheck_Thread.Start();
+            AlarmCheck_Thread.Priority = ThreadPriority.Highest;
         }
 
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
@@ -163,8 +166,9 @@ namespace Incident_Reporting_App_Server
             TB_ElectricalPanelLocation_DT.Text = selectedCompany.ElectricalPanelLocation == null ? "" : selectedCompany.ElectricalPanelLocation;
             TB_GasTrapLocation_DT.Text = selectedCompany.GasTrapLocation == null ? "" : selectedCompany.GasTrapLocation;
             TB_OxygenTrapLocation_DT.Text = selectedCompany.OxygenTrapLocation == null ? "" : selectedCompany.OxygenTrapLocation;
+            ISSI.Text = selectedCompany.ISSI == null ? "" : selectedCompany.ISSI;
             TB_CompanyImage_DT.Image = selectedCompany.RightCompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.RightCompanyImage));
-
+            ISSI.Text = selectedCompany.ISSI;
             //Loading the neighboring companies
 
             PictureBox P1 = new PictureBox();
@@ -619,6 +623,7 @@ namespace Incident_Reporting_App_Server
             c1.LandlinePhoneNumber = TB_LandlinePhone_DT.Text==null?"": TB_LandlinePhone_DT.Text;
             c1.ElectricalPanelLocation = TB_ElectricalPanelLocation_DT.Text==null?"": TB_ElectricalPanelLocation_DT.Text;
             c1.OxygenTrapLocation = TB_OxygenTrapLocation_DT.Text==null?"": TB_OxygenTrapLocation_DT.Text;
+            c1.ISSI = ISSI.Text == null ? "" : ISSI.Text;
             c1.GasTrapLocation = TB_GasTrapLocation_DT.Text==null?"": TB_GasTrapLocation_DT.Text;
             c1.RightCompanyName = RightCompany_UC.TB_DComapnyName_UC_ELe.Text==null?"": RightCompany_UC.TB_DComapnyName_UC_ELe.Text;
             c1.RightCompanyBusiness = RightCompany_UC.TB_DCompanyBuisness_UC_ELe.Text==null?"": RightCompany_UC.TB_DCompanyBuisness_UC_ELe.Text;
@@ -704,6 +709,7 @@ namespace Incident_Reporting_App_Server
             c1.LandlinePhoneNumber = TB_LandlinePhone_DT.Text==null?"": TB_LandlinePhone_DT.Text;
             c1.ElectricalPanelLocation = TB_ElectricalPanelLocation_DT.Text==null?"": TB_ElectricalPanelLocation_DT.Text;
             c1.OxygenTrapLocation = TB_OxygenTrapLocation_DT.Text==null?"": TB_OxygenTrapLocation_DT.Text;
+            c1.ISSI = ISSI.Text == null ? "" : ISSI.Text;
             c1.GasTrapLocation = TB_GasTrapLocation_DT.Text==null? "":TB_GasTrapLocation_DT.Text;
             c1.RightCompanyName = RightCompany_UC.TB_DComapnyName_UC_ELe.Text==null?"" : RightCompany_UC.TB_DComapnyName_UC_ELe.Text;
             c1.RightCompanyBusiness = RightCompany_UC.TB_DCompanyBuisness_UC_ELe.Text==null?"": RightCompany_UC.TB_DCompanyBuisness_UC_ELe.Text;
@@ -980,14 +986,14 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                User user = new User();
+                IRUser user = new IRUser();
                 user.Username = accountName.Text;
                 user.AdminMode = "";
                 if (string.Compare(accountPassword.Text, ReAccountPassword.Text) == 0)
                 {
                     user.Password = accountPassword.Text;
                     user.Info = AccountInfo.Text;
-                    User newUser = server_Class_Obj.Add_Account(user);
+                    IRUser newUser = server_Class_Obj.Add_Account(user);
                     Users_Admin User = new Users_Admin();
                     User.Admin_ID = Selected_User_ID != 0 ? Selected_User_ID : LoginAccount.UserID;
                     User.User_ID = newUser.UserID;
@@ -1015,7 +1021,7 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                User user = new User();
+                IRUser user = new IRUser();
                 user.Username = accountName.Text;
                 user.AdminMode = "";
                 if (string.Compare(accountPassword.Text, ReAccountPassword.Text) == 0)
@@ -1086,10 +1092,16 @@ namespace Incident_Reporting_App_Server
                 else
                 {
                     Alarms[] a=server_Class_Obj.Select_Alarms();
-                   int alarmLength = a.Length == null ? 0 : a.Length;
+                   int alarmLength = a == null ? 0 : a.Length;
                     for(int i=0;i< alarmLength;i++)
                     {
+                        if (a[i].Acknowledege == 0)
+                        {
+                            Building_Alarm_Unit[] BAU=server_Class_Obj.Select_Building_Alarm_Unit(a[i].Building_AlarmUnit_ID);
 
+                            Company C =server_Class_Obj.Select_CompanyByISSI(BAU[0].Network_Identifier);
+                            Load_Data(C.CompanyID);
+                        }
                     }
                 }
             }
@@ -1221,7 +1233,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void Update_User_Users_Companies_TV(Users[] users, TreeNode node_obj)
+        private void Update_User_Users_Companies_TV(IRUser[] users, TreeNode node_obj)
         {
             try
             {
@@ -1418,16 +1430,16 @@ namespace Incident_Reporting_App_Server
                 Company C1 = (Company)e.Node.Tag;
                 companyNode = e.Node;
                 Selected_Company_ID = Convert.ToInt32(C1.CompanyID);
-                Users U1 = (Users)e.Node.Parent.Parent.Tag;
+                IRUser U1 = (IRUser)e.Node.Parent.Parent.Tag;
                 Selected_User_ID = Convert.ToInt32(U1.UserID);
                 Load_Data(Selected_Company_ID);
             }
             else if (e.Node.Name == "User")
             {
-                Users SelectedUser = (Users)e.Node.Tag;
+                IRUser SelectedUser = (IRUser)e.Node.Tag;
                 UserNode = e.Node;
                 Selected_User_ID = Convert.ToInt32(SelectedUser.UserID);
-                Users U1 = server_Class_Obj.Select_User(Selected_User_ID);
+                IRUser U1 = server_Class_Obj.Select_User(Selected_User_ID);
                 //load Station points 
 
                 points = U1.User_FFstations;

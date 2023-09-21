@@ -6,10 +6,10 @@ using IncidentReporting_WS.Code_Files.ENL;
 
 namespace IncidentReporting_WS.Code_Files.SBL
 {
-	public class UserSBL 
+	public class IRUserSBL 
 	{
         ChkCBL Chk = new ChkCBL();
-        UserDAL UsersDAL_Obj = new UserDAL();
+        IRUserDAL UsersDAL_Obj = new IRUserDAL();
 
         public bool Users_Delete(string username, string password, int user_id)
         {
@@ -30,7 +30,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public User Users_Insert(string username, string password, User Users)
+        public IRUser Users_Insert(string username, string password, IRUser Users)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public bool Users_Update(string username, string password, User Users)
+        public bool Users_Update(string username, string password, IRUser Users)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public UserCollection Users_Select_All(string username, string password)
+        public IRUserCollection Users_Select_All(string username, string password)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public User Users_SelectByUserId(string username, string password, int UserId)
+        public IRUser Users_SelectByUserId(string username, string password, int UserId)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public User Users_SelectByNamePass(string username, string password)
+        public IRUser Users_SelectByNamePass(string username, string password)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return null;
             }
         }
-        public UserCollection Users_Select_Users_Of_User(string username, string password, int UserId)
+        public IRUserCollection Users_Select_Users_Of_User(string username, string password, int UserId)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
         }
 
        
-        public User Users_SelectByName(string username, string password, string name)
+        public IRUser Users_SelectByName(string username, string password, string name)
         {
             try
             {
@@ -162,7 +162,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return null;
             }
         }
-        public UserCollection Users_Select_Super_Admin(string username, string password)
+        public IRUserCollection Users_Select_Super_Admin(string username, string password)
         {
             try
             {

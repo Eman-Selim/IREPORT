@@ -21,7 +21,7 @@ namespace IncidentReporting_WS
     public class IncidentReporting_WS : System.Web.Services.WebService
     {
         #region UsersSBL
-        UserSBL UsersSBL_Obj = new UserSBL();
+        IRUserSBL UsersSBL_Obj = new IRUserSBL();
 
         [WebMethod]
         public bool Users_Delete(string username, string password, int user_id)
@@ -37,7 +37,7 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public User Users_Insert(string username, string password, User Users)
+        public IRUser Users_Insert(string username, string password, IRUser Users)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public bool Users_Update(string username, string password, User Users)
+        public bool Users_Update(string username, string password, IRUser Users)
         {
             try
             {
@@ -63,11 +63,11 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public UserCollection Users_Select_All(string username, string password)
+        public IRUserCollection Users_Select_All(string username, string password)
         {
             try
             {
-                UserCollection users_obj = new UserCollection();
+                IRUserCollection users_obj = new IRUserCollection();
                 users_obj = UsersSBL_Obj.Users_Select_All( username, password);
                 return Load_Users_Data(username, password, users_obj);
             }
@@ -78,11 +78,11 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public UserCollection Users_Select_Users_Of_User(string username, string password, int UserId)
+        public IRUserCollection Users_Select_Users_Of_User(string username, string password, int UserId)
         {
             try
             {
-                UserCollection users_obj = new UserCollection();
+                IRUserCollection users_obj = new IRUserCollection();
                 users_obj = UsersSBL_Obj.Users_Select_Users_Of_User(username, password, UserId);
                 return Load_Users_Data(username, password,users_obj );
             }
@@ -93,13 +93,13 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public User Users_SelectByUserId(string username, string password, int UserId)
+        public IRUser Users_SelectByUserId(string username, string password, int UserId)
         {
             try
             {
-                User users_obj = new User();
+                IRUser users_obj = new IRUser();
                 users_obj = UsersSBL_Obj.Users_SelectByUserId( username, password, UserId);
-                return Load_Users_Data(username, password, new UserCollection() { users_obj })[0];
+                return Load_Users_Data(username, password, new IRUserCollection() { users_obj })[0];
 
             }
             catch (Exception e)
@@ -109,13 +109,13 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public User Users_SelectByNamePass(string username, string password)
+        public IRUser Users_SelectByNamePass(string username, string password)
         {
             try
             {
-                User users_obj = new User();
+                IRUser users_obj = new IRUser();
                 users_obj = UsersSBL_Obj.Users_SelectByNamePass( username,   password);
-                return Load_Users_Data(username, password, new UserCollection() { users_obj })[0];
+                return Load_Users_Data(username, password, new IRUserCollection() { users_obj })[0];
 
             }
             catch (Exception e)
@@ -126,13 +126,13 @@ namespace IncidentReporting_WS
 
        
         [WebMethod]
-        public User Users_SelectByName(string username, string password, string name)
+        public IRUser Users_SelectByName(string username, string password, string name)
         {
             try
             {
-                User users_obj = new User();
+                IRUser users_obj = new IRUser();
                 users_obj = UsersSBL_Obj.Users_SelectByName( username,  password,  name);
-                return Load_Users_Data(username, password, new UserCollection() { users_obj })[0];
+                return Load_Users_Data(username, password, new IRUserCollection() { users_obj })[0];
 
             }
             catch (Exception e)
@@ -141,11 +141,11 @@ namespace IncidentReporting_WS
             }
         }
         [WebMethod]
-        public UserCollection Users_Select_Super_Admin(string username, string password)
+        public IRUserCollection Users_Select_Super_Admin(string username, string password)
         {
             try
             {
-                UserCollection users_obj = new UserCollection();
+                IRUserCollection users_obj = new IRUserCollection();
                 users_obj = UsersSBL_Obj.Users_Select_Super_Admin( username, password);
                 return Load_Users_Data(username, password, users_obj);
 
@@ -156,7 +156,7 @@ namespace IncidentReporting_WS
             }
         }
 
-        private UserCollection Load_Users_Data(string username, string password, UserCollection Users_Array)
+        private IRUserCollection Load_Users_Data(string username, string password, IRUserCollection Users_Array)
         {
             if (Users_Array != null)
                 for (int loop = 0; loop < Users_Array.Count; loop++)

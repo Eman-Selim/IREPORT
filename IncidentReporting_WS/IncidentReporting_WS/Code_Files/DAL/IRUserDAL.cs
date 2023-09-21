@@ -8,7 +8,7 @@ using System.Data;
 
 namespace IncidentReporting_WS.Code_Files.DAL
 {
-    public class UserDAL
+    public class IRUserDAL
     {
         DBL.DBL db = new DBL.DBL();
 
@@ -31,7 +31,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public User Users_Insert(string username, string password, User Users)
+        public IRUser Users_Insert(string username, string password, IRUser Users)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public bool Users_Update(string username, string password, User Users)
+        public bool Users_Update(string username, string password, IRUser Users)
         {
             try
             {
@@ -87,11 +87,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public UserCollection Users_Select_All(string username, string password)
+        public IRUserCollection Users_Select_All(string username, string password)
         {
             try
             {
-                UserCollection Users = new UserCollection();
+                IRUserCollection Users = new IRUserCollection();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -109,7 +109,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        Users.Add(new User
+                        Users.Add(new IRUser
                         {
                             UserID = Convert.ToInt32(dr["UserID"]),
                             Username=Convert.ToString(dr["Username"]),
@@ -127,11 +127,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public User Users_SelectByUserId(string username, string password, int UserId)
+        public IRUser Users_SelectByUserId(string username, string password, int UserId)
         {
             try
             {
-                User Users = new User();
+                IRUser Users = new IRUser();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -150,7 +150,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        Users = new User
+                        Users = new IRUser
                         {
                             UserID = Convert.ToInt32(dr["UserID"]),
                             Username = Convert.ToString(dr["Username"]),
@@ -168,11 +168,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public User Users_SelectByNamePass(string username, string password)
+        public IRUser Users_SelectByNamePass(string username, string password)
         {
             try
             {
-                User Users = new User();
+                IRUser Users = new IRUser();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -190,7 +190,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        Users = new User
+                        Users = new IRUser
                         {
                             UserID = Convert.ToInt32(dr["UserID"]),
                             Username = Convert.ToString(dr["Username"]),
@@ -208,11 +208,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public UserCollection Users_Select_Users_Of_User(string username, string password, int UserId)
+        public IRUserCollection Users_Select_Users_Of_User(string username, string password, int UserId)
         {
             try
             {
-                UserCollection Users = new UserCollection();
+                IRUserCollection Users = new IRUserCollection();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -231,7 +231,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        Users.Add( new User
+                        Users.Add( new IRUser
                         {
                             UserID = Convert.ToInt32(dr["User_ID"]),
                             Username = Convert.ToString(dr["Username"]),
@@ -250,11 +250,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
         }
        
 
-        public User Users_SelectByName(string username, string password, string name)
+        public IRUser Users_SelectByName(string username, string password, string name)
         {
             try
             {
-                User Users = new User();
+                IRUser Users = new IRUser();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -273,7 +273,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        Users = new User
+                        Users = new IRUser
                         {
                             UserID = Convert.ToInt32(dr["UserID"]),
                             Username = Convert.ToString(dr["Username"]),
@@ -291,11 +291,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public UserCollection Users_Select_Super_Admin(string username, string password)
+        public IRUserCollection Users_Select_Super_Admin(string username, string password)
         {
             try
             {
-                UserCollection Users = new UserCollection();
+                IRUserCollection Users = new IRUserCollection();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -313,7 +313,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        Users.Add(new User
+                        Users.Add(new IRUser
                         {
                             UserID = Convert.ToInt32(dr["UserID"]),
                             Username = Convert.ToString(dr["Username"]),

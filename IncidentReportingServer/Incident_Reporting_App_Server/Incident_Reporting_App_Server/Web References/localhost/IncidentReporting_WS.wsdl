@@ -1795,11 +1795,11 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:IRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="User">
+      <s:complexType name="IRUser">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
@@ -1809,7 +1809,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="User_Companies" type="tns:ArrayOfCompany" />
           <s:element minOccurs="0" maxOccurs="1" name="User_FF_Pumps" type="tns:ArrayOfFF_pumps" />
           <s:element minOccurs="0" maxOccurs="1" name="User_FFstations" type="tns:ArrayOfFFstations" />
-          <s:element minOccurs="0" maxOccurs="1" name="Users_of_Users" type="tns:ArrayOfUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="Users_of_Users" type="tns:ArrayOfIRUser" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfFFstations">
@@ -1834,15 +1834,15 @@
           <s:element minOccurs="0" maxOccurs="1" name="Station_ManPower" type="tns:ArrayOfFF_ManPower" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfUser">
+      <s:complexType name="ArrayOfIRUser">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IRUser" nillable="true" type="tns:IRUser" />
         </s:sequence>
       </s:complexType>
       <s:element name="Users_InsertResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_InsertResult" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_InsertResult" type="tns:IRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1851,7 +1851,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:IRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1873,7 +1873,7 @@
       <s:element name="Users_Select_AllResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_AllResult" type="tns:ArrayOfUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_AllResult" type="tns:ArrayOfIRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1889,7 +1889,7 @@
       <s:element name="Users_Select_Users_Of_UserResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Users_Of_UserResult" type="tns:ArrayOfUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Users_Of_UserResult" type="tns:ArrayOfIRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1905,7 +1905,7 @@
       <s:element name="Users_SelectByUserIdResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByUserIdResult" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByUserIdResult" type="tns:IRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1920,7 +1920,7 @@
       <s:element name="Users_SelectByNamePassResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNamePassResult" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNamePassResult" type="tns:IRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1936,7 +1936,7 @@
       <s:element name="Users_SelectByNameResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNameResult" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_SelectByNameResult" type="tns:IRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1951,7 +1951,7 @@
       <s:element name="Users_Select_Super_AdminResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Super_AdminResult" type="tns:ArrayOfUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="Users_Select_Super_AdminResult" type="tns:ArrayOfIRUser" />
           </s:sequence>
         </s:complexType>
       </s:element>

@@ -6,7 +6,7 @@ using IncidentReporting_WS.Code_Files.ENL;
 
 namespace IncidentReporting_WS.Code_Files.COL
 {
-    public class UserCollection:List<User>
+    public class IRUserCollection:List<IRUser>
     {
     }
 }
