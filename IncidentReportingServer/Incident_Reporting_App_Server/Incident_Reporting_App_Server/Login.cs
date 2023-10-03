@@ -54,9 +54,10 @@ namespace Incident_Reporting_App_Server
             while (workdone == false)
             {
                 prg_Value += 1;
+                prg_Value = prg_Value >= 10 ? 0 : prg_Value;
                 change_loadingbar_percentage(prg_Value);
 
-                prg_Value = prg_Value >= 10 ? 0 : prg_Value;
+                
                 Thread.Sleep(100);
             }
             change_loadingbar_percentage(10);

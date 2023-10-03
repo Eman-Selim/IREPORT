@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/SC3_Alarm_Module" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Eng\ Eman\\SC3\\Alarm\ Module\\Server\\SC3_Alarm_Module_WS\\SC3_Alarm_Module\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Eng\ Eman\\SC3\\Alarm\ Module\\Server\\SC3_Alarm_Module_WS\\SC3_Alarm_Module\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="dbConnection-Web.config Connection String" description="" value="Data Source=DESKTOP-9A0NP23; Database=SC3_Alarm_Module_DB; user id=sa; password=Pass1234; Persist Security Info=False;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Eng\ Eman\\SC3\\Alarm\ Module\\Server\\SC3_Alarm_Module_WS\\SC3_Alarm_Module\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbConnection']/@connectionString" />
+  </parameter>
+</parameters>

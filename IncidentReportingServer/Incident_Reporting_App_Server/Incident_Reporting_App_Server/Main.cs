@@ -262,10 +262,13 @@ namespace Incident_Reporting_App_Server
         {
             ComboBox cmb = (ComboBox)sender;
             selectedManagerIndex = cmb.SelectedIndex;
-            TB_SelectedUserName_DT.Text = managers[selectedManagerIndex].Name;
-            TB_SelectedUserBuisiness_DT.Text = managers[selectedManagerIndex].CurrentPosition;
-            TB_SelectedUserPhone_DT.Text = managers[selectedManagerIndex].PhoneNumber;
-            TB_SelectedUserInfo_DT.Text = managers[selectedManagerIndex].Info;
+            if(selectedManagerIndex>=0)
+            {
+                TB_SelectedUserName_DT.Text = managers[selectedManagerIndex].Name;
+                TB_SelectedUserBuisiness_DT.Text = managers[selectedManagerIndex].CurrentPosition;
+                TB_SelectedUserPhone_DT.Text = managers[selectedManagerIndex].PhoneNumber;
+                TB_SelectedUserInfo_DT.Text = managers[selectedManagerIndex].Info;
+            }
         }
         private void Deleted_SelectedManager_Click(object sender, EventArgs e)
         {
@@ -1099,8 +1102,11 @@ namespace Incident_Reporting_App_Server
                         {
                             Building_Alarm_Unit[] BAU=server_Class_Obj.Select_Building_Alarm_Unit(a[i].Building_AlarmUnit_ID);
 
-                            Company C =server_Class_Obj.Select_CompanyByISSI(BAU[0].Network_Identifier);
-                            Load_Data(C.CompanyID);
+                            selectedCompany = server_Class_Obj.Select_CompanyByISSI(BAU[0].Network_Identifier);
+                            Selected_User_ID = selectedCompany.UserID;
+                            Selected_Company_ID = selectedCompany.CompanyID;
+                            Load_Data(Selected_Company_ID);
+                            
                         }
                     }
                 }

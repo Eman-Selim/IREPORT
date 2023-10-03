@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Eng Eman\SC3\Alarm Module\Server\SC3_Alarm_Module_WS\SC3_Alarm_Module_WS</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>03/14/2019 05:34:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>01/23/2022 10:00:10</publishTime>
+    </File>
+    <File Include="bin/roslyn/gcsc.ico">
+      <publishTime>01/13/2022 14:46:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>03/14/2019 05:34:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>03/14/2019 05:37:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>03/14/2019 05:38:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>03/14/2019 05:39:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>03/14/2019 05:34:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>03/14/2019 05:34:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>03/14/2019 05:34:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>03/14/2019 05:34:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>03/14/2019 05:34:06</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>03/14/2019 05:34:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>03/14/2019 05:34:08</publishTime>
+    </File>
+    <File Include="bin/SC3_Alarm_Module.dll">
+      <publishTime>06/13/2022 10:53:49</publishTime>
+    </File>
+    <File Include="ClassDiagram1.cd">
+      <publishTime>04/03/2019 14:42:16</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/14/2019 05:33:36</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/14/2019 05:33:38</publishTime>
+    </File>
+    <File Include="SC3_Alarm_Module_WS.asmx">
+      <publishTime>07/14/2020 11:59:18</publishTime>
+    </File>
+    <File Include="Service References/SC3ServiceReference1/SC3_Alarm_Module.SC3ServiceReference1.Delete_UsResponse.datasource">
+      <publishTime>11/24/2019 11:54:54</publishTime>
+    </File>
+    <File Include="Service References/SC3ServiceReference1/SC3_Alarm_Module.SC3ServiceReference1.HelloWorldResponse.datasource">
+      <publishTime>11/24/2019 11:54:54</publishTime>
+    </File>
+    <File Include="Service References/SC3ServiceReference1/SC3_Alarm_Module.SC3ServiceReference1.Select_UserResponse.datasource">
+      <publishTime>11/24/2019 11:54:54</publishTime>
+    </File>
+    <File Include="Service References/SC3ServiceReference1/SC3_Alarm_Module.SC3ServiceReference1.User.datasource">
+      <publishTime>11/24/2019 11:54:54</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/27/2022 14:18:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

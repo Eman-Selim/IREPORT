@@ -89,6 +89,8 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab2 = new C1.Win.C1Command.C1DockingTab();
             this.c1DockingTabPage2 = new C1.Win.C1Command.C1DockingTabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ISSI = new System.Windows.Forms.RichTextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.TB_OxygenTrapLocation_DT = new System.Windows.Forms.RichTextBox();
             this.TB_GasTrapLocation_DT = new System.Windows.Forms.RichTextBox();
             this.TB_ElectricalPanelLocation_DT = new System.Windows.Forms.RichTextBox();
@@ -281,8 +283,6 @@ namespace Incident_Reporting_App_Server
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.ISSI = new System.Windows.Forms.RichTextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.application_pnl_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Maxmized_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).BeginInit();
@@ -787,6 +787,29 @@ namespace Incident_Reporting_App_Server
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات المنشأة";
+            // 
+            // ISSI
+            // 
+            this.ISSI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.ISSI.ForeColor = System.Drawing.Color.White;
+            this.ISSI.Location = new System.Drawing.Point(33, 469);
+            this.ISSI.MaxLength = 300;
+            this.ISSI.Name = "ISSI";
+            this.ISSI.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ISSI.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.ISSI.Size = new System.Drawing.Size(269, 39);
+            this.ISSI.TabIndex = 26;
+            this.ISSI.Text = "";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(332, 483);
+            this.label26.Name = "label26";
+            this.label26.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label26.Size = new System.Drawing.Size(56, 25);
+            this.label26.TabIndex = 25;
+            this.label26.Text = "ISSI:";
             // 
             // TB_OxygenTrapLocation_DT
             // 
@@ -3322,29 +3345,6 @@ namespace Incident_Reporting_App_Server
             this.pictureBox5.Size = new System.Drawing.Size(159, 284);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
-            // 
-            // ISSI
-            // 
-            this.ISSI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.ISSI.ForeColor = System.Drawing.Color.White;
-            this.ISSI.Location = new System.Drawing.Point(33, 469);
-            this.ISSI.MaxLength = 300;
-            this.ISSI.Name = "ISSI";
-            this.ISSI.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ISSI.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.ISSI.Size = new System.Drawing.Size(269, 39);
-            this.ISSI.TabIndex = 26;
-            this.ISSI.Text = "";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(332, 483);
-            this.label26.Name = "label26";
-            this.label26.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label26.Size = new System.Drawing.Size(50, 25);
-            this.label26.TabIndex = 25;
-            this.label26.Text = "ISSI";
             // 
             // Main
             // 
