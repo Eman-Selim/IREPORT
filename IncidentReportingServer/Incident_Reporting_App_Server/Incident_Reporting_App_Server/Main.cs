@@ -52,6 +52,8 @@ namespace Incident_Reporting_App_Server
         TreeNode companyNode;
         TreeNode UserNode;
         private bool First_Time_Loading_User_Data_Flag = true;
+        bool AlarmCheck = false;
+        Thread AlarmCheck_Thread;
         #endregion
 
         public Main()
@@ -61,7 +63,7 @@ namespace Incident_Reporting_App_Server
             Thread Main_Thread = new Thread(load_all_treeviews_cycle);
             Main_Thread.Start();
             LoginAccount = server_Class_Obj.Select_Account();
-            Thread AlarmCheck_Thread = new Thread(CheckAlarm_Thread);
+            AlarmCheck_Thread = new Thread(CheckAlarm_Thread);
             AlarmCheck_Thread.Start();
             AlarmCheck_Thread.Priority = ThreadPriority.Highest;
         }
@@ -1092,7 +1094,7 @@ namespace Incident_Reporting_App_Server
                     CheckAlarm_Delegate _delegate = new CheckAlarm_Delegate(CheckAlarm);
                     treeView3.Invoke(_delegate, new object[] { });
                 }
-                else
+                else if (AlarmCheck==true)
                 {
                     Alarms[] a=server_Class_Obj.Select_Alarms();
                    int alarmLength = a == null ? 0 : a.Length;
@@ -1101,12 +1103,10 @@ namespace Incident_Reporting_App_Server
                         if (a[i].Acknowledege == 0)
                         {
                             Building_Alarm_Unit[] BAU=server_Class_Obj.Select_Building_Alarm_Unit(a[i].Building_AlarmUnit_ID);
-
                             selectedCompany = server_Class_Obj.Select_CompanyByISSI(BAU[0].Network_Identifier);
                             Selected_User_ID = selectedCompany.UserID;
                             Selected_Company_ID = selectedCompany.CompanyID;
                             Load_Data(Selected_Company_ID);
-                            
                         }
                     }
                 }
@@ -1513,6 +1513,22 @@ namespace Incident_Reporting_App_Server
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                AlarmCheck = !AlarmCheck;
+                if (AlarmCheck == false)
+                {
+                    AlarmCheck_Thread.Abort();
+                }
+            }
+            catch (ThreadAbortException ex)
+            {
+                Thread.ResetAbort();
+            }
         }
     }
 }
