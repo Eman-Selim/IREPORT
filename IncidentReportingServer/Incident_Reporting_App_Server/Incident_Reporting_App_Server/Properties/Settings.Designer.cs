@@ -26,20 +26,20 @@ namespace Incident_Reporting_App_Server.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:6578/SC3_Alarm_Module_WS.asmx")]
-        public string Incident_Reporting_App_Server_localhost1_SC3_Alarm_Module_WS {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:51040/IncidentReporting_WS.asmx")]
+        public string Incident_Reporting_App_Server_localhost_IncidentReporting_WS {
             get {
-                return ((string)(this["Incident_Reporting_App_Server_localhost1_SC3_Alarm_Module_WS"]));
+                return ((string)(this["Incident_Reporting_App_Server_localhost_IncidentReporting_WS"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:51040/IncidentReporting_WS.asmx")]
-        public string Incident_Reporting_App_Server_localhost_IncidentReporting_WS {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX")]
+        public string Incident_Reporting_App_Server_WebReference_SC3_Alarm_Module_WS {
             get {
-                return ((string)(this["Incident_Reporting_App_Server_localhost_IncidentReporting_WS"]));
+                return ((string)(this["Incident_Reporting_App_Server_WebReference_SC3_Alarm_Module_WS"]));
             }
         }
     }

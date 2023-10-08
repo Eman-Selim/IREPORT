@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Incident_Reporting_App_Server.localhost;
-using Incident_Reporting_App_Server.localhost1;
+using Incident_Reporting_App_Server.WebReference;
 using SDS_Remote_Control_Application_Server.Code;
 using System.Threading;
 using System.IO;
@@ -260,7 +260,7 @@ namespace Incident_Reporting_App_Server
         #endregion
 
         #region Manager
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
             selectedManagerIndex = cmb.SelectedIndex;
@@ -272,7 +272,7 @@ namespace Incident_Reporting_App_Server
                 TB_SelectedUserInfo_DT.Text = managers[selectedManagerIndex].Info;
             }
         }
-        private void Deleted_SelectedManager_Click(object sender, EventArgs e)
+        private void Deleted_SelectedManager_Click_1(object sender, EventArgs e)
         {
             if(managers==null)
                 statusfeild.Text = "please select manager";
@@ -291,7 +291,7 @@ namespace Incident_Reporting_App_Server
             
         }
 
-        private void Delete_SelectedDangerous_Click(object sender, EventArgs e)
+        private void Delete_SelectedDangerous_Click_1(object sender, EventArgs e)
         {
             if(places==null)
                 statusfeild.Text = " please select place";
@@ -310,7 +310,7 @@ namespace Incident_Reporting_App_Server
         #endregion
 
         #region Dangerous
-        private void Dangerous_SelectedIndexChanged(object sender, EventArgs e)
+        private void Dangerous_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
             selectedDangerousIndex = cmb.SelectedIndex;
@@ -453,7 +453,7 @@ namespace Incident_Reporting_App_Server
 
         #region Building
 
-        private void AddBuildings_Click(object sender, EventArgs e)
+        private void AddBuildings_Click_1(object sender, EventArgs e)
         {
             buildingCount++;
             Buildings building = new Buildings();
@@ -543,7 +543,7 @@ namespace Incident_Reporting_App_Server
         }
 
 
-        private void deleteBuildingList_Click(object sender, EventArgs e)
+        private void deleteBuildingList_Click_1(object sender, EventArgs e)
         {
             Newbuildings.Clear();
             BuildingNumber.Clear();
@@ -554,7 +554,7 @@ namespace Incident_Reporting_App_Server
             DG_Floors_DT.Rows.Clear();
         }
 
-        private void buildingCB_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void buildingCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
             selectedBuildingIndex = cmb.SelectedIndex;
@@ -600,26 +600,18 @@ namespace Incident_Reporting_App_Server
 
         #region Company
 
-        private void DeleteCompany_Click(object sender, EventArgs e)
+        private void DeleteCompany_Click_1(object sender, EventArgs e)
         {
             bool flag = server_Class_Obj.Delete_Company(Selected_Company_ID);
             if (flag == true)
             {
-                
                 Update_Incident_Reporting_trv_Companies();
-                //foreach (TreeNode node in treeView3.Nodes.)
-                //{
-                //    if (node.Tag== companyNode.Tag)
-                //    {
-                //        node.Remove();
-                //    }
-                //}
                 treeView3.Nodes.Remove(companyNode);
                 statusfeild.Text = " Company Deleted Successfully";
             }
         }
 
-        private void SaveAddedBuildings_Click(object sender, EventArgs e)
+        private void SaveAddedBuildings_Click_1(object sender, EventArgs e)
         {
 
             Company c1 = new Company();
@@ -705,7 +697,7 @@ namespace Incident_Reporting_App_Server
             Update_Incident_Reporting_trv_Companies();
         }
 
-        private void EditCompany_Click(object sender, EventArgs e)
+        private void EditCompany_Click_1(object sender, EventArgs e)
         {
             Company c1 = new Company();
 
@@ -768,7 +760,6 @@ namespace Incident_Reporting_App_Server
                             Floors floor = new Floors();
                             buildings[i].BuildingFloors[j].BuildingID = B1.BuildingID;
                             floor = server_Class_Obj.Add_Floors(buildings[i].BuildingFloors[j]);
-
                         }
 
                         ExitPathways exitPathWay = new ExitPathways();
@@ -798,7 +789,6 @@ namespace Incident_Reporting_App_Server
                         exitPathWay.PathwaysImageURL = "";
                         exitPathWay.Description = "";
                         exitPathWay = server_Class_Obj.Add_exitPath(exitPathWay);
-
                     }
                 }
                 else
@@ -813,7 +803,6 @@ namespace Incident_Reporting_App_Server
                             Floors floor = new Floors();
                             kvp.Value.BuildingID = B1.BuildingID;
                             floor = server_Class_Obj.Add_Floors(kvp.Value);
-
                         }
 
                         ExitPathways exitPathWay = new ExitPathways();
@@ -852,7 +841,7 @@ namespace Incident_Reporting_App_Server
 
         #region clear
 
-        private void Delete_SelectedBuilding_Click(object sender, EventArgs e)
+        private void Delete_SelectedBuilding_Click_1(object sender, EventArgs e)
         {
             if(buildings==null)
                 statusfeild.Text = " Please Select Building";
@@ -867,7 +856,7 @@ namespace Incident_Reporting_App_Server
         #endregion
 
         #region images
-        private void BuildingGeoPic_DT_Click(object sender, EventArgs e)
+        private void BuildingGeoPic_DT_Click_1(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
@@ -877,7 +866,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void TB_CompanyImage_DT_Click(object sender, EventArgs e)
+        private void TB_CompanyImage_DT_Click_1(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
@@ -887,7 +876,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void TB_CompanyGeometeryImage_DT_Click_1(object sender, EventArgs e)
+        private void TB_CompanyGeometeryImage_DT_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
@@ -897,7 +886,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void PB_ExitPathWayImage_DT_Click(object sender, EventArgs e)
+        private void PB_ExitPathWayImage_DT_Click_1(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
@@ -909,27 +898,6 @@ namespace Incident_Reporting_App_Server
         #endregion
 
         #region Pump
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FF_pumps pump = new FF_pumps();
-            pump.Additional_info = pumpInfo.Text == null ? "" : pumpInfo.Text;
-            pump.Address = pumpAddress.Text == null ? "" : pumpAddress.Text;
-            pump.Area = pumpArea.Text == null ? "" : pumpArea.Text;
-            pump.PumpNumber = PumpNumber.Text == null ? "" : PumpNumber.Text;
-            pump.Status = Status.Text == null ? "" : Status.Text;
-            pump.Signs = pumpSign.Text == null ? "" : pumpSign.Text;
-            pump.Sector = pumpSector.Text == null ? "" : pumpSector.Text;
-            pump.PumpType = PumpType.Text == null ? "" : PumpType.Text;
-            pump.UserID = Selected_User_ID;
-            FF_pumps p = server_Class_Obj.Add_FFPump(pump);
-            if (p != null)
-            {
-                label22.Text = " FF_pumps Added Successfully";
-                Update_Incident_Reporting_trv_Companies();
-            }
-                
-
-        }
 
         private void EditPUMP_Click(object sender, EventArgs e)
         {
@@ -987,7 +955,7 @@ namespace Incident_Reporting_App_Server
 
         #region Account
 
-        private void AddAccount_Click_1(object sender, EventArgs e)
+        private void AddAccount_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1009,7 +977,6 @@ namespace Incident_Reporting_App_Server
                         AccountStatus.Text = " Account Added Successfully";
                         Update_Incident_Reporting_trv_Companies();
                     }
-                        
                 }
                 else
                 {
@@ -1022,7 +989,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void EditUser_Click_1(object sender, EventArgs e)
+        private void EditUser_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1042,8 +1009,6 @@ namespace Incident_Reporting_App_Server
                     AccountStatus.Text = " Account Updated Successfully";
                     Update_Incident_Reporting_trv_Companies();
                 }
-                    
-
             }
             catch (Exception exception1)
             {
@@ -1051,7 +1016,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void DeleteUser_Click_1(object sender, EventArgs e)
+        private void DeleteUser_Click(object sender, EventArgs e)
         {
             bool flag = server_Class_Obj.Delete_Account(Selected_User_ID);
             if (flag == true)
@@ -1059,8 +1024,10 @@ namespace Incident_Reporting_App_Server
                 AccountStatus.Text = " Account Deleted Successfully";
                 Update_Incident_Reporting_trv_Companies();
                 treeView3.Nodes.Remove(UserNode);
-            }  
+            }
         }
+
+       
 
         #endregion
 
@@ -1073,8 +1040,11 @@ namespace Incident_Reporting_App_Server
             {
                 while (true)
                 {
-
-                    CheckAlarm();
+                    if(AlarmCheck==true)
+                    {
+                        CheckAlarm();
+                    }
+                    
                     Thread.Sleep(20000);
                 }
             }
@@ -1421,7 +1391,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void treeView3_AfterSelect_1(object sender, TreeViewEventArgs e)
+        private void treeView3_AfterSelect(object sender, TreeViewEventArgs e)
         {
             BuildingNumber.Clear();
             floorNumbers.Clear();
@@ -1484,7 +1454,26 @@ namespace Incident_Reporting_App_Server
 
 
 
-        private void Header_pic_Close_Click_1(object sender, EventArgs e)
+  
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                AlarmCheck = !AlarmCheck;
+            }
+            catch (ThreadAbortException ex)
+            {
+                Thread.ResetAbort();
+            }
+        }
+
+        private void Log_out_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1496,7 +1485,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void Maxmized_btn_Click_1(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (form_status == false)
             {
@@ -1510,25 +1499,14 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                AlarmCheck = !AlarmCheck;
-                if (AlarmCheck == false)
-                {
-                    AlarmCheck_Thread.Abort();
-                }
-            }
-            catch (ThreadAbortException ex)
-            {
-                Thread.ResetAbort();
-            }
+
         }
     }
 }

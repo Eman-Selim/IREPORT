@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Incident_Reporting_App_Server.localhost;
-using Incident_Reporting_App_Server.localhost1;
+using Incident_Reporting_App_Server.WebReference;
 
 namespace Incident_Reporting_App_Server.Code
 {

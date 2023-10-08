@@ -1,352 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="Placemarks_SelectByLayerId">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="layerid" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Placemarks_SelectByLayerIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Placemarks_SelectByLayerIdResult" type="tns:ArrayOfPlacemarks" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfPlacemarks">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Placemarks" nillable="true" type="tns:Placemarks" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Placemarks">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Placemark_id" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Layer_id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Placemark_Name" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Placemark_Lat" type="s:double" />
-          <s:element minOccurs="1" maxOccurs="1" name="Placemark_Lon" type="s:double" />
-          <s:element minOccurs="0" maxOccurs="1" name="Placemark_info" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="Placemarks_SelectByUserId">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Placemarks_SelectByUserIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Placemarks_SelectByUserIdResult" type="tns:ArrayOfPlacemarks" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Placemarks_Update">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Placemark" type="tns:Placemarks" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Placemarks_UpdateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Placemarks_UpdateResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Placemarks_Update_Bulk">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Placemarks_Array" type="tns:ArrayOfPlacemarks" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Placemarks_Update_BulkResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Placemarks_Update_BulkResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_Delete">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="destination_id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_DeleteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Forward_Destinations_DeleteResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_Delete_All">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_Delete_AllResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Forward_Destinations_Delete_AllResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_Update">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Upd_Forward_Destination" type="tns:Forward_Destinations" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="Forward_Destinations">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Destination_ID" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="BU_ID" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="MU_ID" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Alarm_Type_ID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Network_Type" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Network_ID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Message_Body" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="Forward_Destinations_UpdateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Forward_Destinations_UpdateResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_Insert">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="New_Forward_Destination" type="tns:Forward_Destinations" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_InsertResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_InsertResult" type="tns:Forward_Destinations" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_Select_All">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_Select_AllResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_Select_AllResult" type="tns:ArrayOfForward_Destinations" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfForward_Destinations">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Forward_Destinations" nillable="true" type="tns:Forward_Destinations" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="Forward_Destinations_Select">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="destination_id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_SelectResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_SelectResult" type="tns:ArrayOfForward_Destinations" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_SelectBy_MU_ID_and_AT_ID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="mu_id" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="at_id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDResult" type="tns:ArrayOfForward_Destinations" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_SelectBy_BU_ID_and_AT_ID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="bu_id" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="at_id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDResult" type="tns:ArrayOfForward_Destinations" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_Delete">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="Path_id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_DeleteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Zones_DeleteResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_Insert">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="tns:Zones" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="Zones">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Zone_id" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="U_id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Zone_Name" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Zone_Type" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Zone_Boundaries" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Zone_Color" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Zone_Info" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="Zones_InsertResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Zones_InsertResult" type="tns:Zones" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_Select">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="zoneid" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_SelectResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Zones_SelectResult" type="tns:ArrayOfZones" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfZones">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Zones" nillable="true" type="tns:Zones" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="Zones_Select_All">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_Select_AllResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Zones_Select_AllResult" type="tns:ArrayOfZones" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_SelectByUserId">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_SelectByUserIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Zones_SelectByUserIdResult" type="tns:ArrayOfZones" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_Update">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="tns:Zones" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Zones_UpdateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Zones_UpdateResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Get_Server_DateTime">
-        <s:complexType />
-      </s:element>
-      <s:element name="Get_Server_DateTimeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Get_Server_DateTimeResult" type="s:dateTime" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="Alarms_Delete_Row">
         <s:complexType>
           <s:sequence>
@@ -934,6 +589,21 @@
           <s:element minOccurs="0" maxOccurs="1" name="Icon" type="s:base64Binary" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfPlacemarks">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Placemarks" nillable="true" type="tns:Placemarks" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Placemarks">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Placemark_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Layer_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Placemark_Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Placemark_Lat" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Placemark_Lon" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Placemark_info" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="ArrayOfAlarm_Type">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="Alarm_Type" nillable="true" type="tns:Alarm_Type" />
@@ -945,6 +615,22 @@
           <s:element minOccurs="0" maxOccurs="1" name="Alarm_Type_Name" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Alarm_Type_Message" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Alarm_Type_Icon" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Zones" nillable="true" type="tns:Zones" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Zones">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Zone_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="U_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zone_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zone_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zone_Boundaries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zone_Color" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zone_Info" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="Users_InsertResponse">
@@ -1461,122 +1147,322 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Placemarks_SelectByLayerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="layerid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Placemarks_SelectByLayerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Placemarks_SelectByLayerIdResult" type="tns:ArrayOfPlacemarks" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Placemarks_SelectByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Placemarks_SelectByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Placemarks_SelectByUserIdResult" type="tns:ArrayOfPlacemarks" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Placemarks_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Placemark" type="tns:Placemarks" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Placemarks_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Placemarks_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Placemarks_Update_Bulk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Placemarks_Array" type="tns:ArrayOfPlacemarks" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Placemarks_Update_BulkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Placemarks_Update_BulkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="destination_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Forward_Destinations_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_Delete_All">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_Delete_AllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Forward_Destinations_Delete_AllResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Upd_Forward_Destination" type="tns:Forward_Destinations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Forward_Destinations">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Destination_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BU_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MU_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Alarm_Type_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Network_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Network_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message_Body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Forward_Destinations_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Forward_Destinations_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="New_Forward_Destination" type="tns:Forward_Destinations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_InsertResult" type="tns:Forward_Destinations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_Select_All">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_Select_AllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_Select_AllResult" type="tns:ArrayOfForward_Destinations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfForward_Destinations">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Forward_Destinations" nillable="true" type="tns:Forward_Destinations" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Forward_Destinations_Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="destination_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_SelectResult" type="tns:ArrayOfForward_Destinations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_SelectBy_MU_ID_and_AT_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mu_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="at_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDResult" type="tns:ArrayOfForward_Destinations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_SelectBy_BU_ID_and_AT_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bu_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="at_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDResult" type="tns:ArrayOfForward_Destinations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Path_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Zones_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="tns:Zones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zones_InsertResult" type="tns:Zones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zoneid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zones_SelectResult" type="tns:ArrayOfZones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_Select_All">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_Select_AllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zones_Select_AllResult" type="tns:ArrayOfZones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_SelectByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_SelectByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zones_SelectByUserIdResult" type="tns:ArrayOfZones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="tns:Zones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Zones_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Zones_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Server_DateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_Server_DateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_Server_DateTimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="Placemarks_SelectByLayerIdSoapIn">
-    <wsdl:part name="parameters" element="tns:Placemarks_SelectByLayerId" />
-  </wsdl:message>
-  <wsdl:message name="Placemarks_SelectByLayerIdSoapOut">
-    <wsdl:part name="parameters" element="tns:Placemarks_SelectByLayerIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="Placemarks_SelectByUserIdSoapIn">
-    <wsdl:part name="parameters" element="tns:Placemarks_SelectByUserId" />
-  </wsdl:message>
-  <wsdl:message name="Placemarks_SelectByUserIdSoapOut">
-    <wsdl:part name="parameters" element="tns:Placemarks_SelectByUserIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="Placemarks_UpdateSoapIn">
-    <wsdl:part name="parameters" element="tns:Placemarks_Update" />
-  </wsdl:message>
-  <wsdl:message name="Placemarks_UpdateSoapOut">
-    <wsdl:part name="parameters" element="tns:Placemarks_UpdateResponse" />
-  </wsdl:message>
-  <wsdl:message name="Placemarks_Update_BulkSoapIn">
-    <wsdl:part name="parameters" element="tns:Placemarks_Update_Bulk" />
-  </wsdl:message>
-  <wsdl:message name="Placemarks_Update_BulkSoapOut">
-    <wsdl:part name="parameters" element="tns:Placemarks_Update_BulkResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_DeleteSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Delete" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_DeleteSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_DeleteResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_Delete_AllSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Delete_All" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_Delete_AllSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Delete_AllResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_UpdateSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Update" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_UpdateSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_UpdateResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_InsertSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Insert" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_InsertSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_InsertResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_Select_AllSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Select_All" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_Select_AllSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Select_AllResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_SelectSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_Select" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_SelectSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_ID" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_IDResponse" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapIn">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_ID" />
-  </wsdl:message>
-  <wsdl:message name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapOut">
-    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_IDResponse" />
-  </wsdl:message>
-  <wsdl:message name="Zones_DeleteSoapIn">
-    <wsdl:part name="parameters" element="tns:Zones_Delete" />
-  </wsdl:message>
-  <wsdl:message name="Zones_DeleteSoapOut">
-    <wsdl:part name="parameters" element="tns:Zones_DeleteResponse" />
-  </wsdl:message>
-  <wsdl:message name="Zones_InsertSoapIn">
-    <wsdl:part name="parameters" element="tns:Zones_Insert" />
-  </wsdl:message>
-  <wsdl:message name="Zones_InsertSoapOut">
-    <wsdl:part name="parameters" element="tns:Zones_InsertResponse" />
-  </wsdl:message>
-  <wsdl:message name="Zones_SelectSoapIn">
-    <wsdl:part name="parameters" element="tns:Zones_Select" />
-  </wsdl:message>
-  <wsdl:message name="Zones_SelectSoapOut">
-    <wsdl:part name="parameters" element="tns:Zones_SelectResponse" />
-  </wsdl:message>
-  <wsdl:message name="Zones_Select_AllSoapIn">
-    <wsdl:part name="parameters" element="tns:Zones_Select_All" />
-  </wsdl:message>
-  <wsdl:message name="Zones_Select_AllSoapOut">
-    <wsdl:part name="parameters" element="tns:Zones_Select_AllResponse" />
-  </wsdl:message>
-  <wsdl:message name="Zones_SelectByUserIdSoapIn">
-    <wsdl:part name="parameters" element="tns:Zones_SelectByUserId" />
-  </wsdl:message>
-  <wsdl:message name="Zones_SelectByUserIdSoapOut">
-    <wsdl:part name="parameters" element="tns:Zones_SelectByUserIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="Zones_UpdateSoapIn">
-    <wsdl:part name="parameters" element="tns:Zones_Update" />
-  </wsdl:message>
-  <wsdl:message name="Zones_UpdateSoapOut">
-    <wsdl:part name="parameters" element="tns:Zones_UpdateResponse" />
-  </wsdl:message>
-  <wsdl:message name="Get_Server_DateTimeSoapIn">
-    <wsdl:part name="parameters" element="tns:Get_Server_DateTime" />
-  </wsdl:message>
-  <wsdl:message name="Get_Server_DateTimeSoapOut">
-    <wsdl:part name="parameters" element="tns:Get_Server_DateTimeResponse" />
-  </wsdl:message>
   <wsdl:message name="Alarms_Delete_RowSoapIn">
     <wsdl:part name="parameters" element="tns:Alarms_Delete_Row" />
   </wsdl:message>
@@ -1943,83 +1829,121 @@
   <wsdl:message name="Placemarks_SelectSoapOut">
     <wsdl:part name="parameters" element="tns:Placemarks_SelectResponse" />
   </wsdl:message>
+  <wsdl:message name="Placemarks_SelectByLayerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Placemarks_SelectByLayerId" />
+  </wsdl:message>
+  <wsdl:message name="Placemarks_SelectByLayerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Placemarks_SelectByLayerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Placemarks_SelectByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Placemarks_SelectByUserId" />
+  </wsdl:message>
+  <wsdl:message name="Placemarks_SelectByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Placemarks_SelectByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Placemarks_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Placemarks_Update" />
+  </wsdl:message>
+  <wsdl:message name="Placemarks_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Placemarks_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Placemarks_Update_BulkSoapIn">
+    <wsdl:part name="parameters" element="tns:Placemarks_Update_Bulk" />
+  </wsdl:message>
+  <wsdl:message name="Placemarks_Update_BulkSoapOut">
+    <wsdl:part name="parameters" element="tns:Placemarks_Update_BulkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_Delete_AllSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Delete_All" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_Delete_AllSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Delete_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Update" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Insert" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_Select_AllSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Select_All" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_Select_AllSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Select_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_Select" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_ID" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_ID" />
+  </wsdl:message>
+  <wsdl:message name="Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zones_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Zones_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Zones_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Zones_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zones_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Zones_Insert" />
+  </wsdl:message>
+  <wsdl:message name="Zones_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:Zones_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zones_SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Zones_Select" />
+  </wsdl:message>
+  <wsdl:message name="Zones_SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:Zones_SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zones_Select_AllSoapIn">
+    <wsdl:part name="parameters" element="tns:Zones_Select_All" />
+  </wsdl:message>
+  <wsdl:message name="Zones_Select_AllSoapOut">
+    <wsdl:part name="parameters" element="tns:Zones_Select_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zones_SelectByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Zones_SelectByUserId" />
+  </wsdl:message>
+  <wsdl:message name="Zones_SelectByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Zones_SelectByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Zones_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Zones_Update" />
+  </wsdl:message>
+  <wsdl:message name="Zones_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Zones_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Server_DateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Server_DateTime" />
+  </wsdl:message>
+  <wsdl:message name="Get_Server_DateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Server_DateTimeResponse" />
+  </wsdl:message>
   <wsdl:portType name="SC3_Alarm_Module_WSSoap">
-    <wsdl:operation name="Placemarks_SelectByLayerId">
-      <wsdl:input message="tns:Placemarks_SelectByLayerIdSoapIn" />
-      <wsdl:output message="tns:Placemarks_SelectByLayerIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Placemarks_SelectByUserId">
-      <wsdl:input message="tns:Placemarks_SelectByUserIdSoapIn" />
-      <wsdl:output message="tns:Placemarks_SelectByUserIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Placemarks_Update">
-      <wsdl:input message="tns:Placemarks_UpdateSoapIn" />
-      <wsdl:output message="tns:Placemarks_UpdateSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Placemarks_Update_Bulk">
-      <wsdl:input message="tns:Placemarks_Update_BulkSoapIn" />
-      <wsdl:output message="tns:Placemarks_Update_BulkSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Delete">
-      <wsdl:input message="tns:Forward_Destinations_DeleteSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_DeleteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Delete_All">
-      <wsdl:input message="tns:Forward_Destinations_Delete_AllSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_Delete_AllSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Update">
-      <wsdl:input message="tns:Forward_Destinations_UpdateSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_UpdateSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Insert">
-      <wsdl:input message="tns:Forward_Destinations_InsertSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_InsertSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Select_All">
-      <wsdl:input message="tns:Forward_Destinations_Select_AllSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_Select_AllSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Select">
-      <wsdl:input message="tns:Forward_Destinations_SelectSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_SelectSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_SelectBy_MU_ID_and_AT_ID">
-      <wsdl:input message="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_SelectBy_BU_ID_and_AT_ID">
-      <wsdl:input message="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapIn" />
-      <wsdl:output message="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Delete">
-      <wsdl:input message="tns:Zones_DeleteSoapIn" />
-      <wsdl:output message="tns:Zones_DeleteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Insert">
-      <wsdl:input message="tns:Zones_InsertSoapIn" />
-      <wsdl:output message="tns:Zones_InsertSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Select">
-      <wsdl:input message="tns:Zones_SelectSoapIn" />
-      <wsdl:output message="tns:Zones_SelectSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Select_All">
-      <wsdl:input message="tns:Zones_Select_AllSoapIn" />
-      <wsdl:output message="tns:Zones_Select_AllSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Zones_SelectByUserId">
-      <wsdl:input message="tns:Zones_SelectByUserIdSoapIn" />
-      <wsdl:output message="tns:Zones_SelectByUserIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Update">
-      <wsdl:input message="tns:Zones_UpdateSoapIn" />
-      <wsdl:output message="tns:Zones_UpdateSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Get_Server_DateTime">
-      <wsdl:input message="tns:Get_Server_DateTimeSoapIn" />
-      <wsdl:output message="tns:Get_Server_DateTimeSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="Alarms_Delete_Row">
       <wsdl:input message="tns:Alarms_Delete_RowSoapIn" />
       <wsdl:output message="tns:Alarms_Delete_RowSoapOut" />
@@ -2264,180 +2188,85 @@
       <wsdl:input message="tns:Placemarks_SelectSoapIn" />
       <wsdl:output message="tns:Placemarks_SelectSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Placemarks_SelectByLayerId">
+      <wsdl:input message="tns:Placemarks_SelectByLayerIdSoapIn" />
+      <wsdl:output message="tns:Placemarks_SelectByLayerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Placemarks_SelectByUserId">
+      <wsdl:input message="tns:Placemarks_SelectByUserIdSoapIn" />
+      <wsdl:output message="tns:Placemarks_SelectByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Placemarks_Update">
+      <wsdl:input message="tns:Placemarks_UpdateSoapIn" />
+      <wsdl:output message="tns:Placemarks_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Placemarks_Update_Bulk">
+      <wsdl:input message="tns:Placemarks_Update_BulkSoapIn" />
+      <wsdl:output message="tns:Placemarks_Update_BulkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Delete">
+      <wsdl:input message="tns:Forward_Destinations_DeleteSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Delete_All">
+      <wsdl:input message="tns:Forward_Destinations_Delete_AllSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_Delete_AllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Update">
+      <wsdl:input message="tns:Forward_Destinations_UpdateSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Insert">
+      <wsdl:input message="tns:Forward_Destinations_InsertSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Select_All">
+      <wsdl:input message="tns:Forward_Destinations_Select_AllSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_Select_AllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Select">
+      <wsdl:input message="tns:Forward_Destinations_SelectSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_SelectBy_MU_ID_and_AT_ID">
+      <wsdl:input message="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_SelectBy_MU_ID_and_AT_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_SelectBy_BU_ID_and_AT_ID">
+      <wsdl:input message="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapIn" />
+      <wsdl:output message="tns:Forward_Destinations_SelectBy_BU_ID_and_AT_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Delete">
+      <wsdl:input message="tns:Zones_DeleteSoapIn" />
+      <wsdl:output message="tns:Zones_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Insert">
+      <wsdl:input message="tns:Zones_InsertSoapIn" />
+      <wsdl:output message="tns:Zones_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Select">
+      <wsdl:input message="tns:Zones_SelectSoapIn" />
+      <wsdl:output message="tns:Zones_SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Select_All">
+      <wsdl:input message="tns:Zones_Select_AllSoapIn" />
+      <wsdl:output message="tns:Zones_Select_AllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zones_SelectByUserId">
+      <wsdl:input message="tns:Zones_SelectByUserIdSoapIn" />
+      <wsdl:output message="tns:Zones_SelectByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Update">
+      <wsdl:input message="tns:Zones_UpdateSoapIn" />
+      <wsdl:output message="tns:Zones_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Server_DateTime">
+      <wsdl:input message="tns:Get_Server_DateTimeSoapIn" />
+      <wsdl:output message="tns:Get_Server_DateTimeSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SC3_Alarm_Module_WSSoap" type="tns:SC3_Alarm_Module_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Placemarks_SelectByLayerId">
-      <soap:operation soapAction="http://tempuri.org/Placemarks_SelectByLayerId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Placemarks_SelectByUserId">
-      <soap:operation soapAction="http://tempuri.org/Placemarks_SelectByUserId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Placemarks_Update">
-      <soap:operation soapAction="http://tempuri.org/Placemarks_Update" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Placemarks_Update_Bulk">
-      <soap:operation soapAction="http://tempuri.org/Placemarks_Update_Bulk" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Delete">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Delete" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Delete_All">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Delete_All" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Update">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Update" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Insert">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Insert" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Select_All">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Select_All" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_Select">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Select" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_SelectBy_MU_ID_and_AT_ID">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_MU_ID_and_AT_ID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Forward_Destinations_SelectBy_BU_ID_and_AT_ID">
-      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_BU_ID_and_AT_ID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Delete">
-      <soap:operation soapAction="http://tempuri.org/Zones_Delete" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Insert">
-      <soap:operation soapAction="http://tempuri.org/Zones_Insert" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Select">
-      <soap:operation soapAction="http://tempuri.org/Zones_Select" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Select_All">
-      <soap:operation soapAction="http://tempuri.org/Zones_Select_All" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Zones_SelectByUserId">
-      <soap:operation soapAction="http://tempuri.org/Zones_SelectByUserId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Zones_Update">
-      <soap:operation soapAction="http://tempuri.org/Zones_Update" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Get_Server_DateTime">
-      <soap:operation soapAction="http://tempuri.org/Get_Server_DateTime" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Alarms_Delete_Row">
       <soap:operation soapAction="http://tempuri.org/Alarms_Delete_Row" style="document" />
       <wsdl:input>
@@ -2987,180 +2816,180 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="SC3_Alarm_Module_WSSoap12" type="tns:SC3_Alarm_Module_WSSoap">
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Placemarks_SelectByLayerId">
-      <soap12:operation soapAction="http://tempuri.org/Placemarks_SelectByLayerId" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Placemarks_SelectByLayerId" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Placemarks_SelectByUserId">
-      <soap12:operation soapAction="http://tempuri.org/Placemarks_SelectByUserId" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Placemarks_SelectByUserId" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Placemarks_Update">
-      <soap12:operation soapAction="http://tempuri.org/Placemarks_Update" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Placemarks_Update" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Placemarks_Update_Bulk">
-      <soap12:operation soapAction="http://tempuri.org/Placemarks_Update_Bulk" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Placemarks_Update_Bulk" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_Delete">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Delete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Delete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_Delete_All">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Delete_All" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Delete_All" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_Update">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Update" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Update" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_Insert">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Insert" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Insert" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_Select_All">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Select_All" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Select_All" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_Select">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Select" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_Select" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_SelectBy_MU_ID_and_AT_ID">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_MU_ID_and_AT_ID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_MU_ID_and_AT_ID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Forward_Destinations_SelectBy_BU_ID_and_AT_ID">
-      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_BU_ID_and_AT_ID" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_BU_ID_and_AT_ID" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Zones_Delete">
-      <soap12:operation soapAction="http://tempuri.org/Zones_Delete" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Zones_Delete" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Zones_Insert">
-      <soap12:operation soapAction="http://tempuri.org/Zones_Insert" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Zones_Insert" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Zones_Select">
-      <soap12:operation soapAction="http://tempuri.org/Zones_Select" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Zones_Select" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Zones_Select_All">
-      <soap12:operation soapAction="http://tempuri.org/Zones_Select_All" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Zones_Select_All" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Zones_SelectByUserId">
-      <soap12:operation soapAction="http://tempuri.org/Zones_SelectByUserId" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Zones_SelectByUserId" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Zones_Update">
-      <soap12:operation soapAction="http://tempuri.org/Zones_Update" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Zones_Update" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Get_Server_DateTime">
-      <soap12:operation soapAction="http://tempuri.org/Get_Server_DateTime" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Get_Server_DateTime" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SC3_Alarm_Module_WSSoap12" type="tns:SC3_Alarm_Module_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Alarms_Delete_Row">
       <soap12:operation soapAction="http://tempuri.org/Alarms_Delete_Row" style="document" />
       <wsdl:input>
@@ -3710,13 +3539,184 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Placemarks_SelectByLayerId">
+      <soap12:operation soapAction="http://tempuri.org/Placemarks_SelectByLayerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Placemarks_SelectByUserId">
+      <soap12:operation soapAction="http://tempuri.org/Placemarks_SelectByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Placemarks_Update">
+      <soap12:operation soapAction="http://tempuri.org/Placemarks_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Placemarks_Update_Bulk">
+      <soap12:operation soapAction="http://tempuri.org/Placemarks_Update_Bulk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Delete_All">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Delete_All" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Update">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Insert">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Select_All">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Select_All" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_Select">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_SelectBy_MU_ID_and_AT_ID">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_MU_ID_and_AT_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Forward_Destinations_SelectBy_BU_ID_and_AT_ID">
+      <soap12:operation soapAction="http://tempuri.org/Forward_Destinations_SelectBy_BU_ID_and_AT_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Zones_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Insert">
+      <soap12:operation soapAction="http://tempuri.org/Zones_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Select">
+      <soap12:operation soapAction="http://tempuri.org/Zones_Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Select_All">
+      <soap12:operation soapAction="http://tempuri.org/Zones_Select_All" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zones_SelectByUserId">
+      <soap12:operation soapAction="http://tempuri.org/Zones_SelectByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zones_Update">
+      <soap12:operation soapAction="http://tempuri.org/Zones_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Server_DateTime">
+      <soap12:operation soapAction="http://tempuri.org/Get_Server_DateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="SC3_Alarm_Module_WS">
     <wsdl:port name="SC3_Alarm_Module_WSSoap" binding="tns:SC3_Alarm_Module_WSSoap">
-      <soap:address location="http://localhost:6578/SC3_Alarm_Module_WS.asmx" />
+      <soap:address location="http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX" />
     </wsdl:port>
     <wsdl:port name="SC3_Alarm_Module_WSSoap12" binding="tns:SC3_Alarm_Module_WSSoap12">
-      <soap12:address location="http://localhost:6578/SC3_Alarm_Module_WS.asmx" />
+      <soap12:address location="http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
