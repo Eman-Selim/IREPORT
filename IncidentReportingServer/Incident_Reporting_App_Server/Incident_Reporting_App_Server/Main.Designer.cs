@@ -30,29 +30,29 @@ namespace Incident_Reporting_App_Server
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle287 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle288 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle294 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle295 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle304 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle305 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle296 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle297 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle298 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle299 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle300 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle301 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle302 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle303 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle306 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle307 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle308 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle289 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle290 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle291 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle292 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle293 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.companyNameBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -365,13 +365,13 @@ namespace Incident_Reporting_App_Server
             // companyNameBtn
             // 
             this.companyNameBtn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle287.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle287.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle287.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle287.Padding = new System.Windows.Forms.Padding(10, 7, 10, 1);
-            dataGridViewCellStyle287.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle287.SelectionForeColor = System.Drawing.Color.Black;
-            this.companyNameBtn.DefaultCellStyle = dataGridViewCellStyle287;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.companyNameBtn.DefaultCellStyle = dataGridViewCellStyle1;
             this.companyNameBtn.FillWeight = 1006.421F;
             this.companyNameBtn.HeaderText = "رقم الدور";
             this.companyNameBtn.Name = "companyNameBtn";
@@ -431,12 +431,12 @@ namespace Incident_Reporting_App_Server
             // dataGridViewButtonColumn1
             // 
             this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle288.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle288.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle288.Padding = new System.Windows.Forms.Padding(10, 7, 10, 1);
-            dataGridViewCellStyle288.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle288.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle288;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewButtonColumn1.FillWeight = 1006.421F;
             this.dataGridViewButtonColumn1.HeaderText = "اتجاه المنشأة ";
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
@@ -1502,20 +1502,20 @@ namespace Incident_Reporting_App_Server
             // 
             // DG_Floors_DT
             // 
-            dataGridViewCellStyle294.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle294.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DG_Floors_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle294;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DG_Floors_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DG_Floors_DT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.DG_Floors_DT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DG_Floors_DT.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle295.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle295.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle295.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle295.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle295.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle295.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle295.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_Floors_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle295;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_Floors_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DG_Floors_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG_Floors_DT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FloorNumber,
@@ -1526,25 +1526,25 @@ namespace Incident_Reporting_App_Server
             this.CarbonDioxideExtinguishersWeight,
             this.FoamExtinguishersNumbers,
             this.FoamExtinguishersWeight});
-            dataGridViewCellStyle304.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle304.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle304.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle304.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle304.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle304.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle304.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_Floors_DT.DefaultCellStyle = dataGridViewCellStyle304;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_Floors_DT.DefaultCellStyle = dataGridViewCellStyle13;
             this.DG_Floors_DT.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DG_Floors_DT.EnableHeadersVisualStyles = false;
             this.DG_Floors_DT.Location = new System.Drawing.Point(0, 457);
             this.DG_Floors_DT.MultiSelect = false;
             this.DG_Floors_DT.Name = "DG_Floors_DT";
-            dataGridViewCellStyle305.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle305.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle305.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle305.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle305.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.DG_Floors_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle305;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.DG_Floors_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.DG_Floors_DT.RowHeadersVisible = false;
             this.DG_Floors_DT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_Floors_DT.Size = new System.Drawing.Size(1480, 316);
@@ -1552,13 +1552,13 @@ namespace Incident_Reporting_App_Server
             // 
             // FloorNumber
             // 
-            dataGridViewCellStyle296.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle296.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle296.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle296.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle296.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle296.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.FloorNumber.DefaultCellStyle = dataGridViewCellStyle296;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.FloorNumber.DefaultCellStyle = dataGridViewCellStyle5;
             this.FloorNumber.HeaderText = "رقم الدور";
             this.FloorNumber.Name = "FloorNumber";
             this.FloorNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1567,98 +1567,98 @@ namespace Incident_Reporting_App_Server
             // FireHydrantsNumber
             // 
             this.FireHydrantsNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle297.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle297.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle297.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle297.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle297.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle297.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle297.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FireHydrantsNumber.DefaultCellStyle = dataGridViewCellStyle297;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FireHydrantsNumber.DefaultCellStyle = dataGridViewCellStyle6;
             this.FireHydrantsNumber.HeaderText = "عدد حنفيات المياه";
             this.FireHydrantsNumber.Name = "FireHydrantsNumber";
             // 
             // PowderExtinguishersNumber
             // 
             this.PowderExtinguishersNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle298.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle298.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle298.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle298.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle298.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle298.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle298.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PowderExtinguishersNumber.DefaultCellStyle = dataGridViewCellStyle298;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PowderExtinguishersNumber.DefaultCellStyle = dataGridViewCellStyle7;
             this.PowderExtinguishersNumber.HeaderText = "عدد طفايات البودرة";
             this.PowderExtinguishersNumber.Name = "PowderExtinguishersNumber";
             // 
             // PowderExtinguishersWeight
             // 
             this.PowderExtinguishersWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle299.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle299.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle299.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle299.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle299.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle299.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle299.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PowderExtinguishersWeight.DefaultCellStyle = dataGridViewCellStyle299;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PowderExtinguishersWeight.DefaultCellStyle = dataGridViewCellStyle8;
             this.PowderExtinguishersWeight.HeaderText = "وزن طفيات البودرة";
             this.PowderExtinguishersWeight.Name = "PowderExtinguishersWeight";
             // 
             // CarbonDioxideExtinguishersNumbers
             // 
             this.CarbonDioxideExtinguishersNumbers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle300.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle300.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle300.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle300.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle300.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle300.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle300.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CarbonDioxideExtinguishersNumbers.DefaultCellStyle = dataGridViewCellStyle300;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CarbonDioxideExtinguishersNumbers.DefaultCellStyle = dataGridViewCellStyle9;
             this.CarbonDioxideExtinguishersNumbers.HeaderText = "عدد طفايات ثاني أكسيد الكربون";
             this.CarbonDioxideExtinguishersNumbers.Name = "CarbonDioxideExtinguishersNumbers";
             // 
             // CarbonDioxideExtinguishersWeight
             // 
             this.CarbonDioxideExtinguishersWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle301.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle301.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle301.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle301.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle301.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle301.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle301.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CarbonDioxideExtinguishersWeight.DefaultCellStyle = dataGridViewCellStyle301;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CarbonDioxideExtinguishersWeight.DefaultCellStyle = dataGridViewCellStyle10;
             this.CarbonDioxideExtinguishersWeight.HeaderText = "وزن طفايات ثاني أكسيد الكربون";
             this.CarbonDioxideExtinguishersWeight.Name = "CarbonDioxideExtinguishersWeight";
             // 
             // FoamExtinguishersNumbers
             // 
             this.FoamExtinguishersNumbers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle302.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle302.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle302.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle302.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle302.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle302.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle302.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FoamExtinguishersNumbers.DefaultCellStyle = dataGridViewCellStyle302;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FoamExtinguishersNumbers.DefaultCellStyle = dataGridViewCellStyle11;
             this.FoamExtinguishersNumbers.HeaderText = "عدد الطفايات الرغوي";
             this.FoamExtinguishersNumbers.Name = "FoamExtinguishersNumbers";
             // 
             // FoamExtinguishersWeight
             // 
             this.FoamExtinguishersWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle303.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle303.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle303.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle303.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle303.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle303.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle303.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FoamExtinguishersWeight.DefaultCellStyle = dataGridViewCellStyle303;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FoamExtinguishersWeight.DefaultCellStyle = dataGridViewCellStyle12;
             this.FoamExtinguishersWeight.HeaderText = "وزن الطفايات الرغوي";
             this.FoamExtinguishersWeight.Name = "FoamExtinguishersWeight";
             // 
@@ -2350,24 +2350,24 @@ namespace Incident_Reporting_App_Server
             // ff_ManPowerGrid
             // 
             this.ff_ManPowerGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle306.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle306.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle306.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle306.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle306.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.ff_ManPowerGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle306;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ff_ManPowerGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.ff_ManPowerGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ff_ManPowerGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.ff_ManPowerGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ff_ManPowerGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle307.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle307.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle307.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle307.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle307.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle307.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle307.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ff_ManPowerGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle307;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ff_ManPowerGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.ff_ManPowerGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ff_ManPowerGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column18,
@@ -2383,11 +2383,11 @@ namespace Incident_Reporting_App_Server
             this.ff_ManPowerGrid.MultiSelect = false;
             this.ff_ManPowerGrid.Name = "ff_ManPowerGrid";
             this.ff_ManPowerGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle308.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle308.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle308.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle308.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.ff_ManPowerGrid.RowsDefaultCellStyle = dataGridViewCellStyle308;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.ff_ManPowerGrid.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.ff_ManPowerGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ff_ManPowerGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ff_ManPowerGrid.Size = new System.Drawing.Size(1751, 350);
@@ -2769,6 +2769,7 @@ namespace Incident_Reporting_App_Server
             this.DeletePump.Size = new System.Drawing.Size(28, 29);
             this.DeletePump.TabIndex = 50;
             this.DeletePump.UseVisualStyleBackColor = true;
+            this.DeletePump.Click += new System.EventHandler(this.DeletePump_Click);
             // 
             // label22
             // 
@@ -2790,6 +2791,7 @@ namespace Incident_Reporting_App_Server
             this.EditPUMP.Size = new System.Drawing.Size(45, 35);
             this.EditPUMP.TabIndex = 49;
             this.EditPUMP.UseVisualStyleBackColor = true;
+            this.EditPUMP.Click += new System.EventHandler(this.EditPUMP_Click_1);
             // 
             // button2
             // 
@@ -2835,21 +2837,21 @@ namespace Incident_Reporting_App_Server
             // DG_Pumps_DT
             // 
             this.DG_Pumps_DT.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle289.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle289.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DG_Pumps_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle289;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DG_Pumps_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
             this.DG_Pumps_DT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DG_Pumps_DT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.DG_Pumps_DT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DG_Pumps_DT.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle290.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle290.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle290.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle290.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle290.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle290.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle290.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_Pumps_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle290;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_Pumps_DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.DG_Pumps_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG_Pumps_DT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -2861,14 +2863,14 @@ namespace Incident_Reporting_App_Server
             this.Column27,
             this.Column28,
             this.Column29});
-            dataGridViewCellStyle291.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle291.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle291.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle291.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle291.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle291.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle291.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_Pumps_DT.DefaultCellStyle = dataGridViewCellStyle291;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_Pumps_DT.DefaultCellStyle = dataGridViewCellStyle20;
             this.DG_Pumps_DT.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DG_Pumps_DT.EnableHeadersVisualStyles = false;
             this.DG_Pumps_DT.GridColor = System.Drawing.Color.DarkGray;
@@ -2876,26 +2878,27 @@ namespace Incident_Reporting_App_Server
             this.DG_Pumps_DT.Location = new System.Drawing.Point(0, 375);
             this.DG_Pumps_DT.MultiSelect = false;
             this.DG_Pumps_DT.Name = "DG_Pumps_DT";
-            dataGridViewCellStyle292.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle292.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle292.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle292.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle292.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle292.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle292.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_Pumps_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle292;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_Pumps_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.DG_Pumps_DT.RowHeadersVisible = false;
-            dataGridViewCellStyle293.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle293.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle293.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle293.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle293.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.DG_Pumps_DT.RowsDefaultCellStyle = dataGridViewCellStyle293;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.DG_Pumps_DT.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.DG_Pumps_DT.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DG_Pumps_DT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_Pumps_DT.Size = new System.Drawing.Size(1751, 397);
             this.DG_Pumps_DT.TabIndex = 41;
             this.DG_Pumps_DT.TabStop = false;
+            this.DG_Pumps_DT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_Pumps_DT_CellContentClick_1);
             // 
             // id
             // 
@@ -3186,6 +3189,7 @@ namespace Incident_Reporting_App_Server
             this.DeleteUser.Size = new System.Drawing.Size(28, 29);
             this.DeleteUser.TabIndex = 50;
             this.DeleteUser.UseVisualStyleBackColor = true;
+            this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click_1);
             // 
             // label27
             // 
@@ -3207,6 +3211,7 @@ namespace Incident_Reporting_App_Server
             this.EditUser.Size = new System.Drawing.Size(45, 35);
             this.EditUser.TabIndex = 49;
             this.EditUser.UseVisualStyleBackColor = true;
+            this.EditUser.Click += new System.EventHandler(this.EditUser_Click_1);
             // 
             // AddAccount
             // 
@@ -3219,6 +3224,7 @@ namespace Incident_Reporting_App_Server
             this.AddAccount.Size = new System.Drawing.Size(42, 35);
             this.AddAccount.TabIndex = 46;
             this.AddAccount.UseVisualStyleBackColor = true;
+            this.AddAccount.Click += new System.EventHandler(this.AddAccount_Click_1);
             // 
             // label36
             // 

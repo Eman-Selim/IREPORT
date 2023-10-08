@@ -96,7 +96,7 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Web References\localhost\Reference.cs">
+    <Compile Include="Web References\WebReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -130,54 +130,54 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Web References\localhost\Accident.datasource">
+    <None Include="Web References\WebReference1\Accident.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\Buildings.datasource">
+    <None Include="Web References\WebReference1\Buildings.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\Company.datasource">
+    <None Include="Web References\WebReference1\Company.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\DangerousPlaces.datasource">
+    <None Include="Web References\WebReference1\DangerousPlaces.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\Death.datasource">
+    <None Include="Web References\WebReference1\Death.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\ExitPathways.datasource">
+    <None Include="Web References\WebReference1\ExitPathways.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\FFstations.datasource">
+    <None Include="Web References\WebReference1\FFstations.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\FF_ManPower.datasource">
+    <None Include="Web References\WebReference1\FF_ManPower.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\FF_pumps.datasource">
+    <None Include="Web References\WebReference1\FF_pumps.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\Floors.datasource">
+    <None Include="Web References\WebReference1\Floors.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\Images.datasource">
+    <None Include="Web References\WebReference1\Images.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\IncidentReporting_WS.wsdl" />
-    <None Include="Web References\localhost\Injured.datasource">
+    <None Include="Web References\WebReference1\IncidentReporting_WS.wsdl" />
+    <None Include="Web References\WebReference1\Injured.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\IRUser.datasource">
+    <None Include="Web References\WebReference1\IRUser.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\Managers.datasource">
+    <None Include="Web References\WebReference1\Managers.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\localhost\Reference.map">
+    <None Include="Web References\WebReference1\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\localhost\Users_Admin.datasource">
+    <None Include="Web References\WebReference1\Users_Admin.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\WebReference\Admin_Users.datasource">
@@ -297,6 +297,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.1.151/IncidentReporting_WS/IncidentReporting_WS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference1\</RelPath>
+      <UpdateFromURL>http://192.168.1.151/IncidentReporting_WS/IncidentReporting_WS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WebReference\</RelPath>
@@ -307,17 +318,6 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Incident_Reporting_App_Server_WebReference_SC3_Alarm_Module_WS</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:51040/IncidentReporting_WS.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\localhost\</RelPath>
-      <UpdateFromURL>http://localhost:51040/IncidentReporting_WS.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Incident_Reporting_App_Server_localhost_IncidentReporting_WS</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
@@ -339,10 +339,10 @@
     <None Include="Resources\Minimize_Button.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\localhost\IncidentReporting_WS.disco" />
+    <None Include="Web References\WebReference\SC3_Alarm_Module_WS.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\WebReference\SC3_Alarm_Module_WS.disco" />
+    <None Include="Web References\WebReference1\IncidentReporting_WS.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

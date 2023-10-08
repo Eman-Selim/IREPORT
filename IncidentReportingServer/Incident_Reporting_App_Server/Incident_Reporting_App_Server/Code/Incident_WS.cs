@@ -1,4 +1,4 @@
-﻿using Incident_Reporting_App_Server.localhost;
+﻿using Incident_Reporting_App_Server.WebReference1;
 using SDS_Remote_Control_Application_Server.Code;
 using System;
 using System.Collections.Generic;

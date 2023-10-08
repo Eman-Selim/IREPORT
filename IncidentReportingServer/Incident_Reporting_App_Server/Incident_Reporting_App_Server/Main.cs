@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Incident_Reporting_App_Server.localhost;
+using Incident_Reporting_App_Server.WebReference1;
 using Incident_Reporting_App_Server.WebReference;
 using SDS_Remote_Control_Application_Server.Code;
 using System.Threading;
@@ -52,7 +52,7 @@ namespace Incident_Reporting_App_Server
         TreeNode companyNode;
         TreeNode UserNode;
         private bool First_Time_Loading_User_Data_Flag = true;
-        bool AlarmCheck = false;
+        bool AlarmCheck = true;
         Thread AlarmCheck_Thread;
         #endregion
 
@@ -899,7 +899,7 @@ namespace Incident_Reporting_App_Server
 
         #region Pump
 
-        private void EditPUMP_Click(object sender, EventArgs e)
+        private void EditPUMP_Click_1(object sender, EventArgs e)
         {
             pump = new FF_pumps();
             pump.FF_pumpsID = PumpID;
@@ -920,7 +920,7 @@ namespace Incident_Reporting_App_Server
             }
                 
         }
-        private void DG_Pumps_DT_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DG_Pumps_DT_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             PumpNumber.Text = (string)DG_Pumps_DT.CurrentRow.Cells[1].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[1].Value;
             pumpArea.Text = (string)DG_Pumps_DT.CurrentRow.Cells[2].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[2].Value;
@@ -932,8 +932,27 @@ namespace Incident_Reporting_App_Server
             pumpInfo.Text = (string)DG_Pumps_DT.CurrentRow.Cells[8].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[8].Value;
             PumpID = Convert.ToInt32(DG_Pumps_DT.CurrentRow.Cells[0].Value);
         }
-
-        private void DeletePump_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pump = new FF_pumps();
+            pump.FF_pumpsID = PumpID;
+            pump.Additional_info = pumpInfo.Text == null ? "" : pumpInfo.Text;
+            pump.Address = pumpAddress.Text == null ? "" : pumpAddress.Text;
+            pump.Area = pumpArea.Text == null ? "" : pumpArea.Text;
+            pump.PumpNumber = PumpNumber.Text == null ? "" : PumpNumber.Text;
+            pump.Status = Status.Text == null ? "" : Status.Text;
+            pump.Signs = pumpSign.Text == null ? "" : pumpSign.Text;
+            pump.Sector = pumpSector.Text == null ? "" : pumpSector.Text;
+            pump.PumpType = PumpType.Text == null ? "" : PumpType.Text;
+            pump.UserID = Selected_User_ID;
+            FF_pumps flag = server_Class_Obj.Add_FFPump(pump);
+            if (flag != null)
+            {
+                label22.Text = " FF_pumps Added Successfully";
+                Update_Incident_Reporting_trv_Companies();
+            }
+        }
+        private void DeletePump_Click(object sender, EventArgs e)
         {
             PumpNumber.Text = "";
             pumpArea.Text = "";
@@ -955,7 +974,7 @@ namespace Incident_Reporting_App_Server
 
         #region Account
 
-        private void AddAccount_Click(object sender, EventArgs e)
+        private void AddAccount_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -989,7 +1008,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void EditUser_Click(object sender, EventArgs e)
+        private void EditUser_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -1016,7 +1035,7 @@ namespace Incident_Reporting_App_Server
             }
         }
 
-        private void DeleteUser_Click(object sender, EventArgs e)
+        private void DeleteUser_Click_1(object sender, EventArgs e)
         {
             bool flag = server_Class_Obj.Delete_Account(Selected_User_ID);
             if (flag == true)
@@ -1067,18 +1086,22 @@ namespace Incident_Reporting_App_Server
                 else if (AlarmCheck==true)
                 {
                     Alarms[] a=server_Class_Obj.Select_Alarms();
-                   int alarmLength = a == null ? 0 : a.Length;
-                    for(int i=0;i< alarmLength;i++)
+                    if(a!=null)
                     {
-                        if (a[i].Acknowledege == 0)
+                        int alarmLength = a == null ? 0 : a.Length;
+                        for (int i = 0; i < alarmLength; i++)
                         {
-                            Building_Alarm_Unit[] BAU=server_Class_Obj.Select_Building_Alarm_Unit(a[i].Building_AlarmUnit_ID);
-                            selectedCompany = server_Class_Obj.Select_CompanyByISSI(BAU[0].Network_Identifier);
-                            Selected_User_ID = selectedCompany.UserID;
-                            Selected_Company_ID = selectedCompany.CompanyID;
-                            Load_Data(Selected_Company_ID);
+                            if (a[i].Acknowledege == 0)
+                            {
+                                Building_Alarm_Unit[] BAU = server_Class_Obj.Select_Building_Alarm_Unit(a[i].Building_AlarmUnit_ID);
+                                selectedCompany = server_Class_Obj.Select_CompanyByISSI(BAU[0].Network_Identifier);
+                                Selected_User_ID = selectedCompany.UserID;
+                                Selected_Company_ID = selectedCompany.CompanyID;
+                                Load_Data(Selected_Company_ID);
+                            }
                         }
                     }
+                  
                 }
             }
             catch (Exception ex)
@@ -1503,10 +1526,6 @@ namespace Incident_Reporting_App_Server
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
