@@ -22,7 +22,6 @@ namespace Incident_Reporting_App_Server
         private bool form_status;
         int menu_Selected_Index = 0;
         ServerClass server_Class_Obj = new ServerClass();
-        Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
         Image imagenu = Image.FromFile("Capture.PNG");
         IRUser LoginAccount;
         Buildings[] buildings;
@@ -149,6 +148,7 @@ namespace Incident_Reporting_App_Server
             TB_Stock_DT.Text = selectedCompany.StockVolume.ToString();
             TB_StockType_DT.Text = selectedCompany.StockType;
             TB_CompanyBuisiness_DT.Text = selectedCompany.CompanyBuisiness;
+            CB_Sector_DT.Text = selectedCompany.sector == null? "" : selectedCompany.sector.ToString();
             TB_CompanyImage_DT.Image = selectedCompany.CompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.CompanyImage));
             if (selectedCompany.companyBuildings != null)
             {
@@ -273,7 +273,7 @@ namespace Incident_Reporting_App_Server
                 TB_SelectedUserInfo_DT.Text = managers[selectedManagerIndex].Info;
             }
         }
-        private void Deleted_SelectedManager_Click_1(object sender, EventArgs e)
+        private async void Deleted_SelectedManager_Click_1(object sender, EventArgs e)
         {
             if (managers == null)
                 statusfeild.Text = "please select manager";
@@ -282,18 +282,24 @@ namespace Incident_Reporting_App_Server
                 bool flag = server_Class_Obj.Delete_Manager(managers[selectedManagerIndex].ManagerID);
                 if (flag == true)
                 {
+                    statusfeild.ForeColor = Color.Green;
                     TB_SelectedUserName_DT.Clear();
                     TB_SelectedUserBuisiness_DT.Clear();
                     TB_SelectedUserPhone_DT.Clear();
                     TB_SelectedUserInfo_DT.Clear();
                     statusfeild.Text = " Managers updated Successfully";
-                    Update_Incident_Reporting_trv_Companies();
+                    await Task.Run(() => Update_Incident_Reporting_trv_Companies());
+                }
+                else
+                {
+                    statusfeild.ForeColor = Color.Red;
+                    statusfeild.Text = " Failed";
                 }
             }
 
         }
 
-        private void Delete_SelectedDangerous_Click_1(object sender, EventArgs e)
+        private async void Delete_SelectedDangerous_Click_1(object sender, EventArgs e)
         {
             if (places == null)
                 statusfeild.Text = " please select place";
@@ -302,11 +308,17 @@ namespace Incident_Reporting_App_Server
                 bool flag = server_Class_Obj.Delete_SelectedDangerousPlaces(places[selectedDangerousIndex].DangerousPlaceID);
                 if (flag == true)
                 {
+                    statusfeild.ForeColor = Color.Green;
                     HazardousSubstance.Clear();
                     DangerouseLocation.Clear();
                     FireMediator.Clear();
                     statusfeild.Text = " DangerousPlaces updated Successfully";
-                    Update_Incident_Reporting_trv_Companies();
+                    await Task.Run(() => Update_Incident_Reporting_trv_Companies());
+                }
+                else
+                {
+                    statusfeild.ForeColor = Color.Red;
+                    statusfeild.Text = " Failed";
                 }
             }
         }
@@ -351,14 +363,29 @@ namespace Incident_Reporting_App_Server
                 FF_ManPower MM = server_Class_Obj.AddFF_ManPower(men);
                 if (MM != null)
                 {
+                    richTextBox1.ForeColor = Color.Green;
                     richTextBox1.Text = " Station_ManPower Added Successfully";
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Load_User_Data(LoginAccount);
                 }
+                else
+                {
+                    richTextBox1.ForeColor = Color.Red;
+                    richTextBox1.Text = " Failed";
+                }
 
             }
             else if (st != null)
+            {
+                richTextBox1.ForeColor = Color.Green;
                 richTextBox1.Text = " Station Added Successfully";
+            }
+                
+            else
+            {
+                richTextBox1.ForeColor = Color.Red;
+                richTextBox1.Text = " Failed";
+            }
 
 
         }
@@ -379,9 +406,15 @@ namespace Incident_Reporting_App_Server
             bool flag1 =await Task.Run(()=> server_Class_Obj.Update_FFstations(station));
             if (flag1 == true)
             {
+                richTextBox1.ForeColor = Color.Green;
                 richTextBox1.Text = " Station Updated Successfully";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
+            }
+            else
+            {
+                richTextBox1.ForeColor = Color.Red;
+                richTextBox1.Text = " failed";
             }
 
 
@@ -401,9 +434,15 @@ namespace Incident_Reporting_App_Server
                     FF_ManPower flag = await Task.Run(() => server_Class_Obj.AddFF_ManPower(men));
                     if (flag != null && flag1 == true)
                     {
+                        richTextBox1.ForeColor = Color.Green;
                         richTextBox1.Text = " Station_ManPower Updated Successfully";
                         LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                         Load_User_Data(LoginAccount);
+                    }
+                    else
+                    {
+                        richTextBox1.ForeColor = Color.Red;
+                        richTextBox1.Text = "Failed";
                     }
 
                 }
@@ -444,9 +483,15 @@ namespace Incident_Reporting_App_Server
             bool flag = server_Class_Obj.Delete_FFstations(points[selectedStationIndex].FF_ID);
             if (flag == true)
             {
+                richTextBox1.ForeColor = Color.Green;
                 richTextBox1.Text = " Station_ManPower Deleted Successfully";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
+            }
+            else
+            {
+                richTextBox1.ForeColor = Color.Red;
+                richTextBox1.Text = "Failed";
             }
         }
 
@@ -454,7 +499,7 @@ namespace Incident_Reporting_App_Server
 
         #region Building
 
-        private void AddBuildings_Click_1(object sender, EventArgs e)
+        private async void AddBuildings_Click_1(object sender, EventArgs e)
         {
             buildingCount++;
             Buildings building = new Buildings();
@@ -540,7 +585,7 @@ namespace Incident_Reporting_App_Server
                     NewFloors.Add(new KeyValuePair<int, Floors>(buildingCount, floor));
                 }
             }
-            Update_Incident_Reporting_trv_Companies();
+            await Task.Run(() => Update_Incident_Reporting_trv_Companies());
         }
 
 
@@ -606,9 +651,16 @@ namespace Incident_Reporting_App_Server
             bool flag = server_Class_Obj.Delete_Company(Selected_Company_ID);
             if (flag == true)
             {
+                statusfeild.ForeColor = Color.Green;
                 statusfeild.Text = " Company Deleted Successfully";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
-                Update_Incident_Reporting_trv_Companies();
+                await Task.Run(() => Update_Incident_Reporting_trv_Companies());
+            }
+
+            else
+            {
+                statusfeild.ForeColor = Color.Red;
+                statusfeild.Text = " Faild";
             }
         }
 
@@ -652,10 +704,17 @@ namespace Incident_Reporting_App_Server
             c1.StockType = TB_StockType_DT.Text == "" ? "" : TB_StockType_DT.Text;
             c1.CompanyImage = TB_CompanyImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyImage_DT.Image);
             c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
+            c1.sector = CB_Sector_DT.SelectedItem == null ? "" : CB_Sector_DT.SelectedItem.ToString();
             c1 = await Task.Run(() => server_Class_Obj.Add_Company(c1));
             if (c1 != null)
             {
+                statusfeild.ForeColor = Color.Green;
                 statusfeild.Text = " Company added Successfully";
+            }
+            else
+            {
+                statusfeild.ForeColor = Color.Red;
+                statusfeild.Text = " Faild";
             }
 
             for (int i = 0; i < Newbuildings.Count; i++)
@@ -697,7 +756,7 @@ namespace Incident_Reporting_App_Server
             M.CompanyID = Selected_Company_ID;
             M = server_Class_Obj.Add_Manager(M);
             LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
-            Update_Incident_Reporting_trv_Companies();
+            await Task.Run(() => Update_Incident_Reporting_trv_Companies());
         }
 
         private async void EditCompany_Click_1(object sender, EventArgs e)
@@ -747,6 +806,7 @@ namespace Incident_Reporting_App_Server
                 c1.CompanyID = Selected_Company_ID;
                 c1.CompanyImage = TB_CompanyImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyImage_DT.Image);
                 c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
+                c1.sector = CB_Sector_DT.SelectedItem == null ? "" : CB_Sector_DT.SelectedItem.ToString(); 
                 ExitPathways exitPathWay = new ExitPathways();
                 exitPathWay.PathwaysImage = PB_ExitPathWayImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(PB_ExitPathWayImage_DT.Image);
                 exitPathWay.PathwaysImageURL = "";
@@ -767,6 +827,7 @@ namespace Incident_Reporting_App_Server
                 bool flag = await Task.Run(() => server_Class_Obj.Update_Company(c1));
                 if (flag == true)
                 {
+                    statusfeild.ForeColor = Color.Green;
                     statusfeild.Text = " Company updated Successfully";
                     if (c1.companyBuildings != null)
                     {
@@ -821,8 +882,14 @@ namespace Incident_Reporting_App_Server
                         M.CompanyID = Selected_Company_ID;
                         M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
                         LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
-                        Update_Incident_Reporting_trv_Companies();
+                        await Task.Run(() => Update_Incident_Reporting_trv_Companies());
                     }
+                }
+
+                else
+                {
+                    statusfeild.ForeColor = Color.Red;
+                    statusfeild.Text = " Faild";
                 }
             }
         }
@@ -907,9 +974,16 @@ namespace Incident_Reporting_App_Server
             bool flag = server_Class_Obj.Update_FFPump(pump);
             if (flag == true)
             {
+                label22.ForeColor = Color.Green;
                 label22.Text = " FF_pumps Updated Successfully";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
+            }
+
+            else
+            {
+                label22.ForeColor = Color.Red;
+                label22.Text = " Faild";
             }
 
         }
@@ -941,9 +1015,15 @@ namespace Incident_Reporting_App_Server
             FF_pumps flag = server_Class_Obj.Add_FFPump(pump);
             if (flag != null)
             {
+                label22.ForeColor = Color.Green;
                 label22.Text = " FF_pumps Added Successfully";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
+            }
+            else
+            {
+                label22.ForeColor = Color.Red;
+                label22.Text = " Faild";
             }
         }
         private async void DeletePump_Click(object sender, EventArgs e)
@@ -959,9 +1039,16 @@ namespace Incident_Reporting_App_Server
             bool flag = server_Class_Obj.Delete_FF_pumps(pump.FF_pumpsID);
             if (flag == true)
             {
+                label22.ForeColor = Color.Green;
                 label22.Text = " FF_pumps Deleted Successfully";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
+
+            }
+            else
+            {
+                label22.ForeColor = Color.Red;
+                label22.Text = " Faild";
             }
 
         }
@@ -990,12 +1077,18 @@ namespace Incident_Reporting_App_Server
                         Users_Admin flag = server_Class_Obj.Add_Users_Admin(User);
                         if (flag != null)
                         {
-
+                            AccountStatus.ForeColor = Color.Green;
                             AccountStatus.Text = " Account Added Successfully";
                             LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                             Load_User_Data(LoginAccount);
-                            Update_Incident_Reporting_trv_Companies();
+                            await Task.Run(() => Update_Incident_Reporting_trv_Companies());
                         }
+                        else
+                        {
+                            AccountStatus.ForeColor = Color.Red;
+                            AccountStatus.Text = " Failed";
+                        }
+
                     }
                     
                 }
@@ -1027,10 +1120,16 @@ namespace Incident_Reporting_App_Server
                 bool flag = server_Class_Obj.Update_Account(user);
                 if (flag == true)
                 {
+                    AccountStatus.ForeColor = Color.Green;
                     AccountStatus.Text = " Account Updated Successfully";
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Load_User_Data(LoginAccount);
-                    Update_Incident_Reporting_trv_Companies();
+                    await Task.Run(() => Update_Incident_Reporting_trv_Companies());
+                }
+                else
+                {
+                    AccountStatus.ForeColor = Color.Red;
+                    AccountStatus.Text = " Failed";
                 }
             }
             catch (Exception exception1)
@@ -1044,12 +1143,19 @@ namespace Incident_Reporting_App_Server
             bool flag = server_Class_Obj.Delete_Account(Selected_User_ID);
             if (flag == true)
             {
+                AccountStatus.ForeColor = Color.Green;
                 AccountStatus.Text = " Account Deleted Successfully";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
-                Update_Incident_Reporting_trv_Companies();
+                await Task.Run(() => Update_Incident_Reporting_trv_Companies());
                 //treeView3.Nodes.Remove(UserNode);
             }
+            else
+            {
+                AccountStatus.ForeColor = Color.Red;
+                AccountStatus.Text = " Failed";
+            }
+
         }
 
 

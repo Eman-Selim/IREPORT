@@ -5416,7 +5416,7 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public  bool Company_Update(string username, string password, ICompany company) {
+        public bool Company_Update(string username, string password, ICompany company) {
             object[] results = this.Invoke("Company_Update", new object[] {
                         username,
                         password,
@@ -6148,6 +6148,8 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         private string iSSIField;
         
+        private string sectorField;
+        
         /// <remarks/>
         public string Name {
             get {
@@ -6561,6 +6563,16 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
             }
             set {
                 this.iSSIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string sector {
+            get {
+                return this.sectorField;
+            }
+            set {
+                this.sectorField = value;
             }
         }
     }

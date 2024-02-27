@@ -1314,8 +1314,6 @@ namespace Incident_Reporting_App_Server.Code
         {
             try
             {
-                
-                var x = System.Environment.CurrentManagedThreadId;
                 return IncidentReporting_WS_Obj.Company_Update(username, password, company);
             }
             catch (Exception ex)

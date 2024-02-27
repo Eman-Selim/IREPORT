@@ -49,5 +49,6 @@ namespace IncidentReporting_WS.Code_Files.ENL
         public DangerousPlacesCollection CompanyDangerousPlaces { get; set; }
         public AccidentCollection CompanyAccident { get; set; }
         public string ISSI { get; set; }
+        public string sector { get; set; }
     }
 }

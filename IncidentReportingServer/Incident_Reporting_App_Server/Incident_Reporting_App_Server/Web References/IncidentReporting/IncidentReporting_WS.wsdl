@@ -66,6 +66,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="CompanyDangerousPlaces" type="tns:ArrayOfDangerousPlaces" />
           <s:element minOccurs="0" maxOccurs="1" name="CompanyAccident" type="tns:ArrayOfAccident" />
           <s:element minOccurs="0" maxOccurs="1" name="ISSI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sector" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfBuildings">

@@ -76,7 +76,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@StockType",company.StockType },
                     {"@CompanyImage",company.CompanyImage },
                     {"@CompanyGeometeryImage",company.CompanyGeometeryImage },
-                    {"@ISSI",company.ISSI }
+                    {"@ISSI",company.ISSI },
+                    {"@sector",company.sector }
                };
 
 
@@ -139,7 +140,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@StockType",company.StockType },
                     {"@CompanyImage",company.CompanyImage },
                     {"@CompanyGeometeryImage",company.CompanyGeometeryImage },
-                    {"@ISSI",company.ISSI }
+                    {"@ISSI",company.ISSI },
+                    {"@sector",company.sector }
                };
                 flag= db.Execute_Update_Delete_Stored_Procedure("Company_Update", sp_params);
 
@@ -205,7 +207,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage= dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector=dr["sector"]is DBNull?"":Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -272,7 +275,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -338,7 +342,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -403,7 +408,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -468,7 +474,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -533,7 +540,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -599,7 +607,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         };
                     }
                 }
@@ -663,7 +672,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
 
                         };
                     }
@@ -729,7 +739,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -794,7 +805,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -859,7 +871,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -924,7 +937,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -989,7 +1003,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1055,7 +1070,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1120,7 +1136,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1185,7 +1202,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1250,7 +1268,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1315,7 +1334,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1380,7 +1400,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1445,7 +1466,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1510,7 +1532,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1575,7 +1598,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
@@ -1640,7 +1664,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             StockType = dr["StockType"] is DBNull ? "" : Convert.ToString(dr["StockType"]),
                             CompanyImage = dr["CompanyImage"] is DBNull ? smallArray : (byte[])dr["CompanyImage"],
                             CompanyGeometeryImage = dr["CompanyGeometeryImage"] is DBNull ? smallArray : (byte[])dr["CompanyGeometeryImage"],
-                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"])
+                            ISSI = dr["ISSI"] is DBNull ? "" : Convert.ToString(dr["ISSI"]),
+                            sector = dr["sector"] is DBNull ? "" : Convert.ToString(dr["sector"])
                         });
                     }
                 }
