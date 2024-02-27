@@ -51,6 +51,7 @@
             this.TB_DCompanyImage_UC.Location = new System.Drawing.Point(5, 52);
             this.TB_DCompanyImage_UC.Name = "TB_DCompanyImage_UC";
             this.TB_DCompanyImage_UC.Size = new System.Drawing.Size(276, 193);
+            this.TB_DCompanyImage_UC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.TB_DCompanyImage_UC.TabIndex = 0;
             this.TB_DCompanyImage_UC.TabStop = false;
             this.TB_DCompanyImage_UC.Click += new System.EventHandler(this.c1PictureBox1_Click);

@@ -1735,11 +1735,11 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Company Company_Insert(string username, string password, Company company)
+        public ICompany Company_Insert(string username, string password, ICompany company)
         {
             try
             {
-                Company Company= new Company();
+                ICompany Company= new ICompany();
                 Company=CompanySBL_Obj.Company_Insert( username, password, company);
                 return Company;
             }
@@ -1750,7 +1750,7 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public bool Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, ICompany company)
         {
             try
             {
@@ -1824,11 +1824,11 @@ namespace IncidentReporting_WS
         }
 
         [WebMethod]
-        public Company Company_Select_By_ISSI(string username, string password, string ISSI)
+        public ICompany Company_Select_By_ISSI(string username, string password, string ISSI)
         {
             try
             {
-                Company Company_obj = new Company();
+                ICompany Company_obj = new ICompany();
                 Company_obj = CompanySBL_Obj.Company_Select_By_ISSI(username, password, ISSI);
                 return Load_Company_Data(username, password, new CompanyCollection() { Company_obj })[0];
             }
@@ -1868,12 +1868,12 @@ namespace IncidentReporting_WS
         }
 
          [WebMethod]
-        public Company Company_Select_By_CompanyID(string username, string password, int CompanyID)
+        public ICompany Company_Select_By_CompanyID(string username, string password, int CompanyID)
         {
             try
             {
                 
-                Company Company_obj= new Company();
+                ICompany Company_obj= new ICompany();
                 Company_obj=CompanySBL_Obj.Company_Select_By_CompanyID( username, password, CompanyID);
                 return Load_Company_Data(username, password, new CompanyCollection() { Company_obj })[0];
             }

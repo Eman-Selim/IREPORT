@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Incident_Reporting_App_Server.WebReference1;
-using Incident_Reporting_App_Server.WebReference;
+using Incident_Reporting_App_Server.IncidentReporting;
+using Incident_Reporting_App_Server.RemoteAlarm;
 
 namespace Incident_Reporting_App_Server.Code
 {
@@ -16,7 +16,7 @@ namespace Incident_Reporting_App_Server.Code
         public delegate void del_Update_Log(string text);
         public event del_Update_Log log_Handler;
         Incident_WS IncidentReporting_WS_Obj = new Incident_WS();
-        Alarm_WS Alarm_WS_Obj = new Alarm_WS();
+        RemoteAlarmWS Alarm_WS_Obj = new RemoteAlarmWS();
 
         #region Login Info
         public static string UserName { get; set; }
@@ -76,11 +76,11 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Alarms[] Select_Alarms()
+        public IncomingAlarm[] Select_Alarms(int Selected_User_ID)
         {
             try
             {
-                return Alarm_WS_Obj.Alarms_Select_ALL(UserName, Password);
+                return Alarm_WS_Obj.Alarms_Select_ALL(Selected_User_ID, UserName, Password);
             }
             catch (Exception exception1)
             {
@@ -89,7 +89,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company Select_Company(int CompanyID)
+        public ICompany Select_Company(int CompanyID)
         {
             try
             {
@@ -101,7 +101,7 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-        public Company Select_CompanyByISSI(string ISSI)
+        public ICompany Select_CompanyByISSI(string ISSI)
         {
             try
             {
@@ -114,23 +114,13 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Building_Alarm_Unit[] Select_Building_Alarm_Unit(int Id)
+        public  bool Update_Company(ICompany company)
         {
             try
             {
-                return Alarm_WS_Obj.Building_AlarmUnit_Select(UserName, Password, Id);
-            }
-            catch (Exception exception1)
-            {
-                Auditing.Error(exception1.Message);
-                return null;
-            }
-        }
-        public bool Update_Company(Company company)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.Company_Update(UserName, Password, company);
+                var x = System.Environment.CurrentManagedThreadId;
+                bool content= IncidentReporting_WS_Obj.Company_Update(UserName, Password, company);
+                return content;
             }
             catch (Exception exception1)
             {
@@ -149,6 +139,18 @@ namespace Incident_Reporting_App_Server.Code
             {
                 Auditing.Error(exception1.Message);
                 return false;
+            }
+        }
+        public Buildings[] Buildings_Select_By_CompanyID(int CompanyID)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.Buildings_Select_By_CompanyID(UserName, Password, CompanyID);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return null;
             }
         }
 
@@ -257,7 +259,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company Add_Company(Company company)
+        public ICompany Add_Company(ICompany company)
         {
             try
             {
@@ -400,7 +402,7 @@ namespace Incident_Reporting_App_Server.Code
         {
             try
             {
-
+                var x = System.Environment.CurrentManagedThreadId;
                 return IncidentReporting_WS_Obj.Buildings_Delete_By_CompanyID(UserName, Password, id);
             }
             catch (Exception exception1)
@@ -497,6 +499,19 @@ namespace Incident_Reporting_App_Server.Code
             {
                 Auditing.Error(exception1.Message);
                 return false;
+            }
+        }
+
+        public ExitPathways[] ExitPathways_Select_By_BuildingID( int BuildingID)
+        {
+            try
+            {
+                return IncidentReporting_WS_Obj.ExitPathways_Select_By_BuildingID(UserName, Password, BuildingID);
+            }
+            catch (Exception ex)
+            {
+                Auditing.Error(ex.Message);
+                return null;
             }
         }
         public bool Update_FFPump(FF_pumps pump)

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33130.400
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incident_Reporting_App_Server", "Incident_Reporting_App_Server\Incident_Reporting_App_Server.csproj", "{9E0ADBB3-5F8E-4072-A239-3EA83879F836}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IRSetup", "IRSetup\IRSetup.vdproj", "{901090E3-F79F-4A3E-BEE0-E2936E563F37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{9E0ADBB3-5F8E-4072-A239-3EA83879F836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0ADBB3-5F8E-4072-A239-3EA83879F836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0ADBB3-5F8E-4072-A239-3EA83879F836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{901090E3-F79F-4A3E-BEE0-E2936E563F37}.Debug|Any CPU.ActiveCfg = Debug
+		{901090E3-F79F-4A3E-BEE0-E2936E563F37}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

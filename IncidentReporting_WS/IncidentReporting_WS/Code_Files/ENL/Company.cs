@@ -6,7 +6,7 @@ using IncidentReporting_WS.Code_Files.COL;
 
 namespace IncidentReporting_WS.Code_Files.ENL
 {
-    public class Company
+    public class ICompany
     {
         public string Name { set; get; }
         public string Address { set; get; }

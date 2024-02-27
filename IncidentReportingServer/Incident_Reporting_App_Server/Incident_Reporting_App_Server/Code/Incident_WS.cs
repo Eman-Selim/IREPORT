@@ -1,4 +1,4 @@
-﻿using Incident_Reporting_App_Server.WebReference1;
+﻿using Incident_Reporting_App_Server.IncidentReporting;
 using SDS_Remote_Control_Application_Server.Code;
 using System;
 using System.Collections.Generic;
@@ -1297,7 +1297,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company Company_Insert(string username, string password, Company company)
+        public ICompany Company_Insert(string username, string password, ICompany company)
         {
             try
             {
@@ -1310,10 +1310,12 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public bool Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, ICompany company)
         {
             try
             {
+                
+                var x = System.Environment.CurrentManagedThreadId;
                 return IncidentReporting_WS_Obj.Company_Update(username, password, company);
             }
             catch (Exception ex)
@@ -1323,7 +1325,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_All(string username, string password)
+        public ICompany[] Company_Select_All(string username, string password)
         {
             try
             {
@@ -1336,7 +1338,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_Address(string username, string password, string address)
+        public ICompany[] Company_Select_By_Address(string username, string password, string address)
         {
             try
             {
@@ -1348,7 +1350,7 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-        public Company[] Company_Select_By_BackCompanyBusiness(string username, string password, string BackCompanyBusiness)
+        public ICompany[] Company_Select_By_BackCompanyBusiness(string username, string password, string BackCompanyBusiness)
         {
             try
             {
@@ -1360,7 +1362,7 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-        public Company[] Company_Select_By_BackCompanyName(string username, string password, string BackCompanyName)
+        public ICompany[] Company_Select_By_BackCompanyName(string username, string password, string BackCompanyName)
         {
             try
             {
@@ -1373,7 +1375,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_BackFireMediator(string username, string password, string BackFireMediator)
+        public ICompany[] Company_Select_By_BackFireMediator(string username, string password, string BackFireMediator)
         {
             try
             {
@@ -1386,7 +1388,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_BuildingsNumber(string username, string password, int BuildingsNumber)
+        public ICompany[] Company_Select_By_BuildingsNumber(string username, string password, int BuildingsNumber)
         {
             try
             {
@@ -1398,7 +1400,7 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-        public Company Company_Select_By_ISSI(string username, string password, string ISSI)
+        public ICompany Company_Select_By_ISSI(string username, string password, string ISSI)
         {
             try
             {
@@ -1410,7 +1412,7 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-        public Company Company_Select_By_CompanyID(string username, string password, int CompanyID)
+        public ICompany Company_Select_By_CompanyID(string username, string password, int CompanyID)
         {
             try
             {
@@ -1423,7 +1425,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_ElectricalPanelLocation(string username, string password, string ElectricalPanelLocation)
+        public ICompany[] Company_Select_By_ElectricalPanelLocation(string username, string password, string ElectricalPanelLocation)
         {
             try
             {
@@ -1436,7 +1438,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_FrontCompanyBusiness(string username, string password, string FrontCompanyBusiness)
+        public ICompany[] Company_Select_By_FrontCompanyBusiness(string username, string password, string FrontCompanyBusiness)
         {
             try
             {
@@ -1449,7 +1451,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_FrontCompanyName(string username, string password, string FrontCompanyName)
+        public ICompany[] Company_Select_By_FrontCompanyName(string username, string password, string FrontCompanyName)
         {
             try
             {
@@ -1462,7 +1464,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_FrontFireMediator(string username, string password, string FrontFireMediator)
+        public ICompany[] Company_Select_By_FrontFireMediator(string username, string password, string FrontFireMediator)
         {
             try
             {
@@ -1475,7 +1477,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_GasTrapLocation(string username, string password, string GasTrapLocation)
+        public ICompany[] Company_Select_By_GasTrapLocation(string username, string password, string GasTrapLocation)
         {
             try
             {
@@ -1488,7 +1490,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_LandlinePhoneNumber(string username, string password, string LandlinePhoneNumber)
+        public ICompany[] Company_Select_By_LandlinePhoneNumber(string username, string password, string LandlinePhoneNumber)
         {
             try
             {
@@ -1501,7 +1503,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_LeftCompanyBusiness(string username, string password, string LeftCompanyBusiness)
+        public ICompany[] Company_Select_By_LeftCompanyBusiness(string username, string password, string LeftCompanyBusiness)
         {
             try
             {
@@ -1513,7 +1515,7 @@ namespace Incident_Reporting_App_Server.Code
                 return null;
             }
         }
-        public Company[] Company_Select_By_LeftCompanyName(string username, string password, string LeftCompanyName)
+        public ICompany[] Company_Select_By_LeftCompanyName(string username, string password, string LeftCompanyName)
         {
             try
             {
@@ -1526,7 +1528,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_LeftFireMediator(string username, string password, string LeftFireMediator)
+        public ICompany[] Company_Select_By_LeftFireMediator(string username, string password, string LeftFireMediator)
         {
             try
             {
@@ -1539,7 +1541,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_Name(string username, string password, string Name)
+        public ICompany[] Company_Select_By_Name(string username, string password, string Name)
         {
             try
             {
@@ -1552,7 +1554,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_OxygenTrapLocation(string username, string password, string OxygenTrapLocation)
+        public ICompany[] Company_Select_By_OxygenTrapLocation(string username, string password, string OxygenTrapLocation)
         {
             try
             {
@@ -1565,7 +1567,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_RightCompanyBusiness(string username, string password, string RightCompanyBusiness)
+        public ICompany[] Company_Select_By_RightCompanyBusiness(string username, string password, string RightCompanyBusiness)
         {
             try
             {
@@ -1578,7 +1580,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_RightCompanyName(string username, string password, string RightCompanyName)
+        public ICompany[] Company_Select_By_RightCompanyName(string username, string password, string RightCompanyName)
         {
             try
             {
@@ -1591,7 +1593,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_RightFireMediator(string username, string password, string RightFireMediator)
+        public ICompany[] Company_Select_By_RightFireMediator(string username, string password, string RightFireMediator)
         {
             try
             {
@@ -1604,7 +1606,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public Company[] Company_Select_By_UserID(string username, string password, int UserID)
+        public ICompany[] Company_Select_By_UserID(string username, string password, int UserID)
         {
             try
             {

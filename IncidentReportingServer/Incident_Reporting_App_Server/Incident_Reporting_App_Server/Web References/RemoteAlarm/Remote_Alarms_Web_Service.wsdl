@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="User_Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_SelectResult" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Privilege" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Good" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Companies" type="tns:ArrayOfCompany" />
+          <s:element minOccurs="0" maxOccurs="1" name="Incoming_Alarms" type="tns:ArrayOfIncomingAlarm" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompany">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Company" type="tns:Company" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Company">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RadioID" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="U_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPersonName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LandLinePhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNumberOne" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLineOne" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLineTwo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCheck" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCheckedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNumberTwo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIncomingAlarm">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IncomingAlarm" type="tns:IncomingAlarm" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IncomingAlarm">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RadioID" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Company_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateReceived" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Acknowledege" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AcknowledegeDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Visibility" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="User_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="New_User" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Edited_User" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Deleted_User" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_Companies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_CompaniesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_Load_CompaniesResult" type="tns:ArrayOfCompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_CompanyBackUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_CompanyBackUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_Load_CompanyBackUpResult" type="tns:ArrayOfCompany_Backup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompany_Backup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Company_Backup" type="tns:Company_Backup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Company_Backup">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RadioID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="U_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPersonName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LandLinePhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNumberOne" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLineOne" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLineTwo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCheck" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCheckedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNumberTwo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="User_Load_Incoming_Alarms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_Incoming_AlarmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_Load_Incoming_AlarmsResult" type="tns:ArrayOfIncomingAlarm" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_Incoming_AlarmsVisible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_Incoming_AlarmsVisibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_Load_Incoming_AlarmsVisibleResult" type="tns:ArrayOfIncomingAlarm" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_Incoming_Alarms_BackUP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="User_Load_Incoming_Alarms_BackUPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_Load_Incoming_Alarms_BackUPResult" type="tns:ArrayOfIncomingAlarm_Backup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIncomingAlarm_Backup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IncomingAlarm_Backup" type="tns:IncomingAlarm_Backup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IncomingAlarm_Backup">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RadioID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Company_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateReceived" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Acknowledege" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AcknowledegeDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Company_Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Radio_ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Company_SelectResult" type="tns:Company" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="New_Company" type="tns:Company" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Company_InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edited_Company" type="tns:Company" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Company_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Status_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OnlineAlarmUnits" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OfflineAlarmUnits" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Check_DateTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Status_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Company_Status_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Company_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Company_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Alarms_Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Radio_Number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Alarms_SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Alarms_SelectResult" type="tns:ArrayOfIncomingAlarm" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="New_Incoming_Alarm" type="tns:IncomingAlarm" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Incoming_Alarms_InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Edited_Incoming_Alarm" type="tns:IncomingAlarm" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Incoming_Alarms_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Alarm_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Incoming_Alarms_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncomingAlarms_ChangeVisibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncomingAlarms_ChangeVisibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IncomingAlarms_ChangeVisibilityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncomingAlarms_ChangeInVisibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="From_DateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="To_DateTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncomingAlarms_ChangeInVisibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IncomingAlarms_ChangeInVisibilityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_DeleteAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Incoming_Alarms_DeleteAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Incoming_Alarms_DeleteAllResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Server_Datetime">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_Server_DatetimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_Server_DatetimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="User_SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Select" />
+  </wsdl:message>
+  <wsdl:message name="User_SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:User_SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Insert" />
+  </wsdl:message>
+  <wsdl:message name="User_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:User_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Update" />
+  </wsdl:message>
+  <wsdl:message name="User_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:User_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Delete" />
+  </wsdl:message>
+  <wsdl:message name="User_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:User_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_CompaniesSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Load_Companies" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_CompaniesSoapOut">
+    <wsdl:part name="parameters" element="tns:User_Load_CompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_CompanyBackUpSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Load_CompanyBackUp" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_CompanyBackUpSoapOut">
+    <wsdl:part name="parameters" element="tns:User_Load_CompanyBackUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_Incoming_AlarmsSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Load_Incoming_Alarms" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_Incoming_AlarmsSoapOut">
+    <wsdl:part name="parameters" element="tns:User_Load_Incoming_AlarmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_Incoming_AlarmsVisibleSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Load_Incoming_AlarmsVisible" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_Incoming_AlarmsVisibleSoapOut">
+    <wsdl:part name="parameters" element="tns:User_Load_Incoming_AlarmsVisibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_Incoming_Alarms_BackUPSoapIn">
+    <wsdl:part name="parameters" element="tns:User_Load_Incoming_Alarms_BackUP" />
+  </wsdl:message>
+  <wsdl:message name="User_Load_Incoming_Alarms_BackUPSoapOut">
+    <wsdl:part name="parameters" element="tns:User_Load_Incoming_Alarms_BackUPResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select" />
+  </wsdl:message>
+  <wsdl:message name="Company_SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Insert" />
+  </wsdl:message>
+  <wsdl:message name="Company_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Update" />
+  </wsdl:message>
+  <wsdl:message name="Company_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_Status_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Status_Update" />
+  </wsdl:message>
+  <wsdl:message name="Company_Status_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Status_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Company_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_Alarms_SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Alarms_Select" />
+  </wsdl:message>
+  <wsdl:message name="Company_Alarms_SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Alarms_SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_Insert" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_Update" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncomingAlarms_ChangeVisibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:IncomingAlarms_ChangeVisibility" />
+  </wsdl:message>
+  <wsdl:message name="IncomingAlarms_ChangeVisibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:IncomingAlarms_ChangeVisibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncomingAlarms_ChangeInVisibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:IncomingAlarms_ChangeInVisibility" />
+  </wsdl:message>
+  <wsdl:message name="IncomingAlarms_ChangeInVisibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:IncomingAlarms_ChangeInVisibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_DeleteAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_DeleteAll" />
+  </wsdl:message>
+  <wsdl:message name="Incoming_Alarms_DeleteAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Incoming_Alarms_DeleteAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Server_DatetimeSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Server_Datetime" />
+  </wsdl:message>
+  <wsdl:message name="Get_Server_DatetimeSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Server_DatetimeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Remote_Alarms_Web_ServiceSoap">
+    <wsdl:operation name="User_Select">
+      <wsdl:input message="tns:User_SelectSoapIn" />
+      <wsdl:output message="tns:User_SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Insert">
+      <wsdl:input message="tns:User_InsertSoapIn" />
+      <wsdl:output message="tns:User_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Update">
+      <wsdl:input message="tns:User_UpdateSoapIn" />
+      <wsdl:output message="tns:User_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <wsdl:input message="tns:User_DeleteSoapIn" />
+      <wsdl:output message="tns:User_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Companies">
+      <wsdl:input message="tns:User_Load_CompaniesSoapIn" />
+      <wsdl:output message="tns:User_Load_CompaniesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_CompanyBackUp">
+      <wsdl:input message="tns:User_Load_CompanyBackUpSoapIn" />
+      <wsdl:output message="tns:User_Load_CompanyBackUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_Alarms">
+      <wsdl:input message="tns:User_Load_Incoming_AlarmsSoapIn" />
+      <wsdl:output message="tns:User_Load_Incoming_AlarmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_AlarmsVisible">
+      <wsdl:input message="tns:User_Load_Incoming_AlarmsVisibleSoapIn" />
+      <wsdl:output message="tns:User_Load_Incoming_AlarmsVisibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_Alarms_BackUP">
+      <wsdl:input message="tns:User_Load_Incoming_Alarms_BackUPSoapIn" />
+      <wsdl:output message="tns:User_Load_Incoming_Alarms_BackUPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select">
+      <wsdl:input message="tns:Company_SelectSoapIn" />
+      <wsdl:output message="tns:Company_SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Insert">
+      <wsdl:input message="tns:Company_InsertSoapIn" />
+      <wsdl:output message="tns:Company_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Update">
+      <wsdl:input message="tns:Company_UpdateSoapIn" />
+      <wsdl:output message="tns:Company_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Status_Update">
+      <wsdl:input message="tns:Company_Status_UpdateSoapIn" />
+      <wsdl:output message="tns:Company_Status_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Delete">
+      <wsdl:input message="tns:Company_DeleteSoapIn" />
+      <wsdl:output message="tns:Company_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Alarms_Select">
+      <wsdl:input message="tns:Company_Alarms_SelectSoapIn" />
+      <wsdl:output message="tns:Company_Alarms_SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Insert">
+      <wsdl:input message="tns:Incoming_Alarms_InsertSoapIn" />
+      <wsdl:output message="tns:Incoming_Alarms_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Update">
+      <wsdl:input message="tns:Incoming_Alarms_UpdateSoapIn" />
+      <wsdl:output message="tns:Incoming_Alarms_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Delete">
+      <wsdl:input message="tns:Incoming_Alarms_DeleteSoapIn" />
+      <wsdl:output message="tns:Incoming_Alarms_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncomingAlarms_ChangeVisibility">
+      <wsdl:input message="tns:IncomingAlarms_ChangeVisibilitySoapIn" />
+      <wsdl:output message="tns:IncomingAlarms_ChangeVisibilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncomingAlarms_ChangeInVisibility">
+      <wsdl:input message="tns:IncomingAlarms_ChangeInVisibilitySoapIn" />
+      <wsdl:output message="tns:IncomingAlarms_ChangeInVisibilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_DeleteAll">
+      <wsdl:input message="tns:Incoming_Alarms_DeleteAllSoapIn" />
+      <wsdl:output message="tns:Incoming_Alarms_DeleteAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Server_Datetime">
+      <wsdl:input message="tns:Get_Server_DatetimeSoapIn" />
+      <wsdl:output message="tns:Get_Server_DatetimeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Remote_Alarms_Web_ServiceSoap" type="tns:Remote_Alarms_Web_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="User_Select">
+      <soap:operation soapAction="http://tempuri.org/User_Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Insert">
+      <soap:operation soapAction="http://tempuri.org/User_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Update">
+      <soap:operation soapAction="http://tempuri.org/User_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <soap:operation soapAction="http://tempuri.org/User_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Companies">
+      <soap:operation soapAction="http://tempuri.org/User_Load_Companies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_CompanyBackUp">
+      <soap:operation soapAction="http://tempuri.org/User_Load_CompanyBackUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_Alarms">
+      <soap:operation soapAction="http://tempuri.org/User_Load_Incoming_Alarms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_AlarmsVisible">
+      <soap:operation soapAction="http://tempuri.org/User_Load_Incoming_AlarmsVisible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_Alarms_BackUP">
+      <soap:operation soapAction="http://tempuri.org/User_Load_Incoming_Alarms_BackUP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select">
+      <soap:operation soapAction="http://tempuri.org/Company_Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Insert">
+      <soap:operation soapAction="http://tempuri.org/Company_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Update">
+      <soap:operation soapAction="http://tempuri.org/Company_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Status_Update">
+      <soap:operation soapAction="http://tempuri.org/Company_Status_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Delete">
+      <soap:operation soapAction="http://tempuri.org/Company_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Alarms_Select">
+      <soap:operation soapAction="http://tempuri.org/Company_Alarms_Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Insert">
+      <soap:operation soapAction="http://tempuri.org/Incoming_Alarms_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Update">
+      <soap:operation soapAction="http://tempuri.org/Incoming_Alarms_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Delete">
+      <soap:operation soapAction="http://tempuri.org/Incoming_Alarms_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncomingAlarms_ChangeVisibility">
+      <soap:operation soapAction="http://tempuri.org/IncomingAlarms_ChangeVisibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncomingAlarms_ChangeInVisibility">
+      <soap:operation soapAction="http://tempuri.org/IncomingAlarms_ChangeInVisibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_DeleteAll">
+      <soap:operation soapAction="http://tempuri.org/Incoming_Alarms_DeleteAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Server_Datetime">
+      <soap:operation soapAction="http://tempuri.org/Get_Server_Datetime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Remote_Alarms_Web_ServiceSoap12" type="tns:Remote_Alarms_Web_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="User_Select">
+      <soap12:operation soapAction="http://tempuri.org/User_Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Insert">
+      <soap12:operation soapAction="http://tempuri.org/User_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Update">
+      <soap12:operation soapAction="http://tempuri.org/User_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <soap12:operation soapAction="http://tempuri.org/User_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Companies">
+      <soap12:operation soapAction="http://tempuri.org/User_Load_Companies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_CompanyBackUp">
+      <soap12:operation soapAction="http://tempuri.org/User_Load_CompanyBackUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_Alarms">
+      <soap12:operation soapAction="http://tempuri.org/User_Load_Incoming_Alarms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_AlarmsVisible">
+      <soap12:operation soapAction="http://tempuri.org/User_Load_Incoming_AlarmsVisible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_Load_Incoming_Alarms_BackUP">
+      <soap12:operation soapAction="http://tempuri.org/User_Load_Incoming_Alarms_BackUP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Insert">
+      <soap12:operation soapAction="http://tempuri.org/Company_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Update">
+      <soap12:operation soapAction="http://tempuri.org/Company_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Status_Update">
+      <soap12:operation soapAction="http://tempuri.org/Company_Status_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Company_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Alarms_Select">
+      <soap12:operation soapAction="http://tempuri.org/Company_Alarms_Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Insert">
+      <soap12:operation soapAction="http://tempuri.org/Incoming_Alarms_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Update">
+      <soap12:operation soapAction="http://tempuri.org/Incoming_Alarms_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_Delete">
+      <soap12:operation soapAction="http://tempuri.org/Incoming_Alarms_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncomingAlarms_ChangeVisibility">
+      <soap12:operation soapAction="http://tempuri.org/IncomingAlarms_ChangeVisibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncomingAlarms_ChangeInVisibility">
+      <soap12:operation soapAction="http://tempuri.org/IncomingAlarms_ChangeInVisibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Incoming_Alarms_DeleteAll">
+      <soap12:operation soapAction="http://tempuri.org/Incoming_Alarms_DeleteAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Server_Datetime">
+      <soap12:operation soapAction="http://tempuri.org/Get_Server_Datetime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Remote_Alarms_Web_Service">
+    <wsdl:port name="Remote_Alarms_Web_ServiceSoap" binding="tns:Remote_Alarms_Web_ServiceSoap">
+      <soap:address location="http://192.168.1.42/WebService_Alarms/Remote_Alarms_Web_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Remote_Alarms_Web_ServiceSoap12" binding="tns:Remote_Alarms_Web_ServiceSoap12">
+      <soap12:address location="http://192.168.1.42/WebService_Alarms/Remote_Alarms_Web_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

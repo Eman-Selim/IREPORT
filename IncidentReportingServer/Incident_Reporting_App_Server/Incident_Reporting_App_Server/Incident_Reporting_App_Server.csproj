@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Incident_Reporting_App_Server</RootNamespace>
     <AssemblyName>Incident_Reporting_App_Server</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,9 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Alarm_WS.cs" />
     <Compile Include="Code\Auditing.cs" />
     <Compile Include="Code\Incident_WS.cs" />
+    <Compile Include="Code\RemoteAlarmWS.cs" />
     <Compile Include="Code\ServerClass.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -96,12 +97,12 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Web References\WebReference1\Reference.cs">
+    <Compile Include="Web References\IncidentReporting\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\WebReference\Reference.cs">
+    <Compile Include="Web References\RemoteAlarm\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -130,92 +131,74 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Web References\WebReference1\Accident.datasource">
+    <None Include="Web References\IncidentReporting\Accident1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\Buildings.datasource">
+    <None Include="Web References\IncidentReporting\Buildings1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\Company.datasource">
+    <None Include="Web References\IncidentReporting\DangerousPlaces1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\DangerousPlaces.datasource">
+    <None Include="Web References\IncidentReporting\Death1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\Death.datasource">
+    <None Include="Web References\IncidentReporting\ExitPathways1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\ExitPathways.datasource">
+    <None Include="Web References\IncidentReporting\FFstations1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\FFstations.datasource">
+    <None Include="Web References\IncidentReporting\FF_ManPower1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\FF_ManPower.datasource">
+    <None Include="Web References\IncidentReporting\FF_pumps1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\FF_pumps.datasource">
+    <None Include="Web References\IncidentReporting\Floors1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\Floors.datasource">
+    <None Include="Web References\IncidentReporting\ICompany.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\Images.datasource">
+    <None Include="Web References\IncidentReporting\Images1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\IncidentReporting_WS.wsdl" />
-    <None Include="Web References\WebReference1\Injured.datasource">
+    <None Include="Web References\IncidentReporting\IncidentReporting_WS.wsdl" />
+    <None Include="Web References\IncidentReporting\Injured1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\IRUser.datasource">
+    <None Include="Web References\IncidentReporting\IRUser1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\Managers.datasource">
+    <None Include="Web References\IncidentReporting\Managers1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference1\Reference.map">
+    <None Include="Web References\IncidentReporting\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\WebReference1\Users_Admin.datasource">
+    <None Include="Web References\IncidentReporting\Users_Admin1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference\Admin_Users.datasource">
+    <None Include="Web References\RemoteAlarm\Company1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference\Alarms.datasource">
+    <None Include="Web References\RemoteAlarm\Company_Backup1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference\Alarm_Type.datasource">
+    <None Include="Web References\RemoteAlarm\IncomingAlarm1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference\Building_Alarm_Unit.datasource">
+    <None Include="Web References\RemoteAlarm\IncomingAlarm_Backup1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\WebReference\Forward_Destinations.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\WebReference\Layers.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\WebReference\Maps.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\WebReference\Movable_Alarm_Unit.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\WebReference\Placemarks.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\WebReference\Reference.map">
+    <None Include="Web References\RemoteAlarm\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\WebReference\SC3_Alarm_Module_WS.wsdl" />
-    <None Include="Web References\WebReference\Users.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\WebReference\Zones.datasource">
+    <None Include="Web References\RemoteAlarm\Remote_Alarms_Web_Service.wsdl" />
+    <None Include="Web References\RemoteAlarm\User1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
@@ -297,10 +280,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.1.151/IncidentReporting_WS/IncidentReporting_WS.asmx">
+    <WebReferenceUrl Include="http://localhost:7777/IncidentReporting/IncidentReporting_WS.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\WebReference1\</RelPath>
-      <UpdateFromURL>http://192.168.1.151/IncidentReporting_WS/IncidentReporting_WS.asmx</UpdateFromURL>
+      <RelPath>Web References\IncidentReporting\</RelPath>
+      <UpdateFromURL>http://localhost:7777/IncidentReporting/IncidentReporting_WS.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -308,10 +291,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX">
+    <WebReferenceUrl Include="http://192.168.1.42/WebService_Alarms/Remote_Alarms_Web_Service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\WebReference\</RelPath>
-      <UpdateFromURL>http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX</UpdateFromURL>
+      <RelPath>Web References\RemoteAlarm\</RelPath>
+      <UpdateFromURL>http://192.168.1.42/WebService_Alarms/Remote_Alarms_Web_Service.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -339,10 +322,15 @@
     <None Include="Resources\Minimize_Button.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\WebReference\SC3_Alarm_Module_WS.disco" />
+    <None Include="Web References\IncidentReporting\IncidentReporting_WS.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\WebReference1\IncidentReporting_WS.disco" />
+    <None Include="Web References\RemoteAlarm\Remote_Alarms_Web_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Capture.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

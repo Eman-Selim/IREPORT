@@ -26,7 +26,7 @@ namespace Incident_Reporting_App_Server.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.42/WebService_Alarms/Remote_Alarms_Web_Service.asmx")]
         public string Incident_Reporting_App_Server_WebReference_SC3_Alarm_Module_WS {
             get {
                 return ((string)(this["Incident_Reporting_App_Server_WebReference_SC3_Alarm_Module_WS"]));
@@ -36,7 +36,7 @@ namespace Incident_Reporting_App_Server.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.151/IncidentReporting_WS/IncidentReporting_WS.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:7777/IncidentReporting/IncidentReporting_WS.asmx")]
         public string Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS {
             get {
                 return ((string)(this["Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS"]));

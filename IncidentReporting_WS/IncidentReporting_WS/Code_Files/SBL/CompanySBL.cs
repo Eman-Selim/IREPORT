@@ -31,7 +31,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public Company Company_Insert(string username, string password, Company company)
+        public ICompany Company_Insert(string username, string password, ICompany company)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return null;
             }
         }
-        public bool Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, ICompany company)
         {
             try
             {
@@ -142,7 +142,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
                 return null;
             }
         }
-        public Company Company_Select_By_ISSI(string username, string password, string ISSI)
+        public ICompany Company_Select_By_ISSI(string username, string password, string ISSI)
         {
             try
             {
@@ -198,7 +198,7 @@ namespace IncidentReporting_WS.Code_Files.SBL
             }
         }
 
-        public Company Company_Select_By_CompanyID(string username, string password, int CompanyID)
+        public ICompany Company_Select_By_CompanyID(string username, string password, int CompanyID)
         {
             try
             {

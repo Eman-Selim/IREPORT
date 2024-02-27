@@ -1,0 +1,18 @@
+E:\New\SIDS\SIDS Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll.config
+E:\New\SIDS\SIDS Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll
+E:\New\SIDS\SIDS Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.pdb
+E:\New\SIDS\SIDS Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.csprojResolveAssemblyReference.cache
+E:\New\SIDS\SIDS Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.dll
+E:\New\SIDS\SIDS Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.pdb
+D:\Softwares\Current Applications\SC3 Client\V 1.2 - Commercial\Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll.config
+D:\Softwares\Current Applications\SC3 Client\V 1.2 - Commercial\Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll
+D:\Softwares\Current Applications\SC3 Client\V 1.2 - Commercial\Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.pdb
+D:\Softwares\Current Applications\SC3 Client\V 1.2 - Commercial\Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.csprojResolveAssemblyReference.cache
+D:\Softwares\Current Applications\SC3 Client\V 1.2 - Commercial\Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.dll
+D:\Softwares\Current Applications\SC3 Client\V 1.2 - Commercial\Server\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.pdb
+F:\V 1.2 - Commercial\alarm\Server\Alarms\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll.config
+F:\V 1.2 - Commercial\alarm\Server\Alarms\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll
+F:\V 1.2 - Commercial\alarm\Server\Alarms\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.pdb
+F:\V 1.2 - Commercial\alarm\Server\Alarms\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.csprojResolveAssemblyReference.cache
+F:\V 1.2 - Commercial\alarm\Server\Alarms\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.dll
+F:\V 1.2 - Commercial\alarm\Server\Alarms\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Release\Remote_Alarms_Web_Service.pdb

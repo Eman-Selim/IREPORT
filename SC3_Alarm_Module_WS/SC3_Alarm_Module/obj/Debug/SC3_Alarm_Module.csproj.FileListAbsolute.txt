@@ -407,3 +407,44 @@ D:\Eng Eman\Alarm_Module_ another_versions\Alarm Module with last alarm changes\
 D:\Eng Eman\Alarm_Module_ another_versions\Alarm Module with last alarm changes\Server\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.csprojResolveAssemblyReference.cache
 D:\Eng Eman\Alarm_Module_ another_versions\Alarm Module with last alarm changes\Server\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.dll
 D:\Eng Eman\Alarm_Module_ another_versions\Alarm Module with last alarm changes\Server\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.pdb
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\csc.exe
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\gcsc.ico
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\System.Collections.Immutable.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\System.Reflection.Metadata.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\vbc.exe
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\VBCSCompiler.exe
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\VBCSCompiler.exe.config
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\SC3_Alarm_Module.dll.config
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\SC3_Alarm_Module.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\SC3_Alarm_Module.pdb
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.csprojResolveAssemblyReference.cache
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.dll
+G:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.pdb
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\csc.exe
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\gcsc.ico
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\System.Collections.Immutable.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\System.Reflection.Metadata.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\vbc.exe
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\VBCSCompiler.exe
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\roslyn\VBCSCompiler.exe.config
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\SC3_Alarm_Module.dll.config
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\SC3_Alarm_Module.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\SC3_Alarm_Module.pdb
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.dll
+E:\incident-reporting\SC3_Alarm_Module_WS\SC3_Alarm_Module\obj\Debug\SC3_Alarm_Module.pdb

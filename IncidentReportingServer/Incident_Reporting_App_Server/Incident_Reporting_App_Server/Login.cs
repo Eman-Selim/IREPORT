@@ -82,6 +82,7 @@ namespace Incident_Reporting_App_Server
                     workdone = server_Class_Obj.Start_Server(Login_txt_Username.Text, Login_txt_Password.Text);
                     if (workdone)
                     {
+                        this.Hide();
                         Main f2 = new Main();
                         f2.Show();
                     }
@@ -134,7 +135,7 @@ namespace Incident_Reporting_App_Server
         {
             try
             {
-                this.Close();
+                System.Environment.Exit(0);
             }
             catch (Exception ex)
             {

@@ -32,7 +32,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public Company Company_Insert(string username, string password, Company company)
+        public ICompany Company_Insert(string username, string password, ICompany company)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
             }
         }
 
-        public bool Company_Update(string username, string password, Company company)
+        public bool Company_Update(string username, string password, ICompany company)
         {
             try
             {
@@ -173,7 +173,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name= dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address= dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -240,7 +240,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -306,7 +306,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -371,7 +371,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -436,7 +436,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -501,7 +501,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -544,11 +544,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 return null;
             }
         }
-        public Company Company_Select_By_ISSI(string username, string password, string ISSI)
+        public ICompany Company_Select_By_ISSI(string username, string password, string ISSI)
         {
             try
             {
-                Company company = new Company();
+                ICompany company = new ICompany();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -567,7 +567,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company=new Company
+                        company=new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -610,11 +610,11 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 return null;
             }
         }
-        public Company Company_Select_By_CompanyID(string username, string password, int CompanyID)
+        public ICompany Company_Select_By_CompanyID(string username, string password, int CompanyID)
         {
             try
             {
-                Company company = new Company();
+                ICompany company = new ICompany();
                 DateTime temp_date = new DateTime(0000 - 00 - 00);
                 object[,] sp_params = new object[,]
                 {
@@ -631,7 +631,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company=new Company
+                        company=new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -697,7 +697,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -762,7 +762,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -827,7 +827,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -892,7 +892,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -957,7 +957,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1023,7 +1023,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1088,7 +1088,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1153,7 +1153,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1218,7 +1218,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1283,7 +1283,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1348,7 +1348,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add( new Company
+                        company.Add( new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1413,7 +1413,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add( new Company
+                        company.Add( new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1478,7 +1478,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1543,7 +1543,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add(new Company
+                        company.Add(new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),
@@ -1608,7 +1608,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        company.Add( new Company
+                        company.Add( new ICompany
                         {
                             Name = dr["Name"] is DBNull ? "" : Convert.ToString(dr["Name"]),
                             Address = dr["Address"] is DBNull ? "" : Convert.ToString(dr["Address"]),

@@ -20,8 +20,8 @@
           </StartPageUrl>
           <StartAction>CurrentPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
-          <SilverlightDebugging>True</SilverlightDebugging>
-          <NativeDebugging>True</NativeDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>True</SQLDebugging>
           <ExternalProgram>
           </ExternalProgram>

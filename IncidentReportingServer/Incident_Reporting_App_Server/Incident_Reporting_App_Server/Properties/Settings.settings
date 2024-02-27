@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="Incident_Reporting_App_Server_WebReference_SC3_Alarm_Module_WS" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://192.168.1.32/SC3_Alarm_Module_WS/SC3_Alarm_Module_WS.ASMX</Value>
+      <Value Profile="(Default)">http://192.168.1.42/WebService_Alarms/Remote_Alarms_Web_Service.asmx</Value>
     </Setting>
     <Setting Name="Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://192.168.1.151/IncidentReporting_WS/IncidentReporting_WS.asmx</Value>
+      <Value Profile="(Default)">http://localhost:7777/IncidentReporting/IncidentReporting_WS.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>
