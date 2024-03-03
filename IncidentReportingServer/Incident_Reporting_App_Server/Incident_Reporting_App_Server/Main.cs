@@ -155,7 +155,8 @@ namespace Incident_Reporting_App_Server
                 ExitPathways[] exitPathWays = selectedCompany.companyBuildings[0].BuildingExitPaths;
                 if (exitPathWays != null)
                     PB_ExitPathWayImage_DT.Image = exitPathWays[0].PathwaysImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(exitPathWays[0].PathwaysImage));
-
+                else
+                    PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
             }
             TB_CompanyGeometeryImage_DT.Image = selectedCompany.CompanyGeometeryImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.CompanyGeometeryImage));
             ISSI.Text = selectedCompany.ISSI;
@@ -831,6 +832,8 @@ namespace Incident_Reporting_App_Server
                 {
                     statusfeild.ForeColor = Color.YellowGreen;
                     statusfeild.Text = " Company updated Successfully";
+                    M.CompanyID = Selected_Company_ID;
+                    M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
                     if (c1.companyBuildings != null)
                     {
                         bool flag1 = server_Class_Obj.Delete_Building(c1.CompanyID);
@@ -862,12 +865,10 @@ namespace Incident_Reporting_App_Server
                                     Floors floor = new Floors();
                                     kvp.Value.BuildingID = B1.BuildingID;
                                     floor = await Task.Run(() => server_Class_Obj.Add_Floors(kvp.Value));
-
                                 }
                                 
                                 exitPathWay.BuildingID = B1.BuildingID;
                                 exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
-
                             }
                         }
                         bool flag2 = server_Class_Obj.Delete_DangerousPlaces(c1.CompanyID);
@@ -881,9 +882,6 @@ namespace Incident_Reporting_App_Server
                                 await Task.Run(() => server_Class_Obj.Add_DangerousPlace(c1.CompanyDangerousPlaces[i]));
                             }
                         }
-                        M.CompanyID = Selected_Company_ID;
-                        M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
-                        
                     }
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Update_Incident_Reporting_trv_Companies();
