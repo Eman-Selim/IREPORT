@@ -150,14 +150,14 @@ namespace Incident_Reporting_App_Server
             TB_CompanyBuisiness_DT.Text = selectedCompany.CompanyBuisiness;
             CB_Sector_DT.Text = selectedCompany.sector == null? "" : selectedCompany.sector.ToString();
             TB_CompanyImage_DT.Image = selectedCompany.CompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.CompanyImage));
-            if (selectedCompany.companyBuildings != null)
-            {
-                ExitPathways[] exitPathWays = selectedCompany.companyBuildings[0].BuildingExitPaths;
-                if (exitPathWays != null)
-                    PB_ExitPathWayImage_DT.Image = exitPathWays[0].PathwaysImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(exitPathWays[0].PathwaysImage));
-                else
-                    PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
-            }
+            //if (selectedCompany.companyBuildings != null)
+            //{
+            //    ExitPathways[] exitPathWays = selectedCompany.companyBuildings[0].BuildingExitPaths;
+            //    if (exitPathWays != null)
+            PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
+            //    else
+            //        PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
+            //}
             TB_CompanyGeometeryImage_DT.Image = selectedCompany.CompanyGeometeryImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.CompanyGeometeryImage));
             ISSI.Text = selectedCompany.ISSI;
 
@@ -274,7 +274,7 @@ namespace Incident_Reporting_App_Server
                 TB_SelectedUserInfo_DT.Text = managers[selectedManagerIndex].Info;
             }
         }
-        private void Deleted_SelectedManager_Click_1(object sender, EventArgs e)
+        private async void Deleted_SelectedManager_Click_1(object sender, EventArgs e)
         {
             if (managers == null)
                 statusfeild.Text = "please select manager";
@@ -289,6 +289,7 @@ namespace Incident_Reporting_App_Server
                     TB_SelectedUserPhone_DT.Clear();
                     TB_SelectedUserInfo_DT.Clear();
                     statusfeild.Text = " Managers updated Successfully";
+                    LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Update_Incident_Reporting_trv_Companies();
                 }
                 else
@@ -300,7 +301,7 @@ namespace Incident_Reporting_App_Server
 
         }
 
-        private void Delete_SelectedDangerous_Click_1(object sender, EventArgs e)
+        private async void Delete_SelectedDangerous_Click_1(object sender, EventArgs e)
         {
             if (places == null)
                 statusfeild.Text = " please select place";
@@ -314,7 +315,8 @@ namespace Incident_Reporting_App_Server
                     DangerouseLocation.Clear();
                     FireMediator.Clear();
                     statusfeild.Text = " DangerousPlaces updated Successfully";
-                     Update_Incident_Reporting_trv_Companies();
+                    LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
+                    Update_Incident_Reporting_trv_Companies();
                 }
                 else
                 {
@@ -588,7 +590,6 @@ namespace Incident_Reporting_App_Server
 
                 }
             }
-            Update_Incident_Reporting_trv_Companies();
         }
 
 
@@ -828,6 +829,15 @@ namespace Incident_Reporting_App_Server
 
                 var x = System.Environment.CurrentManagedThreadId;
                 bool flag = await Task.Run(() => server_Class_Obj.Update_Company(c1));
+               
+                    place.CompanyID = c1.CompanyID;
+                    place = await Task.Run(() => server_Class_Obj.Add_DangerousPlace(place));
+                    //int Dplaces = c1.CompanyDangerousPlaces.Length > 0 ? c1.CompanyDangerousPlaces.Length : 0;
+                    //for (int i = 0; i < Dplaces; i++)
+                    //{
+                    //    await Task.Run(() => server_Class_Obj.Add_DangerousPlace(c1.CompanyDangerousPlaces[i]));
+                    //}
+                
                 if (flag == true)
                 {
                     statusfeild.ForeColor = Color.YellowGreen;
@@ -836,8 +846,9 @@ namespace Incident_Reporting_App_Server
                     M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
                     if (c1.companyBuildings != null)
                     {
+                        
                         bool flag1 = server_Class_Obj.Delete_Building(c1.CompanyID);
-                        if(flag1==true)
+                        if (flag1 == true)
                         {
                             int BuildingLength = c1.companyBuildings.Length > 0 ? c1.companyBuildings.Length : 0;
                             for (int i = 0; i < BuildingLength; i++)
@@ -854,39 +865,50 @@ namespace Incident_Reporting_App_Server
                                         floor = await Task.Run(() => server_Class_Obj.Add_Floors(c1.companyBuildings[i].BuildingFloors[j]));
                                     }
                                 }
-                            }
-                            for (int i = 0; i < Newbuildings.Count; i++)
-                            {
-                                Newbuildings[i].CompanyID = c1.CompanyID;
-                                Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
-
-                                foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
+                                if(c1.companyBuildings[i].BuildingExitPaths!=null)
                                 {
-                                    Floors floor = new Floors();
-                                    kvp.Value.BuildingID = B1.BuildingID;
-                                    floor = await Task.Run(() => server_Class_Obj.Add_Floors(kvp.Value));
+                                    int BuildingExitPathsLength = c1.companyBuildings[i].BuildingExitPaths.Length > 0 ? c1.companyBuildings[i].BuildingExitPaths.Length : 0;
+                                    for (int j = 0; j < BuildingExitPathsLength; j++)
+                                    {
+                                        Floors floor = new Floors();
+                                        if (B1 != null)
+                                            c1.companyBuildings[i].BuildingExitPaths[j].BuildingID = B1.BuildingID;
+                                        await Task.Run(() => server_Class_Obj.Add_exitPath(c1.companyBuildings[i].BuildingExitPaths[j]));
+                                        
+                                    }
+                                }
+                                else
+                                {
+                                    exitPathWay.BuildingID = B1.BuildingID;
+                                    exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
                                 }
                                 
-                                exitPathWay.BuildingID = B1.BuildingID;
-                                exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
                             }
                         }
-                        bool flag2 = server_Class_Obj.Delete_DangerousPlaces(c1.CompanyID);
-                        if (flag2 == true)
-                        {
-                            place.CompanyID = c1.CompanyID;
-                            place = await Task.Run(() => server_Class_Obj.Add_DangerousPlace(place));
-                            int Dplaces=c1.CompanyDangerousPlaces.Length>0? c1.CompanyDangerousPlaces.Length:0;
-                            for(int i=0;i<Dplaces;i++)
-                            {
-                                await Task.Run(() => server_Class_Obj.Add_DangerousPlace(c1.CompanyDangerousPlaces[i]));
-                            }
-                        }
+                        
+                        
+                        
+
                     }
+                    for (int i = 0; i < Newbuildings.Count; i++)
+                    {
+                        Newbuildings[i].CompanyID = c1.CompanyID;
+                        Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
+
+                        foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
+                        {
+                            Floors floor = new Floors();
+                            kvp.Value.BuildingID = B1.BuildingID;
+                            floor = await Task.Run(() => server_Class_Obj.Add_Floors(kvp.Value));
+                        }
+                        
+                        exitPathWay.BuildingID = B1.BuildingID;
+                        exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
+                    }
+
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Update_Incident_Reporting_trv_Companies();
                 }
-
                 else
                 {
                     statusfeild.ForeColor = Color.Red;
@@ -1540,6 +1562,8 @@ namespace Incident_Reporting_App_Server
             TB_SelectedUserBuisiness_DT.Clear();
             TB_SelectedUserPhone_DT.Clear();
             TB_SelectedUserInfo_DT.Clear();
+            Newbuildings.Clear();
+            NewFloors.Clear();
             statusfeild.Text = " ";
             if (e.Node.Name == "Company")
             {
