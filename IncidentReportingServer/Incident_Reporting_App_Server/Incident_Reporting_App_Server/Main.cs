@@ -277,7 +277,7 @@ namespace Incident_Reporting_App_Server
         private async void Deleted_SelectedManager_Click_1(object sender, EventArgs e)
         {
             if (managers == null)
-                statusfeild.Text = "please select manager";
+                statusfeild.Text = "من فضلك اختر المسئول";
             else
             {
                 bool flag = server_Class_Obj.Delete_Manager(managers[selectedManagerIndex].ManagerID);
@@ -288,14 +288,14 @@ namespace Incident_Reporting_App_Server
                     TB_SelectedUserBuisiness_DT.Clear();
                     TB_SelectedUserPhone_DT.Clear();
                     TB_SelectedUserInfo_DT.Clear();
-                    statusfeild.Text = " Managers updated Successfully";
+                    statusfeild.Text = " تم مسح المسئول بنجاح";
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Update_Incident_Reporting_trv_Companies();
                 }
                 else
                 {
                     statusfeild.ForeColor = Color.Red;
-                    statusfeild.Text = " Failed";
+                    statusfeild.Text = "فشلت العملية";
                 }
             }
 
@@ -304,7 +304,7 @@ namespace Incident_Reporting_App_Server
         private async void Delete_SelectedDangerous_Click_1(object sender, EventArgs e)
         {
             if (places == null)
-                statusfeild.Text = " please select place";
+                statusfeild.Text = " من فضلك اختر مصدر الخطورة ";
             else
             {
                 bool flag = server_Class_Obj.Delete_SelectedDangerousPlaces(places[selectedDangerousIndex].DangerousPlaceID);
@@ -314,14 +314,14 @@ namespace Incident_Reporting_App_Server
                     HazardousSubstance.Clear();
                     DangerouseLocation.Clear();
                     FireMediator.Clear();
-                    statusfeild.Text = " DangerousPlaces updated Successfully";
+                    statusfeild.Text = " تم تعديل مصدر الخطورة بنجاح";
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Update_Incident_Reporting_trv_Companies();
                 }
                 else
                 {
                     statusfeild.ForeColor = Color.Red;
-                    statusfeild.Text = " Failed";
+                    statusfeild.Text = "فشلت العملية";
                 }
             }
         }
@@ -367,27 +367,27 @@ namespace Incident_Reporting_App_Server
                 if (MM != null)
                 {
                     richTextBox1.ForeColor = Color.YellowGreen;
-                    richTextBox1.Text = " Station_ManPower Added Successfully";
+                    richTextBox1.Text = " تم إضافة البيانات بنجاح";
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Load_User_Data(LoginAccount);
                 }
                 else
                 {
                     richTextBox1.ForeColor = Color.Red;
-                    richTextBox1.Text = " Failed";
+                    richTextBox1.Text = "فشلت العملية";
                 }
 
             }
             else if (st != null)
             {
                 richTextBox1.ForeColor = Color.YellowGreen;
-                richTextBox1.Text = " Station Added Successfully";
+                richTextBox1.Text = " تم إضافة البيانات بنجاح";
             }
                 
             else
             {
                 richTextBox1.ForeColor = Color.Red;
-                richTextBox1.Text = " Failed";
+                richTextBox1.Text = "فشلت العملية";
             }
 
 
@@ -410,14 +410,14 @@ namespace Incident_Reporting_App_Server
             if (flag1 == true)
             {
                 richTextBox1.ForeColor = Color.YellowGreen;
-                richTextBox1.Text = " Station Updated Successfully";
+                richTextBox1.Text = " تم تعديل البيانات بنجاح";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
             }
             else
             {
                 richTextBox1.ForeColor = Color.Red;
-                richTextBox1.Text = " failed";
+                richTextBox1.Text = "فشلت العملية";
             }
 
 
@@ -438,14 +438,14 @@ namespace Incident_Reporting_App_Server
                     if (flag != null && flag1 == true)
                     {
                         richTextBox1.ForeColor = Color.YellowGreen;
-                        richTextBox1.Text = " Station_ManPower Updated Successfully";
+                        richTextBox1.Text = " تم تعديل البيانات بنجاح";
                         LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                         Load_User_Data(LoginAccount);
                     }
                     else
                     {
                         richTextBox1.ForeColor = Color.Red;
-                        richTextBox1.Text = "Failed";
+                        richTextBox1.Text = "فشلت العملية";
                     }
 
                 }
@@ -487,14 +487,14 @@ namespace Incident_Reporting_App_Server
             if (flag == true)
             {
                 richTextBox1.ForeColor = Color.YellowGreen;
-                richTextBox1.Text = " Station_ManPower Deleted Successfully";
+                richTextBox1.Text = "تم مسح البيانات بنجاح";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
             }
             else
             {
                 richTextBox1.ForeColor = Color.Red;
-                richTextBox1.Text = "Failed";
+                richTextBox1.Text = "فشلت العملية";
             }
         }
 
@@ -507,9 +507,9 @@ namespace Incident_Reporting_App_Server
             buildingCount++;
             Buildings building = new Buildings();
             if (BuildingNumber.Text == "")
-                statusfeild.Text = " Please Add Building number";
+                statusfeild.Text = "من فضلك أدخل رقم المبنى";
             else if (floorNumbers.Text == "")
-                statusfeild.Text = " Please Add floor number";
+                statusfeild.Text = "من فضلك أدخل رقم الدور";
             else
             {
                 building.BuildingNumber = Convert.ToInt32(BuildingNumber.Text);
@@ -518,7 +518,7 @@ namespace Incident_Reporting_App_Server
                 building.GeometricImage = BuildingGeoPic_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(BuildingGeoPic_DT.Image);
                 building.GeometricImageURL = GeoPicURL.Text;
                 Newbuildings.Add(building);
-                statusfeild.Text = " Building added Update changes to continue";
+                statusfeild.Text = "تم حفظ البيانات اضغط تعديل للمتابعة";
                 for (int i = 0; i < DG_Floors_DT.Rows.Count - 1; i++)
                 {
                     Floors floor = new Floors();
@@ -608,6 +608,7 @@ namespace Incident_Reporting_App_Server
         {
             ComboBox cmb = (ComboBox)sender;
             selectedBuildingIndex = cmb.SelectedIndex;
+
             if (buildings.Length >= selectedBuildingIndex)
             {
                 BuildingNumber.Text = Convert.ToString(buildings[selectedBuildingIndex].BuildingNumber);
@@ -616,6 +617,8 @@ namespace Incident_Reporting_App_Server
                 GeoPicURL.Text = buildings[selectedBuildingIndex].GeometricImageURL;
                 if (buildings[selectedBuildingIndex].BuildingExitPaths != null)
                     PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage));
+                //else
+                //    PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
                 BuildingGeoPic_DT.Image = buildings[selectedBuildingIndex].GeometricImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].GeometricImage));
                 Floors[] floor = buildings[selectedBuildingIndex].BuildingFloors;
                 int floor_length = floor != null ? floor.Length : 0;
@@ -656,7 +659,7 @@ namespace Incident_Reporting_App_Server
             if (flag == true)
             {
                 statusfeild.ForeColor = Color.YellowGreen;
-                statusfeild.Text = " Company Deleted Successfully";
+                statusfeild.Text = "تم مسح المنشأة بنجاح";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                  Update_Incident_Reporting_trv_Companies();
             }
@@ -664,7 +667,7 @@ namespace Incident_Reporting_App_Server
             else
             {
                 statusfeild.ForeColor = Color.Red;
-                statusfeild.Text = " Faild";
+                statusfeild.Text = "فشلت عملية المسح";
             }
         }
 
@@ -713,12 +716,12 @@ namespace Incident_Reporting_App_Server
             if (c1 != null)
             {
                 statusfeild.ForeColor = Color.YellowGreen;
-                statusfeild.Text = " Company added Successfully";
+                statusfeild.Text = "تم إضافة المنشأة بنجاح";
             }
             else
             {
                 statusfeild.ForeColor = Color.Red;
-                statusfeild.Text = " Faild";
+                statusfeild.Text = "فشلت عملية الإضافة";
             }
 
             for (int i = 0; i < Newbuildings.Count; i++)
@@ -767,7 +770,7 @@ namespace Incident_Reporting_App_Server
         {
             
             if (selectedCompany == null)
-                statusfeild.Text = " Please Select Company";
+                statusfeild.Text = "من فضلك اختر المنشأة";
             else
             {
                 ICompany c1 = new ICompany();
@@ -841,7 +844,7 @@ namespace Incident_Reporting_App_Server
                 if (flag == true)
                 {
                     statusfeild.ForeColor = Color.YellowGreen;
-                    statusfeild.Text = " Company updated Successfully";
+                    statusfeild.Text = "تم تعديل المنشأة بنجاح";
                     M.CompanyID = Selected_Company_ID;
                     M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
                     if (c1.companyBuildings != null)
@@ -865,16 +868,21 @@ namespace Incident_Reporting_App_Server
                                         floor = await Task.Run(() => server_Class_Obj.Add_Floors(c1.companyBuildings[i].BuildingFloors[j]));
                                     }
                                 }
-                                if(c1.companyBuildings[i].BuildingExitPaths!=null)
+                                if (c1.companyBuildings[i].BuildingExitPaths != null)
                                 {
                                     int BuildingExitPathsLength = c1.companyBuildings[i].BuildingExitPaths.Length > 0 ? c1.companyBuildings[i].BuildingExitPaths.Length : 0;
                                     for (int j = 0; j < BuildingExitPathsLength; j++)
                                     {
                                         Floors floor = new Floors();
                                         if (B1 != null)
+                                        {
                                             c1.companyBuildings[i].BuildingExitPaths[j].BuildingID = B1.BuildingID;
-                                        await Task.Run(() => server_Class_Obj.Add_exitPath(c1.companyBuildings[i].BuildingExitPaths[j]));
-                                        
+                                            //c1.companyBuildings[i].BuildingExitPaths[j].BuildingID = B1.BuildingID;
+                                            await Task.Run(() => server_Class_Obj.Add_exitPath(c1.companyBuildings[i].BuildingExitPaths[j]));
+
+                                        }
+                                            
+
                                     }
                                 }
                                 else
@@ -882,7 +890,7 @@ namespace Incident_Reporting_App_Server
                                     exitPathWay.BuildingID = B1.BuildingID;
                                     exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
                                 }
-                                
+
                             }
                         }
 
@@ -909,7 +917,7 @@ namespace Incident_Reporting_App_Server
                 else
                 {
                     statusfeild.ForeColor = Color.Red;
-                    statusfeild.Text = " Faild";
+                    statusfeild.Text = "فشلت عملية التعديل";
                 }
             }
         }
@@ -922,7 +930,7 @@ namespace Incident_Reporting_App_Server
         private void Delete_SelectedBuilding_Click_1(object sender, EventArgs e)
         {
             if (buildings == null)
-                statusfeild.Text = " Please Select Building";
+                statusfeild.Text = "من فضلك اختر المبنى";
             else
             {
                 server_Class_Obj.Delete_SelectedBuilding(buildings[selectedBuildingIndex].BuildingID);
@@ -995,7 +1003,7 @@ namespace Incident_Reporting_App_Server
             if (flag == true)
             {
                 label22.ForeColor = Color.YellowGreen;
-                label22.Text = " FF_pumps Updated Successfully";
+                label22.Text = " تم تعديل المضخة بنجاح";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
             }
@@ -1003,12 +1011,13 @@ namespace Incident_Reporting_App_Server
             else
             {
                 label22.ForeColor = Color.Red;
-                label22.Text = " Faild";
+                label22.Text = "فشلت عملية التعديل";
             }
 
         }
         private void DG_Pumps_DT_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
             PumpNumber.Text = (string)DG_Pumps_DT.CurrentRow.Cells[1].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[1].Value;
             pumpArea.Text = (string)DG_Pumps_DT.CurrentRow.Cells[2].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[2].Value;
             pumpSector.Text = (string)DG_Pumps_DT.CurrentRow.Cells[3].Value == null ? "" : (string)DG_Pumps_DT.CurrentRow.Cells[3].Value;
@@ -1036,14 +1045,14 @@ namespace Incident_Reporting_App_Server
             if (flag != null)
             {
                 label22.ForeColor = Color.YellowGreen;
-                label22.Text = " FF_pumps Added Successfully";
+                label22.Text = "تم إضافة المضخة بنجاح";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
             }
             else
             {
                 label22.ForeColor = Color.Red;
-                label22.Text = " Faild";
+                label22.Text = "فشلت عملية الإضافة";
             }
         }
         private async void DeletePump_Click(object sender, EventArgs e)
@@ -1056,11 +1065,11 @@ namespace Incident_Reporting_App_Server
             pumpAddress.Text = "";
             pumpSign.Text = "";
             pumpInfo.Text = "";
-            bool flag = server_Class_Obj.Delete_FF_pumps(pump.FF_pumpsID);
+            bool flag = server_Class_Obj.Delete_FF_pumps(PumpID);
             if (flag == true)
             {
                 label22.ForeColor = Color.YellowGreen;
-                label22.Text = " FF_pumps Deleted Successfully";
+                label22.Text = "تم مسح المضخة بنجاح";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
 
@@ -1068,7 +1077,7 @@ namespace Incident_Reporting_App_Server
             else
             {
                 label22.ForeColor = Color.Red;
-                label22.Text = " Faild";
+                label22.Text = "فشلت عملية المسح";
             }
 
         }
@@ -1098,7 +1107,7 @@ namespace Incident_Reporting_App_Server
                         if (flag != null)
                         {
                             AccountStatus.ForeColor = Color.YellowGreen;
-                            AccountStatus.Text = " Account Added Successfully";
+                            AccountStatus.Text = "تم إضافة المستخدم بنجاح";
                             LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                             Load_User_Data(LoginAccount);
                              Update_Incident_Reporting_trv_Companies();
@@ -1106,7 +1115,7 @@ namespace Incident_Reporting_App_Server
                         else
                         {
                             AccountStatus.ForeColor = Color.Red;
-                            AccountStatus.Text = " Failed";
+                            AccountStatus.Text = "فشلت عملية الإضافة ";
                         }
 
                     }
@@ -1114,7 +1123,7 @@ namespace Incident_Reporting_App_Server
                 }
                 else
                 {
-                    AccountStatus.Text = " Password not matched";
+                    AccountStatus.Text = " الرقم السري غير متطابق";
                 }
             }
             catch (Exception exception1)
@@ -1141,7 +1150,7 @@ namespace Incident_Reporting_App_Server
                 if (flag == true)
                 {
                     AccountStatus.ForeColor = Color.YellowGreen;
-                    AccountStatus.Text = " Account Updated Successfully";
+                    AccountStatus.Text = " تم تعديل المستخدم بنجاح";
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Load_User_Data(LoginAccount);
                     Update_Incident_Reporting_trv_Companies();
@@ -1149,7 +1158,7 @@ namespace Incident_Reporting_App_Server
                 else
                 {
                     AccountStatus.ForeColor = Color.Red;
-                    AccountStatus.Text = " Failed";
+                    AccountStatus.Text = "فشلت العملية";
                 }
             }
             catch (Exception exception1)
@@ -1164,7 +1173,7 @@ namespace Incident_Reporting_App_Server
             if (flag == true)
             {
                 AccountStatus.ForeColor = Color.YellowGreen;
-                AccountStatus.Text = " Account Deleted Successfully";
+                AccountStatus.Text = "تم مسح المستخدم بنجاح";
                 LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                 Load_User_Data(LoginAccount);
                  Update_Incident_Reporting_trv_Companies();
@@ -1173,7 +1182,7 @@ namespace Incident_Reporting_App_Server
             else
             {
                 AccountStatus.ForeColor = Color.Red;
-                AccountStatus.Text = " Failed";
+                AccountStatus.Text = "فشلت عملية المسح";
             }
 
         }
@@ -1288,10 +1297,10 @@ namespace Incident_Reporting_App_Server
                         treeView3.Nodes[0].Tag = LoginAccount;
                         treeView3.Nodes[0].Name = "User";
                         //Add Main User Companies node
-                        treeView3.Nodes[0].Nodes.Add("Companies");
+                        treeView3.Nodes[0].Nodes.Add("المنشآت");
 
                         //Add Main User Users node
-                        treeView3.Nodes[0].Nodes.Add("Users");
+                        treeView3.Nodes[0].Nodes.Add("المستخدمين");
                     }
                     else
                     {
@@ -1427,7 +1436,7 @@ namespace Incident_Reporting_App_Server
                                 node_obj.Nodes[node_obj.Nodes.Count - 1].Name = "User";
                                 node_obj.Nodes[node_obj.Nodes.Count - 1].Checked = true;
 
-                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Companies");
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("المنشآت");
                                 node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
 
                                 #region Add and Edit Companies
@@ -1464,7 +1473,7 @@ namespace Incident_Reporting_App_Server
                                 #endregion
 
                                 //Add  User Users node
-                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Users");
+                                node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("المستخدمين");
                                 node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
                             }
 
@@ -1490,7 +1499,7 @@ namespace Incident_Reporting_App_Server
                             node_obj.Nodes[node_obj.Nodes.Count - 1].Name = "User";
                             node_obj.Nodes[node_obj.Nodes.Count - 1].Checked = true;
 
-                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Companies");
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("المنشآت");
                             node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
 
                             #region Add and Edit Companies
@@ -1528,7 +1537,7 @@ namespace Incident_Reporting_App_Server
                             #endregion
 
                             //Add  User Users node
-                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("Users");
+                            node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Add("المستخدمين");
                             node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes[node_obj.Nodes[node_obj.Nodes.Count - 1].Nodes.Count - 1].Checked = true;
 
                             Update_User_Users_Companies_TV(users[uc].Users_of_Users, node_obj.Nodes[uc].Nodes[1]);
