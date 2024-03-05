@@ -885,9 +885,6 @@ namespace Incident_Reporting_App_Server
                                 
                             }
                         }
-                        
-                        
-                        
 
                     }
                     for (int i = 0; i < Newbuildings.Count; i++)
