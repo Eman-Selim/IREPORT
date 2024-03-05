@@ -11,6 +11,7 @@ namespace IncidentReporting_WS.Code_Files.DAL
     public class BuildingsDAL
     {
         DBL.DBL db = new DBL.DBL();
+        byte[] smallArray = new byte[] { 0x20, 0x20 };
         public bool Buildings_Delete(string username, string password, int BuildingID)
         {
             try
@@ -60,9 +61,10 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@BuildingNumber", buildings.BuildingNumber },
                     {"@FloorsNumber", buildings.FloorsNumber},
                     {"@CompanyID",buildings.CompanyID},
+                    {"@BuildingID",buildings.BuildingID},
                     {"@MainWaterTankCapacity",buildings.MainWaterTankCapacity},
                     {"@GeometricImage",buildings.GeometricImage},
-                    {"@GeometricImageURL",buildings.GeometricImageURL },
+                    {"@GeometricImageURL",buildings.GeometricImageURL},
                     {"@PathwaysImage",buildings.PathwaysImage }
 
                };
@@ -96,9 +98,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@BuildingID",buildings.BuildingID},
                     {"@MainWaterTankCapacity",buildings.MainWaterTankCapacity},
                     {"@GeometricImage",buildings.GeometricImage},
+                    {"@GeometricImageURL",buildings.GeometricImageURL},
                     {"@PathwaysImage",buildings.PathwaysImage }
-
-
                };
 
                 flag = db.Execute_Update_Delete_Stored_Procedure("Building_Update", sp_params);
@@ -135,13 +136,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         buildings.Add(new Buildings
                         {
-                            BuildingNumber = Convert.ToInt32(dr["BuildingNumber"]),
-                            FloorsNumber = Convert.ToInt32(dr["FloorsNumber"]),
-                            CompanyID = Convert.ToInt32(dr["CompanyID"]),
-                            BuildingID = Convert.ToInt32(dr["BuildingID"]),
-                            MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"],
-                            PathwaysImage=(byte[])dr["PathwaysImage"]
+                            BuildingNumber = dr["BuildingNumber"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingNumber"]),
+                            FloorsNumber = dr["FloorsNumber"] is DBNull ? 0 : Convert.ToInt32(dr["FloorsNumber"]),
+                            CompanyID = dr["CompanyID"] is DBNull ? 0 : Convert.ToInt32(dr["CompanyID"]),
+                            BuildingID = dr["BuildingID"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingID"]),
+                            MainWaterTankCapacity = dr["MainWaterTankCapacity"] is DBNull ? 0 : Convert.ToInt32(dr["MainWaterTankCapacity"]),
+                            GeometricImage = dr["GeometricImage"] is DBNull ? smallArray : (byte[])dr["GeometricImage"],
+                            GeometricImageURL = dr["GeometricImageURL"] is DBNull ? "" : Convert.ToString(dr["GeometricImageURL"]),
+                            PathwaysImage = dr["PathwaysImage"] is DBNull ? smallArray : (byte[])dr["PathwaysImage"]
                         });
                     }
                 }
@@ -178,13 +180,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         buildings=new Buildings
                         {
-                            BuildingNumber = Convert.ToInt32(dr["BuildingNumber"]),
-                            FloorsNumber = Convert.ToInt32(dr["FloorsNumber"]),
-                            CompanyID = Convert.ToInt32(dr["CompanyID"]),
-                            BuildingID = Convert.ToInt32(dr["BuildingID"]),
-                            MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"],
-                            PathwaysImage = (byte[])dr["PathwaysImage"]
+                            BuildingNumber = dr["BuildingNumber"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingNumber"]),
+                            FloorsNumber = dr["FloorsNumber"] is DBNull ? 0 : Convert.ToInt32(dr["FloorsNumber"]),
+                            CompanyID = dr["CompanyID"] is DBNull ? 0 : Convert.ToInt32(dr["CompanyID"]),
+                            BuildingID = dr["BuildingID"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingID"]),
+                            MainWaterTankCapacity = dr["MainWaterTankCapacity"] is DBNull ? 0 : Convert.ToInt32(dr["MainWaterTankCapacity"]),
+                            GeometricImage = dr["GeometricImage"] is DBNull ? smallArray : (byte[])dr["GeometricImage"],
+                            GeometricImageURL = dr["GeometricImageURL"] is DBNull ? "" : Convert.ToString(dr["GeometricImageURL"]),
+                            PathwaysImage = dr["PathwaysImage"] is DBNull ? smallArray : (byte[])dr["PathwaysImage"]
                         };
                     }
                 }
@@ -221,13 +224,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         buildings.Add(new Buildings
                         {
-                            BuildingNumber = Convert.ToInt32(dr["BuildingNumber"]),
-                            FloorsNumber = Convert.ToInt32(dr["FloorsNumber"]),
-                            CompanyID = Convert.ToInt32(dr["CompanyID"]),
-                            BuildingID = Convert.ToInt32(dr["BuildingID"]),
-                            MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"],
-                            PathwaysImage = (byte[])dr["PathwaysImage"]
+                            BuildingNumber = dr["BuildingNumber"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingNumber"]),
+                            FloorsNumber = dr["FloorsNumber"] is DBNull ? 0 : Convert.ToInt32(dr["FloorsNumber"]),
+                            CompanyID = dr["CompanyID"] is DBNull ? 0 : Convert.ToInt32(dr["CompanyID"]),
+                            BuildingID = dr["BuildingID"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingID"]),
+                            MainWaterTankCapacity = dr["MainWaterTankCapacity"] is DBNull ? 0 : Convert.ToInt32(dr["MainWaterTankCapacity"]),
+                            GeometricImage = dr["GeometricImage"] is DBNull ? smallArray : (byte[])dr["GeometricImage"],
+                            GeometricImageURL = dr["GeometricImageURL"] is DBNull ? "" : Convert.ToString(dr["GeometricImageURL"]),
+                            PathwaysImage = dr["PathwaysImage"] is DBNull ? smallArray : (byte[])dr["PathwaysImage"]
                         });
                     }
                 }
@@ -264,13 +268,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         buildings.Add(new Buildings
                         {
-                            BuildingNumber = Convert.ToInt32(dr["BuildingNumber"]),
-                            FloorsNumber = Convert.ToInt32(dr["FloorsNumber"]),
-                            CompanyID = Convert.ToInt32(dr["CompanyID"]),
-                            BuildingID = Convert.ToInt32(dr["BuildingID"]),
-                            MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"],
-                            PathwaysImage = (byte[])dr["PathwaysImage"]
+                            BuildingNumber = dr["BuildingNumber"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingNumber"]),
+                            FloorsNumber = dr["FloorsNumber"] is DBNull ? 0 : Convert.ToInt32(dr["FloorsNumber"]),
+                            CompanyID = dr["CompanyID"] is DBNull ? 0 : Convert.ToInt32(dr["CompanyID"]),
+                            BuildingID = dr["BuildingID"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingID"]),
+                            MainWaterTankCapacity = dr["MainWaterTankCapacity"] is DBNull ? 0 : Convert.ToInt32(dr["MainWaterTankCapacity"]),
+                            GeometricImage = dr["GeometricImage"] is DBNull ? smallArray : (byte[])dr["GeometricImage"],
+                            GeometricImageURL = dr["GeometricImageURL"] is DBNull ? "" : Convert.ToString(dr["GeometricImageURL"]),
+                            PathwaysImage = dr["PathwaysImage"] is DBNull ? smallArray : (byte[])dr["PathwaysImage"]
                         });
                     }
                 }
@@ -307,13 +312,14 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {
                         buildings.Add(new Buildings
                         {
-                            BuildingNumber = Convert.ToInt32(dr["BuildingNumber"]),
-                            FloorsNumber = Convert.ToInt32(dr["FloorsNumber"]),
-                            CompanyID = Convert.ToInt32(dr["CompanyID"]),
-                            BuildingID = Convert.ToInt32(dr["BuildingID"]),
-                            MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"],
-                            PathwaysImage = (byte[])dr["PathwaysImage"]
+                            BuildingNumber = dr["BuildingNumber"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingNumber"]),
+                            FloorsNumber = dr["FloorsNumber"] is DBNull ? 0 : Convert.ToInt32(dr["FloorsNumber"]),
+                            CompanyID = dr["CompanyID"] is DBNull ? 0 : Convert.ToInt32(dr["CompanyID"]),
+                            BuildingID = dr["BuildingID"] is DBNull ? 0 : Convert.ToInt32(dr["BuildingID"]),
+                            MainWaterTankCapacity = dr["MainWaterTankCapacity"] is DBNull ? 0 : Convert.ToInt32(dr["MainWaterTankCapacity"]),
+                            GeometricImage = dr["GeometricImage"] is DBNull ? smallArray : (byte[])dr["GeometricImage"],
+                            GeometricImageURL= dr["GeometricImageURL"]  is DBNull ? "" : Convert.ToString(dr["GeometricImageURL"]),
+                            PathwaysImage = dr["PathwaysImage"] is DBNull ? smallArray : (byte[])dr["PathwaysImage"]
                         });
                     }
                 }

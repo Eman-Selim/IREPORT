@@ -164,10 +164,6 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyImage_DT = new C1.Win.C1Input.C1PictureBox();
             this.c1DockingTabPage8 = new C1.Win.C1Command.C1DockingTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.c1DockingTabPage6 = new C1.Win.C1Command.C1DockingTabPage();
             this.Deleted_SelectedManager = new System.Windows.Forms.Button();
@@ -299,6 +295,10 @@ namespace Incident_Reporting_App_Server
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.application_pnl_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Maxmized_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).BeginInit();
@@ -1793,42 +1793,6 @@ namespace Incident_Reporting_App_Server
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 345F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1491, 943);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // RightCompany_UC
-            // 
-            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.RightCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightCompany_UC.Location = new System.Drawing.Point(998, 288);
-            this.RightCompany_UC.Name = "RightCompany_UC";
-            this.RightCompany_UC.Size = new System.Drawing.Size(490, 306);
-            this.RightCompany_UC.TabIndex = 0;
-            // 
-            // FrontCompany_UC
-            // 
-            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.FrontCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FrontCompany_UC.Location = new System.Drawing.Point(505, 3);
-            this.FrontCompany_UC.Name = "FrontCompany_UC";
-            this.FrontCompany_UC.Size = new System.Drawing.Size(487, 279);
-            this.FrontCompany_UC.TabIndex = 1;
-            // 
-            // BackCompany_UC
-            // 
-            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.BackCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackCompany_UC.Location = new System.Drawing.Point(505, 600);
-            this.BackCompany_UC.Name = "BackCompany_UC";
-            this.BackCompany_UC.Size = new System.Drawing.Size(487, 340);
-            this.BackCompany_UC.TabIndex = 2;
-            // 
-            // LeftCompany_UC
-            // 
-            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 288);
-            this.LeftCompany_UC.Name = "LeftCompany_UC";
-            this.LeftCompany_UC.Size = new System.Drawing.Size(496, 306);
-            this.LeftCompany_UC.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -3569,6 +3533,42 @@ namespace Incident_Reporting_App_Server
             this.pictureBox5.Size = new System.Drawing.Size(159, 301);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
+            // 
+            // RightCompany_UC
+            // 
+            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.RightCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightCompany_UC.Location = new System.Drawing.Point(998, 288);
+            this.RightCompany_UC.Name = "RightCompany_UC";
+            this.RightCompany_UC.Size = new System.Drawing.Size(490, 306);
+            this.RightCompany_UC.TabIndex = 0;
+            // 
+            // FrontCompany_UC
+            // 
+            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.FrontCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FrontCompany_UC.Location = new System.Drawing.Point(505, 3);
+            this.FrontCompany_UC.Name = "FrontCompany_UC";
+            this.FrontCompany_UC.Size = new System.Drawing.Size(487, 279);
+            this.FrontCompany_UC.TabIndex = 1;
+            // 
+            // BackCompany_UC
+            // 
+            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.BackCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackCompany_UC.Location = new System.Drawing.Point(505, 600);
+            this.BackCompany_UC.Name = "BackCompany_UC";
+            this.BackCompany_UC.Size = new System.Drawing.Size(487, 340);
+            this.BackCompany_UC.TabIndex = 2;
+            // 
+            // LeftCompany_UC
+            // 
+            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 288);
+            this.LeftCompany_UC.Name = "LeftCompany_UC";
+            this.LeftCompany_UC.Size = new System.Drawing.Size(496, 306);
+            this.LeftCompany_UC.TabIndex = 3;
             // 
             // Main
             // 

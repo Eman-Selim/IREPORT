@@ -611,7 +611,7 @@ namespace Incident_Reporting_App_Server
                 floorNumbers.Text = Convert.ToString(buildings[selectedBuildingIndex].FloorsNumber);
                 mainTankCapacity.Text = Convert.ToString(buildings[selectedBuildingIndex].MainWaterTankCapacity);
                 GeoPicURL.Text = buildings[selectedBuildingIndex].GeometricImageURL;
-                 PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].PathwaysImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].PathwaysImage));
+                 PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].PathwaysImage == null|| buildings[selectedBuildingIndex].PathwaysImage.Length==2 ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].PathwaysImage));
 
                 BuildingGeoPic_DT.Image = buildings[selectedBuildingIndex].GeometricImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].GeometricImage));
                 Floors[] floor = buildings[selectedBuildingIndex].BuildingFloors;
