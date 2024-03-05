@@ -1330,76 +1330,7 @@ namespace IncidentReporting_WS
                 return null;
             }
         }
-        #endregion
-
-        #region ExitPathwaysSBL
-        ExitPathwaysSBL ExitPathwaysSBL_Obj = new ExitPathwaysSBL();
-
-        [WebMethod]
-        public ExitPathways ExitPathways_Insert(string username, string password, ExitPathways ExitPathway)
-        {
-            try
-            {
-               ExitPathways ExitPathways= new ExitPathways();
-                ExitPathways  =ExitPathwaysSBL_Obj.ExitPathways_Insert( username, password, ExitPathway);
-                return ExitPathways;
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-
-        [WebMethod]
-        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
-        {
-            try
-            {
-                bool flag = ExitPathwaysSBL_Obj.ExitPathways_Update(username, password, ExitPathway);
-                return flag;
-
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-
-        [WebMethod]
-        public ExitPathwaysCollection ExitPathways_Select_All(string username, string password)
-        {
-            try
-            {
-                ExitPathwaysCollection ExitPathways= new ExitPathwaysCollection();
-                ExitPathways  =ExitPathwaysSBL_Obj.ExitPathways_Select_All(username, password);
-                return ExitPathways;
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-
-        [WebMethod]
-        public ExitPathwaysCollection ExitPathways_Select_By_BuildingID(string username, string password, int BuildingID)
-        {
-            try
-            {
-                ExitPathwaysCollection ExitPathways= new ExitPathwaysCollection();
-                ExitPathways  =ExitPathwaysSBL_Obj.ExitPathways_Select_By_BuildingID(username,password,BuildingID);
-                return ExitPathways;
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-
-
-        #endregion
+        #endregion    
 
         #region DeathSBL
             DeathSBL DeathSBL_Obj= new DeathSBL();
@@ -2330,7 +2261,6 @@ namespace IncidentReporting_WS
                 {
                     Buildings_Array[loop].BuildingFloors = Floors_Select_By_BuildingID(username, password, Buildings_Array[loop].BuildingID);
                     Buildings_Array[loop].BuildingImageCollection = Images_Select_By_BuildingID(username, password, Buildings_Array[loop].BuildingID);
-                    Buildings_Array[loop].BuildingExitPaths = ExitPathways_Select_By_BuildingID(username, password, Buildings_Array[loop].BuildingID);
                 }
             return Buildings_Array;
         }

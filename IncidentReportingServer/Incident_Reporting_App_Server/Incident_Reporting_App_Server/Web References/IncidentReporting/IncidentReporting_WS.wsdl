@@ -2,19 +2,19 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="Company_Select_By_OxygenTrapLocation">
+      <s:element name="Company_Select_By_UserID">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OxygenTrapLocation" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Company_Select_By_OxygenTrapLocationResponse">
+      <s:element name="Company_Select_By_UserIDResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_OxygenTrapLocationResult" type="tns:ArrayOfICompany" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_UserIDResult" type="tns:ArrayOfICompany" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -85,7 +85,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="GeometricImageURL" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="BuildingFloors" type="tns:ArrayOfFloors" />
           <s:element minOccurs="0" maxOccurs="1" name="BuildingImageCollection" type="tns:ArrayOfImages" />
-          <s:element minOccurs="0" maxOccurs="1" name="BuildingExitPaths" type="tns:ArrayOfExitPathways" />
+          <s:element minOccurs="0" maxOccurs="1" name="PathwaysImage" type="s:base64Binary" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfFloors">
@@ -119,20 +119,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:base64Binary" />
           <s:element minOccurs="1" maxOccurs="1" name="ImageID" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="ImageURL" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfExitPathways">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ExitPathways" nillable="true" type="tns:ExitPathways" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ExitPathways">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="PathwaysImage" type="s:base64Binary" />
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="PathwaysImageURL" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ExitPathwaysID" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfManagers">
@@ -223,70 +209,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="AccidentID" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:element name="Company_Select_By_RightCompanyBusiness">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightCompanyBusinessResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyBusinessResult" type="tns:ArrayOfICompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightCompanyName">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightCompanyNameResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyNameResult" type="tns:ArrayOfICompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightFireMediator">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RightFireMediator" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_RightFireMediatorResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightFireMediatorResult" type="tns:ArrayOfICompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_UserID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Company_Select_By_UserIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_UserIDResult" type="tns:ArrayOfICompany" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="Managers_Delete">
         <s:complexType>
           <s:sequence>
@@ -2095,69 +2017,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ExitPathways_Insert">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ExitPathway" type="tns:ExitPathways" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ExitPathways_InsertResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ExitPathways_InsertResult" type="tns:ExitPathways" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ExitPathways_Update">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ExitPathway" type="tns:ExitPathways" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ExitPathways_UpdateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ExitPathways_UpdateResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ExitPathways_Select_All">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ExitPathways_Select_AllResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ExitPathways_Select_AllResult" type="tns:ArrayOfExitPathways" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ExitPathways_Select_By_BuildingID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ExitPathways_Select_By_BuildingIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ExitPathways_Select_By_BuildingIDResult" type="tns:ArrayOfExitPathways" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="Death_Delete">
         <s:complexType>
           <s:sequence>
@@ -2811,32 +2670,72 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Company_Select_By_OxygenTrapLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OxygenTrapLocation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_OxygenTrapLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_OxygenTrapLocationResult" type="tns:ArrayOfICompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightCompanyBusiness">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyBusiness" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightCompanyBusinessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyBusinessResult" type="tns:ArrayOfICompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightCompanyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightCompanyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightCompanyNameResult" type="tns:ArrayOfICompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightFireMediator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightFireMediator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Company_Select_By_RightFireMediatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Select_By_RightFireMediatorResult" type="tns:ArrayOfICompany" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocation" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocationResponse" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusiness" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusinessResponse" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyNameSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyName" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightCompanyNameSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyNameResponse" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightFireMediatorSoapIn">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediator" />
-  </wsdl:message>
-  <wsdl:message name="Company_Select_By_RightFireMediatorSoapOut">
-    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediatorResponse" />
-  </wsdl:message>
   <wsdl:message name="Company_Select_By_UserIDSoapIn">
     <wsdl:part name="parameters" element="tns:Company_Select_By_UserID" />
   </wsdl:message>
@@ -3491,30 +3390,6 @@
   <wsdl:message name="FF_ManPower_Select_By_FF_IDSoapOut">
     <wsdl:part name="parameters" element="tns:FF_ManPower_Select_By_FF_IDResponse" />
   </wsdl:message>
-  <wsdl:message name="ExitPathways_InsertSoapIn">
-    <wsdl:part name="parameters" element="tns:ExitPathways_Insert" />
-  </wsdl:message>
-  <wsdl:message name="ExitPathways_InsertSoapOut">
-    <wsdl:part name="parameters" element="tns:ExitPathways_InsertResponse" />
-  </wsdl:message>
-  <wsdl:message name="ExitPathways_UpdateSoapIn">
-    <wsdl:part name="parameters" element="tns:ExitPathways_Update" />
-  </wsdl:message>
-  <wsdl:message name="ExitPathways_UpdateSoapOut">
-    <wsdl:part name="parameters" element="tns:ExitPathways_UpdateResponse" />
-  </wsdl:message>
-  <wsdl:message name="ExitPathways_Select_AllSoapIn">
-    <wsdl:part name="parameters" element="tns:ExitPathways_Select_All" />
-  </wsdl:message>
-  <wsdl:message name="ExitPathways_Select_AllSoapOut">
-    <wsdl:part name="parameters" element="tns:ExitPathways_Select_AllResponse" />
-  </wsdl:message>
-  <wsdl:message name="ExitPathways_Select_By_BuildingIDSoapIn">
-    <wsdl:part name="parameters" element="tns:ExitPathways_Select_By_BuildingID" />
-  </wsdl:message>
-  <wsdl:message name="ExitPathways_Select_By_BuildingIDSoapOut">
-    <wsdl:part name="parameters" element="tns:ExitPathways_Select_By_BuildingIDResponse" />
-  </wsdl:message>
   <wsdl:message name="Death_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:Death_Delete" />
   </wsdl:message>
@@ -3761,23 +3636,31 @@
   <wsdl:message name="Company_Select_By_NameSoapOut">
     <wsdl:part name="parameters" element="tns:Company_Select_By_NameResponse" />
   </wsdl:message>
+  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocation" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_OxygenTrapLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_OxygenTrapLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusiness" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightCompanyBusinessSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightCompanyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyName" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightCompanyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightCompanyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightFireMediatorSoapIn">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediator" />
+  </wsdl:message>
+  <wsdl:message name="Company_Select_By_RightFireMediatorSoapOut">
+    <wsdl:part name="parameters" element="tns:Company_Select_By_RightFireMediatorResponse" />
+  </wsdl:message>
   <wsdl:portType name="IncidentReporting_WSSoap">
-    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
-      <wsdl:input message="tns:Company_Select_By_OxygenTrapLocationSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_OxygenTrapLocationSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
-      <wsdl:input message="tns:Company_Select_By_RightCompanyBusinessSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_RightCompanyBusinessSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyName">
-      <wsdl:input message="tns:Company_Select_By_RightCompanyNameSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_RightCompanyNameSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightFireMediator">
-      <wsdl:input message="tns:Company_Select_By_RightFireMediatorSoapIn" />
-      <wsdl:output message="tns:Company_Select_By_RightFireMediatorSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_UserID">
       <wsdl:input message="tns:Company_Select_By_UserIDSoapIn" />
       <wsdl:output message="tns:Company_Select_By_UserIDSoapOut" />
@@ -4214,22 +4097,6 @@
       <wsdl:input message="tns:FF_ManPower_Select_By_FF_IDSoapIn" />
       <wsdl:output message="tns:FF_ManPower_Select_By_FF_IDSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Insert">
-      <wsdl:input message="tns:ExitPathways_InsertSoapIn" />
-      <wsdl:output message="tns:ExitPathways_InsertSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Update">
-      <wsdl:input message="tns:ExitPathways_UpdateSoapIn" />
-      <wsdl:output message="tns:ExitPathways_UpdateSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Select_All">
-      <wsdl:input message="tns:ExitPathways_Select_AllSoapIn" />
-      <wsdl:output message="tns:ExitPathways_Select_AllSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Select_By_BuildingID">
-      <wsdl:input message="tns:ExitPathways_Select_By_BuildingIDSoapIn" />
-      <wsdl:output message="tns:ExitPathways_Select_By_BuildingIDSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="Death_Delete">
       <wsdl:input message="tns:Death_DeleteSoapIn" />
       <wsdl:output message="tns:Death_DeleteSoapOut" />
@@ -4394,45 +4261,25 @@
       <wsdl:input message="tns:Company_Select_By_NameSoapIn" />
       <wsdl:output message="tns:Company_Select_By_NameSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
+      <wsdl:input message="tns:Company_Select_By_OxygenTrapLocationSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_OxygenTrapLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
+      <wsdl:input message="tns:Company_Select_By_RightCompanyBusinessSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_RightCompanyBusinessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightCompanyName">
+      <wsdl:input message="tns:Company_Select_By_RightCompanyNameSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_RightCompanyNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightFireMediator">
+      <wsdl:input message="tns:Company_Select_By_RightFireMediatorSoapIn" />
+      <wsdl:output message="tns:Company_Select_By_RightFireMediatorSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="IncidentReporting_WSSoap" type="tns:IncidentReporting_WSSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightCompanyName">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Company_Select_By_RightFireMediator">
-      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Company_Select_By_UserID">
       <soap:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
       <wsdl:input>
@@ -5414,42 +5261,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Insert">
-      <soap:operation soapAction="http://tempuri.org/ExitPathways_Insert" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Update">
-      <soap:operation soapAction="http://tempuri.org/ExitPathways_Update" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Select_All">
-      <soap:operation soapAction="http://tempuri.org/ExitPathways_Select_All" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Select_By_BuildingID">
-      <soap:operation soapAction="http://tempuri.org/ExitPathways_Select_By_BuildingID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Death_Delete">
       <soap:operation soapAction="http://tempuri.org/Death_Delete" style="document" />
       <wsdl:input>
@@ -5819,45 +5630,45 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="IncidentReporting_WSSoap12" type="tns:IncidentReporting_WSSoap">
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightCompanyName">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_RightFireMediator">
-      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
+      <soap:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IncidentReporting_WSSoap12" type="tns:IncidentReporting_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Company_Select_By_UserID">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_UserID" style="document" />
       <wsdl:input>
@@ -6839,42 +6650,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Insert">
-      <soap12:operation soapAction="http://tempuri.org/ExitPathways_Insert" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Update">
-      <soap12:operation soapAction="http://tempuri.org/ExitPathways_Update" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Select_All">
-      <soap12:operation soapAction="http://tempuri.org/ExitPathways_Select_All" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ExitPathways_Select_By_BuildingID">
-      <soap12:operation soapAction="http://tempuri.org/ExitPathways_Select_By_BuildingID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Death_Delete">
       <soap12:operation soapAction="http://tempuri.org/Death_Delete" style="document" />
       <wsdl:input>
@@ -7237,6 +7012,42 @@
     </wsdl:operation>
     <wsdl:operation name="Company_Select_By_Name">
       <soap12:operation soapAction="http://tempuri.org/Company_Select_By_Name" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_OxygenTrapLocation">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_OxygenTrapLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightCompanyBusiness">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyBusiness" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightCompanyName">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightCompanyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Company_Select_By_RightFireMediator">
+      <soap12:operation soapAction="http://tempuri.org/Company_Select_By_RightFireMediator" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

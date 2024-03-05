@@ -29,14 +29,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
     [System.Web.Services.WebServiceBindingAttribute(Name="IncidentReporting_WSSoap", Namespace="http://tempuri.org/")]
     public partial class IncidentReporting_WS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback Company_Select_By_OxygenTrapLocationOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyBusinessOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyNameOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Company_Select_By_RightFireMediatorOperationCompleted;
-        
         private System.Threading.SendOrPostCallback Company_Select_By_UserIDOperationCompleted;
         
         private System.Threading.SendOrPostCallback Managers_DeleteOperationCompleted;
@@ -255,14 +247,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         private System.Threading.SendOrPostCallback FF_ManPower_Select_By_FF_IDOperationCompleted;
         
-        private System.Threading.SendOrPostCallback ExitPathways_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ExitPathways_UpdateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ExitPathways_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback ExitPathways_Select_By_BuildingIDOperationCompleted;
-        
         private System.Threading.SendOrPostCallback Death_DeleteOperationCompleted;
         
         private System.Threading.SendOrPostCallback Death_InsertOperationCompleted;
@@ -345,11 +329,19 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         private System.Threading.SendOrPostCallback Company_Select_By_NameOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Company_Select_By_OxygenTrapLocationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyBusinessOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Company_Select_By_RightCompanyNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Company_Select_By_RightFireMediatorOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
         public IncidentReporting_WS() {
-            this.Url = global::Incident_Reporting_App_Server.Properties.Settings.Default.Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS;
+            this.Url = global::Incident_Reporting_App_Server.Properties.Settings.Default.Incident_Reporting_App_Server_IncidentReporting_IncidentReporting_WS;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -382,18 +374,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
-        
-        /// <remarks/>
-        public event Company_Select_By_OxygenTrapLocationCompletedEventHandler Company_Select_By_OxygenTrapLocationCompleted;
-        
-        /// <remarks/>
-        public event Company_Select_By_RightCompanyBusinessCompletedEventHandler Company_Select_By_RightCompanyBusinessCompleted;
-        
-        /// <remarks/>
-        public event Company_Select_By_RightCompanyNameCompletedEventHandler Company_Select_By_RightCompanyNameCompleted;
-        
-        /// <remarks/>
-        public event Company_Select_By_RightFireMediatorCompletedEventHandler Company_Select_By_RightFireMediatorCompleted;
         
         /// <remarks/>
         public event Company_Select_By_UserIDCompletedEventHandler Company_Select_By_UserIDCompleted;
@@ -723,18 +703,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         public event FF_ManPower_Select_By_FF_IDCompletedEventHandler FF_ManPower_Select_By_FF_IDCompleted;
         
         /// <remarks/>
-        public event ExitPathways_InsertCompletedEventHandler ExitPathways_InsertCompleted;
-        
-        /// <remarks/>
-        public event ExitPathways_UpdateCompletedEventHandler ExitPathways_UpdateCompleted;
-        
-        /// <remarks/>
-        public event ExitPathways_Select_AllCompletedEventHandler ExitPathways_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event ExitPathways_Select_By_BuildingIDCompletedEventHandler ExitPathways_Select_By_BuildingIDCompleted;
-        
-        /// <remarks/>
         public event Death_DeleteCompletedEventHandler Death_DeleteCompleted;
         
         /// <remarks/>
@@ -858,136 +826,16 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         public event Company_Select_By_NameCompletedEventHandler Company_Select_By_NameCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_OxygenTrapLocation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ICompany[] Company_Select_By_OxygenTrapLocation(string username, string password, string OxygenTrapLocation) {
-            object[] results = this.Invoke("Company_Select_By_OxygenTrapLocation", new object[] {
-                        username,
-                        password,
-                        OxygenTrapLocation});
-            return ((ICompany[])(results[0]));
-        }
+        public event Company_Select_By_OxygenTrapLocationCompletedEventHandler Company_Select_By_OxygenTrapLocationCompleted;
         
         /// <remarks/>
-        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation) {
-            this.Company_Select_By_OxygenTrapLocationAsync(username, password, OxygenTrapLocation, null);
-        }
+        public event Company_Select_By_RightCompanyBusinessCompletedEventHandler Company_Select_By_RightCompanyBusinessCompleted;
         
         /// <remarks/>
-        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation, object userState) {
-            if ((this.Company_Select_By_OxygenTrapLocationOperationCompleted == null)) {
-                this.Company_Select_By_OxygenTrapLocationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_OxygenTrapLocationOperationCompleted);
-            }
-            this.InvokeAsync("Company_Select_By_OxygenTrapLocation", new object[] {
-                        username,
-                        password,
-                        OxygenTrapLocation}, this.Company_Select_By_OxygenTrapLocationOperationCompleted, userState);
-        }
-        
-        private void OnCompany_Select_By_OxygenTrapLocationOperationCompleted(object arg) {
-            if ((this.Company_Select_By_OxygenTrapLocationCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Company_Select_By_OxygenTrapLocationCompleted(this, new Company_Select_By_OxygenTrapLocationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
+        public event Company_Select_By_RightCompanyNameCompletedEventHandler Company_Select_By_RightCompanyNameCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyBusiness", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ICompany[] Company_Select_By_RightCompanyBusiness(string username, string password, string RightCompanyBusiness) {
-            object[] results = this.Invoke("Company_Select_By_RightCompanyBusiness", new object[] {
-                        username,
-                        password,
-                        RightCompanyBusiness});
-            return ((ICompany[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness) {
-            this.Company_Select_By_RightCompanyBusinessAsync(username, password, RightCompanyBusiness, null);
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness, object userState) {
-            if ((this.Company_Select_By_RightCompanyBusinessOperationCompleted == null)) {
-                this.Company_Select_By_RightCompanyBusinessOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightCompanyBusinessOperationCompleted);
-            }
-            this.InvokeAsync("Company_Select_By_RightCompanyBusiness", new object[] {
-                        username,
-                        password,
-                        RightCompanyBusiness}, this.Company_Select_By_RightCompanyBusinessOperationCompleted, userState);
-        }
-        
-        private void OnCompany_Select_By_RightCompanyBusinessOperationCompleted(object arg) {
-            if ((this.Company_Select_By_RightCompanyBusinessCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Company_Select_By_RightCompanyBusinessCompleted(this, new Company_Select_By_RightCompanyBusinessCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ICompany[] Company_Select_By_RightCompanyName(string username, string password, string RightCompanyName) {
-            object[] results = this.Invoke("Company_Select_By_RightCompanyName", new object[] {
-                        username,
-                        password,
-                        RightCompanyName});
-            return ((ICompany[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightCompanyNameAsync(string username, string password, string RightCompanyName) {
-            this.Company_Select_By_RightCompanyNameAsync(username, password, RightCompanyName, null);
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightCompanyNameAsync(string username, string password, string RightCompanyName, object userState) {
-            if ((this.Company_Select_By_RightCompanyNameOperationCompleted == null)) {
-                this.Company_Select_By_RightCompanyNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightCompanyNameOperationCompleted);
-            }
-            this.InvokeAsync("Company_Select_By_RightCompanyName", new object[] {
-                        username,
-                        password,
-                        RightCompanyName}, this.Company_Select_By_RightCompanyNameOperationCompleted, userState);
-        }
-        
-        private void OnCompany_Select_By_RightCompanyNameOperationCompleted(object arg) {
-            if ((this.Company_Select_By_RightCompanyNameCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Company_Select_By_RightCompanyNameCompleted(this, new Company_Select_By_RightCompanyNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightFireMediator", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ICompany[] Company_Select_By_RightFireMediator(string username, string password, string RightFireMediator) {
-            object[] results = this.Invoke("Company_Select_By_RightFireMediator", new object[] {
-                        username,
-                        password,
-                        RightFireMediator});
-            return ((ICompany[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightFireMediatorAsync(string username, string password, string RightFireMediator) {
-            this.Company_Select_By_RightFireMediatorAsync(username, password, RightFireMediator, null);
-        }
-        
-        /// <remarks/>
-        public void Company_Select_By_RightFireMediatorAsync(string username, string password, string RightFireMediator, object userState) {
-            if ((this.Company_Select_By_RightFireMediatorOperationCompleted == null)) {
-                this.Company_Select_By_RightFireMediatorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightFireMediatorOperationCompleted);
-            }
-            this.InvokeAsync("Company_Select_By_RightFireMediator", new object[] {
-                        username,
-                        password,
-                        RightFireMediator}, this.Company_Select_By_RightFireMediatorOperationCompleted, userState);
-        }
-        
-        private void OnCompany_Select_By_RightFireMediatorOperationCompleted(object arg) {
-            if ((this.Company_Select_By_RightFireMediatorCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Company_Select_By_RightFireMediatorCompleted(this, new Company_Select_By_RightFireMediatorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
+        public event Company_Select_By_RightFireMediatorCompletedEventHandler Company_Select_By_RightFireMediatorCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_UserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -4563,136 +4411,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ExitPathways_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ExitPathways ExitPathways_Insert(string username, string password, ExitPathways ExitPathway) {
-            object[] results = this.Invoke("ExitPathways_Insert", new object[] {
-                        username,
-                        password,
-                        ExitPathway});
-            return ((ExitPathways)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_InsertAsync(string username, string password, ExitPathways ExitPathway) {
-            this.ExitPathways_InsertAsync(username, password, ExitPathway, null);
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_InsertAsync(string username, string password, ExitPathways ExitPathway, object userState) {
-            if ((this.ExitPathways_InsertOperationCompleted == null)) {
-                this.ExitPathways_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExitPathways_InsertOperationCompleted);
-            }
-            this.InvokeAsync("ExitPathways_Insert", new object[] {
-                        username,
-                        password,
-                        ExitPathway}, this.ExitPathways_InsertOperationCompleted, userState);
-        }
-        
-        private void OnExitPathways_InsertOperationCompleted(object arg) {
-            if ((this.ExitPathways_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExitPathways_InsertCompleted(this, new ExitPathways_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ExitPathways_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway) {
-            object[] results = this.Invoke("ExitPathways_Update", new object[] {
-                        username,
-                        password,
-                        ExitPathway});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_UpdateAsync(string username, string password, ExitPathways ExitPathway) {
-            this.ExitPathways_UpdateAsync(username, password, ExitPathway, null);
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_UpdateAsync(string username, string password, ExitPathways ExitPathway, object userState) {
-            if ((this.ExitPathways_UpdateOperationCompleted == null)) {
-                this.ExitPathways_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExitPathways_UpdateOperationCompleted);
-            }
-            this.InvokeAsync("ExitPathways_Update", new object[] {
-                        username,
-                        password,
-                        ExitPathway}, this.ExitPathways_UpdateOperationCompleted, userState);
-        }
-        
-        private void OnExitPathways_UpdateOperationCompleted(object arg) {
-            if ((this.ExitPathways_UpdateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExitPathways_UpdateCompleted(this, new ExitPathways_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ExitPathways_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ExitPathways[] ExitPathways_Select_All(string username, string password) {
-            object[] results = this.Invoke("ExitPathways_Select_All", new object[] {
-                        username,
-                        password});
-            return ((ExitPathways[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_Select_AllAsync(string username, string password) {
-            this.ExitPathways_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_Select_AllAsync(string username, string password, object userState) {
-            if ((this.ExitPathways_Select_AllOperationCompleted == null)) {
-                this.ExitPathways_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExitPathways_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("ExitPathways_Select_All", new object[] {
-                        username,
-                        password}, this.ExitPathways_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnExitPathways_Select_AllOperationCompleted(object arg) {
-            if ((this.ExitPathways_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExitPathways_Select_AllCompleted(this, new ExitPathways_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ExitPathways_Select_By_BuildingID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ExitPathways[] ExitPathways_Select_By_BuildingID(string username, string password, int BuildingID) {
-            object[] results = this.Invoke("ExitPathways_Select_By_BuildingID", new object[] {
-                        username,
-                        password,
-                        BuildingID});
-            return ((ExitPathways[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_Select_By_BuildingIDAsync(string username, string password, int BuildingID) {
-            this.ExitPathways_Select_By_BuildingIDAsync(username, password, BuildingID, null);
-        }
-        
-        /// <remarks/>
-        public void ExitPathways_Select_By_BuildingIDAsync(string username, string password, int BuildingID, object userState) {
-            if ((this.ExitPathways_Select_By_BuildingIDOperationCompleted == null)) {
-                this.ExitPathways_Select_By_BuildingIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExitPathways_Select_By_BuildingIDOperationCompleted);
-            }
-            this.InvokeAsync("ExitPathways_Select_By_BuildingID", new object[] {
-                        username,
-                        password,
-                        BuildingID}, this.ExitPathways_Select_By_BuildingIDOperationCompleted, userState);
-        }
-        
-        private void OnExitPathways_Select_By_BuildingIDOperationCompleted(object arg) {
-            if ((this.ExitPathways_Select_By_BuildingIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ExitPathways_Select_By_BuildingIDCompleted(this, new ExitPathways_Select_By_BuildingIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Death_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool Death_Delete(string username, string password, int DeathID) {
             object[] results = this.Invoke("Death_Delete", new object[] {
@@ -6040,6 +5758,138 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_OxygenTrapLocation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public ICompany[] Company_Select_By_OxygenTrapLocation(string username, string password, string OxygenTrapLocation) {
+            object[] results = this.Invoke("Company_Select_By_OxygenTrapLocation", new object[] {
+                        username,
+                        password,
+                        OxygenTrapLocation});
+            return ((ICompany[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation) {
+            this.Company_Select_By_OxygenTrapLocationAsync(username, password, OxygenTrapLocation, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_OxygenTrapLocationAsync(string username, string password, string OxygenTrapLocation, object userState) {
+            if ((this.Company_Select_By_OxygenTrapLocationOperationCompleted == null)) {
+                this.Company_Select_By_OxygenTrapLocationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_OxygenTrapLocationOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_OxygenTrapLocation", new object[] {
+                        username,
+                        password,
+                        OxygenTrapLocation}, this.Company_Select_By_OxygenTrapLocationOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_OxygenTrapLocationOperationCompleted(object arg) {
+            if ((this.Company_Select_By_OxygenTrapLocationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_OxygenTrapLocationCompleted(this, new Company_Select_By_OxygenTrapLocationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyBusiness", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public ICompany[] Company_Select_By_RightCompanyBusiness(string username, string password, string RightCompanyBusiness) {
+            object[] results = this.Invoke("Company_Select_By_RightCompanyBusiness", new object[] {
+                        username,
+                        password,
+                        RightCompanyBusiness});
+            return ((ICompany[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness) {
+            this.Company_Select_By_RightCompanyBusinessAsync(username, password, RightCompanyBusiness, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightCompanyBusinessAsync(string username, string password, string RightCompanyBusiness, object userState) {
+            if ((this.Company_Select_By_RightCompanyBusinessOperationCompleted == null)) {
+                this.Company_Select_By_RightCompanyBusinessOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightCompanyBusinessOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_RightCompanyBusiness", new object[] {
+                        username,
+                        password,
+                        RightCompanyBusiness}, this.Company_Select_By_RightCompanyBusinessOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_RightCompanyBusinessOperationCompleted(object arg) {
+            if ((this.Company_Select_By_RightCompanyBusinessCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_RightCompanyBusinessCompleted(this, new Company_Select_By_RightCompanyBusinessCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightCompanyName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public ICompany[] Company_Select_By_RightCompanyName(string username, string password, string RightCompanyName) {
+            object[] results = this.Invoke("Company_Select_By_RightCompanyName", new object[] {
+                        username,
+                        password,
+                        RightCompanyName});
+            return ((ICompany[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightCompanyNameAsync(string username, string password, string RightCompanyName) {
+            this.Company_Select_By_RightCompanyNameAsync(username, password, RightCompanyName, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightCompanyNameAsync(string username, string password, string RightCompanyName, object userState) {
+            if ((this.Company_Select_By_RightCompanyNameOperationCompleted == null)) {
+                this.Company_Select_By_RightCompanyNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightCompanyNameOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_RightCompanyName", new object[] {
+                        username,
+                        password,
+                        RightCompanyName}, this.Company_Select_By_RightCompanyNameOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_RightCompanyNameOperationCompleted(object arg) {
+            if ((this.Company_Select_By_RightCompanyNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_RightCompanyNameCompleted(this, new Company_Select_By_RightCompanyNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_RightFireMediator", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public ICompany[] Company_Select_By_RightFireMediator(string username, string password, string RightFireMediator) {
+            object[] results = this.Invoke("Company_Select_By_RightFireMediator", new object[] {
+                        username,
+                        password,
+                        RightFireMediator});
+            return ((ICompany[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightFireMediatorAsync(string username, string password, string RightFireMediator) {
+            this.Company_Select_By_RightFireMediatorAsync(username, password, RightFireMediator, null);
+        }
+        
+        /// <remarks/>
+        public void Company_Select_By_RightFireMediatorAsync(string username, string password, string RightFireMediator, object userState) {
+            if ((this.Company_Select_By_RightFireMediatorOperationCompleted == null)) {
+                this.Company_Select_By_RightFireMediatorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCompany_Select_By_RightFireMediatorOperationCompleted);
+            }
+            this.InvokeAsync("Company_Select_By_RightFireMediator", new object[] {
+                        username,
+                        password,
+                        RightFireMediator}, this.Company_Select_By_RightFireMediatorOperationCompleted, userState);
+        }
+        
+        private void OnCompany_Select_By_RightFireMediatorOperationCompleted(object arg) {
+            if ((this.Company_Select_By_RightFireMediatorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Company_Select_By_RightFireMediatorCompleted(this, new Company_Select_By_RightFireMediatorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -6603,7 +6453,7 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         private Images[] buildingImageCollectionField;
         
-        private ExitPathways[] buildingExitPathsField;
+        private byte[] pathwaysImageField;
         
         /// <remarks/>
         public int BuildingNumber {
@@ -6697,12 +6547,13 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         }
         
         /// <remarks/>
-        public ExitPathways[] BuildingExitPaths {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] PathwaysImage {
             get {
-                return this.buildingExitPathsField;
+                return this.pathwaysImageField;
             }
             set {
-                this.buildingExitPathsField = value;
+                this.pathwaysImageField = value;
             }
         }
     }
@@ -8013,76 +7864,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class ExitPathways {
-        
-        private byte[] pathwaysImageField;
-        
-        private string descriptionField;
-        
-        private int buildingIDField;
-        
-        private string pathwaysImageURLField;
-        
-        private int exitPathwaysIDField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] PathwaysImage {
-            get {
-                return this.pathwaysImageField;
-            }
-            set {
-                this.pathwaysImageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int BuildingID {
-            get {
-                return this.buildingIDField;
-            }
-            set {
-                this.buildingIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string PathwaysImageURL {
-            get {
-                return this.pathwaysImageURLField;
-            }
-            set {
-                this.pathwaysImageURLField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ExitPathwaysID {
-            get {
-                return this.exitPathwaysIDField;
-            }
-            set {
-                this.exitPathwaysIDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Images {
         
         private string imageDescriptionField;
@@ -8143,110 +7924,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
             }
             set {
                 this.imageURLField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Company_Select_By_OxygenTrapLocationCompletedEventHandler(object sender, Company_Select_By_OxygenTrapLocationCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Company_Select_By_OxygenTrapLocationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Company_Select_By_OxygenTrapLocationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ICompany[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ICompany[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Company_Select_By_RightCompanyBusinessCompletedEventHandler(object sender, Company_Select_By_RightCompanyBusinessCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Company_Select_By_RightCompanyBusinessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Company_Select_By_RightCompanyBusinessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ICompany[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ICompany[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Company_Select_By_RightCompanyNameCompletedEventHandler(object sender, Company_Select_By_RightCompanyNameCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Company_Select_By_RightCompanyNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Company_Select_By_RightCompanyNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ICompany[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ICompany[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Company_Select_By_RightFireMediatorCompletedEventHandler(object sender, Company_Select_By_RightFireMediatorCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Company_Select_By_RightFireMediatorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Company_Select_By_RightFireMediatorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ICompany[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ICompany[])(this.results[0]));
             }
         }
     }
@@ -11087,110 +10764,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ExitPathways_InsertCompletedEventHandler(object sender, ExitPathways_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ExitPathways_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ExitPathways_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ExitPathways Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ExitPathways)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ExitPathways_UpdateCompletedEventHandler(object sender, ExitPathways_UpdateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ExitPathways_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ExitPathways_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ExitPathways_Select_AllCompletedEventHandler(object sender, ExitPathways_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ExitPathways_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ExitPathways_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ExitPathways[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ExitPathways[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ExitPathways_Select_By_BuildingIDCompletedEventHandler(object sender, ExitPathways_Select_By_BuildingIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ExitPathways_Select_By_BuildingIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ExitPathways_Select_By_BuildingIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ExitPathways[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ExitPathways[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void Death_DeleteCompletedEventHandler(object sender, Death_DeleteCompletedEventArgs e);
     
     /// <remarks/>
@@ -12242,6 +11815,110 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         private object[] results;
         
         internal Company_Select_By_NameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ICompany[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ICompany[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_OxygenTrapLocationCompletedEventHandler(object sender, Company_Select_By_OxygenTrapLocationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_OxygenTrapLocationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_OxygenTrapLocationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ICompany[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ICompany[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_RightCompanyBusinessCompletedEventHandler(object sender, Company_Select_By_RightCompanyBusinessCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_RightCompanyBusinessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_RightCompanyBusinessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ICompany[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ICompany[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_RightCompanyNameCompletedEventHandler(object sender, Company_Select_By_RightCompanyNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_RightCompanyNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_RightCompanyNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ICompany[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ICompany[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Company_Select_By_RightFireMediatorCompletedEventHandler(object sender, Company_Select_By_RightFireMediatorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Company_Select_By_RightFireMediatorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Company_Select_By_RightFireMediatorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

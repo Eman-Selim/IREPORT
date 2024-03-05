@@ -298,18 +298,7 @@ namespace Incident_Reporting_App_Server.Code
             }
         }
 
-        public ExitPathways Add_exitPath(ExitPathways exitPath)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.ExitPathways_Insert(UserName, Password, exitPath);
-            }
-            catch (Exception exception1)
-            {
-                Auditing.Error(exception1.Message);
-                return null;
-            }
-        }
+    
 
         public DangerousPlaces Add_DangerousPlace(DangerousPlaces Place)
         {
@@ -489,31 +478,7 @@ namespace Incident_Reporting_App_Server.Code
                 return false;
             }
         }
-        public bool Update_ExitPathways(ExitPathways path)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.ExitPathways_Update(UserName, Password, path);
-            }
-            catch (Exception exception1)
-            {
-                Auditing.Error(exception1.Message);
-                return false;
-            }
-        }
-
-        public ExitPathways[] ExitPathways_Select_By_BuildingID( int BuildingID)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.ExitPathways_Select_By_BuildingID(UserName, Password, BuildingID);
-            }
-            catch (Exception ex)
-            {
-                Auditing.Error(ex.Message);
-                return null;
-            }
-        }
+      
         public bool Update_FFPump(FF_pumps pump)
         {
             try

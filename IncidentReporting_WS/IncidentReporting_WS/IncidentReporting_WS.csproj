@@ -121,7 +121,6 @@
     <Compile Include="Code_Files\COL\CompanyCollection.cs" />
     <Compile Include="Code_Files\COL\DangerousPlacesCollection.cs" />
     <Compile Include="Code_Files\COL\DeathCollection.cs" />
-    <Compile Include="Code_Files\COL\ExitPathwaysCollection.cs" />
     <Compile Include="Code_Files\COL\FFstationsCollection.cs" />
     <Compile Include="Code_Files\COL\FF_ManPowerCollection.cs" />
     <Compile Include="Code_Files\COL\FF_pumpsCollection.cs" />
@@ -136,7 +135,6 @@
     <Compile Include="Code_Files\DAL\CompanyDAL.cs" />
     <Compile Include="Code_Files\DAL\DangerousPlacesDAL.cs" />
     <Compile Include="Code_Files\DAL\DeathDAL.cs" />
-    <Compile Include="Code_Files\DAL\ExitPathwaysDAL.cs" />
     <Compile Include="Code_Files\DAL\FFstationsDAL.cs" />
     <Compile Include="Code_Files\DAL\FF_ManPowerDAL.cs" />
     <Compile Include="Code_Files\DAL\FF_pumpsDAL.cs" />
@@ -152,7 +150,6 @@
     <Compile Include="Code_Files\ENL\Company.cs" />
     <Compile Include="Code_Files\ENL\DangerousPlaces.cs" />
     <Compile Include="Code_Files\ENL\Death.cs" />
-    <Compile Include="Code_Files\ENL\ExitPathways.cs" />
     <Compile Include="Code_Files\ENL\FFstations.cs" />
     <Compile Include="Code_Files\ENL\FF_ManPower.cs" />
     <Compile Include="Code_Files\ENL\FF_pumps.cs" />
@@ -167,7 +164,6 @@
     <Compile Include="Code_Files\SBL\CompanySBL.cs" />
     <Compile Include="Code_Files\SBL\DangerousPlacesSBL.cs" />
     <Compile Include="Code_Files\SBL\DeathSBL.cs" />
-    <Compile Include="Code_Files\SBL\ExitPathwaysSBL.cs" />
     <Compile Include="Code_Files\SBL\FFstationsSBL.cs" />
     <Compile Include="Code_Files\SBL\FF_ManPowerSBL.cs" />
     <Compile Include="Code_Files\SBL\FF_pumpsSBL.cs" />

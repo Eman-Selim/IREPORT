@@ -62,7 +62,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@CompanyID",buildings.CompanyID},
                     {"@MainWaterTankCapacity",buildings.MainWaterTankCapacity},
                     {"@GeometricImage",buildings.GeometricImage},
-                    {"@GeometricImageURL",buildings.GeometricImageURL }
+                    {"@GeometricImageURL",buildings.GeometricImageURL },
+                    {"@PathwaysImage",buildings.PathwaysImage }
 
                };
 
@@ -94,7 +95,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                     {"@CompanyID",buildings.CompanyID},
                     {"@BuildingID",buildings.BuildingID},
                     {"@MainWaterTankCapacity",buildings.MainWaterTankCapacity},
-                    {"@GeometricImage",buildings.GeometricImage}
+                    {"@GeometricImage",buildings.GeometricImage},
+                    {"@PathwaysImage",buildings.PathwaysImage }
 
 
                };
@@ -138,7 +140,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             CompanyID = Convert.ToInt32(dr["CompanyID"]),
                             BuildingID = Convert.ToInt32(dr["BuildingID"]),
                             MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"]
+                            GeometricImage = (byte[])dr["GeometricImage"],
+                            PathwaysImage=(byte[])dr["PathwaysImage"]
                         });
                     }
                 }
@@ -180,7 +183,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             CompanyID = Convert.ToInt32(dr["CompanyID"]),
                             BuildingID = Convert.ToInt32(dr["BuildingID"]),
                             MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"]
+                            GeometricImage = (byte[])dr["GeometricImage"],
+                            PathwaysImage = (byte[])dr["PathwaysImage"]
                         };
                     }
                 }
@@ -222,7 +226,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             CompanyID = Convert.ToInt32(dr["CompanyID"]),
                             BuildingID = Convert.ToInt32(dr["BuildingID"]),
                             MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"]
+                            GeometricImage = (byte[])dr["GeometricImage"],
+                            PathwaysImage = (byte[])dr["PathwaysImage"]
                         });
                     }
                 }
@@ -264,7 +269,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             CompanyID = Convert.ToInt32(dr["CompanyID"]),
                             BuildingID = Convert.ToInt32(dr["BuildingID"]),
                             MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"]
+                            GeometricImage = (byte[])dr["GeometricImage"],
+                            PathwaysImage = (byte[])dr["PathwaysImage"]
                         });
                     }
                 }
@@ -306,7 +312,8 @@ namespace IncidentReporting_WS.Code_Files.DAL
                             CompanyID = Convert.ToInt32(dr["CompanyID"]),
                             BuildingID = Convert.ToInt32(dr["BuildingID"]),
                             MainWaterTankCapacity = Convert.ToInt32(dr["MainWaterTankCapacity"]),
-                            GeometricImage = (byte[])dr["GeometricImage"]
+                            GeometricImage = (byte[])dr["GeometricImage"],
+                            PathwaysImage = (byte[])dr["PathwaysImage"]
                         });
                     }
                 }

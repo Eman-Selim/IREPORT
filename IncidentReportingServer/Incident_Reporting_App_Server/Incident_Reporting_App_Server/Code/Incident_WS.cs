@@ -956,62 +956,7 @@ namespace Incident_Reporting_App_Server.Code
         }
         #endregion
 
-        #region ExitPathways
-
-        public ExitPathways ExitPathways_Insert(string username, string password, ExitPathways ExitPathway)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.ExitPathways_Insert(username, password, ExitPathway);
-            }
-            catch (Exception ex)
-            {
-                Auditing.Error(ex.Message);
-                return null;
-            }
-        }
-
-        public bool ExitPathways_Update(string username, string password, ExitPathways ExitPathway)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.ExitPathways_Update(username, password, ExitPathway);
-            }
-            catch (Exception ex)
-            {
-                Auditing.Error(ex.Message);
-                return false;
-            }
-        }
-
-        public ExitPathways[] ExitPathways_Select_All(string username, string password)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.ExitPathways_Select_All(username, password);
-            }
-            catch (Exception ex)
-            {
-                Auditing.Error(ex.Message);
-                return null;
-            }
-        }
-
-        public ExitPathways[] ExitPathways_Select_By_BuildingID(string username, string password, int BuildingID)
-        {
-            try
-            {
-                return IncidentReporting_WS_Obj.ExitPathways_Select_By_BuildingID(username, password, BuildingID);
-            }
-            catch (Exception ex)
-            {
-                Auditing.Error(ex.Message);
-                return null;
-            }
-        }
-
-
-        #endregion
+      
 
         #region Death
 

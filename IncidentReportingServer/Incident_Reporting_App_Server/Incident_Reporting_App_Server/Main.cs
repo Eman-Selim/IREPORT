@@ -150,14 +150,9 @@ namespace Incident_Reporting_App_Server
             TB_CompanyBuisiness_DT.Text = selectedCompany.CompanyBuisiness;
             CB_Sector_DT.Text = selectedCompany.sector == null? "" : selectedCompany.sector.ToString();
             TB_CompanyImage_DT.Image = selectedCompany.CompanyImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.CompanyImage));
-            //if (selectedCompany.companyBuildings != null)
-            //{
-            //    ExitPathways[] exitPathWays = selectedCompany.companyBuildings[0].BuildingExitPaths;
-            //    if (exitPathWays != null)
+
             PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
-            //    else
-            //        PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
-            //}
+
             TB_CompanyGeometeryImage_DT.Image = selectedCompany.CompanyGeometeryImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.CompanyGeometeryImage));
             ISSI.Text = selectedCompany.ISSI;
 
@@ -517,6 +512,7 @@ namespace Incident_Reporting_App_Server
                 building.MainWaterTankCapacity = mainTankCapacity.Text == null ? 0 : Convert.ToInt32(mainTankCapacity.Text);
                 building.GeometricImage = BuildingGeoPic_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(BuildingGeoPic_DT.Image);
                 building.GeometricImageURL = GeoPicURL.Text;
+                building.PathwaysImage= PB_ExitPathWayImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(PB_ExitPathWayImage_DT.Image);
                 Newbuildings.Add(building);
                 statusfeild.Text = "تم حفظ البيانات اضغط تعديل للمتابعة";
                 for (int i = 0; i < DG_Floors_DT.Rows.Count - 1; i++)
@@ -615,10 +611,8 @@ namespace Incident_Reporting_App_Server
                 floorNumbers.Text = Convert.ToString(buildings[selectedBuildingIndex].FloorsNumber);
                 mainTankCapacity.Text = Convert.ToString(buildings[selectedBuildingIndex].MainWaterTankCapacity);
                 GeoPicURL.Text = buildings[selectedBuildingIndex].GeometricImageURL;
-                if (buildings[selectedBuildingIndex].BuildingExitPaths != null)
-                    PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].BuildingExitPaths[0].PathwaysImage));
-                //else
-                //    PB_ExitPathWayImage_DT.Image = System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu)));
+                 PB_ExitPathWayImage_DT.Image = buildings[selectedBuildingIndex].PathwaysImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].PathwaysImage));
+
                 BuildingGeoPic_DT.Image = buildings[selectedBuildingIndex].GeometricImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(buildings[selectedBuildingIndex].GeometricImage));
                 Floors[] floor = buildings[selectedBuildingIndex].BuildingFloors;
                 int floor_length = floor != null ? floor.Length : 0;
@@ -737,13 +731,6 @@ namespace Incident_Reporting_App_Server
 
                 }
 
-                ExitPathways exitPathWay = new ExitPathways();
-                exitPathWay.BuildingID = B1.BuildingID;
-                exitPathWay.PathwaysImage = PB_ExitPathWayImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(PB_ExitPathWayImage_DT.Image);
-                exitPathWay.PathwaysImageURL = "";
-                exitPathWay.Description = "";
-                exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
-
             }
             DangerousPlaces place = new DangerousPlaces();
             place.Location = DangerouseLocation.Text;
@@ -814,10 +801,7 @@ namespace Incident_Reporting_App_Server
                 c1.CompanyImage = TB_CompanyImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyImage_DT.Image);
                 c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
                 c1.sector = CB_Sector_DT.SelectedItem == null ? "" : CB_Sector_DT.SelectedItem.ToString(); 
-                ExitPathways exitPathWay = new ExitPathways();
-                exitPathWay.PathwaysImage = PB_ExitPathWayImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(PB_ExitPathWayImage_DT.Image);
-                exitPathWay.PathwaysImageURL = "";
-                exitPathWay.Description = "";
+               
                 DangerousPlaces place = new DangerousPlaces();
                 place.Location = DangerouseLocation.Text;
                 place.HazardousSubstance = HazardousSubstance.Text;
@@ -835,11 +819,6 @@ namespace Incident_Reporting_App_Server
                
                     place.CompanyID = c1.CompanyID;
                     place = await Task.Run(() => server_Class_Obj.Add_DangerousPlace(place));
-                    //int Dplaces = c1.CompanyDangerousPlaces.Length > 0 ? c1.CompanyDangerousPlaces.Length : 0;
-                    //for (int i = 0; i < Dplaces; i++)
-                    //{
-                    //    await Task.Run(() => server_Class_Obj.Add_DangerousPlace(c1.CompanyDangerousPlaces[i]));
-                    //}
                 
                 if (flag == true)
                 {
@@ -868,28 +847,7 @@ namespace Incident_Reporting_App_Server
                                         floor = await Task.Run(() => server_Class_Obj.Add_Floors(c1.companyBuildings[i].BuildingFloors[j]));
                                     }
                                 }
-                                if (c1.companyBuildings[i].BuildingExitPaths != null)
-                                {
-                                    int BuildingExitPathsLength = c1.companyBuildings[i].BuildingExitPaths.Length > 0 ? c1.companyBuildings[i].BuildingExitPaths.Length : 0;
-                                    for (int j = 0; j < BuildingExitPathsLength; j++)
-                                    {
-                                        Floors floor = new Floors();
-                                        if (B1 != null)
-                                        {
-                                            c1.companyBuildings[i].BuildingExitPaths[j].BuildingID = B1.BuildingID;
-                                            //c1.companyBuildings[i].BuildingExitPaths[j].BuildingID = B1.BuildingID;
-                                            await Task.Run(() => server_Class_Obj.Add_exitPath(c1.companyBuildings[i].BuildingExitPaths[j]));
-
-                                        }
-                                            
-
-                                    }
-                                }
-                                else
-                                {
-                                    exitPathWay.BuildingID = B1.BuildingID;
-                                    exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
-                                }
+                               
 
                             }
                         }
@@ -907,8 +865,7 @@ namespace Incident_Reporting_App_Server
                             floor = await Task.Run(() => server_Class_Obj.Add_Floors(kvp.Value));
                         }
                         
-                        exitPathWay.BuildingID = B1.BuildingID;
-                        exitPathWay = await Task.Run(() => server_Class_Obj.Add_exitPath(exitPathWay));
+                       
                     }
 
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());

@@ -36,20 +36,20 @@ namespace Incident_Reporting_App_Server.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:7777/IncidentReporting/IncidentReporting_WS.asmx")]
-        public string Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.3:7777/IncidentReporting/incidentReporting_WS.asmx")]
+        public string Incident_Reporting_App_Server_Incident_WS_IncidentReporting_WS {
             get {
-                return ((string)(this["Incident_Reporting_App_Server_WebReference1_IncidentReporting_WS"]));
+                return ((string)(this["Incident_Reporting_App_Server_Incident_WS_IncidentReporting_WS"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.3:7777/IncidentReporting/incidentReporting_WS.asmx")]
-        public string Incident_Reporting_App_Server_Incident_WS_IncidentReporting_WS {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:7777/IncidentReporting/IncidentReporting_WS.asmx")]
+        public string Incident_Reporting_App_Server_IncidentReporting_IncidentReporting_WS {
             get {
-                return ((string)(this["Incident_Reporting_App_Server_Incident_WS_IncidentReporting_WS"]));
+                return ((string)(this["Incident_Reporting_App_Server_IncidentReporting_IncidentReporting_WS"]));
             }
         }
     }
