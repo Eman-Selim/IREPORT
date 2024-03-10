@@ -338,6 +338,7 @@ namespace Incident_Reporting_App_Server
         {
             station.CarsNumber = TB_CarsNumber_DT.Text == null ? "" : Convert.ToString(TB_CarsNumber_DT.Text);
             station.SoliderNumber = TB_SoliderNumber_DT.Text == null ? "" : Convert.ToString(TB_SoliderNumber_DT.Text);
+            station.AreaName= TB_area_DT.Text == null ? "" : Convert.ToString(TB_area_DT.Text);
             station.OfficersNumber = TB_OfficersNumber_DT.Text == null ? "" : Convert.ToString(TB_OfficersNumber_DT.Text);
             station.Sector = TB_sector_DT.Text == null ? "" : Convert.ToString(TB_sector_DT.Text);
             station.Signs = TB_signs_DT.Text == null ? "" : Convert.ToString(TB_signs_DT.Text);
@@ -371,21 +372,17 @@ namespace Incident_Reporting_App_Server
                     richTextBox1.ForeColor = Color.Red;
                     richTextBox1.Text = "فشلت العملية";
                 }
-
             }
             else if (st != null)
             {
                 richTextBox1.ForeColor = Color.YellowGreen;
                 richTextBox1.Text = " تم إضافة البيانات بنجاح";
             }
-                
             else
             {
                 richTextBox1.ForeColor = Color.Red;
                 richTextBox1.Text = "فشلت العملية";
             }
-
-
         }
 
         private async void EditStationsManPower_Click(object sender, EventArgs e)
@@ -393,6 +390,7 @@ namespace Incident_Reporting_App_Server
             station.CarsNumber = TB_CarsNumber_DT.Text == null ? "" : Convert.ToString(TB_CarsNumber_DT.Text);
             station.SoliderNumber = TB_SoliderNumber_DT.Text == null ? "" : Convert.ToString(TB_SoliderNumber_DT.Text);
             station.OfficersNumber = TB_OfficersNumber_DT.Text == null ? "" : Convert.ToString(TB_OfficersNumber_DT.Text);
+            station.AreaName= TB_area_DT.Text == null ? "" : Convert.ToString(TB_area_DT.Text);
             station.Sector = TB_sector_DT.Text == null ? "" : Convert.ToString(TB_sector_DT.Text);
             station.Signs = TB_signs_DT.Text == null ? "" : Convert.ToString(TB_signs_DT.Text);
             station.Street = TB_street_DT.Text == null ? "" : Convert.ToString(TB_street_DT.Text);
@@ -453,15 +451,15 @@ namespace Incident_Reporting_App_Server
             selectedStationIndex = cmb.SelectedIndex;
             if (points.Length >= selectedStationIndex)
             {
-                TB_sector_DT.Text = Convert.ToString(points[selectedStationIndex].Sector);
-                TB_area_DT.Text = Convert.ToString(points[selectedStationIndex].AreaName);
-                TB_street_DT.Text = Convert.ToString(points[selectedStationIndex].Street);
-                TB_signs_DT.Text = points[selectedStationIndex].Signs;
-                TB_Additional_info_DT.Text = points[selectedStationIndex].Additional_info;
+                TB_sector_DT.Text = points[selectedStationIndex].Sector==null?"": Convert.ToString(points[selectedStationIndex].Sector);
+                TB_area_DT.Text = points[selectedStationIndex].AreaName==null?"": Convert.ToString(points[selectedStationIndex].AreaName);
+                TB_street_DT.Text = points[selectedStationIndex].Street==null?"":Convert.ToString(points[selectedStationIndex].Street);
+                TB_signs_DT.Text = points[selectedStationIndex].Signs==null? "" : Convert.ToString(points[selectedStationIndex].Signs);
+                TB_Additional_info_DT.Text = points[selectedStationIndex].Additional_info==null?"": points[selectedStationIndex].Additional_info;
                 TB_OfficersNumber_DT.Text = points[selectedStationIndex].OfficersNumber == null ? "" : Convert.ToString(points[selectedStationIndex].OfficersNumber);
-                TB_SoliderNumber_DT.Text = points[selectedStationIndex].SoliderNumber;
-                TB_CarsNumber_DT.Text = points[selectedStationIndex].CarsNumber;
-                TB_Equipments_DT.Text = points[selectedStationIndex].Equipments;
+                TB_SoliderNumber_DT.Text = points[selectedStationIndex].SoliderNumber==null?"" : Convert.ToString(points[selectedStationIndex].SoliderNumber);
+                TB_CarsNumber_DT.Text = points[selectedStationIndex].CarsNumber==null?"": Convert.ToString(points[selectedStationIndex].CarsNumber);
+                TB_Equipments_DT.Text = points[selectedStationIndex].Equipments==null?"": Convert.ToString(points[selectedStationIndex].Equipments);
                 ff_ManPowerGrid.Rows.Clear();
                 int Station_ManPower_length = points[selectedStationIndex].Station_ManPower != null ? points[selectedStationIndex].Station_ManPower.Length : 0;
                 for (int i = 0; i < Station_ManPower_length; i++)
@@ -857,7 +855,7 @@ namespace Incident_Reporting_App_Server
                     {
                         Newbuildings[i].CompanyID = c1.CompanyID;
                         Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
-
+                        if(B1!=null)
                         foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
                         {
                             Floors floor = new Floors();
@@ -1098,6 +1096,12 @@ namespace Incident_Reporting_App_Server
                 user.AdminMode = "";
                 if (string.Compare(accountPassword.Text, ReAccountPassword.Text) == 0)
                 {
+                    if(accountPassword.Text == "**********")
+                    {
+                        AccountStatus.Text = "من فضلك ادخل الرقم السري ";
+                        
+                    }
+                    else
                     user.Password = accountPassword.Text;
                 }
                 user.UserID = Selected_User_ID;
@@ -1108,9 +1112,9 @@ namespace Incident_Reporting_App_Server
                 {
                     AccountStatus.ForeColor = Color.YellowGreen;
                     AccountStatus.Text = " تم تعديل المستخدم بنجاح";
-                    LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
-                    Load_User_Data(LoginAccount);
-                    Update_Incident_Reporting_trv_Companies();
+                    this.Close();
+                    Login f1 = new Login();
+                    f1.Show();
                 }
                 else
                 {

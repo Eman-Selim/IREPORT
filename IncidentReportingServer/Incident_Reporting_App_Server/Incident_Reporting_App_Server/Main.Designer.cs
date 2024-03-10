@@ -2150,7 +2150,7 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab4.ShowCaption = true;
             this.c1DockingTab4.ShowTabList = true;
             this.c1DockingTab4.ShowToolTips = true;
-            this.c1DockingTab4.Size = new System.Drawing.Size(273, 973);
+            this.c1DockingTab4.Size = new System.Drawing.Size(273, 946);
             this.c1DockingTab4.TabIndex = 1;
             this.c1DockingTab4.TabSizeMode = C1.Win.C1Command.TabSizeModeEnum.Fit;
             this.c1DockingTab4.TabsShowFocusCues = false;
@@ -2169,7 +2169,7 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage4.ImageIndex = 28;
             this.c1DockingTabPage4.Location = new System.Drawing.Point(3, 0);
             this.c1DockingTabPage4.Name = "c1DockingTabPage4";
-            this.c1DockingTabPage4.Size = new System.Drawing.Size(240, 973);
+            this.c1DockingTabPage4.Size = new System.Drawing.Size(240, 946);
             this.c1DockingTabPage4.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage4.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage4.TabForeColor = System.Drawing.Color.White;
@@ -2188,7 +2188,7 @@ namespace Incident_Reporting_App_Server
             this.treeView3.Name = "treeView3";
             this.treeView3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.treeView3.RightToLeftLayout = true;
-            this.treeView3.Size = new System.Drawing.Size(240, 953);
+            this.treeView3.Size = new System.Drawing.Size(240, 926);
             this.treeView3.TabIndex = 134;
             this.treeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect);
             // 
