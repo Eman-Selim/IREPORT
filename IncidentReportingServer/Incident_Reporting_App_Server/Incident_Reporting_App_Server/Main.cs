@@ -882,13 +882,25 @@ namespace Incident_Reporting_App_Server
 
         #region clear
 
-        private void Delete_SelectedBuilding_Click_1(object sender, EventArgs e)
+        private async void Delete_SelectedBuilding_Click_1(object sender, EventArgs e)
         {
             if (buildings == null)
                 statusfeild.Text = "من فضلك اختر المبنى";
             else
             {
-                server_Class_Obj.Delete_SelectedBuilding(buildings[selectedBuildingIndex].BuildingID);
+               bool flag= server_Class_Obj.Delete_SelectedBuilding(buildings[selectedBuildingIndex].BuildingID);
+                if(flag==true)
+                {
+                    statusfeild.ForeColor = Color.YellowGreen;
+                    statusfeild.Text = "تم مسح المبنى بنجاح";
+                    LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
+                    Update_Incident_Reporting_trv_Companies();
+                }
+                else
+                {
+                    statusfeild.ForeColor = Color.Red;
+                    statusfeild.Text = "فشل المسح";
+                }
 
             }
 

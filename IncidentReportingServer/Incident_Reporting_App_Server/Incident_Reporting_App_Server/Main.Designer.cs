@@ -1386,7 +1386,7 @@ namespace Incident_Reporting_App_Server
             this.Delete_SelectedBuilding.FlatAppearance.BorderSize = 0;
             this.Delete_SelectedBuilding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_SelectedBuilding.Image = ((System.Drawing.Image)(resources.GetObject("Delete_SelectedBuilding.Image")));
-            this.Delete_SelectedBuilding.Location = new System.Drawing.Point(146, 497);
+            this.Delete_SelectedBuilding.Location = new System.Drawing.Point(1307, 861);
             this.Delete_SelectedBuilding.Name = "Delete_SelectedBuilding";
             this.Delete_SelectedBuilding.Size = new System.Drawing.Size(47, 43);
             this.Delete_SelectedBuilding.TabIndex = 35;
@@ -1399,7 +1399,7 @@ namespace Incident_Reporting_App_Server
             this.AddBuildings.FlatAppearance.BorderSize = 0;
             this.AddBuildings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddBuildings.Image = ((System.Drawing.Image)(resources.GetObject("AddBuildings.Image")));
-            this.AddBuildings.Location = new System.Drawing.Point(93, 497);
+            this.AddBuildings.Location = new System.Drawing.Point(1254, 861);
             this.AddBuildings.Name = "AddBuildings";
             this.AddBuildings.Size = new System.Drawing.Size(51, 43);
             this.AddBuildings.TabIndex = 34;
@@ -1494,7 +1494,7 @@ namespace Incident_Reporting_App_Server
             this.deleteBuildingList.FlatAppearance.BorderSize = 0;
             this.deleteBuildingList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBuildingList.Image = ((System.Drawing.Image)(resources.GetObject("deleteBuildingList.Image")));
-            this.deleteBuildingList.Location = new System.Drawing.Point(48, 497);
+            this.deleteBuildingList.Location = new System.Drawing.Point(1209, 861);
             this.deleteBuildingList.Name = "deleteBuildingList";
             this.deleteBuildingList.Size = new System.Drawing.Size(48, 43);
             this.deleteBuildingList.TabIndex = 26;
@@ -1503,8 +1503,9 @@ namespace Incident_Reporting_App_Server
             // 
             // DG_Floors_DT
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             this.DG_Floors_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DG_Floors_DT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.DG_Floors_DT.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1537,7 +1538,7 @@ namespace Incident_Reporting_App_Server
             this.DG_Floors_DT.DefaultCellStyle = dataGridViewCellStyle13;
             this.DG_Floors_DT.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DG_Floors_DT.EnableHeadersVisualStyles = false;
-            this.DG_Floors_DT.Location = new System.Drawing.Point(0, 627);
+            this.DG_Floors_DT.Location = new System.Drawing.Point(0, 541);
             this.DG_Floors_DT.MultiSelect = false;
             this.DG_Floors_DT.Name = "DG_Floors_DT";
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -1548,7 +1549,7 @@ namespace Incident_Reporting_App_Server
             this.DG_Floors_DT.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.DG_Floors_DT.RowHeadersVisible = false;
             this.DG_Floors_DT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DG_Floors_DT.Size = new System.Drawing.Size(1491, 316);
+            this.DG_Floors_DT.Size = new System.Drawing.Size(1491, 402);
             this.DG_Floors_DT.TabIndex = 25;
             // 
             // FloorNumber
@@ -2150,7 +2151,7 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTab4.ShowCaption = true;
             this.c1DockingTab4.ShowTabList = true;
             this.c1DockingTab4.ShowToolTips = true;
-            this.c1DockingTab4.Size = new System.Drawing.Size(273, 946);
+            this.c1DockingTab4.Size = new System.Drawing.Size(273, 973);
             this.c1DockingTab4.TabIndex = 1;
             this.c1DockingTab4.TabSizeMode = C1.Win.C1Command.TabSizeModeEnum.Fit;
             this.c1DockingTab4.TabsShowFocusCues = false;
@@ -2169,7 +2170,7 @@ namespace Incident_Reporting_App_Server
             this.c1DockingTabPage4.ImageIndex = 28;
             this.c1DockingTabPage4.Location = new System.Drawing.Point(3, 0);
             this.c1DockingTabPage4.Name = "c1DockingTabPage4";
-            this.c1DockingTabPage4.Size = new System.Drawing.Size(240, 946);
+            this.c1DockingTabPage4.Size = new System.Drawing.Size(240, 973);
             this.c1DockingTabPage4.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage4.TabBackColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.c1DockingTabPage4.TabForeColor = System.Drawing.Color.White;
@@ -2188,7 +2189,7 @@ namespace Incident_Reporting_App_Server
             this.treeView3.Name = "treeView3";
             this.treeView3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.treeView3.RightToLeftLayout = true;
-            this.treeView3.Size = new System.Drawing.Size(240, 926);
+            this.treeView3.Size = new System.Drawing.Size(240, 953);
             this.treeView3.TabIndex = 134;
             this.treeView3.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView3_AfterSelect);
             // 
@@ -2810,8 +2811,9 @@ namespace Incident_Reporting_App_Server
             // DG_Pumps_DT
             // 
             this.DG_Pumps_DT.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
             dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             this.DG_Pumps_DT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
             this.DG_Pumps_DT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DG_Pumps_DT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
