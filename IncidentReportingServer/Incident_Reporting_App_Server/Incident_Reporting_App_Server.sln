@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incident_Reporting_App_Server", "Incident_Reporting_App_Server\Incident_Reporting_App_Server.csproj", "{9E0ADBB3-5F8E-4072-A239-3EA83879F836}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IR_Setup", "IR_Setup\IR_Setup.vdproj", "{3E380D38-4380-4C74-9367-B06D4C649EA9}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Incident Reporting", "Incident Reporting\Incident Reporting.vdproj", "{4F4DCE8B-BDA5-4A4C-86A2-3F52258D136E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{9E0ADBB3-5F8E-4072-A239-3EA83879F836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0ADBB3-5F8E-4072-A239-3EA83879F836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0ADBB3-5F8E-4072-A239-3EA83879F836}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E380D38-4380-4C74-9367-B06D4C649EA9}.Debug|Any CPU.ActiveCfg = Debug
-		{3E380D38-4380-4C74-9367-B06D4C649EA9}.Release|Any CPU.ActiveCfg = Release
+		{4F4DCE8B-BDA5-4A4C-86A2-3F52258D136E}.Debug|Any CPU.ActiveCfg = Debug
+		{4F4DCE8B-BDA5-4A4C-86A2-3F52258D136E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

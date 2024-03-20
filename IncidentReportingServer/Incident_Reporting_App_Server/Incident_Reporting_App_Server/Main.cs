@@ -747,6 +747,8 @@ namespace Incident_Reporting_App_Server
             M.Info = TB_SelectedUserInfo_DT.Text;
             M.CompanyID = Selected_Company_ID;
             M = server_Class_Obj.Add_Manager(M);
+            M.CompanyID = c1.CompanyID;
+            M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
             LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
              Update_Incident_Reporting_trv_Companies();
         }
@@ -855,16 +857,17 @@ namespace Incident_Reporting_App_Server
                     {
                         Newbuildings[i].CompanyID = c1.CompanyID;
                         Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
-                        if(B1!=null)
-                        foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
+
+                        foreach (var kvp in NewFloors)
                         {
                             Floors floor = new Floors();
                             kvp.Value.BuildingID = B1.BuildingID;
                             floor = await Task.Run(() => server_Class_Obj.Add_Floors(kvp.Value));
+
                         }
-                        
-                       
+
                     }
+                    
 
                     LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
                     Update_Incident_Reporting_trv_Companies();
