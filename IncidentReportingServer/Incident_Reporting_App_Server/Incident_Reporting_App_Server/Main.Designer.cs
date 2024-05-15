@@ -287,7 +287,7 @@ namespace Incident_Reporting_App_Server
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label28 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Log_out = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -3429,7 +3429,7 @@ namespace Incident_Reporting_App_Server
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(85)))));
-            this.panel16.Controls.Add(this.checkBox1);
+            this.panel16.Controls.Add(this.comboBox2);
             this.panel16.Controls.Add(this.Log_out);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel16.Location = new System.Drawing.Point(0, 21);
@@ -3437,20 +3437,17 @@ namespace Incident_Reporting_App_Server
             this.panel16.Size = new System.Drawing.Size(1762, 38);
             this.panel16.TabIndex = 137;
             // 
-            // checkBox1
+            // comboBox2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox1.Location = new System.Drawing.Point(1563, 7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(137, 28);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Check Alarm";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "تفعيل متابعة الإنذارات",
+            "تفعيل الإضافة والتعديل"});
+            this.comboBox2.Location = new System.Drawing.Point(1562, 11);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(171, 21);
+            this.comboBox2.TabIndex = 2;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // Log_out
             // 
@@ -3663,7 +3660,6 @@ namespace Incident_Reporting_App_Server
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -3915,9 +3911,9 @@ namespace Incident_Reporting_App_Server
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button Log_out;
         public System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label AccountStatus;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

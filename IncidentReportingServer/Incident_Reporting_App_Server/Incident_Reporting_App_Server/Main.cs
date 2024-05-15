@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Incident_Reporting_App_Server.IncidentReporting;
 using Incident_Reporting_App_Server.RemoteAlarm;
-using SDS_Remote_Control_Application_Server.Code;
+using Incident_Reporting_App_Server.Code;
 using System.Threading;
 using System.IO;
 
@@ -58,6 +58,15 @@ namespace Incident_Reporting_App_Server
             AlarmCheck_Thread = new Thread(CheckAlarm_Thread);
             AlarmCheck_Thread.Start();
             AlarmCheck_Thread.Priority = ThreadPriority.Highest;
+            AlarmCheck = true;
+            SaveAddedBuildings.Enabled = false;
+            EditCompany.Enabled = false;
+            DeleteCompany.Enabled = false;
+            Delete_SelectedBuilding.Enabled = false;
+            AddBuildings.Enabled = false;
+            deleteBuildingList.Enabled = false;
+            Delete_SelectedDangerous.Enabled = false;
+            Deleted_SelectedManager.Enabled = false;
         }
 
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
@@ -1181,7 +1190,7 @@ namespace Incident_Reporting_App_Server
                         CheckAlarm();
                     }
 
-                    Thread.Sleep(20000);
+                    Thread.Sleep(200);
                 }
             }
             catch (Exception ex)
@@ -1213,8 +1222,9 @@ namespace Incident_Reporting_App_Server
 
                                 selectedCompany = server_Class_Obj.Select_CompanyByISSI(a[i].RadioID.ToString());
                                 IRUser U1 = server_Class_Obj.Select_User(Selected_User_ID);
-
+                                if(selectedCompany!=null)
                                 Load_Data(selectedCompany);
+                                if(U1!=null)
                                 Load_User_Data(U1);
                                 break;
                             }
@@ -1568,17 +1578,7 @@ namespace Incident_Reporting_App_Server
             }
         }
         #endregion
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            try
-            {
-                AlarmCheck = !AlarmCheck;
-            }
-            catch (ThreadAbortException ex)
-            {
-                Thread.ResetAbort();
-            }
-        }
+       
 
         private void Log_out_Click_1(object sender, EventArgs e)
         {
@@ -1618,7 +1618,36 @@ namespace Incident_Reporting_App_Server
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == 0)
+            {
+                AlarmCheck = true;
+                SaveAddedBuildings.Enabled = false;
+                EditCompany.Enabled = false;
+                DeleteCompany.Enabled = false;
+                Delete_SelectedBuilding.Enabled = false;
+                AddBuildings.Enabled = false;
+                deleteBuildingList.Enabled = false;
+                Delete_SelectedDangerous.Enabled = false;
+                Deleted_SelectedManager.Enabled = false;
+            }
+                
+            else if (comboBox2.SelectedIndex == 1)
+            {
+                AlarmCheck = false;
+                SaveAddedBuildings.Enabled = true;
+                EditCompany.Enabled = true;
+                DeleteCompany.Enabled = true;
+                Delete_SelectedBuilding.Enabled = true;
+                AddBuildings.Enabled = true;
+                deleteBuildingList.Enabled = true;
+                Delete_SelectedDangerous.Enabled = true;
+                Deleted_SelectedManager.Enabled = true;
+            }
+                
+        }
     }
 }
 

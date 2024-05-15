@@ -77,7 +77,7 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
         
         /// <remarks/>
         public Remote_Alarms_Web_Service() {
-            this.Url = global::Incident_Reporting_App_Server.Properties.Settings.Default.Incident_Reporting_App_Server_WebReference_SC3_Alarm_Module_WS;
+            this.Url = global::Incident_Reporting_App_Server.Properties.Settings.Default.Incident_Reporting_App_Server_RemoteAlarm_Remote_Alarms_Web_Service;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -1061,6 +1061,8 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
         
         private string mobileNumberTwoField;
         
+        private string device_TypeField;
+        
         /// <remarks/>
         public int ID {
             get {
@@ -1210,6 +1212,16 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
                 this.mobileNumberTwoField = value;
             }
         }
+        
+        /// <remarks/>
+        public string Device_Type {
+            get {
+                return this.device_TypeField;
+            }
+            set {
+                this.device_TypeField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -1237,6 +1249,8 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
         private int acknowledegeField;
         
         private System.DateTime acknowledegeDateField;
+        
+        private string deviceTypeField;
         
         /// <remarks/>
         public int ID {
@@ -1327,6 +1341,16 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
                 this.acknowledegeDateField = value;
             }
         }
+        
+        /// <remarks/>
+        public string DeviceType {
+            get {
+                return this.deviceTypeField;
+            }
+            set {
+                this.deviceTypeField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -1348,6 +1372,8 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
         private double latitudeField;
         
         private double longitudeField;
+        
+        private string device_TypeField;
         
         private string contactPersonNameField;
         
@@ -1424,6 +1450,16 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
             }
             set {
                 this.longitudeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Device_Type {
+            get {
+                return this.device_TypeField;
+            }
+            set {
+                this.device_TypeField = value;
             }
         }
         
@@ -1546,6 +1582,8 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
         
         private bool visibilityField;
         
+        private string typeField;
+        
         /// <remarks/>
         public int ID {
             get {
@@ -1643,6 +1681,16 @@ namespace Incident_Reporting_App_Server.RemoteAlarm {
             }
             set {
                 this.visibilityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
             }
         }
     }

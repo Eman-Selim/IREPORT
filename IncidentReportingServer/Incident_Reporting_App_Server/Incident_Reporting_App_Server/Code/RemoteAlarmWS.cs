@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Incident_Reporting_App_Server.RemoteAlarm;
-using SDS_Remote_Control_Application_Server.Code;
+using Incident_Reporting_App_Server.Code;
 
 namespace Incident_Reporting_App_Server.Code
 {

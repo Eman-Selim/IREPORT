@@ -85,130 +85,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         private System.Threading.SendOrPostCallback Accident_Select_By_VehiclesToAccidentOperationCompleted;
         
-        private System.Threading.SendOrPostCallback Users_DeleteOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_UpdateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Select_Users_Of_UserOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_SelectByUserIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_SelectByNamePassOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_SelectByNameOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Select_Super_AdminOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Admin_DeleteOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Admin_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Admin_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Admin_SelectByAdminIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Users_Admin_SelectByUserIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_DeleteOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_By_AccidentIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_By_AgeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_By_Civil_MilitaryOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_By_DateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_By_InjuredIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_By_NameOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Injured_Select_By_RankOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Images_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Images_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Images_Select_By_BuildingIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Images_Select_By_ImageDescriptionOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_UpdateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_By_BuildingIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_By_PowderExtinguishersNumberOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_By_FoamExtinguishersNumbersOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_By_PowderExtinguishersWeightOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Floors_Select_By_FoamExtinguishersWeightOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_DeleteOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_UpdateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_AreaNameOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_CarsNumberOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_EquipmentsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_FF_IDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_OfficersNumberOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_SectorOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_SignsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_SoliderNumberOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_StreetOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_UserIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FFstations_Select_By_ZoneNumberOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_DeleteOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_InsertOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_UpdateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_Select_AllOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_Select_By_AddressOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_Select_By_AreaOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_Select_By_FF_pumpsIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_Select_By_PumpNumberOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback FF_pumps_Select_By_SectorOperationCompleted;
-        
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_SignsOperationCompleted;
         
         private System.Threading.SendOrPostCallback FF_pumps_Select_By_StatusOperationCompleted;
@@ -337,6 +213,130 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         private System.Threading.SendOrPostCallback Company_Select_By_RightFireMediatorOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Users_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_InsertOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Select_AllOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Select_Users_Of_UserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_SelectByUserIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_SelectByNamePassOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_SelectByNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Select_Super_AdminOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Admin_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Admin_InsertOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Admin_Select_AllOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Admin_SelectByAdminIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Users_Admin_SelectByUserIDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_InsertOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_AllOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_By_AccidentIDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_By_AgeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_By_Civil_MilitaryOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_By_DateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_By_InjuredIDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_By_NameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Injured_Select_By_RankOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Images_InsertOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Images_Select_AllOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Images_Select_By_BuildingIDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Images_Select_By_ImageDescriptionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_InsertOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_AllOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_By_BuildingIDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_By_PowderExtinguishersNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_By_FoamExtinguishersNumbersOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_By_PowderExtinguishersWeightOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Floors_Select_By_FoamExtinguishersWeightOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_InsertOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_AllOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_AreaNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_CarsNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_EquipmentsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_FF_IDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_OfficersNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_SectorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_SignsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_SoliderNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_StreetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_UserIDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FFstations_Select_By_ZoneNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_DeleteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_InsertOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_AllOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_By_AddressOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_By_AreaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_By_FF_pumpsIDOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_By_PumpNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FF_pumps_Select_By_SectorOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -458,192 +458,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         /// <remarks/>
         public event Accident_Select_By_VehiclesToAccidentCompletedEventHandler Accident_Select_By_VehiclesToAccidentCompleted;
-        
-        /// <remarks/>
-        public event Users_DeleteCompletedEventHandler Users_DeleteCompleted;
-        
-        /// <remarks/>
-        public event Users_InsertCompletedEventHandler Users_InsertCompleted;
-        
-        /// <remarks/>
-        public event Users_UpdateCompletedEventHandler Users_UpdateCompleted;
-        
-        /// <remarks/>
-        public event Users_Select_AllCompletedEventHandler Users_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event Users_Select_Users_Of_UserCompletedEventHandler Users_Select_Users_Of_UserCompleted;
-        
-        /// <remarks/>
-        public event Users_SelectByUserIdCompletedEventHandler Users_SelectByUserIdCompleted;
-        
-        /// <remarks/>
-        public event Users_SelectByNamePassCompletedEventHandler Users_SelectByNamePassCompleted;
-        
-        /// <remarks/>
-        public event Users_SelectByNameCompletedEventHandler Users_SelectByNameCompleted;
-        
-        /// <remarks/>
-        public event Users_Select_Super_AdminCompletedEventHandler Users_Select_Super_AdminCompleted;
-        
-        /// <remarks/>
-        public event Users_Admin_DeleteCompletedEventHandler Users_Admin_DeleteCompleted;
-        
-        /// <remarks/>
-        public event Users_Admin_InsertCompletedEventHandler Users_Admin_InsertCompleted;
-        
-        /// <remarks/>
-        public event Users_Admin_Select_AllCompletedEventHandler Users_Admin_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event Users_Admin_SelectByAdminIdCompletedEventHandler Users_Admin_SelectByAdminIdCompleted;
-        
-        /// <remarks/>
-        public event Users_Admin_SelectByUserIDCompletedEventHandler Users_Admin_SelectByUserIDCompleted;
-        
-        /// <remarks/>
-        public event Injured_DeleteCompletedEventHandler Injured_DeleteCompleted;
-        
-        /// <remarks/>
-        public event Injured_InsertCompletedEventHandler Injured_InsertCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_AllCompletedEventHandler Injured_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_By_AccidentIDCompletedEventHandler Injured_Select_By_AccidentIDCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_By_AgeCompletedEventHandler Injured_Select_By_AgeCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_By_Civil_MilitaryCompletedEventHandler Injured_Select_By_Civil_MilitaryCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_By_DateCompletedEventHandler Injured_Select_By_DateCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_By_InjuredIDCompletedEventHandler Injured_Select_By_InjuredIDCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_By_NameCompletedEventHandler Injured_Select_By_NameCompleted;
-        
-        /// <remarks/>
-        public event Injured_Select_By_RankCompletedEventHandler Injured_Select_By_RankCompleted;
-        
-        /// <remarks/>
-        public event Images_InsertCompletedEventHandler Images_InsertCompleted;
-        
-        /// <remarks/>
-        public event Images_Select_AllCompletedEventHandler Images_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event Images_Select_By_BuildingIDCompletedEventHandler Images_Select_By_BuildingIDCompleted;
-        
-        /// <remarks/>
-        public event Images_Select_By_ImageDescriptionCompletedEventHandler Images_Select_By_ImageDescriptionCompleted;
-        
-        /// <remarks/>
-        public event Floors_InsertCompletedEventHandler Floors_InsertCompleted;
-        
-        /// <remarks/>
-        public event Floors_UpdateCompletedEventHandler Floors_UpdateCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_AllCompletedEventHandler Floors_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_By_BuildingIDCompletedEventHandler Floors_Select_By_BuildingIDCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventHandler Floors_Select_By_CarbonDioxideExtinguishersNumbersCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_By_PowderExtinguishersNumberCompletedEventHandler Floors_Select_By_PowderExtinguishersNumberCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_By_FoamExtinguishersNumbersCompletedEventHandler Floors_Select_By_FoamExtinguishersNumbersCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_By_PowderExtinguishersWeightCompletedEventHandler Floors_Select_By_PowderExtinguishersWeightCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventHandler Floors_Select_By_CarbonDioxideExtinguishersWeightCompleted;
-        
-        /// <remarks/>
-        public event Floors_Select_By_FoamExtinguishersWeightCompletedEventHandler Floors_Select_By_FoamExtinguishersWeightCompleted;
-        
-        /// <remarks/>
-        public event FFstations_DeleteCompletedEventHandler FFstations_DeleteCompleted;
-        
-        /// <remarks/>
-        public event FFstations_InsertCompletedEventHandler FFstations_InsertCompleted;
-        
-        /// <remarks/>
-        public event FFstations_UpdateCompletedEventHandler FFstations_UpdateCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_AllCompletedEventHandler FFstations_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_AreaNameCompletedEventHandler FFstations_Select_By_AreaNameCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_CarsNumberCompletedEventHandler FFstations_Select_By_CarsNumberCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_EquipmentsCompletedEventHandler FFstations_Select_By_EquipmentsCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_FF_IDCompletedEventHandler FFstations_Select_By_FF_IDCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_OfficersNumberCompletedEventHandler FFstations_Select_By_OfficersNumberCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_SectorCompletedEventHandler FFstations_Select_By_SectorCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_SignsCompletedEventHandler FFstations_Select_By_SignsCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_SoliderNumberCompletedEventHandler FFstations_Select_By_SoliderNumberCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_StreetCompletedEventHandler FFstations_Select_By_StreetCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_UserIDCompletedEventHandler FFstations_Select_By_UserIDCompleted;
-        
-        /// <remarks/>
-        public event FFstations_Select_By_ZoneNumberCompletedEventHandler FFstations_Select_By_ZoneNumberCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_DeleteCompletedEventHandler FF_pumps_DeleteCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_InsertCompletedEventHandler FF_pumps_InsertCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_UpdateCompletedEventHandler FF_pumps_UpdateCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_Select_AllCompletedEventHandler FF_pumps_Select_AllCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_Select_By_AddressCompletedEventHandler FF_pumps_Select_By_AddressCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_Select_By_AreaCompletedEventHandler FF_pumps_Select_By_AreaCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_Select_By_FF_pumpsIDCompletedEventHandler FF_pumps_Select_By_FF_pumpsIDCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_Select_By_PumpNumberCompletedEventHandler FF_pumps_Select_By_PumpNumberCompleted;
-        
-        /// <remarks/>
-        public event FF_pumps_Select_By_SectorCompletedEventHandler FF_pumps_Select_By_SectorCompleted;
         
         /// <remarks/>
         public event FF_pumps_Select_By_SignsCompletedEventHandler FF_pumps_Select_By_SignsCompleted;
@@ -836,6 +650,192 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         
         /// <remarks/>
         public event Company_Select_By_RightFireMediatorCompletedEventHandler Company_Select_By_RightFireMediatorCompleted;
+        
+        /// <remarks/>
+        public event Users_DeleteCompletedEventHandler Users_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Users_InsertCompletedEventHandler Users_InsertCompleted;
+        
+        /// <remarks/>
+        public event Users_UpdateCompletedEventHandler Users_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Users_Select_AllCompletedEventHandler Users_Select_AllCompleted;
+        
+        /// <remarks/>
+        public event Users_Select_Users_Of_UserCompletedEventHandler Users_Select_Users_Of_UserCompleted;
+        
+        /// <remarks/>
+        public event Users_SelectByUserIdCompletedEventHandler Users_SelectByUserIdCompleted;
+        
+        /// <remarks/>
+        public event Users_SelectByNamePassCompletedEventHandler Users_SelectByNamePassCompleted;
+        
+        /// <remarks/>
+        public event Users_SelectByNameCompletedEventHandler Users_SelectByNameCompleted;
+        
+        /// <remarks/>
+        public event Users_Select_Super_AdminCompletedEventHandler Users_Select_Super_AdminCompleted;
+        
+        /// <remarks/>
+        public event Users_Admin_DeleteCompletedEventHandler Users_Admin_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Users_Admin_InsertCompletedEventHandler Users_Admin_InsertCompleted;
+        
+        /// <remarks/>
+        public event Users_Admin_Select_AllCompletedEventHandler Users_Admin_Select_AllCompleted;
+        
+        /// <remarks/>
+        public event Users_Admin_SelectByAdminIdCompletedEventHandler Users_Admin_SelectByAdminIdCompleted;
+        
+        /// <remarks/>
+        public event Users_Admin_SelectByUserIDCompletedEventHandler Users_Admin_SelectByUserIDCompleted;
+        
+        /// <remarks/>
+        public event Injured_DeleteCompletedEventHandler Injured_DeleteCompleted;
+        
+        /// <remarks/>
+        public event Injured_InsertCompletedEventHandler Injured_InsertCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_AllCompletedEventHandler Injured_Select_AllCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_By_AccidentIDCompletedEventHandler Injured_Select_By_AccidentIDCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_By_AgeCompletedEventHandler Injured_Select_By_AgeCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_By_Civil_MilitaryCompletedEventHandler Injured_Select_By_Civil_MilitaryCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_By_DateCompletedEventHandler Injured_Select_By_DateCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_By_InjuredIDCompletedEventHandler Injured_Select_By_InjuredIDCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_By_NameCompletedEventHandler Injured_Select_By_NameCompleted;
+        
+        /// <remarks/>
+        public event Injured_Select_By_RankCompletedEventHandler Injured_Select_By_RankCompleted;
+        
+        /// <remarks/>
+        public event Images_InsertCompletedEventHandler Images_InsertCompleted;
+        
+        /// <remarks/>
+        public event Images_Select_AllCompletedEventHandler Images_Select_AllCompleted;
+        
+        /// <remarks/>
+        public event Images_Select_By_BuildingIDCompletedEventHandler Images_Select_By_BuildingIDCompleted;
+        
+        /// <remarks/>
+        public event Images_Select_By_ImageDescriptionCompletedEventHandler Images_Select_By_ImageDescriptionCompleted;
+        
+        /// <remarks/>
+        public event Floors_InsertCompletedEventHandler Floors_InsertCompleted;
+        
+        /// <remarks/>
+        public event Floors_UpdateCompletedEventHandler Floors_UpdateCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_AllCompletedEventHandler Floors_Select_AllCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_By_BuildingIDCompletedEventHandler Floors_Select_By_BuildingIDCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventHandler Floors_Select_By_CarbonDioxideExtinguishersNumbersCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_By_PowderExtinguishersNumberCompletedEventHandler Floors_Select_By_PowderExtinguishersNumberCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_By_FoamExtinguishersNumbersCompletedEventHandler Floors_Select_By_FoamExtinguishersNumbersCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_By_PowderExtinguishersWeightCompletedEventHandler Floors_Select_By_PowderExtinguishersWeightCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventHandler Floors_Select_By_CarbonDioxideExtinguishersWeightCompleted;
+        
+        /// <remarks/>
+        public event Floors_Select_By_FoamExtinguishersWeightCompletedEventHandler Floors_Select_By_FoamExtinguishersWeightCompleted;
+        
+        /// <remarks/>
+        public event FFstations_DeleteCompletedEventHandler FFstations_DeleteCompleted;
+        
+        /// <remarks/>
+        public event FFstations_InsertCompletedEventHandler FFstations_InsertCompleted;
+        
+        /// <remarks/>
+        public event FFstations_UpdateCompletedEventHandler FFstations_UpdateCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_AllCompletedEventHandler FFstations_Select_AllCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_AreaNameCompletedEventHandler FFstations_Select_By_AreaNameCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_CarsNumberCompletedEventHandler FFstations_Select_By_CarsNumberCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_EquipmentsCompletedEventHandler FFstations_Select_By_EquipmentsCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_FF_IDCompletedEventHandler FFstations_Select_By_FF_IDCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_OfficersNumberCompletedEventHandler FFstations_Select_By_OfficersNumberCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_SectorCompletedEventHandler FFstations_Select_By_SectorCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_SignsCompletedEventHandler FFstations_Select_By_SignsCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_SoliderNumberCompletedEventHandler FFstations_Select_By_SoliderNumberCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_StreetCompletedEventHandler FFstations_Select_By_StreetCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_UserIDCompletedEventHandler FFstations_Select_By_UserIDCompleted;
+        
+        /// <remarks/>
+        public event FFstations_Select_By_ZoneNumberCompletedEventHandler FFstations_Select_By_ZoneNumberCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_DeleteCompletedEventHandler FF_pumps_DeleteCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_InsertCompletedEventHandler FF_pumps_InsertCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_UpdateCompletedEventHandler FF_pumps_UpdateCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_AllCompletedEventHandler FF_pumps_Select_AllCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_By_AddressCompletedEventHandler FF_pumps_Select_By_AddressCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_By_AreaCompletedEventHandler FF_pumps_Select_By_AreaCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_By_FF_pumpsIDCompletedEventHandler FF_pumps_Select_By_FF_pumpsIDCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_By_PumpNumberCompletedEventHandler FF_pumps_Select_By_PumpNumberCompleted;
+        
+        /// <remarks/>
+        public event FF_pumps_Select_By_SectorCompletedEventHandler FF_pumps_Select_By_SectorCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Company_Select_By_UserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1752,2036 +1752,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
             if ((this.Accident_Select_By_VehiclesToAccidentCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Accident_Select_By_VehiclesToAccidentCompleted(this, new Accident_Select_By_VehiclesToAccidentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Users_Delete(string username, string password, int user_id) {
-            object[] results = this.Invoke("Users_Delete", new object[] {
-                        username,
-                        password,
-                        user_id});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_DeleteAsync(string username, string password, int user_id) {
-            this.Users_DeleteAsync(username, password, user_id, null);
-        }
-        
-        /// <remarks/>
-        public void Users_DeleteAsync(string username, string password, int user_id, object userState) {
-            if ((this.Users_DeleteOperationCompleted == null)) {
-                this.Users_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_DeleteOperationCompleted);
-            }
-            this.InvokeAsync("Users_Delete", new object[] {
-                        username,
-                        password,
-                        user_id}, this.Users_DeleteOperationCompleted, userState);
-        }
-        
-        private void OnUsers_DeleteOperationCompleted(object arg) {
-            if ((this.Users_DeleteCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_DeleteCompleted(this, new Users_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public IRUser Users_Insert(string username, string password, IRUser Users) {
-            object[] results = this.Invoke("Users_Insert", new object[] {
-                        username,
-                        password,
-                        Users});
-            return ((IRUser)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_InsertAsync(string username, string password, IRUser Users) {
-            this.Users_InsertAsync(username, password, Users, null);
-        }
-        
-        /// <remarks/>
-        public void Users_InsertAsync(string username, string password, IRUser Users, object userState) {
-            if ((this.Users_InsertOperationCompleted == null)) {
-                this.Users_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_InsertOperationCompleted);
-            }
-            this.InvokeAsync("Users_Insert", new object[] {
-                        username,
-                        password,
-                        Users}, this.Users_InsertOperationCompleted, userState);
-        }
-        
-        private void OnUsers_InsertOperationCompleted(object arg) {
-            if ((this.Users_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_InsertCompleted(this, new Users_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Users_Update(string username, string password, IRUser Users) {
-            object[] results = this.Invoke("Users_Update", new object[] {
-                        username,
-                        password,
-                        Users});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_UpdateAsync(string username, string password, IRUser Users) {
-            this.Users_UpdateAsync(username, password, Users, null);
-        }
-        
-        /// <remarks/>
-        public void Users_UpdateAsync(string username, string password, IRUser Users, object userState) {
-            if ((this.Users_UpdateOperationCompleted == null)) {
-                this.Users_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_UpdateOperationCompleted);
-            }
-            this.InvokeAsync("Users_Update", new object[] {
-                        username,
-                        password,
-                        Users}, this.Users_UpdateOperationCompleted, userState);
-        }
-        
-        private void OnUsers_UpdateOperationCompleted(object arg) {
-            if ((this.Users_UpdateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_UpdateCompleted(this, new Users_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public IRUser[] Users_Select_All(string username, string password) {
-            object[] results = this.Invoke("Users_Select_All", new object[] {
-                        username,
-                        password});
-            return ((IRUser[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Select_AllAsync(string username, string password) {
-            this.Users_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Select_AllAsync(string username, string password, object userState) {
-            if ((this.Users_Select_AllOperationCompleted == null)) {
-                this.Users_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("Users_Select_All", new object[] {
-                        username,
-                        password}, this.Users_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Select_AllOperationCompleted(object arg) {
-            if ((this.Users_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Select_AllCompleted(this, new Users_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Users_Of_User", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public IRUser[] Users_Select_Users_Of_User(string username, string password, int UserId) {
-            object[] results = this.Invoke("Users_Select_Users_Of_User", new object[] {
-                        username,
-                        password,
-                        UserId});
-            return ((IRUser[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Select_Users_Of_UserAsync(string username, string password, int UserId) {
-            this.Users_Select_Users_Of_UserAsync(username, password, UserId, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Select_Users_Of_UserAsync(string username, string password, int UserId, object userState) {
-            if ((this.Users_Select_Users_Of_UserOperationCompleted == null)) {
-                this.Users_Select_Users_Of_UserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Select_Users_Of_UserOperationCompleted);
-            }
-            this.InvokeAsync("Users_Select_Users_Of_User", new object[] {
-                        username,
-                        password,
-                        UserId}, this.Users_Select_Users_Of_UserOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Select_Users_Of_UserOperationCompleted(object arg) {
-            if ((this.Users_Select_Users_Of_UserCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Select_Users_Of_UserCompleted(this, new Users_Select_Users_Of_UserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByUserId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public IRUser Users_SelectByUserId(string username, string password, int UserId) {
-            object[] results = this.Invoke("Users_SelectByUserId", new object[] {
-                        username,
-                        password,
-                        UserId});
-            return ((IRUser)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_SelectByUserIdAsync(string username, string password, int UserId) {
-            this.Users_SelectByUserIdAsync(username, password, UserId, null);
-        }
-        
-        /// <remarks/>
-        public void Users_SelectByUserIdAsync(string username, string password, int UserId, object userState) {
-            if ((this.Users_SelectByUserIdOperationCompleted == null)) {
-                this.Users_SelectByUserIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_SelectByUserIdOperationCompleted);
-            }
-            this.InvokeAsync("Users_SelectByUserId", new object[] {
-                        username,
-                        password,
-                        UserId}, this.Users_SelectByUserIdOperationCompleted, userState);
-        }
-        
-        private void OnUsers_SelectByUserIdOperationCompleted(object arg) {
-            if ((this.Users_SelectByUserIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_SelectByUserIdCompleted(this, new Users_SelectByUserIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByNamePass", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public IRUser Users_SelectByNamePass(string username, string password) {
-            object[] results = this.Invoke("Users_SelectByNamePass", new object[] {
-                        username,
-                        password});
-            return ((IRUser)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_SelectByNamePassAsync(string username, string password) {
-            this.Users_SelectByNamePassAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void Users_SelectByNamePassAsync(string username, string password, object userState) {
-            if ((this.Users_SelectByNamePassOperationCompleted == null)) {
-                this.Users_SelectByNamePassOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_SelectByNamePassOperationCompleted);
-            }
-            this.InvokeAsync("Users_SelectByNamePass", new object[] {
-                        username,
-                        password}, this.Users_SelectByNamePassOperationCompleted, userState);
-        }
-        
-        private void OnUsers_SelectByNamePassOperationCompleted(object arg) {
-            if ((this.Users_SelectByNamePassCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_SelectByNamePassCompleted(this, new Users_SelectByNamePassCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public IRUser Users_SelectByName(string username, string password, string name) {
-            object[] results = this.Invoke("Users_SelectByName", new object[] {
-                        username,
-                        password,
-                        name});
-            return ((IRUser)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_SelectByNameAsync(string username, string password, string name) {
-            this.Users_SelectByNameAsync(username, password, name, null);
-        }
-        
-        /// <remarks/>
-        public void Users_SelectByNameAsync(string username, string password, string name, object userState) {
-            if ((this.Users_SelectByNameOperationCompleted == null)) {
-                this.Users_SelectByNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_SelectByNameOperationCompleted);
-            }
-            this.InvokeAsync("Users_SelectByName", new object[] {
-                        username,
-                        password,
-                        name}, this.Users_SelectByNameOperationCompleted, userState);
-        }
-        
-        private void OnUsers_SelectByNameOperationCompleted(object arg) {
-            if ((this.Users_SelectByNameCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_SelectByNameCompleted(this, new Users_SelectByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Super_Admin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public IRUser[] Users_Select_Super_Admin(string username, string password) {
-            object[] results = this.Invoke("Users_Select_Super_Admin", new object[] {
-                        username,
-                        password});
-            return ((IRUser[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Select_Super_AdminAsync(string username, string password) {
-            this.Users_Select_Super_AdminAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Select_Super_AdminAsync(string username, string password, object userState) {
-            if ((this.Users_Select_Super_AdminOperationCompleted == null)) {
-                this.Users_Select_Super_AdminOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Select_Super_AdminOperationCompleted);
-            }
-            this.InvokeAsync("Users_Select_Super_Admin", new object[] {
-                        username,
-                        password}, this.Users_Select_Super_AdminOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Select_Super_AdminOperationCompleted(object arg) {
-            if ((this.Users_Select_Super_AdminCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Select_Super_AdminCompleted(this, new Users_Select_Super_AdminCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Users_Admin_Delete(string username, string password, int user_id, int Admin_id) {
-            object[] results = this.Invoke("Users_Admin_Delete", new object[] {
-                        username,
-                        password,
-                        user_id,
-                        Admin_id});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_DeleteAsync(string username, string password, int user_id, int Admin_id) {
-            this.Users_Admin_DeleteAsync(username, password, user_id, Admin_id, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_DeleteAsync(string username, string password, int user_id, int Admin_id, object userState) {
-            if ((this.Users_Admin_DeleteOperationCompleted == null)) {
-                this.Users_Admin_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_DeleteOperationCompleted);
-            }
-            this.InvokeAsync("Users_Admin_Delete", new object[] {
-                        username,
-                        password,
-                        user_id,
-                        Admin_id}, this.Users_Admin_DeleteOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Admin_DeleteOperationCompleted(object arg) {
-            if ((this.Users_Admin_DeleteCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Admin_DeleteCompleted(this, new Users_Admin_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users_Admin Users_Admin_Insert(string username, string password, Users_Admin Users_Admin) {
-            object[] results = this.Invoke("Users_Admin_Insert", new object[] {
-                        username,
-                        password,
-                        Users_Admin});
-            return ((Users_Admin)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_InsertAsync(string username, string password, Users_Admin Users_Admin) {
-            this.Users_Admin_InsertAsync(username, password, Users_Admin, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_InsertAsync(string username, string password, Users_Admin Users_Admin, object userState) {
-            if ((this.Users_Admin_InsertOperationCompleted == null)) {
-                this.Users_Admin_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_InsertOperationCompleted);
-            }
-            this.InvokeAsync("Users_Admin_Insert", new object[] {
-                        username,
-                        password,
-                        Users_Admin}, this.Users_Admin_InsertOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Admin_InsertOperationCompleted(object arg) {
-            if ((this.Users_Admin_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Admin_InsertCompleted(this, new Users_Admin_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users_Admin[] Users_Admin_Select_All(string username, string password) {
-            object[] results = this.Invoke("Users_Admin_Select_All", new object[] {
-                        username,
-                        password});
-            return ((Users_Admin[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_Select_AllAsync(string username, string password) {
-            this.Users_Admin_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_Select_AllAsync(string username, string password, object userState) {
-            if ((this.Users_Admin_Select_AllOperationCompleted == null)) {
-                this.Users_Admin_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("Users_Admin_Select_All", new object[] {
-                        username,
-                        password}, this.Users_Admin_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Admin_Select_AllOperationCompleted(object arg) {
-            if ((this.Users_Admin_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Admin_Select_AllCompleted(this, new Users_Admin_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_SelectByAdminId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users_Admin Users_Admin_SelectByAdminId(string username, string password, int Admin_ID) {
-            object[] results = this.Invoke("Users_Admin_SelectByAdminId", new object[] {
-                        username,
-                        password,
-                        Admin_ID});
-            return ((Users_Admin)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_SelectByAdminIdAsync(string username, string password, int Admin_ID) {
-            this.Users_Admin_SelectByAdminIdAsync(username, password, Admin_ID, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_SelectByAdminIdAsync(string username, string password, int Admin_ID, object userState) {
-            if ((this.Users_Admin_SelectByAdminIdOperationCompleted == null)) {
-                this.Users_Admin_SelectByAdminIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_SelectByAdminIdOperationCompleted);
-            }
-            this.InvokeAsync("Users_Admin_SelectByAdminId", new object[] {
-                        username,
-                        password,
-                        Admin_ID}, this.Users_Admin_SelectByAdminIdOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Admin_SelectByAdminIdOperationCompleted(object arg) {
-            if ((this.Users_Admin_SelectByAdminIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Admin_SelectByAdminIdCompleted(this, new Users_Admin_SelectByAdminIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_SelectByUserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Users_Admin Users_Admin_SelectByUserID(string username, string password, int User_ID) {
-            object[] results = this.Invoke("Users_Admin_SelectByUserID", new object[] {
-                        username,
-                        password,
-                        User_ID});
-            return ((Users_Admin)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_SelectByUserIDAsync(string username, string password, int User_ID) {
-            this.Users_Admin_SelectByUserIDAsync(username, password, User_ID, null);
-        }
-        
-        /// <remarks/>
-        public void Users_Admin_SelectByUserIDAsync(string username, string password, int User_ID, object userState) {
-            if ((this.Users_Admin_SelectByUserIDOperationCompleted == null)) {
-                this.Users_Admin_SelectByUserIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_SelectByUserIDOperationCompleted);
-            }
-            this.InvokeAsync("Users_Admin_SelectByUserID", new object[] {
-                        username,
-                        password,
-                        User_ID}, this.Users_Admin_SelectByUserIDOperationCompleted, userState);
-        }
-        
-        private void OnUsers_Admin_SelectByUserIDOperationCompleted(object arg) {
-            if ((this.Users_Admin_SelectByUserIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Users_Admin_SelectByUserIDCompleted(this, new Users_Admin_SelectByUserIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Injured_Delete(string username, string password, int InjuredID) {
-            object[] results = this.Invoke("Injured_Delete", new object[] {
-                        username,
-                        password,
-                        InjuredID});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_DeleteAsync(string username, string password, int InjuredID) {
-            this.Injured_DeleteAsync(username, password, InjuredID, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_DeleteAsync(string username, string password, int InjuredID, object userState) {
-            if ((this.Injured_DeleteOperationCompleted == null)) {
-                this.Injured_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_DeleteOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Delete", new object[] {
-                        username,
-                        password,
-                        InjuredID}, this.Injured_DeleteOperationCompleted, userState);
-        }
-        
-        private void OnInjured_DeleteOperationCompleted(object arg) {
-            if ((this.Injured_DeleteCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_DeleteCompleted(this, new Injured_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured Injured_Insert(string username, string password, Injured Injured) {
-            object[] results = this.Invoke("Injured_Insert", new object[] {
-                        username,
-                        password,
-                        Injured});
-            return ((Injured)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_InsertAsync(string username, string password, Injured Injured) {
-            this.Injured_InsertAsync(username, password, Injured, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_InsertAsync(string username, string password, Injured Injured, object userState) {
-            if ((this.Injured_InsertOperationCompleted == null)) {
-                this.Injured_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_InsertOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Insert", new object[] {
-                        username,
-                        password,
-                        Injured}, this.Injured_InsertOperationCompleted, userState);
-        }
-        
-        private void OnInjured_InsertOperationCompleted(object arg) {
-            if ((this.Injured_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_InsertCompleted(this, new Injured_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_All(string username, string password) {
-            object[] results = this.Invoke("Injured_Select_All", new object[] {
-                        username,
-                        password});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_AllAsync(string username, string password) {
-            this.Injured_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_AllAsync(string username, string password, object userState) {
-            if ((this.Injured_Select_AllOperationCompleted == null)) {
-                this.Injured_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_All", new object[] {
-                        username,
-                        password}, this.Injured_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_AllOperationCompleted(object arg) {
-            if ((this.Injured_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_AllCompleted(this, new Injured_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_AccidentID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_By_AccidentID(string username, string password, int AccidentID) {
-            object[] results = this.Invoke("Injured_Select_By_AccidentID", new object[] {
-                        username,
-                        password,
-                        AccidentID});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_AccidentIDAsync(string username, string password, int AccidentID) {
-            this.Injured_Select_By_AccidentIDAsync(username, password, AccidentID, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_AccidentIDAsync(string username, string password, int AccidentID, object userState) {
-            if ((this.Injured_Select_By_AccidentIDOperationCompleted == null)) {
-                this.Injured_Select_By_AccidentIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_AccidentIDOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_By_AccidentID", new object[] {
-                        username,
-                        password,
-                        AccidentID}, this.Injured_Select_By_AccidentIDOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_By_AccidentIDOperationCompleted(object arg) {
-            if ((this.Injured_Select_By_AccidentIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_By_AccidentIDCompleted(this, new Injured_Select_By_AccidentIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Age", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_By_Age(string username, string password, int Age) {
-            object[] results = this.Invoke("Injured_Select_By_Age", new object[] {
-                        username,
-                        password,
-                        Age});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_AgeAsync(string username, string password, int Age) {
-            this.Injured_Select_By_AgeAsync(username, password, Age, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_AgeAsync(string username, string password, int Age, object userState) {
-            if ((this.Injured_Select_By_AgeOperationCompleted == null)) {
-                this.Injured_Select_By_AgeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_AgeOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_By_Age", new object[] {
-                        username,
-                        password,
-                        Age}, this.Injured_Select_By_AgeOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_By_AgeOperationCompleted(object arg) {
-            if ((this.Injured_Select_By_AgeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_By_AgeCompleted(this, new Injured_Select_By_AgeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Civil_Military", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_By_Civil_Military(string username, string password, string Civil_Military) {
-            object[] results = this.Invoke("Injured_Select_By_Civil_Military", new object[] {
-                        username,
-                        password,
-                        Civil_Military});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_Civil_MilitaryAsync(string username, string password, string Civil_Military) {
-            this.Injured_Select_By_Civil_MilitaryAsync(username, password, Civil_Military, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_Civil_MilitaryAsync(string username, string password, string Civil_Military, object userState) {
-            if ((this.Injured_Select_By_Civil_MilitaryOperationCompleted == null)) {
-                this.Injured_Select_By_Civil_MilitaryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_Civil_MilitaryOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_By_Civil_Military", new object[] {
-                        username,
-                        password,
-                        Civil_Military}, this.Injured_Select_By_Civil_MilitaryOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_By_Civil_MilitaryOperationCompleted(object arg) {
-            if ((this.Injured_Select_By_Civil_MilitaryCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_By_Civil_MilitaryCompleted(this, new Injured_Select_By_Civil_MilitaryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Date", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_By_Date(string username, string password, System.DateTime Date) {
-            object[] results = this.Invoke("Injured_Select_By_Date", new object[] {
-                        username,
-                        password,
-                        Date});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_DateAsync(string username, string password, System.DateTime Date) {
-            this.Injured_Select_By_DateAsync(username, password, Date, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_DateAsync(string username, string password, System.DateTime Date, object userState) {
-            if ((this.Injured_Select_By_DateOperationCompleted == null)) {
-                this.Injured_Select_By_DateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_DateOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_By_Date", new object[] {
-                        username,
-                        password,
-                        Date}, this.Injured_Select_By_DateOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_By_DateOperationCompleted(object arg) {
-            if ((this.Injured_Select_By_DateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_By_DateCompleted(this, new Injured_Select_By_DateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_InjuredID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_By_InjuredID(string username, string password, int InjuredID) {
-            object[] results = this.Invoke("Injured_Select_By_InjuredID", new object[] {
-                        username,
-                        password,
-                        InjuredID});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_InjuredIDAsync(string username, string password, int InjuredID) {
-            this.Injured_Select_By_InjuredIDAsync(username, password, InjuredID, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_InjuredIDAsync(string username, string password, int InjuredID, object userState) {
-            if ((this.Injured_Select_By_InjuredIDOperationCompleted == null)) {
-                this.Injured_Select_By_InjuredIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_InjuredIDOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_By_InjuredID", new object[] {
-                        username,
-                        password,
-                        InjuredID}, this.Injured_Select_By_InjuredIDOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_By_InjuredIDOperationCompleted(object arg) {
-            if ((this.Injured_Select_By_InjuredIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_By_InjuredIDCompleted(this, new Injured_Select_By_InjuredIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Name", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_By_Name(string username, string password, string Name) {
-            object[] results = this.Invoke("Injured_Select_By_Name", new object[] {
-                        username,
-                        password,
-                        Name});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_NameAsync(string username, string password, string Name) {
-            this.Injured_Select_By_NameAsync(username, password, Name, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_NameAsync(string username, string password, string Name, object userState) {
-            if ((this.Injured_Select_By_NameOperationCompleted == null)) {
-                this.Injured_Select_By_NameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_NameOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_By_Name", new object[] {
-                        username,
-                        password,
-                        Name}, this.Injured_Select_By_NameOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_By_NameOperationCompleted(object arg) {
-            if ((this.Injured_Select_By_NameCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_By_NameCompleted(this, new Injured_Select_By_NameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Rank", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Injured[] Injured_Select_By_Rank(string username, string password, string Rank) {
-            object[] results = this.Invoke("Injured_Select_By_Rank", new object[] {
-                        username,
-                        password,
-                        Rank});
-            return ((Injured[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_RankAsync(string username, string password, string Rank) {
-            this.Injured_Select_By_RankAsync(username, password, Rank, null);
-        }
-        
-        /// <remarks/>
-        public void Injured_Select_By_RankAsync(string username, string password, string Rank, object userState) {
-            if ((this.Injured_Select_By_RankOperationCompleted == null)) {
-                this.Injured_Select_By_RankOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_RankOperationCompleted);
-            }
-            this.InvokeAsync("Injured_Select_By_Rank", new object[] {
-                        username,
-                        password,
-                        Rank}, this.Injured_Select_By_RankOperationCompleted, userState);
-        }
-        
-        private void OnInjured_Select_By_RankOperationCompleted(object arg) {
-            if ((this.Injured_Select_By_RankCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Injured_Select_By_RankCompleted(this, new Injured_Select_By_RankCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Images Images_Insert(string username, string password, Images Images) {
-            object[] results = this.Invoke("Images_Insert", new object[] {
-                        username,
-                        password,
-                        Images});
-            return ((Images)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Images_InsertAsync(string username, string password, Images Images) {
-            this.Images_InsertAsync(username, password, Images, null);
-        }
-        
-        /// <remarks/>
-        public void Images_InsertAsync(string username, string password, Images Images, object userState) {
-            if ((this.Images_InsertOperationCompleted == null)) {
-                this.Images_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_InsertOperationCompleted);
-            }
-            this.InvokeAsync("Images_Insert", new object[] {
-                        username,
-                        password,
-                        Images}, this.Images_InsertOperationCompleted, userState);
-        }
-        
-        private void OnImages_InsertOperationCompleted(object arg) {
-            if ((this.Images_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Images_InsertCompleted(this, new Images_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Images[] Images_Select_All(string username, string password) {
-            object[] results = this.Invoke("Images_Select_All", new object[] {
-                        username,
-                        password});
-            return ((Images[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Images_Select_AllAsync(string username, string password) {
-            this.Images_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void Images_Select_AllAsync(string username, string password, object userState) {
-            if ((this.Images_Select_AllOperationCompleted == null)) {
-                this.Images_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("Images_Select_All", new object[] {
-                        username,
-                        password}, this.Images_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnImages_Select_AllOperationCompleted(object arg) {
-            if ((this.Images_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Images_Select_AllCompleted(this, new Images_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Select_By_BuildingID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Images[] Images_Select_By_BuildingID(string username, string password, int BuildingID) {
-            object[] results = this.Invoke("Images_Select_By_BuildingID", new object[] {
-                        username,
-                        password,
-                        BuildingID});
-            return ((Images[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Images_Select_By_BuildingIDAsync(string username, string password, int BuildingID) {
-            this.Images_Select_By_BuildingIDAsync(username, password, BuildingID, null);
-        }
-        
-        /// <remarks/>
-        public void Images_Select_By_BuildingIDAsync(string username, string password, int BuildingID, object userState) {
-            if ((this.Images_Select_By_BuildingIDOperationCompleted == null)) {
-                this.Images_Select_By_BuildingIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_Select_By_BuildingIDOperationCompleted);
-            }
-            this.InvokeAsync("Images_Select_By_BuildingID", new object[] {
-                        username,
-                        password,
-                        BuildingID}, this.Images_Select_By_BuildingIDOperationCompleted, userState);
-        }
-        
-        private void OnImages_Select_By_BuildingIDOperationCompleted(object arg) {
-            if ((this.Images_Select_By_BuildingIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Images_Select_By_BuildingIDCompleted(this, new Images_Select_By_BuildingIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Select_By_ImageDescription", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Images[] Images_Select_By_ImageDescription(string username, string password, string ImageDescription) {
-            object[] results = this.Invoke("Images_Select_By_ImageDescription", new object[] {
-                        username,
-                        password,
-                        ImageDescription});
-            return ((Images[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Images_Select_By_ImageDescriptionAsync(string username, string password, string ImageDescription) {
-            this.Images_Select_By_ImageDescriptionAsync(username, password, ImageDescription, null);
-        }
-        
-        /// <remarks/>
-        public void Images_Select_By_ImageDescriptionAsync(string username, string password, string ImageDescription, object userState) {
-            if ((this.Images_Select_By_ImageDescriptionOperationCompleted == null)) {
-                this.Images_Select_By_ImageDescriptionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_Select_By_ImageDescriptionOperationCompleted);
-            }
-            this.InvokeAsync("Images_Select_By_ImageDescription", new object[] {
-                        username,
-                        password,
-                        ImageDescription}, this.Images_Select_By_ImageDescriptionOperationCompleted, userState);
-        }
-        
-        private void OnImages_Select_By_ImageDescriptionOperationCompleted(object arg) {
-            if ((this.Images_Select_By_ImageDescriptionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Images_Select_By_ImageDescriptionCompleted(this, new Images_Select_By_ImageDescriptionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors Floors_Insert(string username, string password, Floors Floors) {
-            object[] results = this.Invoke("Floors_Insert", new object[] {
-                        username,
-                        password,
-                        Floors});
-            return ((Floors)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_InsertAsync(string username, string password, Floors Floors) {
-            this.Floors_InsertAsync(username, password, Floors, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_InsertAsync(string username, string password, Floors Floors, object userState) {
-            if ((this.Floors_InsertOperationCompleted == null)) {
-                this.Floors_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_InsertOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Insert", new object[] {
-                        username,
-                        password,
-                        Floors}, this.Floors_InsertOperationCompleted, userState);
-        }
-        
-        private void OnFloors_InsertOperationCompleted(object arg) {
-            if ((this.Floors_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_InsertCompleted(this, new Floors_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Floors_Update(string username, string password, Floors Floors) {
-            object[] results = this.Invoke("Floors_Update", new object[] {
-                        username,
-                        password,
-                        Floors});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_UpdateAsync(string username, string password, Floors Floors) {
-            this.Floors_UpdateAsync(username, password, Floors, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_UpdateAsync(string username, string password, Floors Floors, object userState) {
-            if ((this.Floors_UpdateOperationCompleted == null)) {
-                this.Floors_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_UpdateOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Update", new object[] {
-                        username,
-                        password,
-                        Floors}, this.Floors_UpdateOperationCompleted, userState);
-        }
-        
-        private void OnFloors_UpdateOperationCompleted(object arg) {
-            if ((this.Floors_UpdateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_UpdateCompleted(this, new Floors_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_All(string username, string password) {
-            object[] results = this.Invoke("Floors_Select_All", new object[] {
-                        username,
-                        password});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_AllAsync(string username, string password) {
-            this.Floors_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_AllAsync(string username, string password, object userState) {
-            if ((this.Floors_Select_AllOperationCompleted == null)) {
-                this.Floors_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_All", new object[] {
-                        username,
-                        password}, this.Floors_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_AllOperationCompleted(object arg) {
-            if ((this.Floors_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_AllCompleted(this, new Floors_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_BuildingID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_By_BuildingID(string username, string password, int BuildingID) {
-            object[] results = this.Invoke("Floors_Select_By_BuildingID", new object[] {
-                        username,
-                        password,
-                        BuildingID});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_BuildingIDAsync(string username, string password, int BuildingID) {
-            this.Floors_Select_By_BuildingIDAsync(username, password, BuildingID, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_BuildingIDAsync(string username, string password, int BuildingID, object userState) {
-            if ((this.Floors_Select_By_BuildingIDOperationCompleted == null)) {
-                this.Floors_Select_By_BuildingIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_BuildingIDOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_By_BuildingID", new object[] {
-                        username,
-                        password,
-                        BuildingID}, this.Floors_Select_By_BuildingIDOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_By_BuildingIDOperationCompleted(object arg) {
-            if ((this.Floors_Select_By_BuildingIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_By_BuildingIDCompleted(this, new Floors_Select_By_BuildingIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_CarbonDioxideExtinguishersNumbers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_By_CarbonDioxideExtinguishersNumbers(string username, string password, string CarbonDioxideExtinguishersNumbers) {
-            object[] results = this.Invoke("Floors_Select_By_CarbonDioxideExtinguishersNumbers", new object[] {
-                        username,
-                        password,
-                        CarbonDioxideExtinguishersNumbers});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_CarbonDioxideExtinguishersNumbersAsync(string username, string password, string CarbonDioxideExtinguishersNumbers) {
-            this.Floors_Select_By_CarbonDioxideExtinguishersNumbersAsync(username, password, CarbonDioxideExtinguishersNumbers, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_CarbonDioxideExtinguishersNumbersAsync(string username, string password, string CarbonDioxideExtinguishersNumbers, object userState) {
-            if ((this.Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted == null)) {
-                this.Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_By_CarbonDioxideExtinguishersNumbers", new object[] {
-                        username,
-                        password,
-                        CarbonDioxideExtinguishersNumbers}, this.Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted(object arg) {
-            if ((this.Floors_Select_By_CarbonDioxideExtinguishersNumbersCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_By_CarbonDioxideExtinguishersNumbersCompleted(this, new Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_PowderExtinguishersNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_By_PowderExtinguishersNumber(string username, string password, string PowderExtinguishersNumber) {
-            object[] results = this.Invoke("Floors_Select_By_PowderExtinguishersNumber", new object[] {
-                        username,
-                        password,
-                        PowderExtinguishersNumber});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_PowderExtinguishersNumberAsync(string username, string password, string PowderExtinguishersNumber) {
-            this.Floors_Select_By_PowderExtinguishersNumberAsync(username, password, PowderExtinguishersNumber, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_PowderExtinguishersNumberAsync(string username, string password, string PowderExtinguishersNumber, object userState) {
-            if ((this.Floors_Select_By_PowderExtinguishersNumberOperationCompleted == null)) {
-                this.Floors_Select_By_PowderExtinguishersNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_PowderExtinguishersNumberOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_By_PowderExtinguishersNumber", new object[] {
-                        username,
-                        password,
-                        PowderExtinguishersNumber}, this.Floors_Select_By_PowderExtinguishersNumberOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_By_PowderExtinguishersNumberOperationCompleted(object arg) {
-            if ((this.Floors_Select_By_PowderExtinguishersNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_By_PowderExtinguishersNumberCompleted(this, new Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_FoamExtinguishersNumbers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_By_FoamExtinguishersNumbers(string username, string password, string FoamExtinguishersNumbers) {
-            object[] results = this.Invoke("Floors_Select_By_FoamExtinguishersNumbers", new object[] {
-                        username,
-                        password,
-                        FoamExtinguishersNumbers});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_FoamExtinguishersNumbersAsync(string username, string password, string FoamExtinguishersNumbers) {
-            this.Floors_Select_By_FoamExtinguishersNumbersAsync(username, password, FoamExtinguishersNumbers, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_FoamExtinguishersNumbersAsync(string username, string password, string FoamExtinguishersNumbers, object userState) {
-            if ((this.Floors_Select_By_FoamExtinguishersNumbersOperationCompleted == null)) {
-                this.Floors_Select_By_FoamExtinguishersNumbersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_FoamExtinguishersNumbersOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_By_FoamExtinguishersNumbers", new object[] {
-                        username,
-                        password,
-                        FoamExtinguishersNumbers}, this.Floors_Select_By_FoamExtinguishersNumbersOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_By_FoamExtinguishersNumbersOperationCompleted(object arg) {
-            if ((this.Floors_Select_By_FoamExtinguishersNumbersCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_By_FoamExtinguishersNumbersCompleted(this, new Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_PowderExtinguishersWeight", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_By_PowderExtinguishersWeight(string username, string password, int PowderExtinguishersWeight) {
-            object[] results = this.Invoke("Floors_Select_By_PowderExtinguishersWeight", new object[] {
-                        username,
-                        password,
-                        PowderExtinguishersWeight});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_PowderExtinguishersWeightAsync(string username, string password, int PowderExtinguishersWeight) {
-            this.Floors_Select_By_PowderExtinguishersWeightAsync(username, password, PowderExtinguishersWeight, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_PowderExtinguishersWeightAsync(string username, string password, int PowderExtinguishersWeight, object userState) {
-            if ((this.Floors_Select_By_PowderExtinguishersWeightOperationCompleted == null)) {
-                this.Floors_Select_By_PowderExtinguishersWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_PowderExtinguishersWeightOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_By_PowderExtinguishersWeight", new object[] {
-                        username,
-                        password,
-                        PowderExtinguishersWeight}, this.Floors_Select_By_PowderExtinguishersWeightOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_By_PowderExtinguishersWeightOperationCompleted(object arg) {
-            if ((this.Floors_Select_By_PowderExtinguishersWeightCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_By_PowderExtinguishersWeightCompleted(this, new Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_CarbonDioxideExtinguishersWeight", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_By_CarbonDioxideExtinguishersWeight(string username, string password, int CarbonDioxideExtinguishersWeight) {
-            object[] results = this.Invoke("Floors_Select_By_CarbonDioxideExtinguishersWeight", new object[] {
-                        username,
-                        password,
-                        CarbonDioxideExtinguishersWeight});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_CarbonDioxideExtinguishersWeightAsync(string username, string password, int CarbonDioxideExtinguishersWeight) {
-            this.Floors_Select_By_CarbonDioxideExtinguishersWeightAsync(username, password, CarbonDioxideExtinguishersWeight, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_CarbonDioxideExtinguishersWeightAsync(string username, string password, int CarbonDioxideExtinguishersWeight, object userState) {
-            if ((this.Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted == null)) {
-                this.Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_By_CarbonDioxideExtinguishersWeight", new object[] {
-                        username,
-                        password,
-                        CarbonDioxideExtinguishersWeight}, this.Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted(object arg) {
-            if ((this.Floors_Select_By_CarbonDioxideExtinguishersWeightCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_By_CarbonDioxideExtinguishersWeightCompleted(this, new Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_FoamExtinguishersWeight", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Floors[] Floors_Select_By_FoamExtinguishersWeight(string username, string password, int FoamExtinguishersWeight) {
-            object[] results = this.Invoke("Floors_Select_By_FoamExtinguishersWeight", new object[] {
-                        username,
-                        password,
-                        FoamExtinguishersWeight});
-            return ((Floors[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_FoamExtinguishersWeightAsync(string username, string password, int FoamExtinguishersWeight) {
-            this.Floors_Select_By_FoamExtinguishersWeightAsync(username, password, FoamExtinguishersWeight, null);
-        }
-        
-        /// <remarks/>
-        public void Floors_Select_By_FoamExtinguishersWeightAsync(string username, string password, int FoamExtinguishersWeight, object userState) {
-            if ((this.Floors_Select_By_FoamExtinguishersWeightOperationCompleted == null)) {
-                this.Floors_Select_By_FoamExtinguishersWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_FoamExtinguishersWeightOperationCompleted);
-            }
-            this.InvokeAsync("Floors_Select_By_FoamExtinguishersWeight", new object[] {
-                        username,
-                        password,
-                        FoamExtinguishersWeight}, this.Floors_Select_By_FoamExtinguishersWeightOperationCompleted, userState);
-        }
-        
-        private void OnFloors_Select_By_FoamExtinguishersWeightOperationCompleted(object arg) {
-            if ((this.Floors_Select_By_FoamExtinguishersWeightCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Floors_Select_By_FoamExtinguishersWeightCompleted(this, new Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool FFstations_Delete(string username, string password, int FFstationsID) {
-            object[] results = this.Invoke("FFstations_Delete", new object[] {
-                        username,
-                        password,
-                        FFstationsID});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_DeleteAsync(string username, string password, int FFstationsID) {
-            this.FFstations_DeleteAsync(username, password, FFstationsID, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_DeleteAsync(string username, string password, int FFstationsID, object userState) {
-            if ((this.FFstations_DeleteOperationCompleted == null)) {
-                this.FFstations_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_DeleteOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Delete", new object[] {
-                        username,
-                        password,
-                        FFstationsID}, this.FFstations_DeleteOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_DeleteOperationCompleted(object arg) {
-            if ((this.FFstations_DeleteCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_DeleteCompleted(this, new FFstations_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations FFstations_Insert(string username, string password, FFstations FFstations) {
-            object[] results = this.Invoke("FFstations_Insert", new object[] {
-                        username,
-                        password,
-                        FFstations});
-            return ((FFstations)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_InsertAsync(string username, string password, FFstations FFstations) {
-            this.FFstations_InsertAsync(username, password, FFstations, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_InsertAsync(string username, string password, FFstations FFstations, object userState) {
-            if ((this.FFstations_InsertOperationCompleted == null)) {
-                this.FFstations_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_InsertOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Insert", new object[] {
-                        username,
-                        password,
-                        FFstations}, this.FFstations_InsertOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_InsertOperationCompleted(object arg) {
-            if ((this.FFstations_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_InsertCompleted(this, new FFstations_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool FFstations_Update(string username, string password, FFstations FFstations) {
-            object[] results = this.Invoke("FFstations_Update", new object[] {
-                        username,
-                        password,
-                        FFstations});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_UpdateAsync(string username, string password, FFstations FFstations) {
-            this.FFstations_UpdateAsync(username, password, FFstations, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_UpdateAsync(string username, string password, FFstations FFstations, object userState) {
-            if ((this.FFstations_UpdateOperationCompleted == null)) {
-                this.FFstations_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_UpdateOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Update", new object[] {
-                        username,
-                        password,
-                        FFstations}, this.FFstations_UpdateOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_UpdateOperationCompleted(object arg) {
-            if ((this.FFstations_UpdateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_UpdateCompleted(this, new FFstations_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_All(string username, string password) {
-            object[] results = this.Invoke("FFstations_Select_All", new object[] {
-                        username,
-                        password});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_AllAsync(string username, string password) {
-            this.FFstations_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_AllAsync(string username, string password, object userState) {
-            if ((this.FFstations_Select_AllOperationCompleted == null)) {
-                this.FFstations_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_All", new object[] {
-                        username,
-                        password}, this.FFstations_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_AllOperationCompleted(object arg) {
-            if ((this.FFstations_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_AllCompleted(this, new FFstations_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_AreaName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_AreaName(string username, string password, string AreaName) {
-            object[] results = this.Invoke("FFstations_Select_By_AreaName", new object[] {
-                        username,
-                        password,
-                        AreaName});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_AreaNameAsync(string username, string password, string AreaName) {
-            this.FFstations_Select_By_AreaNameAsync(username, password, AreaName, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_AreaNameAsync(string username, string password, string AreaName, object userState) {
-            if ((this.FFstations_Select_By_AreaNameOperationCompleted == null)) {
-                this.FFstations_Select_By_AreaNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_AreaNameOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_AreaName", new object[] {
-                        username,
-                        password,
-                        AreaName}, this.FFstations_Select_By_AreaNameOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_AreaNameOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_AreaNameCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_AreaNameCompleted(this, new FFstations_Select_By_AreaNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_CarsNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_CarsNumber(string username, string password, string CarsNumber) {
-            object[] results = this.Invoke("FFstations_Select_By_CarsNumber", new object[] {
-                        username,
-                        password,
-                        CarsNumber});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_CarsNumberAsync(string username, string password, string CarsNumber) {
-            this.FFstations_Select_By_CarsNumberAsync(username, password, CarsNumber, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_CarsNumberAsync(string username, string password, string CarsNumber, object userState) {
-            if ((this.FFstations_Select_By_CarsNumberOperationCompleted == null)) {
-                this.FFstations_Select_By_CarsNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_CarsNumberOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_CarsNumber", new object[] {
-                        username,
-                        password,
-                        CarsNumber}, this.FFstations_Select_By_CarsNumberOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_CarsNumberOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_CarsNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_CarsNumberCompleted(this, new FFstations_Select_By_CarsNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Equipments", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_Equipments(string username, string password, string Equipments) {
-            object[] results = this.Invoke("FFstations_Select_By_Equipments", new object[] {
-                        username,
-                        password,
-                        Equipments});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_EquipmentsAsync(string username, string password, string Equipments) {
-            this.FFstations_Select_By_EquipmentsAsync(username, password, Equipments, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_EquipmentsAsync(string username, string password, string Equipments, object userState) {
-            if ((this.FFstations_Select_By_EquipmentsOperationCompleted == null)) {
-                this.FFstations_Select_By_EquipmentsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_EquipmentsOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_Equipments", new object[] {
-                        username,
-                        password,
-                        Equipments}, this.FFstations_Select_By_EquipmentsOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_EquipmentsOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_EquipmentsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_EquipmentsCompleted(this, new FFstations_Select_By_EquipmentsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_FF_ID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_FF_ID(string username, string password, int FF_ID) {
-            object[] results = this.Invoke("FFstations_Select_By_FF_ID", new object[] {
-                        username,
-                        password,
-                        FF_ID});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_FF_IDAsync(string username, string password, int FF_ID) {
-            this.FFstations_Select_By_FF_IDAsync(username, password, FF_ID, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_FF_IDAsync(string username, string password, int FF_ID, object userState) {
-            if ((this.FFstations_Select_By_FF_IDOperationCompleted == null)) {
-                this.FFstations_Select_By_FF_IDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_FF_IDOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_FF_ID", new object[] {
-                        username,
-                        password,
-                        FF_ID}, this.FFstations_Select_By_FF_IDOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_FF_IDOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_FF_IDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_FF_IDCompleted(this, new FFstations_Select_By_FF_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_OfficersNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_OfficersNumber(string username, string password, string OfficersNumber) {
-            object[] results = this.Invoke("FFstations_Select_By_OfficersNumber", new object[] {
-                        username,
-                        password,
-                        OfficersNumber});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_OfficersNumberAsync(string username, string password, string OfficersNumber) {
-            this.FFstations_Select_By_OfficersNumberAsync(username, password, OfficersNumber, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_OfficersNumberAsync(string username, string password, string OfficersNumber, object userState) {
-            if ((this.FFstations_Select_By_OfficersNumberOperationCompleted == null)) {
-                this.FFstations_Select_By_OfficersNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_OfficersNumberOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_OfficersNumber", new object[] {
-                        username,
-                        password,
-                        OfficersNumber}, this.FFstations_Select_By_OfficersNumberOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_OfficersNumberOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_OfficersNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_OfficersNumberCompleted(this, new FFstations_Select_By_OfficersNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Sector", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_Sector(string username, string password, string Sector) {
-            object[] results = this.Invoke("FFstations_Select_By_Sector", new object[] {
-                        username,
-                        password,
-                        Sector});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_SectorAsync(string username, string password, string Sector) {
-            this.FFstations_Select_By_SectorAsync(username, password, Sector, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_SectorAsync(string username, string password, string Sector, object userState) {
-            if ((this.FFstations_Select_By_SectorOperationCompleted == null)) {
-                this.FFstations_Select_By_SectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_SectorOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_Sector", new object[] {
-                        username,
-                        password,
-                        Sector}, this.FFstations_Select_By_SectorOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_SectorOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_SectorCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_SectorCompleted(this, new FFstations_Select_By_SectorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Signs", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_Signs(string username, string password, string Signs) {
-            object[] results = this.Invoke("FFstations_Select_By_Signs", new object[] {
-                        username,
-                        password,
-                        Signs});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_SignsAsync(string username, string password, string Signs) {
-            this.FFstations_Select_By_SignsAsync(username, password, Signs, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_SignsAsync(string username, string password, string Signs, object userState) {
-            if ((this.FFstations_Select_By_SignsOperationCompleted == null)) {
-                this.FFstations_Select_By_SignsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_SignsOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_Signs", new object[] {
-                        username,
-                        password,
-                        Signs}, this.FFstations_Select_By_SignsOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_SignsOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_SignsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_SignsCompleted(this, new FFstations_Select_By_SignsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_SoliderNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_SoliderNumber(string username, string password, string SoliderNumber) {
-            object[] results = this.Invoke("FFstations_Select_By_SoliderNumber", new object[] {
-                        username,
-                        password,
-                        SoliderNumber});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_SoliderNumberAsync(string username, string password, string SoliderNumber) {
-            this.FFstations_Select_By_SoliderNumberAsync(username, password, SoliderNumber, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_SoliderNumberAsync(string username, string password, string SoliderNumber, object userState) {
-            if ((this.FFstations_Select_By_SoliderNumberOperationCompleted == null)) {
-                this.FFstations_Select_By_SoliderNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_SoliderNumberOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_SoliderNumber", new object[] {
-                        username,
-                        password,
-                        SoliderNumber}, this.FFstations_Select_By_SoliderNumberOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_SoliderNumberOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_SoliderNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_SoliderNumberCompleted(this, new FFstations_Select_By_SoliderNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Street", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_Street(string username, string password, string Street) {
-            object[] results = this.Invoke("FFstations_Select_By_Street", new object[] {
-                        username,
-                        password,
-                        Street});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_StreetAsync(string username, string password, string Street) {
-            this.FFstations_Select_By_StreetAsync(username, password, Street, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_StreetAsync(string username, string password, string Street, object userState) {
-            if ((this.FFstations_Select_By_StreetOperationCompleted == null)) {
-                this.FFstations_Select_By_StreetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_StreetOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_Street", new object[] {
-                        username,
-                        password,
-                        Street}, this.FFstations_Select_By_StreetOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_StreetOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_StreetCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_StreetCompleted(this, new FFstations_Select_By_StreetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_UserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_UserID(string username, string password, int UserID) {
-            object[] results = this.Invoke("FFstations_Select_By_UserID", new object[] {
-                        username,
-                        password,
-                        UserID});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_UserIDAsync(string username, string password, int UserID) {
-            this.FFstations_Select_By_UserIDAsync(username, password, UserID, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_UserIDAsync(string username, string password, int UserID, object userState) {
-            if ((this.FFstations_Select_By_UserIDOperationCompleted == null)) {
-                this.FFstations_Select_By_UserIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_UserIDOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_UserID", new object[] {
-                        username,
-                        password,
-                        UserID}, this.FFstations_Select_By_UserIDOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_UserIDOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_UserIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_UserIDCompleted(this, new FFstations_Select_By_UserIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_ZoneNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FFstations[] FFstations_Select_By_ZoneNumber(string username, string password, string ZoneNumber) {
-            object[] results = this.Invoke("FFstations_Select_By_ZoneNumber", new object[] {
-                        username,
-                        password,
-                        ZoneNumber});
-            return ((FFstations[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_ZoneNumberAsync(string username, string password, string ZoneNumber) {
-            this.FFstations_Select_By_ZoneNumberAsync(username, password, ZoneNumber, null);
-        }
-        
-        /// <remarks/>
-        public void FFstations_Select_By_ZoneNumberAsync(string username, string password, string ZoneNumber, object userState) {
-            if ((this.FFstations_Select_By_ZoneNumberOperationCompleted == null)) {
-                this.FFstations_Select_By_ZoneNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_ZoneNumberOperationCompleted);
-            }
-            this.InvokeAsync("FFstations_Select_By_ZoneNumber", new object[] {
-                        username,
-                        password,
-                        ZoneNumber}, this.FFstations_Select_By_ZoneNumberOperationCompleted, userState);
-        }
-        
-        private void OnFFstations_Select_By_ZoneNumberOperationCompleted(object arg) {
-            if ((this.FFstations_Select_By_ZoneNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FFstations_Select_By_ZoneNumberCompleted(this, new FFstations_Select_By_ZoneNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool FF_pumps_Delete(string username, string password, int FF_pumpsID) {
-            object[] results = this.Invoke("FF_pumps_Delete", new object[] {
-                        username,
-                        password,
-                        FF_pumpsID});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_DeleteAsync(string username, string password, int FF_pumpsID) {
-            this.FF_pumps_DeleteAsync(username, password, FF_pumpsID, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_DeleteAsync(string username, string password, int FF_pumpsID, object userState) {
-            if ((this.FF_pumps_DeleteOperationCompleted == null)) {
-                this.FF_pumps_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_DeleteOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Delete", new object[] {
-                        username,
-                        password,
-                        FF_pumpsID}, this.FF_pumps_DeleteOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_DeleteOperationCompleted(object arg) {
-            if ((this.FF_pumps_DeleteCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_DeleteCompleted(this, new FF_pumps_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps FF_pumps_Insert(string username, string password, FF_pumps FF_pumps) {
-            object[] results = this.Invoke("FF_pumps_Insert", new object[] {
-                        username,
-                        password,
-                        FF_pumps});
-            return ((FF_pumps)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_InsertAsync(string username, string password, FF_pumps FF_pumps) {
-            this.FF_pumps_InsertAsync(username, password, FF_pumps, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_InsertAsync(string username, string password, FF_pumps FF_pumps, object userState) {
-            if ((this.FF_pumps_InsertOperationCompleted == null)) {
-                this.FF_pumps_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_InsertOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Insert", new object[] {
-                        username,
-                        password,
-                        FF_pumps}, this.FF_pumps_InsertOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_InsertOperationCompleted(object arg) {
-            if ((this.FF_pumps_InsertCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_InsertCompleted(this, new FF_pumps_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool FF_pumps_Update(string username, string password, FF_pumps FF_pumps) {
-            object[] results = this.Invoke("FF_pumps_Update", new object[] {
-                        username,
-                        password,
-                        FF_pumps});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_UpdateAsync(string username, string password, FF_pumps FF_pumps) {
-            this.FF_pumps_UpdateAsync(username, password, FF_pumps, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_UpdateAsync(string username, string password, FF_pumps FF_pumps, object userState) {
-            if ((this.FF_pumps_UpdateOperationCompleted == null)) {
-                this.FF_pumps_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_UpdateOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Update", new object[] {
-                        username,
-                        password,
-                        FF_pumps}, this.FF_pumps_UpdateOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_UpdateOperationCompleted(object arg) {
-            if ((this.FF_pumps_UpdateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_UpdateCompleted(this, new FF_pumps_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_All(string username, string password) {
-            object[] results = this.Invoke("FF_pumps_Select_All", new object[] {
-                        username,
-                        password});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_AllAsync(string username, string password) {
-            this.FF_pumps_Select_AllAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_AllAsync(string username, string password, object userState) {
-            if ((this.FF_pumps_Select_AllOperationCompleted == null)) {
-                this.FF_pumps_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_AllOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_All", new object[] {
-                        username,
-                        password}, this.FF_pumps_Select_AllOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_AllOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_AllCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_AllCompleted(this, new FF_pumps_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Address", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_By_Address(string username, string password, string Address) {
-            object[] results = this.Invoke("FF_pumps_Select_By_Address", new object[] {
-                        username,
-                        password,
-                        Address});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_AddressAsync(string username, string password, string Address) {
-            this.FF_pumps_Select_By_AddressAsync(username, password, Address, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_AddressAsync(string username, string password, string Address, object userState) {
-            if ((this.FF_pumps_Select_By_AddressOperationCompleted == null)) {
-                this.FF_pumps_Select_By_AddressOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_AddressOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_By_Address", new object[] {
-                        username,
-                        password,
-                        Address}, this.FF_pumps_Select_By_AddressOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_By_AddressOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_By_AddressCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_By_AddressCompleted(this, new FF_pumps_Select_By_AddressCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Area", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_By_Area(string username, string password, string Area) {
-            object[] results = this.Invoke("FF_pumps_Select_By_Area", new object[] {
-                        username,
-                        password,
-                        Area});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_AreaAsync(string username, string password, string Area) {
-            this.FF_pumps_Select_By_AreaAsync(username, password, Area, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_AreaAsync(string username, string password, string Area, object userState) {
-            if ((this.FF_pumps_Select_By_AreaOperationCompleted == null)) {
-                this.FF_pumps_Select_By_AreaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_AreaOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_By_Area", new object[] {
-                        username,
-                        password,
-                        Area}, this.FF_pumps_Select_By_AreaOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_By_AreaOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_By_AreaCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_By_AreaCompleted(this, new FF_pumps_Select_By_AreaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_FF_pumpsID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_By_FF_pumpsID(string username, string password, int FF_pumpsID) {
-            object[] results = this.Invoke("FF_pumps_Select_By_FF_pumpsID", new object[] {
-                        username,
-                        password,
-                        FF_pumpsID});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_FF_pumpsIDAsync(string username, string password, int FF_pumpsID) {
-            this.FF_pumps_Select_By_FF_pumpsIDAsync(username, password, FF_pumpsID, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_FF_pumpsIDAsync(string username, string password, int FF_pumpsID, object userState) {
-            if ((this.FF_pumps_Select_By_FF_pumpsIDOperationCompleted == null)) {
-                this.FF_pumps_Select_By_FF_pumpsIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_FF_pumpsIDOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_By_FF_pumpsID", new object[] {
-                        username,
-                        password,
-                        FF_pumpsID}, this.FF_pumps_Select_By_FF_pumpsIDOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_By_FF_pumpsIDOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_By_FF_pumpsIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_By_FF_pumpsIDCompleted(this, new FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_PumpNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_By_PumpNumber(string username, string password, string PumpNumber) {
-            object[] results = this.Invoke("FF_pumps_Select_By_PumpNumber", new object[] {
-                        username,
-                        password,
-                        PumpNumber});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_PumpNumberAsync(string username, string password, string PumpNumber) {
-            this.FF_pumps_Select_By_PumpNumberAsync(username, password, PumpNumber, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_PumpNumberAsync(string username, string password, string PumpNumber, object userState) {
-            if ((this.FF_pumps_Select_By_PumpNumberOperationCompleted == null)) {
-                this.FF_pumps_Select_By_PumpNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_PumpNumberOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_By_PumpNumber", new object[] {
-                        username,
-                        password,
-                        PumpNumber}, this.FF_pumps_Select_By_PumpNumberOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_By_PumpNumberOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_By_PumpNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_By_PumpNumberCompleted(this, new FF_pumps_Select_By_PumpNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Sector", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public FF_pumps[] FF_pumps_Select_By_Sector(string username, string password, string Sector) {
-            object[] results = this.Invoke("FF_pumps_Select_By_Sector", new object[] {
-                        username,
-                        password,
-                        Sector});
-            return ((FF_pumps[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_SectorAsync(string username, string password, string Sector) {
-            this.FF_pumps_Select_By_SectorAsync(username, password, Sector, null);
-        }
-        
-        /// <remarks/>
-        public void FF_pumps_Select_By_SectorAsync(string username, string password, string Sector, object userState) {
-            if ((this.FF_pumps_Select_By_SectorOperationCompleted == null)) {
-                this.FF_pumps_Select_By_SectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_SectorOperationCompleted);
-            }
-            this.InvokeAsync("FF_pumps_Select_By_Sector", new object[] {
-                        username,
-                        password,
-                        Sector}, this.FF_pumps_Select_By_SectorOperationCompleted, userState);
-        }
-        
-        private void OnFF_pumps_Select_By_SectorOperationCompleted(object arg) {
-            if ((this.FF_pumps_Select_By_SectorCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.FF_pumps_Select_By_SectorCompleted(this, new FF_pumps_Select_By_SectorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -5890,6 +3860,2036 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Users_Delete(string username, string password, int user_id) {
+            object[] results = this.Invoke("Users_Delete", new object[] {
+                        username,
+                        password,
+                        user_id});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_DeleteAsync(string username, string password, int user_id) {
+            this.Users_DeleteAsync(username, password, user_id, null);
+        }
+        
+        /// <remarks/>
+        public void Users_DeleteAsync(string username, string password, int user_id, object userState) {
+            if ((this.Users_DeleteOperationCompleted == null)) {
+                this.Users_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Users_Delete", new object[] {
+                        username,
+                        password,
+                        user_id}, this.Users_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnUsers_DeleteOperationCompleted(object arg) {
+            if ((this.Users_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_DeleteCompleted(this, new Users_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public IRUser Users_Insert(string username, string password, IRUser Users) {
+            object[] results = this.Invoke("Users_Insert", new object[] {
+                        username,
+                        password,
+                        Users});
+            return ((IRUser)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_InsertAsync(string username, string password, IRUser Users) {
+            this.Users_InsertAsync(username, password, Users, null);
+        }
+        
+        /// <remarks/>
+        public void Users_InsertAsync(string username, string password, IRUser Users, object userState) {
+            if ((this.Users_InsertOperationCompleted == null)) {
+                this.Users_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_InsertOperationCompleted);
+            }
+            this.InvokeAsync("Users_Insert", new object[] {
+                        username,
+                        password,
+                        Users}, this.Users_InsertOperationCompleted, userState);
+        }
+        
+        private void OnUsers_InsertOperationCompleted(object arg) {
+            if ((this.Users_InsertCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_InsertCompleted(this, new Users_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Users_Update(string username, string password, IRUser Users) {
+            object[] results = this.Invoke("Users_Update", new object[] {
+                        username,
+                        password,
+                        Users});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_UpdateAsync(string username, string password, IRUser Users) {
+            this.Users_UpdateAsync(username, password, Users, null);
+        }
+        
+        /// <remarks/>
+        public void Users_UpdateAsync(string username, string password, IRUser Users, object userState) {
+            if ((this.Users_UpdateOperationCompleted == null)) {
+                this.Users_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Users_Update", new object[] {
+                        username,
+                        password,
+                        Users}, this.Users_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnUsers_UpdateOperationCompleted(object arg) {
+            if ((this.Users_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_UpdateCompleted(this, new Users_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public IRUser[] Users_Select_All(string username, string password) {
+            object[] results = this.Invoke("Users_Select_All", new object[] {
+                        username,
+                        password});
+            return ((IRUser[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Select_AllAsync(string username, string password) {
+            this.Users_Select_AllAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Select_AllAsync(string username, string password, object userState) {
+            if ((this.Users_Select_AllOperationCompleted == null)) {
+                this.Users_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Select_AllOperationCompleted);
+            }
+            this.InvokeAsync("Users_Select_All", new object[] {
+                        username,
+                        password}, this.Users_Select_AllOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Select_AllOperationCompleted(object arg) {
+            if ((this.Users_Select_AllCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Select_AllCompleted(this, new Users_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Users_Of_User", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public IRUser[] Users_Select_Users_Of_User(string username, string password, int UserId) {
+            object[] results = this.Invoke("Users_Select_Users_Of_User", new object[] {
+                        username,
+                        password,
+                        UserId});
+            return ((IRUser[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Select_Users_Of_UserAsync(string username, string password, int UserId) {
+            this.Users_Select_Users_Of_UserAsync(username, password, UserId, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Select_Users_Of_UserAsync(string username, string password, int UserId, object userState) {
+            if ((this.Users_Select_Users_Of_UserOperationCompleted == null)) {
+                this.Users_Select_Users_Of_UserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Select_Users_Of_UserOperationCompleted);
+            }
+            this.InvokeAsync("Users_Select_Users_Of_User", new object[] {
+                        username,
+                        password,
+                        UserId}, this.Users_Select_Users_Of_UserOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Select_Users_Of_UserOperationCompleted(object arg) {
+            if ((this.Users_Select_Users_Of_UserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Select_Users_Of_UserCompleted(this, new Users_Select_Users_Of_UserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByUserId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public IRUser Users_SelectByUserId(string username, string password, int UserId) {
+            object[] results = this.Invoke("Users_SelectByUserId", new object[] {
+                        username,
+                        password,
+                        UserId});
+            return ((IRUser)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_SelectByUserIdAsync(string username, string password, int UserId) {
+            this.Users_SelectByUserIdAsync(username, password, UserId, null);
+        }
+        
+        /// <remarks/>
+        public void Users_SelectByUserIdAsync(string username, string password, int UserId, object userState) {
+            if ((this.Users_SelectByUserIdOperationCompleted == null)) {
+                this.Users_SelectByUserIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_SelectByUserIdOperationCompleted);
+            }
+            this.InvokeAsync("Users_SelectByUserId", new object[] {
+                        username,
+                        password,
+                        UserId}, this.Users_SelectByUserIdOperationCompleted, userState);
+        }
+        
+        private void OnUsers_SelectByUserIdOperationCompleted(object arg) {
+            if ((this.Users_SelectByUserIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_SelectByUserIdCompleted(this, new Users_SelectByUserIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByNamePass", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public IRUser Users_SelectByNamePass(string username, string password) {
+            object[] results = this.Invoke("Users_SelectByNamePass", new object[] {
+                        username,
+                        password});
+            return ((IRUser)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_SelectByNamePassAsync(string username, string password) {
+            this.Users_SelectByNamePassAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void Users_SelectByNamePassAsync(string username, string password, object userState) {
+            if ((this.Users_SelectByNamePassOperationCompleted == null)) {
+                this.Users_SelectByNamePassOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_SelectByNamePassOperationCompleted);
+            }
+            this.InvokeAsync("Users_SelectByNamePass", new object[] {
+                        username,
+                        password}, this.Users_SelectByNamePassOperationCompleted, userState);
+        }
+        
+        private void OnUsers_SelectByNamePassOperationCompleted(object arg) {
+            if ((this.Users_SelectByNamePassCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_SelectByNamePassCompleted(this, new Users_SelectByNamePassCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_SelectByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public IRUser Users_SelectByName(string username, string password, string name) {
+            object[] results = this.Invoke("Users_SelectByName", new object[] {
+                        username,
+                        password,
+                        name});
+            return ((IRUser)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_SelectByNameAsync(string username, string password, string name) {
+            this.Users_SelectByNameAsync(username, password, name, null);
+        }
+        
+        /// <remarks/>
+        public void Users_SelectByNameAsync(string username, string password, string name, object userState) {
+            if ((this.Users_SelectByNameOperationCompleted == null)) {
+                this.Users_SelectByNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_SelectByNameOperationCompleted);
+            }
+            this.InvokeAsync("Users_SelectByName", new object[] {
+                        username,
+                        password,
+                        name}, this.Users_SelectByNameOperationCompleted, userState);
+        }
+        
+        private void OnUsers_SelectByNameOperationCompleted(object arg) {
+            if ((this.Users_SelectByNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_SelectByNameCompleted(this, new Users_SelectByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Select_Super_Admin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public IRUser[] Users_Select_Super_Admin(string username, string password) {
+            object[] results = this.Invoke("Users_Select_Super_Admin", new object[] {
+                        username,
+                        password});
+            return ((IRUser[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Select_Super_AdminAsync(string username, string password) {
+            this.Users_Select_Super_AdminAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Select_Super_AdminAsync(string username, string password, object userState) {
+            if ((this.Users_Select_Super_AdminOperationCompleted == null)) {
+                this.Users_Select_Super_AdminOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Select_Super_AdminOperationCompleted);
+            }
+            this.InvokeAsync("Users_Select_Super_Admin", new object[] {
+                        username,
+                        password}, this.Users_Select_Super_AdminOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Select_Super_AdminOperationCompleted(object arg) {
+            if ((this.Users_Select_Super_AdminCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Select_Super_AdminCompleted(this, new Users_Select_Super_AdminCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Users_Admin_Delete(string username, string password, int user_id, int Admin_id) {
+            object[] results = this.Invoke("Users_Admin_Delete", new object[] {
+                        username,
+                        password,
+                        user_id,
+                        Admin_id});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_DeleteAsync(string username, string password, int user_id, int Admin_id) {
+            this.Users_Admin_DeleteAsync(username, password, user_id, Admin_id, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_DeleteAsync(string username, string password, int user_id, int Admin_id, object userState) {
+            if ((this.Users_Admin_DeleteOperationCompleted == null)) {
+                this.Users_Admin_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Users_Admin_Delete", new object[] {
+                        username,
+                        password,
+                        user_id,
+                        Admin_id}, this.Users_Admin_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Admin_DeleteOperationCompleted(object arg) {
+            if ((this.Users_Admin_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Admin_DeleteCompleted(this, new Users_Admin_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Users_Admin Users_Admin_Insert(string username, string password, Users_Admin Users_Admin) {
+            object[] results = this.Invoke("Users_Admin_Insert", new object[] {
+                        username,
+                        password,
+                        Users_Admin});
+            return ((Users_Admin)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_InsertAsync(string username, string password, Users_Admin Users_Admin) {
+            this.Users_Admin_InsertAsync(username, password, Users_Admin, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_InsertAsync(string username, string password, Users_Admin Users_Admin, object userState) {
+            if ((this.Users_Admin_InsertOperationCompleted == null)) {
+                this.Users_Admin_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_InsertOperationCompleted);
+            }
+            this.InvokeAsync("Users_Admin_Insert", new object[] {
+                        username,
+                        password,
+                        Users_Admin}, this.Users_Admin_InsertOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Admin_InsertOperationCompleted(object arg) {
+            if ((this.Users_Admin_InsertCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Admin_InsertCompleted(this, new Users_Admin_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Users_Admin[] Users_Admin_Select_All(string username, string password) {
+            object[] results = this.Invoke("Users_Admin_Select_All", new object[] {
+                        username,
+                        password});
+            return ((Users_Admin[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_Select_AllAsync(string username, string password) {
+            this.Users_Admin_Select_AllAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_Select_AllAsync(string username, string password, object userState) {
+            if ((this.Users_Admin_Select_AllOperationCompleted == null)) {
+                this.Users_Admin_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_Select_AllOperationCompleted);
+            }
+            this.InvokeAsync("Users_Admin_Select_All", new object[] {
+                        username,
+                        password}, this.Users_Admin_Select_AllOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Admin_Select_AllOperationCompleted(object arg) {
+            if ((this.Users_Admin_Select_AllCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Admin_Select_AllCompleted(this, new Users_Admin_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_SelectByAdminId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Users_Admin Users_Admin_SelectByAdminId(string username, string password, int Admin_ID) {
+            object[] results = this.Invoke("Users_Admin_SelectByAdminId", new object[] {
+                        username,
+                        password,
+                        Admin_ID});
+            return ((Users_Admin)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_SelectByAdminIdAsync(string username, string password, int Admin_ID) {
+            this.Users_Admin_SelectByAdminIdAsync(username, password, Admin_ID, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_SelectByAdminIdAsync(string username, string password, int Admin_ID, object userState) {
+            if ((this.Users_Admin_SelectByAdminIdOperationCompleted == null)) {
+                this.Users_Admin_SelectByAdminIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_SelectByAdminIdOperationCompleted);
+            }
+            this.InvokeAsync("Users_Admin_SelectByAdminId", new object[] {
+                        username,
+                        password,
+                        Admin_ID}, this.Users_Admin_SelectByAdminIdOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Admin_SelectByAdminIdOperationCompleted(object arg) {
+            if ((this.Users_Admin_SelectByAdminIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Admin_SelectByAdminIdCompleted(this, new Users_Admin_SelectByAdminIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Users_Admin_SelectByUserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Users_Admin Users_Admin_SelectByUserID(string username, string password, int User_ID) {
+            object[] results = this.Invoke("Users_Admin_SelectByUserID", new object[] {
+                        username,
+                        password,
+                        User_ID});
+            return ((Users_Admin)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_SelectByUserIDAsync(string username, string password, int User_ID) {
+            this.Users_Admin_SelectByUserIDAsync(username, password, User_ID, null);
+        }
+        
+        /// <remarks/>
+        public void Users_Admin_SelectByUserIDAsync(string username, string password, int User_ID, object userState) {
+            if ((this.Users_Admin_SelectByUserIDOperationCompleted == null)) {
+                this.Users_Admin_SelectByUserIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUsers_Admin_SelectByUserIDOperationCompleted);
+            }
+            this.InvokeAsync("Users_Admin_SelectByUserID", new object[] {
+                        username,
+                        password,
+                        User_ID}, this.Users_Admin_SelectByUserIDOperationCompleted, userState);
+        }
+        
+        private void OnUsers_Admin_SelectByUserIDOperationCompleted(object arg) {
+            if ((this.Users_Admin_SelectByUserIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Users_Admin_SelectByUserIDCompleted(this, new Users_Admin_SelectByUserIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Injured_Delete(string username, string password, int InjuredID) {
+            object[] results = this.Invoke("Injured_Delete", new object[] {
+                        username,
+                        password,
+                        InjuredID});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_DeleteAsync(string username, string password, int InjuredID) {
+            this.Injured_DeleteAsync(username, password, InjuredID, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_DeleteAsync(string username, string password, int InjuredID, object userState) {
+            if ((this.Injured_DeleteOperationCompleted == null)) {
+                this.Injured_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Delete", new object[] {
+                        username,
+                        password,
+                        InjuredID}, this.Injured_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnInjured_DeleteOperationCompleted(object arg) {
+            if ((this.Injured_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_DeleteCompleted(this, new Injured_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured Injured_Insert(string username, string password, Injured Injured) {
+            object[] results = this.Invoke("Injured_Insert", new object[] {
+                        username,
+                        password,
+                        Injured});
+            return ((Injured)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_InsertAsync(string username, string password, Injured Injured) {
+            this.Injured_InsertAsync(username, password, Injured, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_InsertAsync(string username, string password, Injured Injured, object userState) {
+            if ((this.Injured_InsertOperationCompleted == null)) {
+                this.Injured_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_InsertOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Insert", new object[] {
+                        username,
+                        password,
+                        Injured}, this.Injured_InsertOperationCompleted, userState);
+        }
+        
+        private void OnInjured_InsertOperationCompleted(object arg) {
+            if ((this.Injured_InsertCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_InsertCompleted(this, new Injured_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_All(string username, string password) {
+            object[] results = this.Invoke("Injured_Select_All", new object[] {
+                        username,
+                        password});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_AllAsync(string username, string password) {
+            this.Injured_Select_AllAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_AllAsync(string username, string password, object userState) {
+            if ((this.Injured_Select_AllOperationCompleted == null)) {
+                this.Injured_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_AllOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_All", new object[] {
+                        username,
+                        password}, this.Injured_Select_AllOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_AllOperationCompleted(object arg) {
+            if ((this.Injured_Select_AllCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_AllCompleted(this, new Injured_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_AccidentID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_By_AccidentID(string username, string password, int AccidentID) {
+            object[] results = this.Invoke("Injured_Select_By_AccidentID", new object[] {
+                        username,
+                        password,
+                        AccidentID});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_AccidentIDAsync(string username, string password, int AccidentID) {
+            this.Injured_Select_By_AccidentIDAsync(username, password, AccidentID, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_AccidentIDAsync(string username, string password, int AccidentID, object userState) {
+            if ((this.Injured_Select_By_AccidentIDOperationCompleted == null)) {
+                this.Injured_Select_By_AccidentIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_AccidentIDOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_By_AccidentID", new object[] {
+                        username,
+                        password,
+                        AccidentID}, this.Injured_Select_By_AccidentIDOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_By_AccidentIDOperationCompleted(object arg) {
+            if ((this.Injured_Select_By_AccidentIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_By_AccidentIDCompleted(this, new Injured_Select_By_AccidentIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Age", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_By_Age(string username, string password, int Age) {
+            object[] results = this.Invoke("Injured_Select_By_Age", new object[] {
+                        username,
+                        password,
+                        Age});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_AgeAsync(string username, string password, int Age) {
+            this.Injured_Select_By_AgeAsync(username, password, Age, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_AgeAsync(string username, string password, int Age, object userState) {
+            if ((this.Injured_Select_By_AgeOperationCompleted == null)) {
+                this.Injured_Select_By_AgeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_AgeOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_By_Age", new object[] {
+                        username,
+                        password,
+                        Age}, this.Injured_Select_By_AgeOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_By_AgeOperationCompleted(object arg) {
+            if ((this.Injured_Select_By_AgeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_By_AgeCompleted(this, new Injured_Select_By_AgeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Civil_Military", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_By_Civil_Military(string username, string password, string Civil_Military) {
+            object[] results = this.Invoke("Injured_Select_By_Civil_Military", new object[] {
+                        username,
+                        password,
+                        Civil_Military});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_Civil_MilitaryAsync(string username, string password, string Civil_Military) {
+            this.Injured_Select_By_Civil_MilitaryAsync(username, password, Civil_Military, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_Civil_MilitaryAsync(string username, string password, string Civil_Military, object userState) {
+            if ((this.Injured_Select_By_Civil_MilitaryOperationCompleted == null)) {
+                this.Injured_Select_By_Civil_MilitaryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_Civil_MilitaryOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_By_Civil_Military", new object[] {
+                        username,
+                        password,
+                        Civil_Military}, this.Injured_Select_By_Civil_MilitaryOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_By_Civil_MilitaryOperationCompleted(object arg) {
+            if ((this.Injured_Select_By_Civil_MilitaryCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_By_Civil_MilitaryCompleted(this, new Injured_Select_By_Civil_MilitaryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Date", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_By_Date(string username, string password, System.DateTime Date) {
+            object[] results = this.Invoke("Injured_Select_By_Date", new object[] {
+                        username,
+                        password,
+                        Date});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_DateAsync(string username, string password, System.DateTime Date) {
+            this.Injured_Select_By_DateAsync(username, password, Date, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_DateAsync(string username, string password, System.DateTime Date, object userState) {
+            if ((this.Injured_Select_By_DateOperationCompleted == null)) {
+                this.Injured_Select_By_DateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_DateOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_By_Date", new object[] {
+                        username,
+                        password,
+                        Date}, this.Injured_Select_By_DateOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_By_DateOperationCompleted(object arg) {
+            if ((this.Injured_Select_By_DateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_By_DateCompleted(this, new Injured_Select_By_DateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_InjuredID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_By_InjuredID(string username, string password, int InjuredID) {
+            object[] results = this.Invoke("Injured_Select_By_InjuredID", new object[] {
+                        username,
+                        password,
+                        InjuredID});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_InjuredIDAsync(string username, string password, int InjuredID) {
+            this.Injured_Select_By_InjuredIDAsync(username, password, InjuredID, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_InjuredIDAsync(string username, string password, int InjuredID, object userState) {
+            if ((this.Injured_Select_By_InjuredIDOperationCompleted == null)) {
+                this.Injured_Select_By_InjuredIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_InjuredIDOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_By_InjuredID", new object[] {
+                        username,
+                        password,
+                        InjuredID}, this.Injured_Select_By_InjuredIDOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_By_InjuredIDOperationCompleted(object arg) {
+            if ((this.Injured_Select_By_InjuredIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_By_InjuredIDCompleted(this, new Injured_Select_By_InjuredIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Name", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_By_Name(string username, string password, string Name) {
+            object[] results = this.Invoke("Injured_Select_By_Name", new object[] {
+                        username,
+                        password,
+                        Name});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_NameAsync(string username, string password, string Name) {
+            this.Injured_Select_By_NameAsync(username, password, Name, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_NameAsync(string username, string password, string Name, object userState) {
+            if ((this.Injured_Select_By_NameOperationCompleted == null)) {
+                this.Injured_Select_By_NameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_NameOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_By_Name", new object[] {
+                        username,
+                        password,
+                        Name}, this.Injured_Select_By_NameOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_By_NameOperationCompleted(object arg) {
+            if ((this.Injured_Select_By_NameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_By_NameCompleted(this, new Injured_Select_By_NameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Injured_Select_By_Rank", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Injured[] Injured_Select_By_Rank(string username, string password, string Rank) {
+            object[] results = this.Invoke("Injured_Select_By_Rank", new object[] {
+                        username,
+                        password,
+                        Rank});
+            return ((Injured[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_RankAsync(string username, string password, string Rank) {
+            this.Injured_Select_By_RankAsync(username, password, Rank, null);
+        }
+        
+        /// <remarks/>
+        public void Injured_Select_By_RankAsync(string username, string password, string Rank, object userState) {
+            if ((this.Injured_Select_By_RankOperationCompleted == null)) {
+                this.Injured_Select_By_RankOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInjured_Select_By_RankOperationCompleted);
+            }
+            this.InvokeAsync("Injured_Select_By_Rank", new object[] {
+                        username,
+                        password,
+                        Rank}, this.Injured_Select_By_RankOperationCompleted, userState);
+        }
+        
+        private void OnInjured_Select_By_RankOperationCompleted(object arg) {
+            if ((this.Injured_Select_By_RankCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Injured_Select_By_RankCompleted(this, new Injured_Select_By_RankCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Images Images_Insert(string username, string password, Images Images) {
+            object[] results = this.Invoke("Images_Insert", new object[] {
+                        username,
+                        password,
+                        Images});
+            return ((Images)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Images_InsertAsync(string username, string password, Images Images) {
+            this.Images_InsertAsync(username, password, Images, null);
+        }
+        
+        /// <remarks/>
+        public void Images_InsertAsync(string username, string password, Images Images, object userState) {
+            if ((this.Images_InsertOperationCompleted == null)) {
+                this.Images_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_InsertOperationCompleted);
+            }
+            this.InvokeAsync("Images_Insert", new object[] {
+                        username,
+                        password,
+                        Images}, this.Images_InsertOperationCompleted, userState);
+        }
+        
+        private void OnImages_InsertOperationCompleted(object arg) {
+            if ((this.Images_InsertCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Images_InsertCompleted(this, new Images_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Images[] Images_Select_All(string username, string password) {
+            object[] results = this.Invoke("Images_Select_All", new object[] {
+                        username,
+                        password});
+            return ((Images[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Images_Select_AllAsync(string username, string password) {
+            this.Images_Select_AllAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void Images_Select_AllAsync(string username, string password, object userState) {
+            if ((this.Images_Select_AllOperationCompleted == null)) {
+                this.Images_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_Select_AllOperationCompleted);
+            }
+            this.InvokeAsync("Images_Select_All", new object[] {
+                        username,
+                        password}, this.Images_Select_AllOperationCompleted, userState);
+        }
+        
+        private void OnImages_Select_AllOperationCompleted(object arg) {
+            if ((this.Images_Select_AllCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Images_Select_AllCompleted(this, new Images_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Select_By_BuildingID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Images[] Images_Select_By_BuildingID(string username, string password, int BuildingID) {
+            object[] results = this.Invoke("Images_Select_By_BuildingID", new object[] {
+                        username,
+                        password,
+                        BuildingID});
+            return ((Images[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Images_Select_By_BuildingIDAsync(string username, string password, int BuildingID) {
+            this.Images_Select_By_BuildingIDAsync(username, password, BuildingID, null);
+        }
+        
+        /// <remarks/>
+        public void Images_Select_By_BuildingIDAsync(string username, string password, int BuildingID, object userState) {
+            if ((this.Images_Select_By_BuildingIDOperationCompleted == null)) {
+                this.Images_Select_By_BuildingIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_Select_By_BuildingIDOperationCompleted);
+            }
+            this.InvokeAsync("Images_Select_By_BuildingID", new object[] {
+                        username,
+                        password,
+                        BuildingID}, this.Images_Select_By_BuildingIDOperationCompleted, userState);
+        }
+        
+        private void OnImages_Select_By_BuildingIDOperationCompleted(object arg) {
+            if ((this.Images_Select_By_BuildingIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Images_Select_By_BuildingIDCompleted(this, new Images_Select_By_BuildingIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Images_Select_By_ImageDescription", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Images[] Images_Select_By_ImageDescription(string username, string password, string ImageDescription) {
+            object[] results = this.Invoke("Images_Select_By_ImageDescription", new object[] {
+                        username,
+                        password,
+                        ImageDescription});
+            return ((Images[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Images_Select_By_ImageDescriptionAsync(string username, string password, string ImageDescription) {
+            this.Images_Select_By_ImageDescriptionAsync(username, password, ImageDescription, null);
+        }
+        
+        /// <remarks/>
+        public void Images_Select_By_ImageDescriptionAsync(string username, string password, string ImageDescription, object userState) {
+            if ((this.Images_Select_By_ImageDescriptionOperationCompleted == null)) {
+                this.Images_Select_By_ImageDescriptionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnImages_Select_By_ImageDescriptionOperationCompleted);
+            }
+            this.InvokeAsync("Images_Select_By_ImageDescription", new object[] {
+                        username,
+                        password,
+                        ImageDescription}, this.Images_Select_By_ImageDescriptionOperationCompleted, userState);
+        }
+        
+        private void OnImages_Select_By_ImageDescriptionOperationCompleted(object arg) {
+            if ((this.Images_Select_By_ImageDescriptionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Images_Select_By_ImageDescriptionCompleted(this, new Images_Select_By_ImageDescriptionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors Floors_Insert(string username, string password, Floors Floors) {
+            object[] results = this.Invoke("Floors_Insert", new object[] {
+                        username,
+                        password,
+                        Floors});
+            return ((Floors)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_InsertAsync(string username, string password, Floors Floors) {
+            this.Floors_InsertAsync(username, password, Floors, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_InsertAsync(string username, string password, Floors Floors, object userState) {
+            if ((this.Floors_InsertOperationCompleted == null)) {
+                this.Floors_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_InsertOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Insert", new object[] {
+                        username,
+                        password,
+                        Floors}, this.Floors_InsertOperationCompleted, userState);
+        }
+        
+        private void OnFloors_InsertOperationCompleted(object arg) {
+            if ((this.Floors_InsertCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_InsertCompleted(this, new Floors_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Floors_Update(string username, string password, Floors Floors) {
+            object[] results = this.Invoke("Floors_Update", new object[] {
+                        username,
+                        password,
+                        Floors});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_UpdateAsync(string username, string password, Floors Floors) {
+            this.Floors_UpdateAsync(username, password, Floors, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_UpdateAsync(string username, string password, Floors Floors, object userState) {
+            if ((this.Floors_UpdateOperationCompleted == null)) {
+                this.Floors_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Update", new object[] {
+                        username,
+                        password,
+                        Floors}, this.Floors_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnFloors_UpdateOperationCompleted(object arg) {
+            if ((this.Floors_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_UpdateCompleted(this, new Floors_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_All(string username, string password) {
+            object[] results = this.Invoke("Floors_Select_All", new object[] {
+                        username,
+                        password});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_AllAsync(string username, string password) {
+            this.Floors_Select_AllAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_AllAsync(string username, string password, object userState) {
+            if ((this.Floors_Select_AllOperationCompleted == null)) {
+                this.Floors_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_AllOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_All", new object[] {
+                        username,
+                        password}, this.Floors_Select_AllOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_AllOperationCompleted(object arg) {
+            if ((this.Floors_Select_AllCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_AllCompleted(this, new Floors_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_BuildingID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_By_BuildingID(string username, string password, int BuildingID) {
+            object[] results = this.Invoke("Floors_Select_By_BuildingID", new object[] {
+                        username,
+                        password,
+                        BuildingID});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_BuildingIDAsync(string username, string password, int BuildingID) {
+            this.Floors_Select_By_BuildingIDAsync(username, password, BuildingID, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_BuildingIDAsync(string username, string password, int BuildingID, object userState) {
+            if ((this.Floors_Select_By_BuildingIDOperationCompleted == null)) {
+                this.Floors_Select_By_BuildingIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_BuildingIDOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_By_BuildingID", new object[] {
+                        username,
+                        password,
+                        BuildingID}, this.Floors_Select_By_BuildingIDOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_By_BuildingIDOperationCompleted(object arg) {
+            if ((this.Floors_Select_By_BuildingIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_By_BuildingIDCompleted(this, new Floors_Select_By_BuildingIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_CarbonDioxideExtinguishersNumbers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_By_CarbonDioxideExtinguishersNumbers(string username, string password, string CarbonDioxideExtinguishersNumbers) {
+            object[] results = this.Invoke("Floors_Select_By_CarbonDioxideExtinguishersNumbers", new object[] {
+                        username,
+                        password,
+                        CarbonDioxideExtinguishersNumbers});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_CarbonDioxideExtinguishersNumbersAsync(string username, string password, string CarbonDioxideExtinguishersNumbers) {
+            this.Floors_Select_By_CarbonDioxideExtinguishersNumbersAsync(username, password, CarbonDioxideExtinguishersNumbers, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_CarbonDioxideExtinguishersNumbersAsync(string username, string password, string CarbonDioxideExtinguishersNumbers, object userState) {
+            if ((this.Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted == null)) {
+                this.Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_By_CarbonDioxideExtinguishersNumbers", new object[] {
+                        username,
+                        password,
+                        CarbonDioxideExtinguishersNumbers}, this.Floors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_By_CarbonDioxideExtinguishersNumbersOperationCompleted(object arg) {
+            if ((this.Floors_Select_By_CarbonDioxideExtinguishersNumbersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_By_CarbonDioxideExtinguishersNumbersCompleted(this, new Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_PowderExtinguishersNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_By_PowderExtinguishersNumber(string username, string password, string PowderExtinguishersNumber) {
+            object[] results = this.Invoke("Floors_Select_By_PowderExtinguishersNumber", new object[] {
+                        username,
+                        password,
+                        PowderExtinguishersNumber});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_PowderExtinguishersNumberAsync(string username, string password, string PowderExtinguishersNumber) {
+            this.Floors_Select_By_PowderExtinguishersNumberAsync(username, password, PowderExtinguishersNumber, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_PowderExtinguishersNumberAsync(string username, string password, string PowderExtinguishersNumber, object userState) {
+            if ((this.Floors_Select_By_PowderExtinguishersNumberOperationCompleted == null)) {
+                this.Floors_Select_By_PowderExtinguishersNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_PowderExtinguishersNumberOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_By_PowderExtinguishersNumber", new object[] {
+                        username,
+                        password,
+                        PowderExtinguishersNumber}, this.Floors_Select_By_PowderExtinguishersNumberOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_By_PowderExtinguishersNumberOperationCompleted(object arg) {
+            if ((this.Floors_Select_By_PowderExtinguishersNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_By_PowderExtinguishersNumberCompleted(this, new Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_FoamExtinguishersNumbers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_By_FoamExtinguishersNumbers(string username, string password, string FoamExtinguishersNumbers) {
+            object[] results = this.Invoke("Floors_Select_By_FoamExtinguishersNumbers", new object[] {
+                        username,
+                        password,
+                        FoamExtinguishersNumbers});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_FoamExtinguishersNumbersAsync(string username, string password, string FoamExtinguishersNumbers) {
+            this.Floors_Select_By_FoamExtinguishersNumbersAsync(username, password, FoamExtinguishersNumbers, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_FoamExtinguishersNumbersAsync(string username, string password, string FoamExtinguishersNumbers, object userState) {
+            if ((this.Floors_Select_By_FoamExtinguishersNumbersOperationCompleted == null)) {
+                this.Floors_Select_By_FoamExtinguishersNumbersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_FoamExtinguishersNumbersOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_By_FoamExtinguishersNumbers", new object[] {
+                        username,
+                        password,
+                        FoamExtinguishersNumbers}, this.Floors_Select_By_FoamExtinguishersNumbersOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_By_FoamExtinguishersNumbersOperationCompleted(object arg) {
+            if ((this.Floors_Select_By_FoamExtinguishersNumbersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_By_FoamExtinguishersNumbersCompleted(this, new Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_PowderExtinguishersWeight", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_By_PowderExtinguishersWeight(string username, string password, int PowderExtinguishersWeight) {
+            object[] results = this.Invoke("Floors_Select_By_PowderExtinguishersWeight", new object[] {
+                        username,
+                        password,
+                        PowderExtinguishersWeight});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_PowderExtinguishersWeightAsync(string username, string password, int PowderExtinguishersWeight) {
+            this.Floors_Select_By_PowderExtinguishersWeightAsync(username, password, PowderExtinguishersWeight, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_PowderExtinguishersWeightAsync(string username, string password, int PowderExtinguishersWeight, object userState) {
+            if ((this.Floors_Select_By_PowderExtinguishersWeightOperationCompleted == null)) {
+                this.Floors_Select_By_PowderExtinguishersWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_PowderExtinguishersWeightOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_By_PowderExtinguishersWeight", new object[] {
+                        username,
+                        password,
+                        PowderExtinguishersWeight}, this.Floors_Select_By_PowderExtinguishersWeightOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_By_PowderExtinguishersWeightOperationCompleted(object arg) {
+            if ((this.Floors_Select_By_PowderExtinguishersWeightCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_By_PowderExtinguishersWeightCompleted(this, new Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_CarbonDioxideExtinguishersWeight", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_By_CarbonDioxideExtinguishersWeight(string username, string password, int CarbonDioxideExtinguishersWeight) {
+            object[] results = this.Invoke("Floors_Select_By_CarbonDioxideExtinguishersWeight", new object[] {
+                        username,
+                        password,
+                        CarbonDioxideExtinguishersWeight});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_CarbonDioxideExtinguishersWeightAsync(string username, string password, int CarbonDioxideExtinguishersWeight) {
+            this.Floors_Select_By_CarbonDioxideExtinguishersWeightAsync(username, password, CarbonDioxideExtinguishersWeight, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_CarbonDioxideExtinguishersWeightAsync(string username, string password, int CarbonDioxideExtinguishersWeight, object userState) {
+            if ((this.Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted == null)) {
+                this.Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_By_CarbonDioxideExtinguishersWeight", new object[] {
+                        username,
+                        password,
+                        CarbonDioxideExtinguishersWeight}, this.Floors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_By_CarbonDioxideExtinguishersWeightOperationCompleted(object arg) {
+            if ((this.Floors_Select_By_CarbonDioxideExtinguishersWeightCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_By_CarbonDioxideExtinguishersWeightCompleted(this, new Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Floors_Select_By_FoamExtinguishersWeight", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Floors[] Floors_Select_By_FoamExtinguishersWeight(string username, string password, int FoamExtinguishersWeight) {
+            object[] results = this.Invoke("Floors_Select_By_FoamExtinguishersWeight", new object[] {
+                        username,
+                        password,
+                        FoamExtinguishersWeight});
+            return ((Floors[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_FoamExtinguishersWeightAsync(string username, string password, int FoamExtinguishersWeight) {
+            this.Floors_Select_By_FoamExtinguishersWeightAsync(username, password, FoamExtinguishersWeight, null);
+        }
+        
+        /// <remarks/>
+        public void Floors_Select_By_FoamExtinguishersWeightAsync(string username, string password, int FoamExtinguishersWeight, object userState) {
+            if ((this.Floors_Select_By_FoamExtinguishersWeightOperationCompleted == null)) {
+                this.Floors_Select_By_FoamExtinguishersWeightOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFloors_Select_By_FoamExtinguishersWeightOperationCompleted);
+            }
+            this.InvokeAsync("Floors_Select_By_FoamExtinguishersWeight", new object[] {
+                        username,
+                        password,
+                        FoamExtinguishersWeight}, this.Floors_Select_By_FoamExtinguishersWeightOperationCompleted, userState);
+        }
+        
+        private void OnFloors_Select_By_FoamExtinguishersWeightOperationCompleted(object arg) {
+            if ((this.Floors_Select_By_FoamExtinguishersWeightCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Floors_Select_By_FoamExtinguishersWeightCompleted(this, new Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool FFstations_Delete(string username, string password, int FFstationsID) {
+            object[] results = this.Invoke("FFstations_Delete", new object[] {
+                        username,
+                        password,
+                        FFstationsID});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_DeleteAsync(string username, string password, int FFstationsID) {
+            this.FFstations_DeleteAsync(username, password, FFstationsID, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_DeleteAsync(string username, string password, int FFstationsID, object userState) {
+            if ((this.FFstations_DeleteOperationCompleted == null)) {
+                this.FFstations_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Delete", new object[] {
+                        username,
+                        password,
+                        FFstationsID}, this.FFstations_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_DeleteOperationCompleted(object arg) {
+            if ((this.FFstations_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_DeleteCompleted(this, new FFstations_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations FFstations_Insert(string username, string password, FFstations FFstations) {
+            object[] results = this.Invoke("FFstations_Insert", new object[] {
+                        username,
+                        password,
+                        FFstations});
+            return ((FFstations)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_InsertAsync(string username, string password, FFstations FFstations) {
+            this.FFstations_InsertAsync(username, password, FFstations, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_InsertAsync(string username, string password, FFstations FFstations, object userState) {
+            if ((this.FFstations_InsertOperationCompleted == null)) {
+                this.FFstations_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_InsertOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Insert", new object[] {
+                        username,
+                        password,
+                        FFstations}, this.FFstations_InsertOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_InsertOperationCompleted(object arg) {
+            if ((this.FFstations_InsertCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_InsertCompleted(this, new FFstations_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool FFstations_Update(string username, string password, FFstations FFstations) {
+            object[] results = this.Invoke("FFstations_Update", new object[] {
+                        username,
+                        password,
+                        FFstations});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_UpdateAsync(string username, string password, FFstations FFstations) {
+            this.FFstations_UpdateAsync(username, password, FFstations, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_UpdateAsync(string username, string password, FFstations FFstations, object userState) {
+            if ((this.FFstations_UpdateOperationCompleted == null)) {
+                this.FFstations_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Update", new object[] {
+                        username,
+                        password,
+                        FFstations}, this.FFstations_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_UpdateOperationCompleted(object arg) {
+            if ((this.FFstations_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_UpdateCompleted(this, new FFstations_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_All(string username, string password) {
+            object[] results = this.Invoke("FFstations_Select_All", new object[] {
+                        username,
+                        password});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_AllAsync(string username, string password) {
+            this.FFstations_Select_AllAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_AllAsync(string username, string password, object userState) {
+            if ((this.FFstations_Select_AllOperationCompleted == null)) {
+                this.FFstations_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_AllOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_All", new object[] {
+                        username,
+                        password}, this.FFstations_Select_AllOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_AllOperationCompleted(object arg) {
+            if ((this.FFstations_Select_AllCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_AllCompleted(this, new FFstations_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_AreaName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_AreaName(string username, string password, string AreaName) {
+            object[] results = this.Invoke("FFstations_Select_By_AreaName", new object[] {
+                        username,
+                        password,
+                        AreaName});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_AreaNameAsync(string username, string password, string AreaName) {
+            this.FFstations_Select_By_AreaNameAsync(username, password, AreaName, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_AreaNameAsync(string username, string password, string AreaName, object userState) {
+            if ((this.FFstations_Select_By_AreaNameOperationCompleted == null)) {
+                this.FFstations_Select_By_AreaNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_AreaNameOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_AreaName", new object[] {
+                        username,
+                        password,
+                        AreaName}, this.FFstations_Select_By_AreaNameOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_AreaNameOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_AreaNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_AreaNameCompleted(this, new FFstations_Select_By_AreaNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_CarsNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_CarsNumber(string username, string password, string CarsNumber) {
+            object[] results = this.Invoke("FFstations_Select_By_CarsNumber", new object[] {
+                        username,
+                        password,
+                        CarsNumber});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_CarsNumberAsync(string username, string password, string CarsNumber) {
+            this.FFstations_Select_By_CarsNumberAsync(username, password, CarsNumber, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_CarsNumberAsync(string username, string password, string CarsNumber, object userState) {
+            if ((this.FFstations_Select_By_CarsNumberOperationCompleted == null)) {
+                this.FFstations_Select_By_CarsNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_CarsNumberOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_CarsNumber", new object[] {
+                        username,
+                        password,
+                        CarsNumber}, this.FFstations_Select_By_CarsNumberOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_CarsNumberOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_CarsNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_CarsNumberCompleted(this, new FFstations_Select_By_CarsNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Equipments", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_Equipments(string username, string password, string Equipments) {
+            object[] results = this.Invoke("FFstations_Select_By_Equipments", new object[] {
+                        username,
+                        password,
+                        Equipments});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_EquipmentsAsync(string username, string password, string Equipments) {
+            this.FFstations_Select_By_EquipmentsAsync(username, password, Equipments, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_EquipmentsAsync(string username, string password, string Equipments, object userState) {
+            if ((this.FFstations_Select_By_EquipmentsOperationCompleted == null)) {
+                this.FFstations_Select_By_EquipmentsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_EquipmentsOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_Equipments", new object[] {
+                        username,
+                        password,
+                        Equipments}, this.FFstations_Select_By_EquipmentsOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_EquipmentsOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_EquipmentsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_EquipmentsCompleted(this, new FFstations_Select_By_EquipmentsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_FF_ID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_FF_ID(string username, string password, int FF_ID) {
+            object[] results = this.Invoke("FFstations_Select_By_FF_ID", new object[] {
+                        username,
+                        password,
+                        FF_ID});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_FF_IDAsync(string username, string password, int FF_ID) {
+            this.FFstations_Select_By_FF_IDAsync(username, password, FF_ID, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_FF_IDAsync(string username, string password, int FF_ID, object userState) {
+            if ((this.FFstations_Select_By_FF_IDOperationCompleted == null)) {
+                this.FFstations_Select_By_FF_IDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_FF_IDOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_FF_ID", new object[] {
+                        username,
+                        password,
+                        FF_ID}, this.FFstations_Select_By_FF_IDOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_FF_IDOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_FF_IDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_FF_IDCompleted(this, new FFstations_Select_By_FF_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_OfficersNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_OfficersNumber(string username, string password, string OfficersNumber) {
+            object[] results = this.Invoke("FFstations_Select_By_OfficersNumber", new object[] {
+                        username,
+                        password,
+                        OfficersNumber});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_OfficersNumberAsync(string username, string password, string OfficersNumber) {
+            this.FFstations_Select_By_OfficersNumberAsync(username, password, OfficersNumber, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_OfficersNumberAsync(string username, string password, string OfficersNumber, object userState) {
+            if ((this.FFstations_Select_By_OfficersNumberOperationCompleted == null)) {
+                this.FFstations_Select_By_OfficersNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_OfficersNumberOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_OfficersNumber", new object[] {
+                        username,
+                        password,
+                        OfficersNumber}, this.FFstations_Select_By_OfficersNumberOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_OfficersNumberOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_OfficersNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_OfficersNumberCompleted(this, new FFstations_Select_By_OfficersNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Sector", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_Sector(string username, string password, string Sector) {
+            object[] results = this.Invoke("FFstations_Select_By_Sector", new object[] {
+                        username,
+                        password,
+                        Sector});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_SectorAsync(string username, string password, string Sector) {
+            this.FFstations_Select_By_SectorAsync(username, password, Sector, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_SectorAsync(string username, string password, string Sector, object userState) {
+            if ((this.FFstations_Select_By_SectorOperationCompleted == null)) {
+                this.FFstations_Select_By_SectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_SectorOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_Sector", new object[] {
+                        username,
+                        password,
+                        Sector}, this.FFstations_Select_By_SectorOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_SectorOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_SectorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_SectorCompleted(this, new FFstations_Select_By_SectorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Signs", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_Signs(string username, string password, string Signs) {
+            object[] results = this.Invoke("FFstations_Select_By_Signs", new object[] {
+                        username,
+                        password,
+                        Signs});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_SignsAsync(string username, string password, string Signs) {
+            this.FFstations_Select_By_SignsAsync(username, password, Signs, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_SignsAsync(string username, string password, string Signs, object userState) {
+            if ((this.FFstations_Select_By_SignsOperationCompleted == null)) {
+                this.FFstations_Select_By_SignsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_SignsOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_Signs", new object[] {
+                        username,
+                        password,
+                        Signs}, this.FFstations_Select_By_SignsOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_SignsOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_SignsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_SignsCompleted(this, new FFstations_Select_By_SignsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_SoliderNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_SoliderNumber(string username, string password, string SoliderNumber) {
+            object[] results = this.Invoke("FFstations_Select_By_SoliderNumber", new object[] {
+                        username,
+                        password,
+                        SoliderNumber});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_SoliderNumberAsync(string username, string password, string SoliderNumber) {
+            this.FFstations_Select_By_SoliderNumberAsync(username, password, SoliderNumber, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_SoliderNumberAsync(string username, string password, string SoliderNumber, object userState) {
+            if ((this.FFstations_Select_By_SoliderNumberOperationCompleted == null)) {
+                this.FFstations_Select_By_SoliderNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_SoliderNumberOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_SoliderNumber", new object[] {
+                        username,
+                        password,
+                        SoliderNumber}, this.FFstations_Select_By_SoliderNumberOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_SoliderNumberOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_SoliderNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_SoliderNumberCompleted(this, new FFstations_Select_By_SoliderNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_Street", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_Street(string username, string password, string Street) {
+            object[] results = this.Invoke("FFstations_Select_By_Street", new object[] {
+                        username,
+                        password,
+                        Street});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_StreetAsync(string username, string password, string Street) {
+            this.FFstations_Select_By_StreetAsync(username, password, Street, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_StreetAsync(string username, string password, string Street, object userState) {
+            if ((this.FFstations_Select_By_StreetOperationCompleted == null)) {
+                this.FFstations_Select_By_StreetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_StreetOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_Street", new object[] {
+                        username,
+                        password,
+                        Street}, this.FFstations_Select_By_StreetOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_StreetOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_StreetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_StreetCompleted(this, new FFstations_Select_By_StreetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_UserID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_UserID(string username, string password, int UserID) {
+            object[] results = this.Invoke("FFstations_Select_By_UserID", new object[] {
+                        username,
+                        password,
+                        UserID});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_UserIDAsync(string username, string password, int UserID) {
+            this.FFstations_Select_By_UserIDAsync(username, password, UserID, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_UserIDAsync(string username, string password, int UserID, object userState) {
+            if ((this.FFstations_Select_By_UserIDOperationCompleted == null)) {
+                this.FFstations_Select_By_UserIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_UserIDOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_UserID", new object[] {
+                        username,
+                        password,
+                        UserID}, this.FFstations_Select_By_UserIDOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_UserIDOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_UserIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_UserIDCompleted(this, new FFstations_Select_By_UserIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FFstations_Select_By_ZoneNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FFstations[] FFstations_Select_By_ZoneNumber(string username, string password, string ZoneNumber) {
+            object[] results = this.Invoke("FFstations_Select_By_ZoneNumber", new object[] {
+                        username,
+                        password,
+                        ZoneNumber});
+            return ((FFstations[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_ZoneNumberAsync(string username, string password, string ZoneNumber) {
+            this.FFstations_Select_By_ZoneNumberAsync(username, password, ZoneNumber, null);
+        }
+        
+        /// <remarks/>
+        public void FFstations_Select_By_ZoneNumberAsync(string username, string password, string ZoneNumber, object userState) {
+            if ((this.FFstations_Select_By_ZoneNumberOperationCompleted == null)) {
+                this.FFstations_Select_By_ZoneNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFFstations_Select_By_ZoneNumberOperationCompleted);
+            }
+            this.InvokeAsync("FFstations_Select_By_ZoneNumber", new object[] {
+                        username,
+                        password,
+                        ZoneNumber}, this.FFstations_Select_By_ZoneNumberOperationCompleted, userState);
+        }
+        
+        private void OnFFstations_Select_By_ZoneNumberOperationCompleted(object arg) {
+            if ((this.FFstations_Select_By_ZoneNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FFstations_Select_By_ZoneNumberCompleted(this, new FFstations_Select_By_ZoneNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Delete", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool FF_pumps_Delete(string username, string password, int FF_pumpsID) {
+            object[] results = this.Invoke("FF_pumps_Delete", new object[] {
+                        username,
+                        password,
+                        FF_pumpsID});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_DeleteAsync(string username, string password, int FF_pumpsID) {
+            this.FF_pumps_DeleteAsync(username, password, FF_pumpsID, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_DeleteAsync(string username, string password, int FF_pumpsID, object userState) {
+            if ((this.FF_pumps_DeleteOperationCompleted == null)) {
+                this.FF_pumps_DeleteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_DeleteOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Delete", new object[] {
+                        username,
+                        password,
+                        FF_pumpsID}, this.FF_pumps_DeleteOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_DeleteOperationCompleted(object arg) {
+            if ((this.FF_pumps_DeleteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_DeleteCompleted(this, new FF_pumps_DeleteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps FF_pumps_Insert(string username, string password, FF_pumps FF_pumps) {
+            object[] results = this.Invoke("FF_pumps_Insert", new object[] {
+                        username,
+                        password,
+                        FF_pumps});
+            return ((FF_pumps)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_InsertAsync(string username, string password, FF_pumps FF_pumps) {
+            this.FF_pumps_InsertAsync(username, password, FF_pumps, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_InsertAsync(string username, string password, FF_pumps FF_pumps, object userState) {
+            if ((this.FF_pumps_InsertOperationCompleted == null)) {
+                this.FF_pumps_InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_InsertOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Insert", new object[] {
+                        username,
+                        password,
+                        FF_pumps}, this.FF_pumps_InsertOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_InsertOperationCompleted(object arg) {
+            if ((this.FF_pumps_InsertCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_InsertCompleted(this, new FF_pumps_InsertCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Update", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool FF_pumps_Update(string username, string password, FF_pumps FF_pumps) {
+            object[] results = this.Invoke("FF_pumps_Update", new object[] {
+                        username,
+                        password,
+                        FF_pumps});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_UpdateAsync(string username, string password, FF_pumps FF_pumps) {
+            this.FF_pumps_UpdateAsync(username, password, FF_pumps, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_UpdateAsync(string username, string password, FF_pumps FF_pumps, object userState) {
+            if ((this.FF_pumps_UpdateOperationCompleted == null)) {
+                this.FF_pumps_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Update", new object[] {
+                        username,
+                        password,
+                        FF_pumps}, this.FF_pumps_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_UpdateOperationCompleted(object arg) {
+            if ((this.FF_pumps_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_UpdateCompleted(this, new FF_pumps_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_All", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_All(string username, string password) {
+            object[] results = this.Invoke("FF_pumps_Select_All", new object[] {
+                        username,
+                        password});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_AllAsync(string username, string password) {
+            this.FF_pumps_Select_AllAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_AllAsync(string username, string password, object userState) {
+            if ((this.FF_pumps_Select_AllOperationCompleted == null)) {
+                this.FF_pumps_Select_AllOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_AllOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_All", new object[] {
+                        username,
+                        password}, this.FF_pumps_Select_AllOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_AllOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_AllCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_AllCompleted(this, new FF_pumps_Select_AllCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Address", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_By_Address(string username, string password, string Address) {
+            object[] results = this.Invoke("FF_pumps_Select_By_Address", new object[] {
+                        username,
+                        password,
+                        Address});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_AddressAsync(string username, string password, string Address) {
+            this.FF_pumps_Select_By_AddressAsync(username, password, Address, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_AddressAsync(string username, string password, string Address, object userState) {
+            if ((this.FF_pumps_Select_By_AddressOperationCompleted == null)) {
+                this.FF_pumps_Select_By_AddressOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_AddressOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_By_Address", new object[] {
+                        username,
+                        password,
+                        Address}, this.FF_pumps_Select_By_AddressOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_By_AddressOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_By_AddressCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_By_AddressCompleted(this, new FF_pumps_Select_By_AddressCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Area", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_By_Area(string username, string password, string Area) {
+            object[] results = this.Invoke("FF_pumps_Select_By_Area", new object[] {
+                        username,
+                        password,
+                        Area});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_AreaAsync(string username, string password, string Area) {
+            this.FF_pumps_Select_By_AreaAsync(username, password, Area, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_AreaAsync(string username, string password, string Area, object userState) {
+            if ((this.FF_pumps_Select_By_AreaOperationCompleted == null)) {
+                this.FF_pumps_Select_By_AreaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_AreaOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_By_Area", new object[] {
+                        username,
+                        password,
+                        Area}, this.FF_pumps_Select_By_AreaOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_By_AreaOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_By_AreaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_By_AreaCompleted(this, new FF_pumps_Select_By_AreaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_FF_pumpsID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_By_FF_pumpsID(string username, string password, int FF_pumpsID) {
+            object[] results = this.Invoke("FF_pumps_Select_By_FF_pumpsID", new object[] {
+                        username,
+                        password,
+                        FF_pumpsID});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_FF_pumpsIDAsync(string username, string password, int FF_pumpsID) {
+            this.FF_pumps_Select_By_FF_pumpsIDAsync(username, password, FF_pumpsID, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_FF_pumpsIDAsync(string username, string password, int FF_pumpsID, object userState) {
+            if ((this.FF_pumps_Select_By_FF_pumpsIDOperationCompleted == null)) {
+                this.FF_pumps_Select_By_FF_pumpsIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_FF_pumpsIDOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_By_FF_pumpsID", new object[] {
+                        username,
+                        password,
+                        FF_pumpsID}, this.FF_pumps_Select_By_FF_pumpsIDOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_By_FF_pumpsIDOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_By_FF_pumpsIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_By_FF_pumpsIDCompleted(this, new FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_PumpNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_By_PumpNumber(string username, string password, string PumpNumber) {
+            object[] results = this.Invoke("FF_pumps_Select_By_PumpNumber", new object[] {
+                        username,
+                        password,
+                        PumpNumber});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_PumpNumberAsync(string username, string password, string PumpNumber) {
+            this.FF_pumps_Select_By_PumpNumberAsync(username, password, PumpNumber, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_PumpNumberAsync(string username, string password, string PumpNumber, object userState) {
+            if ((this.FF_pumps_Select_By_PumpNumberOperationCompleted == null)) {
+                this.FF_pumps_Select_By_PumpNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_PumpNumberOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_By_PumpNumber", new object[] {
+                        username,
+                        password,
+                        PumpNumber}, this.FF_pumps_Select_By_PumpNumberOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_By_PumpNumberOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_By_PumpNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_By_PumpNumberCompleted(this, new FF_pumps_Select_By_PumpNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FF_pumps_Select_By_Sector", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public FF_pumps[] FF_pumps_Select_By_Sector(string username, string password, string Sector) {
+            object[] results = this.Invoke("FF_pumps_Select_By_Sector", new object[] {
+                        username,
+                        password,
+                        Sector});
+            return ((FF_pumps[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_SectorAsync(string username, string password, string Sector) {
+            this.FF_pumps_Select_By_SectorAsync(username, password, Sector, null);
+        }
+        
+        /// <remarks/>
+        public void FF_pumps_Select_By_SectorAsync(string username, string password, string Sector, object userState) {
+            if ((this.FF_pumps_Select_By_SectorOperationCompleted == null)) {
+                this.FF_pumps_Select_By_SectorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFF_pumps_Select_By_SectorOperationCompleted);
+            }
+            this.InvokeAsync("FF_pumps_Select_By_Sector", new object[] {
+                        username,
+                        password,
+                        Sector}, this.FF_pumps_Select_By_SectorOperationCompleted, userState);
+        }
+        
+        private void OnFF_pumps_Select_By_SectorOperationCompleted(object arg) {
+            if ((this.FF_pumps_Select_By_SectorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FF_pumps_Select_By_SectorCompleted(this, new FF_pumps_Select_By_SectorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -6738,159 +6738,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class FF_ManPower {
-        
-        private int fF_ManPowerIDField;
-        
-        private string sectorField;
-        
-        private string areaField;
-        
-        private string pointField;
-        
-        private string officerNameField;
-        
-        private string rankField;
-        
-        private string timeSlotField;
-        
-        private string availabilityField;
-        
-        private string jobField;
-        
-        private string additional_infoField;
-        
-        private int userIDField;
-        
-        private int fF_IDField;
-        
-        /// <remarks/>
-        public int FF_ManPowerID {
-            get {
-                return this.fF_ManPowerIDField;
-            }
-            set {
-                this.fF_ManPowerIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Sector {
-            get {
-                return this.sectorField;
-            }
-            set {
-                this.sectorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Area {
-            get {
-                return this.areaField;
-            }
-            set {
-                this.areaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Point {
-            get {
-                return this.pointField;
-            }
-            set {
-                this.pointField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string OfficerName {
-            get {
-                return this.officerNameField;
-            }
-            set {
-                this.officerNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Rank {
-            get {
-                return this.rankField;
-            }
-            set {
-                this.rankField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TimeSlot {
-            get {
-                return this.timeSlotField;
-            }
-            set {
-                this.timeSlotField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Availability {
-            get {
-                return this.availabilityField;
-            }
-            set {
-                this.availabilityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Job {
-            get {
-                return this.jobField;
-            }
-            set {
-                this.jobField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Additional_info {
-            get {
-                return this.additional_infoField;
-            }
-            set {
-                this.additional_infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int UserID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                this.userIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int FF_ID {
-            get {
-                return this.fF_IDField;
-            }
-            set {
-                this.fF_IDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class FFstations {
         
         private int fF_IDField;
@@ -7056,6 +6903,276 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class FF_ManPower {
+        
+        private int fF_ManPowerIDField;
+        
+        private string sectorField;
+        
+        private string areaField;
+        
+        private string pointField;
+        
+        private string officerNameField;
+        
+        private string rankField;
+        
+        private string timeSlotField;
+        
+        private string availabilityField;
+        
+        private string jobField;
+        
+        private string additional_infoField;
+        
+        private int userIDField;
+        
+        private int fF_IDField;
+        
+        /// <remarks/>
+        public int FF_ManPowerID {
+            get {
+                return this.fF_ManPowerIDField;
+            }
+            set {
+                this.fF_ManPowerIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Sector {
+            get {
+                return this.sectorField;
+            }
+            set {
+                this.sectorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Area {
+            get {
+                return this.areaField;
+            }
+            set {
+                this.areaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Point {
+            get {
+                return this.pointField;
+            }
+            set {
+                this.pointField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OfficerName {
+            get {
+                return this.officerNameField;
+            }
+            set {
+                this.officerNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Rank {
+            get {
+                return this.rankField;
+            }
+            set {
+                this.rankField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TimeSlot {
+            get {
+                return this.timeSlotField;
+            }
+            set {
+                this.timeSlotField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Availability {
+            get {
+                return this.availabilityField;
+            }
+            set {
+                this.availabilityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Job {
+            get {
+                return this.jobField;
+            }
+            set {
+                this.jobField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Additional_info {
+            get {
+                return this.additional_infoField;
+            }
+            set {
+                this.additional_infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int UserID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                this.userIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int FF_ID {
+            get {
+                return this.fF_IDField;
+            }
+            set {
+                this.fF_IDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class IRUser {
+        
+        private int userIDField;
+        
+        private string usernameField;
+        
+        private string passwordField;
+        
+        private string infoField;
+        
+        private string adminModeField;
+        
+        private ICompany[] user_CompaniesField;
+        
+        private FF_pumps[] user_FF_PumpsField;
+        
+        private FFstations[] user_FFstationsField;
+        
+        private IRUser[] users_of_UsersField;
+        
+        /// <remarks/>
+        public int UserID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                this.userIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                this.passwordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Info {
+            get {
+                return this.infoField;
+            }
+            set {
+                this.infoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AdminMode {
+            get {
+                return this.adminModeField;
+            }
+            set {
+                this.adminModeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ICompany[] User_Companies {
+            get {
+                return this.user_CompaniesField;
+            }
+            set {
+                this.user_CompaniesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] User_FF_Pumps {
+            get {
+                return this.user_FF_PumpsField;
+            }
+            set {
+                this.user_FF_PumpsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FFstations[] User_FFstations {
+            get {
+                return this.user_FFstationsField;
+            }
+            set {
+                this.user_FFstationsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public IRUser[] Users_of_Users {
+            get {
+                return this.users_of_UsersField;
+            }
+            set {
+                this.users_of_UsersField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class FF_pumps {
         
         private int fF_pumpsIDField;
@@ -7175,123 +7292,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
             }
             set {
                 this.userIDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class IRUser {
-        
-        private int userIDField;
-        
-        private string usernameField;
-        
-        private string passwordField;
-        
-        private string infoField;
-        
-        private string adminModeField;
-        
-        private ICompany[] user_CompaniesField;
-        
-        private FF_pumps[] user_FF_PumpsField;
-        
-        private FFstations[] user_FFstationsField;
-        
-        private IRUser[] users_of_UsersField;
-        
-        /// <remarks/>
-        public int UserID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                this.userIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Username {
-            get {
-                return this.usernameField;
-            }
-            set {
-                this.usernameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                this.passwordField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Info {
-            get {
-                return this.infoField;
-            }
-            set {
-                this.infoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string AdminMode {
-            get {
-                return this.adminModeField;
-            }
-            set {
-                this.adminModeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public ICompany[] User_Companies {
-            get {
-                return this.user_CompaniesField;
-            }
-            set {
-                this.user_CompaniesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] User_FF_Pumps {
-            get {
-                return this.user_FF_PumpsField;
-            }
-            set {
-                this.user_FF_PumpsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FFstations[] User_FFstations {
-            get {
-                return this.user_FFstationsField;
-            }
-            set {
-                this.user_FFstationsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public IRUser[] Users_of_Users {
-            get {
-                return this.users_of_UsersField;
-            }
-            set {
-                this.users_of_UsersField = value;
             }
         }
     }
@@ -8652,1618 +8652,6 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Accident[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_DeleteCompletedEventHandler(object sender, Users_DeleteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_InsertCompletedEventHandler(object sender, Users_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public IRUser Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((IRUser)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_UpdateCompletedEventHandler(object sender, Users_UpdateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Select_AllCompletedEventHandler(object sender, Users_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public IRUser[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((IRUser[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Select_Users_Of_UserCompletedEventHandler(object sender, Users_Select_Users_Of_UserCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Select_Users_Of_UserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Select_Users_Of_UserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public IRUser[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((IRUser[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_SelectByUserIdCompletedEventHandler(object sender, Users_SelectByUserIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_SelectByUserIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_SelectByUserIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public IRUser Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((IRUser)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_SelectByNamePassCompletedEventHandler(object sender, Users_SelectByNamePassCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_SelectByNamePassCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_SelectByNamePassCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public IRUser Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((IRUser)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_SelectByNameCompletedEventHandler(object sender, Users_SelectByNameCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_SelectByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_SelectByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public IRUser Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((IRUser)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Select_Super_AdminCompletedEventHandler(object sender, Users_Select_Super_AdminCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Select_Super_AdminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Select_Super_AdminCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public IRUser[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((IRUser[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Admin_DeleteCompletedEventHandler(object sender, Users_Admin_DeleteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Admin_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Admin_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Admin_InsertCompletedEventHandler(object sender, Users_Admin_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Admin_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Admin_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Users_Admin Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Users_Admin)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Admin_Select_AllCompletedEventHandler(object sender, Users_Admin_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Admin_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Admin_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Users_Admin[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Users_Admin[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Admin_SelectByAdminIdCompletedEventHandler(object sender, Users_Admin_SelectByAdminIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Admin_SelectByAdminIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Admin_SelectByAdminIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Users_Admin Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Users_Admin)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Users_Admin_SelectByUserIDCompletedEventHandler(object sender, Users_Admin_SelectByUserIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Users_Admin_SelectByUserIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Users_Admin_SelectByUserIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Users_Admin Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Users_Admin)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_DeleteCompletedEventHandler(object sender, Injured_DeleteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_InsertCompletedEventHandler(object sender, Injured_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_AllCompletedEventHandler(object sender, Injured_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_By_AccidentIDCompletedEventHandler(object sender, Injured_Select_By_AccidentIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_By_AccidentIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_By_AccidentIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_By_AgeCompletedEventHandler(object sender, Injured_Select_By_AgeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_By_AgeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_By_AgeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_By_Civil_MilitaryCompletedEventHandler(object sender, Injured_Select_By_Civil_MilitaryCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_By_Civil_MilitaryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_By_Civil_MilitaryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_By_DateCompletedEventHandler(object sender, Injured_Select_By_DateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_By_DateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_By_DateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_By_InjuredIDCompletedEventHandler(object sender, Injured_Select_By_InjuredIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_By_InjuredIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_By_InjuredIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_By_NameCompletedEventHandler(object sender, Injured_Select_By_NameCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_By_NameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_By_NameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Injured_Select_By_RankCompletedEventHandler(object sender, Injured_Select_By_RankCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Injured_Select_By_RankCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Injured_Select_By_RankCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Injured[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Injured[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Images_InsertCompletedEventHandler(object sender, Images_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Images_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Images_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Images Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Images)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Images_Select_AllCompletedEventHandler(object sender, Images_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Images_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Images_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Images[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Images[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Images_Select_By_BuildingIDCompletedEventHandler(object sender, Images_Select_By_BuildingIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Images_Select_By_BuildingIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Images_Select_By_BuildingIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Images[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Images[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Images_Select_By_ImageDescriptionCompletedEventHandler(object sender, Images_Select_By_ImageDescriptionCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Images_Select_By_ImageDescriptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Images_Select_By_ImageDescriptionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Images[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Images[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_InsertCompletedEventHandler(object sender, Floors_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_UpdateCompletedEventHandler(object sender, Floors_UpdateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_AllCompletedEventHandler(object sender, Floors_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_By_BuildingIDCompletedEventHandler(object sender, Floors_Select_By_BuildingIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_By_BuildingIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_By_BuildingIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventHandler(object sender, Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_By_PowderExtinguishersNumberCompletedEventHandler(object sender, Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_By_FoamExtinguishersNumbersCompletedEventHandler(object sender, Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_By_PowderExtinguishersWeightCompletedEventHandler(object sender, Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventHandler(object sender, Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void Floors_Select_By_FoamExtinguishersWeightCompletedEventHandler(object sender, Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Floors[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Floors[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_DeleteCompletedEventHandler(object sender, FFstations_DeleteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_InsertCompletedEventHandler(object sender, FFstations_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_UpdateCompletedEventHandler(object sender, FFstations_UpdateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_AllCompletedEventHandler(object sender, FFstations_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_AreaNameCompletedEventHandler(object sender, FFstations_Select_By_AreaNameCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_AreaNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_AreaNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_CarsNumberCompletedEventHandler(object sender, FFstations_Select_By_CarsNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_CarsNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_CarsNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_EquipmentsCompletedEventHandler(object sender, FFstations_Select_By_EquipmentsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_EquipmentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_EquipmentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_FF_IDCompletedEventHandler(object sender, FFstations_Select_By_FF_IDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_FF_IDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_FF_IDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_OfficersNumberCompletedEventHandler(object sender, FFstations_Select_By_OfficersNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_OfficersNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_OfficersNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_SectorCompletedEventHandler(object sender, FFstations_Select_By_SectorCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_SectorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_SectorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_SignsCompletedEventHandler(object sender, FFstations_Select_By_SignsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_SignsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_SignsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_SoliderNumberCompletedEventHandler(object sender, FFstations_Select_By_SoliderNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_SoliderNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_SoliderNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_StreetCompletedEventHandler(object sender, FFstations_Select_By_StreetCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_StreetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_StreetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_UserIDCompletedEventHandler(object sender, FFstations_Select_By_UserIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_UserIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_UserIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FFstations_Select_By_ZoneNumberCompletedEventHandler(object sender, FFstations_Select_By_ZoneNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FFstations_Select_By_ZoneNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FFstations_Select_By_ZoneNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FFstations[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FFstations[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_DeleteCompletedEventHandler(object sender, FF_pumps_DeleteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_InsertCompletedEventHandler(object sender, FF_pumps_InsertCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_UpdateCompletedEventHandler(object sender, FF_pumps_UpdateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_AllCompletedEventHandler(object sender, FF_pumps_Select_AllCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_By_AddressCompletedEventHandler(object sender, FF_pumps_Select_By_AddressCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_By_AddressCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_By_AddressCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_By_AreaCompletedEventHandler(object sender, FF_pumps_Select_By_AreaCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_By_AreaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_By_AreaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_By_FF_pumpsIDCompletedEventHandler(object sender, FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_By_PumpNumberCompletedEventHandler(object sender, FF_pumps_Select_By_PumpNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_By_PumpNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_By_PumpNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void FF_pumps_Select_By_SectorCompletedEventHandler(object sender, FF_pumps_Select_By_SectorCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class FF_pumps_Select_By_SectorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal FF_pumps_Select_By_SectorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public FF_pumps[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((FF_pumps[])(this.results[0]));
             }
         }
     }
@@ -11928,6 +10316,1618 @@ namespace Incident_Reporting_App_Server.IncidentReporting {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((ICompany[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_DeleteCompletedEventHandler(object sender, Users_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_InsertCompletedEventHandler(object sender, Users_InsertCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IRUser Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IRUser)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_UpdateCompletedEventHandler(object sender, Users_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Select_AllCompletedEventHandler(object sender, Users_Select_AllCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IRUser[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IRUser[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Select_Users_Of_UserCompletedEventHandler(object sender, Users_Select_Users_Of_UserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Select_Users_Of_UserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Select_Users_Of_UserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IRUser[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IRUser[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_SelectByUserIdCompletedEventHandler(object sender, Users_SelectByUserIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_SelectByUserIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_SelectByUserIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IRUser Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IRUser)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_SelectByNamePassCompletedEventHandler(object sender, Users_SelectByNamePassCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_SelectByNamePassCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_SelectByNamePassCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IRUser Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IRUser)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_SelectByNameCompletedEventHandler(object sender, Users_SelectByNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_SelectByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_SelectByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IRUser Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IRUser)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Select_Super_AdminCompletedEventHandler(object sender, Users_Select_Super_AdminCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Select_Super_AdminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Select_Super_AdminCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public IRUser[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((IRUser[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Admin_DeleteCompletedEventHandler(object sender, Users_Admin_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Admin_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Admin_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Admin_InsertCompletedEventHandler(object sender, Users_Admin_InsertCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Admin_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Admin_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Users_Admin Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Users_Admin)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Admin_Select_AllCompletedEventHandler(object sender, Users_Admin_Select_AllCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Admin_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Admin_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Users_Admin[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Users_Admin[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Admin_SelectByAdminIdCompletedEventHandler(object sender, Users_Admin_SelectByAdminIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Admin_SelectByAdminIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Admin_SelectByAdminIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Users_Admin Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Users_Admin)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Users_Admin_SelectByUserIDCompletedEventHandler(object sender, Users_Admin_SelectByUserIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Users_Admin_SelectByUserIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Users_Admin_SelectByUserIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Users_Admin Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Users_Admin)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_DeleteCompletedEventHandler(object sender, Injured_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_InsertCompletedEventHandler(object sender, Injured_InsertCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_AllCompletedEventHandler(object sender, Injured_Select_AllCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_By_AccidentIDCompletedEventHandler(object sender, Injured_Select_By_AccidentIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_By_AccidentIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_By_AccidentIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_By_AgeCompletedEventHandler(object sender, Injured_Select_By_AgeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_By_AgeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_By_AgeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_By_Civil_MilitaryCompletedEventHandler(object sender, Injured_Select_By_Civil_MilitaryCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_By_Civil_MilitaryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_By_Civil_MilitaryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_By_DateCompletedEventHandler(object sender, Injured_Select_By_DateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_By_DateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_By_DateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_By_InjuredIDCompletedEventHandler(object sender, Injured_Select_By_InjuredIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_By_InjuredIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_By_InjuredIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_By_NameCompletedEventHandler(object sender, Injured_Select_By_NameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_By_NameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_By_NameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Injured_Select_By_RankCompletedEventHandler(object sender, Injured_Select_By_RankCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Injured_Select_By_RankCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Injured_Select_By_RankCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Injured[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Injured[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Images_InsertCompletedEventHandler(object sender, Images_InsertCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Images_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Images_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Images Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Images)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Images_Select_AllCompletedEventHandler(object sender, Images_Select_AllCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Images_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Images_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Images[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Images[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Images_Select_By_BuildingIDCompletedEventHandler(object sender, Images_Select_By_BuildingIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Images_Select_By_BuildingIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Images_Select_By_BuildingIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Images[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Images[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Images_Select_By_ImageDescriptionCompletedEventHandler(object sender, Images_Select_By_ImageDescriptionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Images_Select_By_ImageDescriptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Images_Select_By_ImageDescriptionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Images[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Images[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_InsertCompletedEventHandler(object sender, Floors_InsertCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_UpdateCompletedEventHandler(object sender, Floors_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_AllCompletedEventHandler(object sender, Floors_Select_AllCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_By_BuildingIDCompletedEventHandler(object sender, Floors_Select_By_BuildingIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_By_BuildingIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_By_BuildingIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventHandler(object sender, Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_By_CarbonDioxideExtinguishersNumbersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_By_PowderExtinguishersNumberCompletedEventHandler(object sender, Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_By_PowderExtinguishersNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_By_FoamExtinguishersNumbersCompletedEventHandler(object sender, Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_By_FoamExtinguishersNumbersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_By_PowderExtinguishersWeightCompletedEventHandler(object sender, Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_By_PowderExtinguishersWeightCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventHandler(object sender, Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_By_CarbonDioxideExtinguishersWeightCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Floors_Select_By_FoamExtinguishersWeightCompletedEventHandler(object sender, Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Floors_Select_By_FoamExtinguishersWeightCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Floors[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Floors[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_DeleteCompletedEventHandler(object sender, FFstations_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_InsertCompletedEventHandler(object sender, FFstations_InsertCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_UpdateCompletedEventHandler(object sender, FFstations_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_AllCompletedEventHandler(object sender, FFstations_Select_AllCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_AreaNameCompletedEventHandler(object sender, FFstations_Select_By_AreaNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_AreaNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_AreaNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_CarsNumberCompletedEventHandler(object sender, FFstations_Select_By_CarsNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_CarsNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_CarsNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_EquipmentsCompletedEventHandler(object sender, FFstations_Select_By_EquipmentsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_EquipmentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_EquipmentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_FF_IDCompletedEventHandler(object sender, FFstations_Select_By_FF_IDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_FF_IDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_FF_IDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_OfficersNumberCompletedEventHandler(object sender, FFstations_Select_By_OfficersNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_OfficersNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_OfficersNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_SectorCompletedEventHandler(object sender, FFstations_Select_By_SectorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_SectorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_SectorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_SignsCompletedEventHandler(object sender, FFstations_Select_By_SignsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_SignsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_SignsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_SoliderNumberCompletedEventHandler(object sender, FFstations_Select_By_SoliderNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_SoliderNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_SoliderNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_StreetCompletedEventHandler(object sender, FFstations_Select_By_StreetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_StreetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_StreetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_UserIDCompletedEventHandler(object sender, FFstations_Select_By_UserIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_UserIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_UserIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FFstations_Select_By_ZoneNumberCompletedEventHandler(object sender, FFstations_Select_By_ZoneNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FFstations_Select_By_ZoneNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FFstations_Select_By_ZoneNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FFstations[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FFstations[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_DeleteCompletedEventHandler(object sender, FF_pumps_DeleteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_InsertCompletedEventHandler(object sender, FF_pumps_InsertCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_InsertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_InsertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_UpdateCompletedEventHandler(object sender, FF_pumps_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_AllCompletedEventHandler(object sender, FF_pumps_Select_AllCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_By_AddressCompletedEventHandler(object sender, FF_pumps_Select_By_AddressCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_By_AddressCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_By_AddressCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_By_AreaCompletedEventHandler(object sender, FF_pumps_Select_By_AreaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_By_AreaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_By_AreaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_By_FF_pumpsIDCompletedEventHandler(object sender, FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_By_FF_pumpsIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_By_PumpNumberCompletedEventHandler(object sender, FF_pumps_Select_By_PumpNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_By_PumpNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_By_PumpNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FF_pumps_Select_By_SectorCompletedEventHandler(object sender, FF_pumps_Select_By_SectorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FF_pumps_Select_By_SectorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FF_pumps_Select_By_SectorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FF_pumps[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FF_pumps[])(this.results[0]));
             }
         }
     }

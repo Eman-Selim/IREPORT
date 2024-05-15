@@ -45,3 +45,9 @@ E:\incident-reporting\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Re
 E:\incident-reporting\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Debug\Remote_Alarms_Web_Service.csprojResolveAssemblyReference.cache
 E:\incident-reporting\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Debug\Remote_Alarms_Web_Service.dll
 E:\incident-reporting\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Debug\Remote_Alarms_Web_Service.pdb
+C:\Users\systel\Desktop\InCedentNew\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll.config
+C:\Users\systel\Desktop\InCedentNew\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.dll
+C:\Users\systel\Desktop\InCedentNew\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\bin\Remote_Alarms_Web_Service.pdb
+C:\Users\systel\Desktop\InCedentNew\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Debug\Remote_Alarms_Web_Service.csprojResolveAssemblyReference.cache
+C:\Users\systel\Desktop\InCedentNew\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Debug\Remote_Alarms_Web_Service.dll
+C:\Users\systel\Desktop\InCedentNew\Remote_Alarms_Web_Service\Remote_Alarms_Web_Service\obj\Debug\Remote_Alarms_Web_Service.pdb

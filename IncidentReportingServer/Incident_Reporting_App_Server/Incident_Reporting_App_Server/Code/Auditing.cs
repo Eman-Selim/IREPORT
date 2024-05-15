@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SDS_Remote_Control_Application_Server.Code
+namespace Incident_Reporting_App_Server.Code
 {
     public class Auditing
     {
