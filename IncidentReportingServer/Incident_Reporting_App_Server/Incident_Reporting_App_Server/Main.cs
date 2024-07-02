@@ -46,18 +46,20 @@ namespace Incident_Reporting_App_Server
         private bool First_Time_Loading_User_Data_Flag = true;
         bool AlarmCheck = true;
         Thread AlarmCheck_Thread;
+        Thread Main_Thread;
         #endregion
 
         public Main()
         {
             InitializeComponent();
             pictureBox5.MouseWheel += PictureBox5_MouseWheel;
-            Thread Main_Thread = new Thread(load_all_treeviews_cycle);
+            Main_Thread = new Thread(load_all_treeviews_cycle);
             Main_Thread.Start();
             LoginAccount = server_Class_Obj.Select_Account();
             AlarmCheck_Thread = new Thread(CheckAlarm_Thread);
             AlarmCheck_Thread.Start();
             AlarmCheck_Thread.Priority = ThreadPriority.Highest;
+            comboBox2.SelectedIndex = 0;
             AlarmCheck = true;
             SaveAddedBuildings.Enabled = false;
             EditCompany.Enabled = false;
@@ -164,7 +166,7 @@ namespace Incident_Reporting_App_Server
 
             TB_CompanyGeometeryImage_DT.Image = selectedCompany.CompanyGeometeryImage == null ? System.Drawing.Image.FromStream(new System.IO.MemoryStream(ImageToByteArray(imagenu))) : System.Drawing.Image.FromStream(new System.IO.MemoryStream(selectedCompany.CompanyGeometeryImage));
             ISSI.Text = selectedCompany.ISSI;
-
+            AdditionalInfo.Text = selectedCompany.Info;
             //Loading the neighboring companies
 
             PictureBox P1 = new PictureBox();
@@ -359,22 +361,34 @@ namespace Incident_Reporting_App_Server
 
             FFstations st = server_Class_Obj.Add_FFstations(station);
             FF_ManPower men = new FF_ManPower();
-            if (ff_ManPowerGrid.CurrentRow != null)
+            for (int i = 0; i < ff_ManPowerGrid.RowCount-1; i++)
             {
-                men.OfficerName = ff_ManPowerGrid.CurrentRow.Cells[0].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[0].Value;
-                men.Sector = ff_ManPowerGrid.CurrentRow.Cells[1].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[1].Value;
-                men.Area = ff_ManPowerGrid.CurrentRow.Cells[2].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[2].Value;
-                men.Rank = ff_ManPowerGrid.CurrentRow.Cells[3].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[3].Value;
-                men.Job = ff_ManPowerGrid.CurrentRow.Cells[4].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[4].Value;
-                men.Additional_info = ff_ManPowerGrid.CurrentRow.Cells[5].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[5].Value;
-                men.FF_ID = st.FF_ID;
-                FF_ManPower MM = server_Class_Obj.AddFF_ManPower(men);
-                if (MM != null)
+                if (ff_ManPowerGrid.Rows[i] != null)
+                {
+                    men.OfficerName = ff_ManPowerGrid.Rows[i].Cells[0].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[0].Value;
+                    men.Sector = ff_ManPowerGrid.Rows[i].Cells[1].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[1].Value;
+                    men.Area = ff_ManPowerGrid.Rows[i].Cells[2].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[2].Value;
+                    men.Rank = ff_ManPowerGrid.Rows[i].Cells[3].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[3].Value;
+                    men.Job = ff_ManPowerGrid.Rows[i].Cells[4].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[4].Value;
+                    men.Additional_info = ff_ManPowerGrid.Rows[i].Cells[5].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[5].Value;
+                    men.FF_ID = st.FF_ID;
+                    FF_ManPower MM = server_Class_Obj.AddFF_ManPower(men);
+                    if (MM != null)
+                    {
+                        richTextBox1.ForeColor = Color.YellowGreen;
+                        richTextBox1.Text = " تم إضافة البيانات بنجاح";
+                        
+                    }
+                    else
+                    {
+                        richTextBox1.ForeColor = Color.Red;
+                        richTextBox1.Text = "فشلت العملية";
+                    }
+                }
+                else if (st != null)
                 {
                     richTextBox1.ForeColor = Color.YellowGreen;
                     richTextBox1.Text = " تم إضافة البيانات بنجاح";
-                    LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
-                    Load_User_Data(LoginAccount);
                 }
                 else
                 {
@@ -382,16 +396,8 @@ namespace Incident_Reporting_App_Server
                     richTextBox1.Text = "فشلت العملية";
                 }
             }
-            else if (st != null)
-            {
-                richTextBox1.ForeColor = Color.YellowGreen;
-                richTextBox1.Text = " تم إضافة البيانات بنجاح";
-            }
-            else
-            {
-                richTextBox1.ForeColor = Color.Red;
-                richTextBox1.Text = "فشلت العملية";
-            }
+            LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
+            Load_User_Data(LoginAccount);
         }
 
         private async void EditStationsManPower_Click(object sender, EventArgs e)
@@ -425,33 +431,33 @@ namespace Incident_Reporting_App_Server
 
             await Task.Run(()=>server_Class_Obj.DeleteFF_ManPower(station.FF_ID));
             FF_ManPower men = new FF_ManPower();
-            for (int i = 0; i < ff_ManPowerGrid.RowCount - 1; i++)
+            for (int i = 0; i < ff_ManPowerGrid.RowCount-1 ; i++)
             {
                 if (ff_ManPowerGrid.Rows[i] != null)
                 {
-                    men.OfficerName = ff_ManPowerGrid.CurrentRow.Cells[0].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[0].Value;
-                    men.Sector = ff_ManPowerGrid.CurrentRow.Cells[1].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[1].Value;
-                    men.Area = ff_ManPowerGrid.CurrentRow.Cells[2].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[2].Value;
-                    men.Rank = ff_ManPowerGrid.CurrentRow.Cells[3].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[3].Value;
-                    men.Job = ff_ManPowerGrid.CurrentRow.Cells[4].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[4].Value;
-                    men.Additional_info = ff_ManPowerGrid.CurrentRow.Cells[5].Value == null ? "" : (string)ff_ManPowerGrid.CurrentRow.Cells[5].Value;
+                    men.OfficerName = ff_ManPowerGrid.Rows[i].Cells[0].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[0].Value;
+                    men.Sector = ff_ManPowerGrid.Rows[i].Cells[1].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[1].Value;
+                    men.Area = ff_ManPowerGrid.Rows[i].Cells[2].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[2].Value;
+                    men.Rank = ff_ManPowerGrid.Rows[i].Cells[3].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[3].Value;
+                    men.Job = ff_ManPowerGrid.Rows[i].Cells[4].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[4].Value;
+                    men.Additional_info = ff_ManPowerGrid.Rows[i].Cells[5].Value == null ? "" : (string)ff_ManPowerGrid.Rows[i].Cells[5].Value;
                     men.FF_ID = station.FF_ID;
                     FF_ManPower flag = await Task.Run(() => server_Class_Obj.AddFF_ManPower(men));
                     if (flag != null && flag1 == true)
                     {
                         richTextBox1.ForeColor = Color.YellowGreen;
                         richTextBox1.Text = " تم تعديل البيانات بنجاح";
-                        LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
-                        Load_User_Data(LoginAccount);
+                        
                     }
                     else
                     {
                         richTextBox1.ForeColor = Color.Red;
                         richTextBox1.Text = "فشلت العملية";
                     }
-
                 }
             }
+            LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
+            Load_User_Data(LoginAccount);
         }
 
         private void CB_Stations_DT_SelectedIndexChanged(object sender, EventArgs e)
@@ -674,7 +680,6 @@ namespace Incident_Reporting_App_Server
 
         private async void SaveAddedBuildings_Click_1(object sender, EventArgs e)
         {
-
             ICompany c1 = new ICompany();
             c1.Name = TB_companyName_DT.Text == null ? "" : TB_companyName_DT.Text;
             c1.Address = TB_Address_DT.Text == null ? "" : TB_Address_DT.Text;
@@ -713,6 +718,7 @@ namespace Incident_Reporting_App_Server
             c1.CompanyImage = TB_CompanyImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyImage_DT.Image);
             c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
             c1.sector = CB_Sector_DT.SelectedItem == null ? "" : CB_Sector_DT.SelectedItem.ToString();
+            c1.Info = AdditionalInfo.Text=="" ? "" : AdditionalInfo.Text;
             c1 = await Task.Run(() => server_Class_Obj.Add_Company(c1));
             if (c1 != null)
             {
@@ -729,14 +735,20 @@ namespace Incident_Reporting_App_Server
             {
                 Newbuildings[i].CompanyID = c1.CompanyID;
                 Buildings B1 = server_Class_Obj.Add_Building(Newbuildings[i]);
-
-                foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
+                foreach (var kvp in NewFloors)
                 {
                     Floors floor = new Floors();
                     kvp.Value.BuildingID = B1.BuildingID;
                     floor = await Task.Run(() => server_Class_Obj.Add_Floors(kvp.Value));
 
                 }
+                //foreach (var kvp in NewFloors.FindAll(m => m.Key == i + 1))
+                //{
+                //    Floors floor = new Floors();
+                //    kvp.Value.BuildingID = B1.BuildingID;
+                //    floor = server_Class_Obj.Add_Floors(kvp.Value);
+
+                //}
 
             }
             DangerousPlaces place = new DangerousPlaces();
@@ -754,10 +766,12 @@ namespace Incident_Reporting_App_Server
             M.CurrentPosition = TB_SelectedUserBuisiness_DT.Text;
             M.PhoneNumber = TB_SelectedUserPhone_DT.Text;
             M.Info = TB_SelectedUserInfo_DT.Text;
-            M.CompanyID = Selected_Company_ID;
-            M = server_Class_Obj.Add_Manager(M);
-            M.CompanyID = c1.CompanyID;
-            M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
+            if (c1 != null)
+            {
+                M.CompanyID = c1.CompanyID;
+                M = await Task.Run(() => server_Class_Obj.Add_Manager(M));
+            }
+            
             LoginAccount = await Task.Run(() => server_Class_Obj.Select_Account());
              Update_Incident_Reporting_trv_Companies();
         }
@@ -805,12 +819,12 @@ namespace Incident_Reporting_App_Server
                 c1.Latitude = 0;
                 c1.CompanyBuisiness = TB_CompanyBuisiness_DT.Text == null ? "" : TB_CompanyBuisiness_DT.Text;
                 c1.StockVolume = TB_Stock_DT.Text == "" ? 0 : Convert.ToInt32(TB_Stock_DT.Text);
-                c1.StockType = TB_StockType_DT.Text == null ? "" : TB_StockType_DT.Text;
+                c1.StockType = TB_StockType_DT.Text == "" ? "" : TB_StockType_DT.Text;
                 c1.CompanyID = Selected_Company_ID;
                 c1.CompanyImage = TB_CompanyImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyImage_DT.Image);
                 c1.CompanyGeometeryImage = TB_CompanyGeometeryImage_DT.Image == null ? ImageToByteArray(imagenu) : ImageToByteArray(TB_CompanyGeometeryImage_DT.Image);
-                c1.sector = CB_Sector_DT.SelectedItem == null ? "" : CB_Sector_DT.SelectedItem.ToString(); 
-               
+                c1.sector = CB_Sector_DT.SelectedItem == null ? "" : CB_Sector_DT.SelectedItem.ToString();
+                c1.Info = AdditionalInfo.Text == "" ? "" : AdditionalInfo.Text;
                 DangerousPlaces place = new DangerousPlaces();
                 place.Location = DangerouseLocation.Text;
                 place.HazardousSubstance = HazardousSubstance.Text;
@@ -856,11 +870,8 @@ namespace Incident_Reporting_App_Server
                                         floor = await Task.Run(() => server_Class_Obj.Add_Floors(c1.companyBuildings[i].BuildingFloors[j]));
                                     }
                                 }
-                               
-
                             }
                         }
-
                     }
                     for (int i = 0; i < Newbuildings.Count; i++)
                     {
@@ -1118,32 +1129,44 @@ namespace Incident_Reporting_App_Server
                 IRUser user = new IRUser();
                 user.Username = accountName.Text;
                 user.AdminMode = "";
+                string tempPass = "";
                 if (string.Compare(accountPassword.Text, ReAccountPassword.Text) == 0)
                 {
-                    if(accountPassword.Text == "**********")
+                    for(int i=0;i< LoginAccount.Password.Length;i++)
                     {
+                        tempPass+= "*";
+                    }
+                    if(accountPassword.Text == tempPass)
+                    {
+                        AccountStatus.ForeColor= Color.Red;
                         AccountStatus.Text = "من فضلك ادخل الرقم السري ";
                         
                     }
                     else
-                    user.Password = accountPassword.Text;
-                }
-                user.UserID = Selected_User_ID;
-                user.Info = AccountInfo.Text;
-
-                bool flag = server_Class_Obj.Update_Account(user);
-                if (flag == true)
-                {
-                    AccountStatus.ForeColor = Color.YellowGreen;
-                    AccountStatus.Text = " تم تعديل المستخدم بنجاح";
-                    this.Close();
-                    Login f1 = new Login();
-                    f1.Show();
+                    {
+                        user.Password = accountPassword.Text;
+                        user.UserID = Selected_User_ID;
+                        user.Info = AccountInfo.Text;
+                        bool flag = server_Class_Obj.Update_Account(user);
+                        if (flag == true)
+                        {
+                            AccountStatus.ForeColor = Color.YellowGreen;
+                            AccountStatus.Text = " تم تعديل المستخدم بنجاح";
+                            this.Close();
+                            Login f1 = new Login();
+                            f1.Show();
+                        }
+                        else
+                        {
+                            AccountStatus.ForeColor = Color.Red;
+                            AccountStatus.Text = "فشلت العملية";
+                        }
+                    }
                 }
                 else
                 {
                     AccountStatus.ForeColor = Color.Red;
-                    AccountStatus.Text = "فشلت العملية";
+                    AccountStatus.Text = "كلمة السر غير متطابقة ";
                 }
             }
             catch (Exception exception1)
@@ -1211,7 +1234,8 @@ namespace Incident_Reporting_App_Server
                 }
                 else if (AlarmCheck == true)
                 {
-                    IncomingAlarm[] a = server_Class_Obj.Select_Alarms(Selected_User_ID);
+                    IncomingAlarm[] a = server_Class_Obj.Select_Alarms(LoginAccount.UserID);
+
                     if (a != null)
                     {
                         int alarmLength = a == null ? 0 : a.Length;
@@ -1647,6 +1671,11 @@ namespace Incident_Reporting_App_Server
                 Deleted_SelectedManager.Enabled = true;
             }
                 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

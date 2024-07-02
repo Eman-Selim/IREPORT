@@ -102,11 +102,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\Incident_WS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="Web References\RemoteAlarm\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,53 +176,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\IncidentReporting\Users_Admin.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\Accident.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\Buildings.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\DangerousPlaces.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\Death.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\FFstations.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\FF_ManPower.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\FF_pumps.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\Floors.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\ICompany.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\Images.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\IncidentReporting_WS.wsdl" />
-    <None Include="Web References\Incident_WS\Injured.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\IRUser.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\Managers.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\Incident_WS\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\Incident_WS\Users_Admin.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\RemoteAlarm\Company.datasource">
@@ -329,10 +277,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.1.13/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx">
+    <WebReferenceUrl Include="http://192.168.1.14:7777/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\RemoteAlarm\</RelPath>
-      <UpdateFromURL>http://192.168.1.13/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx</UpdateFromURL>
+      <UpdateFromURL>http://192.168.1.14:7777/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -340,21 +288,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Incident_Reporting_App_Server_RemoteAlarm_Remote_Alarms_Web_Service</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:51040/IncidentReporting_WS.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\Incident_WS\</RelPath>
-      <UpdateFromURL>http://localhost:51040/IncidentReporting_WS.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Incident_Reporting_App_Server_Incident_WS_IncidentReporting_WS</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:51040/IncidentReporting_WS.asmx">
+    <WebReferenceUrl Include="http://192.168.1.13/IncidentReporting_WS/IncidentReporting_WS.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\IncidentReporting\</RelPath>
-      <UpdateFromURL>http://localhost:51040/IncidentReporting_WS.asmx</UpdateFromURL>
+      <UpdateFromURL>http://192.168.1.13/IncidentReporting_WS/IncidentReporting_WS.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -386,7 +323,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Web References\RemoteAlarm\Remote_Alarms_Web_Service.disco" />
-    <None Include="Web References\Incident_WS\IncidentReporting_WS.disco" />
     <None Include="Web References\IncidentReporting\IncidentReporting_WS.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

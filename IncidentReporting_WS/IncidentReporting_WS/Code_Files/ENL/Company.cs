@@ -50,5 +50,6 @@ namespace IncidentReporting_WS.Code_Files.ENL
         public AccidentCollection CompanyAccident { get; set; }
         public string ISSI { get; set; }
         public string sector { get; set; }
+        public string Info { get; set; }
     }
 }

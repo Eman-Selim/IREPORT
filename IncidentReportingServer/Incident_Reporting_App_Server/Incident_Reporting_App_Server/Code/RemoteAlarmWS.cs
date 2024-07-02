@@ -20,8 +20,10 @@ namespace Incident_Reporting_App_Server.Code
             }
             catch (Exception ex)
             {
-                Auditing.Error(ex.Message);
                 return null;
+                Auditing.Error(ex.Message);
+                
+
             }
         }
 

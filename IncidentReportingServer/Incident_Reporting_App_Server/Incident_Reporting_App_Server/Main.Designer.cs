@@ -116,13 +116,11 @@ namespace Incident_Reporting_App_Server
             this.label11 = new System.Windows.Forms.Label();
             this.AdditionalInfo = new System.Windows.Forms.RichTextBox();
             this.TB_LandlinePhone_DT = new System.Windows.Forms.RichTextBox();
-            this.policeName = new System.Windows.Forms.RichTextBox();
             this.TB_Address_DT = new System.Windows.Forms.RichTextBox();
             this.district = new System.Windows.Forms.RichTextBox();
             this.TB_companyName_DT = new System.Windows.Forms.RichTextBox();
             this.govern = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -164,6 +162,10 @@ namespace Incident_Reporting_App_Server
             this.TB_CompanyImage_DT = new C1.Win.C1Input.C1PictureBox();
             this.c1DockingTabPage8 = new C1.Win.C1Command.C1DockingTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
+            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.c1DockingTabPage6 = new C1.Win.C1Command.C1DockingTabPage();
             this.Deleted_SelectedManager = new System.Windows.Forms.Button();
@@ -295,10 +297,6 @@ namespace Incident_Reporting_App_Server
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.RightCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.FrontCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.BackCompany_UC = new Incident_Reporting_App_Server.UserControl1();
-            this.LeftCompany_UC = new Incident_Reporting_App_Server.UserControl1();
             this.application_pnl_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Maxmized_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).BeginInit();
@@ -1079,13 +1077,11 @@ namespace Incident_Reporting_App_Server
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.AdditionalInfo);
             this.groupBox1.Controls.Add(this.TB_LandlinePhone_DT);
-            this.groupBox1.Controls.Add(this.policeName);
             this.groupBox1.Controls.Add(this.TB_Address_DT);
             this.groupBox1.Controls.Add(this.district);
             this.groupBox1.Controls.Add(this.TB_companyName_DT);
             this.groupBox1.Controls.Add(this.govern);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -1100,11 +1096,12 @@ namespace Incident_Reporting_App_Server
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "مكان المنشأة";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(364, 483);
+            this.label11.Location = new System.Drawing.Point(364, 425);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(129, 25);
             this.label11.TabIndex = 23;
@@ -1115,9 +1112,9 @@ namespace Incident_Reporting_App_Server
             this.AdditionalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.AdditionalInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AdditionalInfo.ForeColor = System.Drawing.Color.White;
-            this.AdditionalInfo.Location = new System.Drawing.Point(31, 447);
+            this.AdditionalInfo.Location = new System.Drawing.Point(31, 409);
             this.AdditionalInfo.Name = "AdditionalInfo";
-            this.AdditionalInfo.Size = new System.Drawing.Size(269, 99);
+            this.AdditionalInfo.Size = new System.Drawing.Size(269, 113);
             this.AdditionalInfo.TabIndex = 22;
             this.AdditionalInfo.Text = "";
             // 
@@ -1126,22 +1123,11 @@ namespace Incident_Reporting_App_Server
             this.TB_LandlinePhone_DT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
             this.TB_LandlinePhone_DT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_LandlinePhone_DT.ForeColor = System.Drawing.Color.White;
-            this.TB_LandlinePhone_DT.Location = new System.Drawing.Point(31, 395);
+            this.TB_LandlinePhone_DT.Location = new System.Drawing.Point(31, 342);
             this.TB_LandlinePhone_DT.Name = "TB_LandlinePhone_DT";
             this.TB_LandlinePhone_DT.Size = new System.Drawing.Size(269, 38);
             this.TB_LandlinePhone_DT.TabIndex = 21;
             this.TB_LandlinePhone_DT.Text = "";
-            // 
-            // policeName
-            // 
-            this.policeName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.policeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.policeName.ForeColor = System.Drawing.Color.White;
-            this.policeName.Location = new System.Drawing.Point(31, 340);
-            this.policeName.Name = "policeName";
-            this.policeName.Size = new System.Drawing.Size(269, 40);
-            this.policeName.TabIndex = 20;
-            this.policeName.Text = "";
             // 
             // TB_Address_DT
             // 
@@ -1194,22 +1180,12 @@ namespace Incident_Reporting_App_Server
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(364, 400);
+            this.label10.Location = new System.Drawing.Point(364, 344);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label10.Size = new System.Drawing.Size(160, 25);
             this.label10.TabIndex = 14;
             this.label10.Text = "رقم التليفون الأرضي:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(364, 342);
-            this.label9.Name = "label9";
-            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label9.Size = new System.Drawing.Size(54, 25);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "القسم:";
             // 
             // label8
             // 
@@ -1794,6 +1770,42 @@ namespace Incident_Reporting_App_Server
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 345F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1491, 943);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // RightCompany_UC
+            // 
+            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.RightCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightCompany_UC.Location = new System.Drawing.Point(998, 288);
+            this.RightCompany_UC.Name = "RightCompany_UC";
+            this.RightCompany_UC.Size = new System.Drawing.Size(490, 306);
+            this.RightCompany_UC.TabIndex = 0;
+            // 
+            // FrontCompany_UC
+            // 
+            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.FrontCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FrontCompany_UC.Location = new System.Drawing.Point(505, 3);
+            this.FrontCompany_UC.Name = "FrontCompany_UC";
+            this.FrontCompany_UC.Size = new System.Drawing.Size(487, 279);
+            this.FrontCompany_UC.TabIndex = 1;
+            // 
+            // BackCompany_UC
+            // 
+            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.BackCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackCompany_UC.Location = new System.Drawing.Point(505, 600);
+            this.BackCompany_UC.Name = "BackCompany_UC";
+            this.BackCompany_UC.Size = new System.Drawing.Size(487, 340);
+            this.BackCompany_UC.TabIndex = 2;
+            // 
+            // LeftCompany_UC
+            // 
+            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 288);
+            this.LeftCompany_UC.Name = "LeftCompany_UC";
+            this.LeftCompany_UC.Size = new System.Drawing.Size(496, 306);
+            this.LeftCompany_UC.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -3439,13 +3451,18 @@ namespace Incident_Reporting_App_Server
             // 
             // comboBox2
             // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.ForeColor = System.Drawing.Color.LightGray;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "تفعيل متابعة الإنذارات",
             "تفعيل الإضافة والتعديل"});
-            this.comboBox2.Location = new System.Drawing.Point(1562, 11);
+            this.comboBox2.Location = new System.Drawing.Point(1490, 6);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(171, 21);
+            this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox2.Size = new System.Drawing.Size(206, 26);
             this.comboBox2.TabIndex = 2;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -3532,42 +3549,6 @@ namespace Incident_Reporting_App_Server
             this.pictureBox5.Size = new System.Drawing.Size(159, 301);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
-            // 
-            // RightCompany_UC
-            // 
-            this.RightCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.RightCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightCompany_UC.Location = new System.Drawing.Point(998, 288);
-            this.RightCompany_UC.Name = "RightCompany_UC";
-            this.RightCompany_UC.Size = new System.Drawing.Size(490, 306);
-            this.RightCompany_UC.TabIndex = 0;
-            // 
-            // FrontCompany_UC
-            // 
-            this.FrontCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.FrontCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FrontCompany_UC.Location = new System.Drawing.Point(505, 3);
-            this.FrontCompany_UC.Name = "FrontCompany_UC";
-            this.FrontCompany_UC.Size = new System.Drawing.Size(487, 279);
-            this.FrontCompany_UC.TabIndex = 1;
-            // 
-            // BackCompany_UC
-            // 
-            this.BackCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.BackCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackCompany_UC.Location = new System.Drawing.Point(505, 600);
-            this.BackCompany_UC.Name = "BackCompany_UC";
-            this.BackCompany_UC.Size = new System.Drawing.Size(487, 340);
-            this.BackCompany_UC.TabIndex = 2;
-            // 
-            // LeftCompany_UC
-            // 
-            this.LeftCompany_UC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(73)))), ((int)(((byte)(105)))));
-            this.LeftCompany_UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeftCompany_UC.Location = new System.Drawing.Point(3, 288);
-            this.LeftCompany_UC.Name = "LeftCompany_UC";
-            this.LeftCompany_UC.Size = new System.Drawing.Size(496, 306);
-            this.LeftCompany_UC.TabIndex = 3;
             // 
             // Main
             // 
@@ -3827,13 +3808,11 @@ namespace Incident_Reporting_App_Server
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox AdditionalInfo;
         private System.Windows.Forms.RichTextBox TB_LandlinePhone_DT;
-        private System.Windows.Forms.RichTextBox policeName;
         private System.Windows.Forms.RichTextBox TB_Address_DT;
         private System.Windows.Forms.RichTextBox district;
         private System.Windows.Forms.RichTextBox TB_companyName_DT;
         private System.Windows.Forms.RichTextBox govern;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

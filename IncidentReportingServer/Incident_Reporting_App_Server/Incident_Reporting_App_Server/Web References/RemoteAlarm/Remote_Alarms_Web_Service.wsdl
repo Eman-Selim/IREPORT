@@ -1079,10 +1079,10 @@
   </wsdl:binding>
   <wsdl:service name="Remote_Alarms_Web_Service">
     <wsdl:port name="Remote_Alarms_Web_ServiceSoap" binding="tns:Remote_Alarms_Web_ServiceSoap">
-      <soap:address location="http://192.168.1.13/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx" />
+      <soap:address location="http://192.168.1.14:7777/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx" />
     </wsdl:port>
     <wsdl:port name="Remote_Alarms_Web_ServiceSoap12" binding="tns:Remote_Alarms_Web_ServiceSoap12">
-      <soap12:address location="http://192.168.1.13/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx" />
+      <soap12:address location="http://192.168.1.14:7777/Remote_Alarms_Web_Service/Remote_Alarms_Web_Service.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
